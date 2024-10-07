@@ -13,7 +13,12 @@
 		}
 	},
 	"linter": {
-		"enabled": true
+		"enabled": true,
+		"rules": {
+			"style": {
+				"useImportType": "off"
+			}
+		}
 	},
 	"organizeImports": {
 		"enabled": true
