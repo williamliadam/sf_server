@@ -1,2 +1,2 @@
 # sf_server
-single food server repo
+single food server repo (power by nest js)
