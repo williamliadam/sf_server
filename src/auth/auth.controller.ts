@@ -5,13 +5,15 @@ import { LocalAuthGuard } from './guards/local-auth.guard';
 import { Public } from './decorators/public.decorator';
 import { UserService } from 'src/user/user.service';
 import { SignupDto } from './dto/signup.dto';
+import { MailerService } from '@nestjs-modules/mailer';
 
 @Public()
 @Controller('auth')
 export class AuthController {
 	constructor(
 		private authService: AuthService,
-		private useService: UserService
+		private useService: UserService,
+		private mailerService: MailerService
 	) { }
 
 	@UseGuards(LocalAuthGuard)
@@ -23,6 +25,16 @@ export class AuthController {
 	@Post("signup")
 	async signup(@Body() signupDto: SignupDto) {
 		const { password, ...rest } = signupDto;
+		await this.mailerService.sendMail({
+			to: rest.email,
+			from: 'noreply@singlefood.com',
+			subject: 'Signup Account',
+			template: 'code', // The `.pug` or `.hbs` extension is appended automatically.
+			context: {  // Data to be sent to template engine.
+				code: 'cf1a3f828287',
+				username: 'john doe',
+			},
+		})
 		const salt = await bcrypt.genSalt();
 		const hash = await bcrypt.hash(password, salt);
 		return this.useService.create({ ...rest, password: hash })
