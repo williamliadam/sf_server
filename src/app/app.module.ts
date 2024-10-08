@@ -7,9 +7,13 @@ import { PostModule } from '../post/post.module';
 import { AuthModule } from '../auth/auth.module';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
+import { CacheModule } from '@nestjs/cache-manager';
 @Module({
 	imports: [
 		ConfigModule.forRoot(),
+		CacheModule.register({
+			isGlobal: true,
+		}),
 		MailerModule.forRoot({
 			transport: {
 				host: process.env.SMTP_HOST,
