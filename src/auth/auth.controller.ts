@@ -3,7 +3,7 @@ import * as bcrypt from 'bcrypt';
 import { AuthService } from './auth.service';
 import { LocalAuthGuard } from './guards/local-auth.guard';
 import { Public } from './decorators/public.decorator';
-import { UserService } from 'src/user/user.service';
+import { UserService } from '../user/user.service';
 import { SignupDto } from './dto/signup.dto';
 import { MailerService } from '@nestjs-modules/mailer';
 
@@ -27,7 +27,6 @@ export class AuthController {
 		const { password, ...rest } = signupDto;
 		await this.mailerService.sendMail({
 			to: rest.email,
-			from: 'noreply@singlefood.com',
 			subject: 'Signup Account',
 			template: 'code', // The `.pug` or `.hbs` extension is appended automatically.
 			context: {  // Data to be sent to template engine.
