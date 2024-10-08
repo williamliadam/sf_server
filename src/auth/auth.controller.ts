@@ -6,6 +6,7 @@ import {
 	Body,
 	Inject,
 	UnauthorizedException,
+	BadRequestException,
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { AuthService } from './auth.service';
@@ -40,7 +41,7 @@ export class AuthController {
 		// match email and code
 		const cacheCode = await this.cacheManager.get(rest.email);
 		if (code !== cacheCode) {
-			throw new UnauthorizedException();
+			throw new BadRequestException();
 		}
 		await this.cacheManager.del(rest.email);
 		const salt = await bcrypt.genSalt();
@@ -52,7 +53,7 @@ export class AuthController {
 	async verifyEmail(@Body() verifyEmailDto: VerifyEmailDto) {
 		const { email } = verifyEmailDto;
 		const code = `000000${Math.floor(Math.random() * 999999)}`.slice(-6);
-		await this.cacheManager.set(email, code, 30000);
+		await this.cacheManager.set(email, code, 60000);
 		await this.mailerService.sendMail({
 			to: email,
 			subject: 'Signup Account',
