@@ -7,6 +7,9 @@ import {
 	Inject,
 	UnauthorizedException,
 	BadRequestException,
+	HttpException,
+	HttpStatus,
+	HttpCode,
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { AuthService } from './auth.service';
@@ -18,7 +21,6 @@ import { MailerService } from '@nestjs-modules/mailer';
 import { VerifyEmailDto } from './dto/verify-email.dto';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
-
 @Public()
 @Controller('auth')
 export class AuthController {
@@ -41,7 +43,7 @@ export class AuthController {
 		// match email and code
 		const cacheCode = await this.cacheManager.get(rest.email);
 		if (code !== cacheCode) {
-			throw new BadRequestException();
+			throw new HttpException('Not Correct Code', HttpStatus.FORBIDDEN);
 		}
 		await this.cacheManager.del(rest.email);
 		const salt = await bcrypt.genSalt();
@@ -52,8 +54,12 @@ export class AuthController {
 	@Post('email/verify')
 	async verifyEmail(@Body() verifyEmailDto: VerifyEmailDto) {
 		const { email } = verifyEmailDto;
+		const isExistCode = await this.cacheManager.get(email);
+		if (isExistCode) {
+			throw new HttpException('Already Send', HttpStatus.FORBIDDEN);
+		}
 		const code = `000000${Math.floor(Math.random() * 999999)}`.slice(-6);
-		await this.cacheManager.set(email, code, 60000);
+		await this.cacheManager.set(email, code, { ttl: 60 });
 		await this.mailerService.sendMail({
 			to: email,
 			subject: 'Signup Account',

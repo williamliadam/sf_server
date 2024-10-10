@@ -8,11 +8,6 @@ import { Public } from 'src/auth/decorators/public.decorator';
 export class UserController {
 	constructor(private readonly userService: UserService) { }
 
-	@Get(':id')
-	findOne(@Param('id') id: string) {
-		return this.userService.findOne({ id: Number(id) });
-	}
-
 	@Get('profile')
 	getProfile(@Request() req) {
 		return req.user;

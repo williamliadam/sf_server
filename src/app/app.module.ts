@@ -8,10 +8,17 @@ import { AuthModule } from '../auth/auth.module';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { CacheModule } from '@nestjs/cache-manager';
+import * as redisStore from 'cache-manager-redis-store';
+
 @Module({
 	imports: [
 		ConfigModule.forRoot(),
 		CacheModule.register({
+			ttl: 30, // seconds
+			max: 10, // maximum number of items in cache
+			store: redisStore,
+			host: 'localhost',
+			port: 6379,
 			isGlobal: true,
 		}),
 		MailerModule.forRoot({
