@@ -29,7 +29,7 @@ export class AuthController {
 		private useService: UserService,
 		private mailerService: MailerService,
 		@Inject(CACHE_MANAGER) private cacheManager: Cache,
-	) {}
+	) { }
 
 	@UseGuards(LocalAuthGuard)
 	@Post('login')
@@ -60,7 +60,7 @@ export class AuthController {
 		}
 		const code = `000000${Math.floor(Math.random() * 999999)}`.slice(-6);
 		await this.cacheManager.set(email, code, { ttl: 60 });
-		await this.mailerService.sendMail({
+		const result = await this.mailerService.sendMail({
 			to: email,
 			subject: 'Signup Account',
 			template: 'code',
@@ -68,5 +68,6 @@ export class AuthController {
 				code,
 			},
 		});
+		return result;
 	}
 }

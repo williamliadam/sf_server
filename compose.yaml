@@ -1,0 +1,32 @@
+services:
+  db:
+    image: "postgres:alpine"
+    container_name: postgress
+    environment:
+      - POSTGRES_PASSWORD=db123456
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  redis:
+    image: "redis:alpine"
+    container_name: redis
+    volumes:
+      - redis_data:/data
+    ports:
+      - 6379:6379
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: sf_server
+    environment:
+      - PORT=${PORT}
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+      - redis
+volumes:
+  db_data:
+  redis_data:
