@@ -20,8 +20,9 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: sf_server
-    environment:
-      - PORT=${PORT}
+    restart: always
+    env_file:
+      - .env
     ports:
       - 3000:3000
     depends_on:

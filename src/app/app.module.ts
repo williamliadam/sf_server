@@ -17,8 +17,8 @@ import * as redisStore from 'cache-manager-redis-store';
 			ttl: 30, // seconds
 			max: 10, // maximum number of items in cache
 			store: redisStore,
-			host: 'localhost',
-			port: 6379,
+			host: process.env.REDIS_HOST,
+			port: Number(process.env.REDIS_PORT),
 			isGlobal: true,
 		}),
 		MailerModule.forRoot({
