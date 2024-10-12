@@ -12,7 +12,9 @@ import * as redisStore from 'cache-manager-redis-store';
 
 @Module({
 	imports: [
-		ConfigModule.forRoot(),
+		ConfigModule.forRoot({
+			envFilePath: ['.env.local', '.env'],
+		}),
 		CacheModule.register({
 			ttl: 30, // seconds
 			max: 10, // maximum number of items in cache

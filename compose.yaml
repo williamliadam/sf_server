@@ -1,7 +1,7 @@
 services:
   db:
     image: "postgres:alpine"
-    container_name: postgress
+    container_name: postgres
     environment:
       - POSTGRES_PASSWORD=db123456
     volumes:
@@ -20,9 +20,9 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: sf_server
-    restart: always
     env_file:
-      - .env
+      - .env.production.local
+    restart: always
     ports:
       - 3000:3000
     depends_on:
