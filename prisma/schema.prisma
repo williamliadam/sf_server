@@ -20,18 +20,16 @@ model User {
   password        String
   phone           String         @unique
   wxId            String         @unique
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @default(now())
   role            Role           @default(USER)
   profile         Profile?
   bodyDetail      BodyDetail?
-  dayPlans        DayPlan[]
-  myComments      Comment[]
+  myPosts         Post[]
   myRecipes       Recipe[]
-  posts           Post[]
-  chargeDishPlans DishPlan[]     @relation("PlanCooker")
-  myMealPlans     MealPlan[]
   myMealTemplates MealTemplate[]
-  createdAt       DateTime       @default(now())
-  updatedAt       DateTime       @default(now())
+  myMealPlans     MealPlan[]
+  chargeDishPlans DishPlan[]     @relation("PlanCooker")
 }
 
 model Post {
@@ -39,26 +37,25 @@ model Post {
   title     String
   content   String?
   published Boolean? @default(false)
-  author    User?    @relation(fields: [authorId], references: [id])
   authorId  Int?
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+  author    User?    @relation(fields: [authorId], references: [id])
 }
 
 model Profile {
   id        Int      @id @default(autoincrement())
   avatar    String?
   nickName  String?
-  goal      Goal     @default(KEEP)
-  user      User     @relation(fields: [userId], references: [id])
   userId    Int      @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+  goal      Goal     @default(KEEP)
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model BodyDetail {
   id        Int      @id @default(autoincrement())
-  user      User     @relation(fields: [userId], references: [id])
   weight    Int?
   height    Int?
   age       Int?
@@ -68,26 +65,27 @@ model BodyDetail {
   userId    Int      @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model Nutrition {
   id        Int            @id @default(autoincrement())
   code      String         @unique
   name      String
-  usedRow   NutritionRow[]
   createdAt DateTime       @default(now())
   updatedAt DateTime       @default(now())
+  usedRow   NutritionRow[]
 }
 
 model NutritionRow {
   id             Int       @id @default(autoincrement())
-  nutirtion      Nutrition @relation(fields: [nutirtionId], references: [id])
   nutirtionId    Int
   percent        Int
-  belongMaterial Material  @relation(fields: [belongToId], references: [id])
   belongToId     Int
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @default(now())
+  nutirtion      Nutrition @relation(fields: [nutirtionId], references: [id])
+  belongMaterial Material  @relation(fields: [belongToId], references: [id])
 }
 
 model MateriaUnit {
@@ -95,21 +93,21 @@ model MateriaUnit {
   code        String       @unique
   name        String
   toKilo      Int
-  ingredients Ingredient[]
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @default(now())
+  ingredients Ingredient[]
 }
 
 model MateriaCategory {
   id        Int               @id @default(autoincrement())
   code      String            @unique
   name      String
-  next      MateriaCategory[] @relation("NextCategorys")
-  last      MateriaCategory?  @relation("NextCategorys", fields: [lastId], references: [id])
   lastId    Int?
-  materials Material[]
   createdAt DateTime          @default(now())
   updatedAt DateTime          @default(now())
+  materials Material[]
+  next      MateriaCategory[] @relation("NextCategorys")
+  last      MateriaCategory?  @relation("NextCategorys", fields: [lastId], references: [id])
 }
 
 model Material {
@@ -117,25 +115,25 @@ model Material {
   name              String
   code              String          @unique
   nickName          String
-  category          MateriaCategory @relation(fields: [materiaCategoryId], references: [id])
-  nutritionMatrix   NutritionRow[]
   materiaCategoryId Int
-  ingredients       Ingredient[]
   createdAt         DateTime        @default(now())
   updatedAt         DateTime        @default(now())
+  category          MateriaCategory @relation(fields: [materiaCategoryId], references: [id])
+  nutritionMatrix   NutritionRow[]
+  ingredients       Ingredient[]
 }
 
 model Ingredient {
   id            Int         @id @default(autoincrement())
-  material      Material    @relation(fields: [materialId], references: [id])
   materialId    Int
-  unit          MateriaUnit @relation(fields: [materiaUnitId], references: [id])
   amount        Int
   materiaUnitId Int
-  usedRecipe    Recipe?     @relation(fields: [recipeId], references: [id])
   recipeId      Int?
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @default(now())
+  material      Material    @relation(fields: [materialId], references: [id])
+  unit          MateriaUnit @relation(fields: [materiaUnitId], references: [id])
+  usedRecipe    Recipe?     @relation(fields: [recipeId], references: [id])
 }
 
 model Method {
@@ -143,102 +141,69 @@ model Method {
   code       String   @unique
   name       String
   desc       String
-  usedRecipe Recipe?  @relation(fields: [recipeId], references: [id])
   recipeId   Int?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @default(now())
-}
-
-model Comment {
-  id            Int       @id @default(autoincrement())
-  authorId      Int
-  author        User      @relation(fields: [authorId], references: [id])
-  content       String
-  rootCommentId Int?
-  rootComment   Comment?  @relation("rootComment", fields: [rootCommentId], references: [id])
-  belowComments Comment[] @relation("rootComment")
-  nextId        Int?      @unique
-  nextComment   Comment?  @relation("nextComment", fields: [nextId], references: [id])
-  lastComment   Comment?  @relation("nextComment")
-  fatherId      Int?
-  fatherComment Comment?  @relation("fatherComment", fields: [fatherId], references: [id])
-  children      Comment[] @relation("fatherComment")
-  rootOfRecipe  Recipe?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @default(now())
+  usedRecipe Recipe?  @relation(fields: [recipeId], references: [id])
 }
 
 model Recipe {
   id                Int            @id @default(autoincrement())
   name              String
-  author            User           @relation(fields: [authorId], references: [id])
   stars             Int
-  rootComment       Comment        @relation(fields: [rootCommentId], references: [id])
-  ingredients       Ingredient[]
-  methods           Method[]
   authorId          Int
-  rootCommentId     Int            @unique
-  usedDishPlans     DishPlan[]
-  usedDishTemplates DishTemplate[]
   createdAt         DateTime       @default(now())
   updatedAt         DateTime       @default(now())
+  author            User           @relation(fields: [authorId], references: [id])
+  ingredients       Ingredient[]
+  methods           Method[]
+  usedDishPlans     DishPlan[]
+  usedDishTemplates DishTemplate[]
 }
 
 model DishTemplate {
   id                Int           @id @default(autoincrement())
   recipeId          Int
-  recipe            Recipe        @relation(fields: [recipeId], references: [id])
   amount            Int
   createdAt         DateTime      @default(now())
   updatedAt         DateTime      @default(now())
-  usedMealTemplates MealTemplate? @relation(fields: [mealTemplateId], references: [id])
   mealTemplateId    Int?
+  usedMealTemplates MealTemplate? @relation(fields: [mealTemplateId], references: [id])
+  recipe            Recipe        @relation(fields: [recipeId], references: [id])
 }
 
 model MealTemplate {
   id            Int            @id @default(autoincrement())
   name          String
-  dishTemplates DishTemplate[]
   userId        Int
-  createBy      User           @relation(fields: [userId], references: [id])
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @default(now())
+  createBy      User           @relation(fields: [userId], references: [id])
+  dishTemplates DishTemplate[]
 }
 
 model DishPlan {
   id           Int       @id @default(autoincrement())
   recipeId     Int
-  recipe       Recipe    @relation(fields: [recipeId], references: [id])
   amount       Int
   planCookerId Int
-  planCooker   User      @relation("PlanCooker", fields: [planCookerId], references: [id])
-  usedMealPlan MealPlan? @relation(fields: [mealPlanId], references: [id])
   mealPlanId   Int?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @default(now())
+  planCooker   User      @relation("PlanCooker", fields: [planCookerId], references: [id])
+  recipe       Recipe    @relation(fields: [recipeId], references: [id])
+  usedMealPlan MealPlan? @relation(fields: [mealPlanId], references: [id])
 }
 
 model MealPlan {
-  id           Int        @id @default(autoincrement())
-  type         MealType   @default(MEAL)
-  planTime     DateTime?
-  dishPlans    DishPlan[]
-  userId       Int
-  usedDayPlans DayPlan?   @relation(fields: [dayPlanId], references: [id])
-  dayPlanId    Int?
-  createBy     User       @relation(fields: [userId], references: [id])
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @default(now())
-}
-
-model DayPlan {
   id        Int        @id @default(autoincrement())
-  startDate DateTime
-  belongTo  User?      @relation(fields: [userId], references: [id])
-  userId    Int?
-  mealPlans MealPlan[]
+  planTime  DateTime?
+  userId    Int
   createdAt DateTime   @default(now())
   updatedAt DateTime   @default(now())
+  type      MealType   @default(MEAL)
+  dishPlans DishPlan[]
+  createBy  User       @relation(fields: [userId], references: [id])
 }
 
 enum MealType {

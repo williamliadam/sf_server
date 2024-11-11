@@ -9,7 +9,7 @@ export class IngredientService {
   }
 
   findAll() {
-    return `This action returns all ingredient`;
+    return 'This action returns all ingredient';
   }
 
   findOne(id: number) {
