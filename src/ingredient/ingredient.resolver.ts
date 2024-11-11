@@ -3,13 +3,13 @@ import { Post } from "src/post/entities/post.entity";
 import { PrismaService } from "src/prisma/prisma.service";
 import { Ingredient } from "./entities/ingredient.entity";
 
-@Resolver('Ingredient')
+@Resolver(() => Ingredient)
 export class AuthorsResolver {
   constructor(
     private prisma: PrismaService
   ) { }
 
-  @Query()
+  @Query(returns => Ingredient)
   async ingredient(@Args('id') id: number) {
     return this.prisma.ingredient.findUnique({
       where: { id }
@@ -19,8 +19,8 @@ export class AuthorsResolver {
   @ResolveField('posts', () => [Post])
   async getPosts(@Parent() ingredient: Ingredient) {
     const { id } = ingredient;
-    return this.prisma.user.findUnique({
-      where: { id }
+    return this.prisma.user.findMany({
+      where: { bodyDetail: { height: 20 } }
     })
   }
 }

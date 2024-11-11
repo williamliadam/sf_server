@@ -5,11 +5,8 @@ import {
 	Request,
 	Body,
 	Inject,
-	UnauthorizedException,
-	BadRequestException,
 	HttpException,
 	HttpStatus,
-	HttpCode,
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { AuthService } from './auth.service';
@@ -21,6 +18,7 @@ import { MailerService } from '@nestjs-modules/mailer';
 import { VerifyEmailDto } from './dto/verify-email.dto';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
+
 @Public()
 @Controller('auth')
 export class AuthController {
