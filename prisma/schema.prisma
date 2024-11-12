@@ -8,6 +8,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator custom_generator {
+  provider = "nestjs-prisma-graphql-crud-gen"
+  output = "../src/generated"
+}
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")

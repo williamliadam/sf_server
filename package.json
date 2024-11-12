@@ -50,6 +50,7 @@
     "handlebars": "^4.7.8",
     "ioredis": "^5.4.1",
     "nestjs-prisma": "^0.23.0",
+    "nestjs-prisma-graphql-crud-gen": "^1.0.4",
     "nodemailer": "^6.9.15",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
