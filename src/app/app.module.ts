@@ -12,7 +12,6 @@ import * as redisStore from 'cache-manager-redis-store';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'node:path';
-import { IngredientModule } from 'src/ingredient/ingredient.module';
 
 @Module({
 	imports: [
@@ -51,7 +50,6 @@ import { IngredientModule } from 'src/ingredient/ingredient.module';
 		UserModule,
 		PostModule,
 		AuthModule,
-		IngredientModule,
 		GraphQLModule.forRoot<ApolloDriverConfig>({
 			driver: ApolloDriver,
 			autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
