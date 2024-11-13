@@ -11,32 +11,33 @@ import { RecipeUpdateToOneWithWhereWithoutMethodsInput } from './recipe-update-t
 
 @InputType()
 export class RecipeUpdateOneWithoutMethodsNestedInput {
+	@Field(() => RecipeCreateWithoutMethodsInput, { nullable: true })
+	@Type(() => RecipeCreateWithoutMethodsInput)
+	create?: RecipeCreateWithoutMethodsInput;
 
-    @Field(() => RecipeCreateWithoutMethodsInput, {nullable:true})
-    @Type(() => RecipeCreateWithoutMethodsInput)
-    create?: RecipeCreateWithoutMethodsInput;
+	@Field(() => RecipeCreateOrConnectWithoutMethodsInput, { nullable: true })
+	@Type(() => RecipeCreateOrConnectWithoutMethodsInput)
+	connectOrCreate?: RecipeCreateOrConnectWithoutMethodsInput;
 
-    @Field(() => RecipeCreateOrConnectWithoutMethodsInput, {nullable:true})
-    @Type(() => RecipeCreateOrConnectWithoutMethodsInput)
-    connectOrCreate?: RecipeCreateOrConnectWithoutMethodsInput;
+	@Field(() => RecipeUpsertWithoutMethodsInput, { nullable: true })
+	@Type(() => RecipeUpsertWithoutMethodsInput)
+	upsert?: RecipeUpsertWithoutMethodsInput;
 
-    @Field(() => RecipeUpsertWithoutMethodsInput, {nullable:true})
-    @Type(() => RecipeUpsertWithoutMethodsInput)
-    upsert?: RecipeUpsertWithoutMethodsInput;
+	@Field(() => RecipeWhereInput, { nullable: true })
+	@Type(() => RecipeWhereInput)
+	disconnect?: RecipeWhereInput;
 
-    @Field(() => RecipeWhereInput, {nullable:true})
-    @Type(() => RecipeWhereInput)
-    disconnect?: RecipeWhereInput;
+	@Field(() => RecipeWhereInput, { nullable: true })
+	@Type(() => RecipeWhereInput)
+	delete?: RecipeWhereInput;
 
-    @Field(() => RecipeWhereInput, {nullable:true})
-    @Type(() => RecipeWhereInput)
-    delete?: RecipeWhereInput;
+	@Field(() => RecipeWhereUniqueInput, { nullable: true })
+	@Type(() => RecipeWhereUniqueInput)
+	connect?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 
-    @Field(() => RecipeWhereUniqueInput, {nullable:true})
-    @Type(() => RecipeWhereUniqueInput)
-    connect?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
-
-    @Field(() => RecipeUpdateToOneWithWhereWithoutMethodsInput, {nullable:true})
-    @Type(() => RecipeUpdateToOneWithWhereWithoutMethodsInput)
-    update?: RecipeUpdateToOneWithWhereWithoutMethodsInput;
+	@Field(() => RecipeUpdateToOneWithWhereWithoutMethodsInput, {
+		nullable: true,
+	})
+	@Type(() => RecipeUpdateToOneWithWhereWithoutMethodsInput)
+	update?: RecipeUpdateToOneWithWhereWithoutMethodsInput;
 }

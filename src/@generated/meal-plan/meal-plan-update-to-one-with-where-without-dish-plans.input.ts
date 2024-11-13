@@ -6,12 +6,11 @@ import { MealPlanUpdateWithoutDishPlansInput } from './meal-plan-update-without-
 
 @InputType()
 export class MealPlanUpdateToOneWithWhereWithoutDishPlansInput {
+	@Field(() => MealPlanWhereInput, { nullable: true })
+	@Type(() => MealPlanWhereInput)
+	where?: MealPlanWhereInput;
 
-    @Field(() => MealPlanWhereInput, {nullable:true})
-    @Type(() => MealPlanWhereInput)
-    where?: MealPlanWhereInput;
-
-    @Field(() => MealPlanUpdateWithoutDishPlansInput, {nullable:false})
-    @Type(() => MealPlanUpdateWithoutDishPlansInput)
-    data!: MealPlanUpdateWithoutDishPlansInput;
+	@Field(() => MealPlanUpdateWithoutDishPlansInput, { nullable: false })
+	@Type(() => MealPlanUpdateWithoutDishPlansInput)
+	data!: MealPlanUpdateWithoutDishPlansInput;
 }

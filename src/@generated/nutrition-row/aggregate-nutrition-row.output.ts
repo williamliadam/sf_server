@@ -8,19 +8,18 @@ import { NutritionRowMaxAggregate } from './nutrition-row-max-aggregate.output';
 
 @ObjectType()
 export class AggregateNutritionRow {
+	@Field(() => NutritionRowCountAggregate, { nullable: true })
+	_count?: NutritionRowCountAggregate;
 
-    @Field(() => NutritionRowCountAggregate, {nullable:true})
-    _count?: NutritionRowCountAggregate;
+	@Field(() => NutritionRowAvgAggregate, { nullable: true })
+	_avg?: NutritionRowAvgAggregate;
 
-    @Field(() => NutritionRowAvgAggregate, {nullable:true})
-    _avg?: NutritionRowAvgAggregate;
+	@Field(() => NutritionRowSumAggregate, { nullable: true })
+	_sum?: NutritionRowSumAggregate;
 
-    @Field(() => NutritionRowSumAggregate, {nullable:true})
-    _sum?: NutritionRowSumAggregate;
+	@Field(() => NutritionRowMinAggregate, { nullable: true })
+	_min?: NutritionRowMinAggregate;
 
-    @Field(() => NutritionRowMinAggregate, {nullable:true})
-    _min?: NutritionRowMinAggregate;
-
-    @Field(() => NutritionRowMaxAggregate, {nullable:true})
-    _max?: NutritionRowMaxAggregate;
+	@Field(() => NutritionRowMaxAggregate, { nullable: true })
+	_max?: NutritionRowMaxAggregate;
 }

@@ -8,16 +8,15 @@ import { DishTemplateCreateWithoutRecipeInput } from './dish-template-create-wit
 
 @InputType()
 export class DishTemplateUpsertWithWhereUniqueWithoutRecipeInput {
+	@Field(() => DishTemplateWhereUniqueInput, { nullable: false })
+	@Type(() => DishTemplateWhereUniqueInput)
+	where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => DishTemplateWhereUniqueInput, {nullable:false})
-    @Type(() => DishTemplateWhereUniqueInput)
-    where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
+	@Field(() => DishTemplateUpdateWithoutRecipeInput, { nullable: false })
+	@Type(() => DishTemplateUpdateWithoutRecipeInput)
+	update!: DishTemplateUpdateWithoutRecipeInput;
 
-    @Field(() => DishTemplateUpdateWithoutRecipeInput, {nullable:false})
-    @Type(() => DishTemplateUpdateWithoutRecipeInput)
-    update!: DishTemplateUpdateWithoutRecipeInput;
-
-    @Field(() => DishTemplateCreateWithoutRecipeInput, {nullable:false})
-    @Type(() => DishTemplateCreateWithoutRecipeInput)
-    create!: DishTemplateCreateWithoutRecipeInput;
+	@Field(() => DishTemplateCreateWithoutRecipeInput, { nullable: false })
+	@Type(() => DishTemplateCreateWithoutRecipeInput)
+	create!: DishTemplateCreateWithoutRecipeInput;
 }

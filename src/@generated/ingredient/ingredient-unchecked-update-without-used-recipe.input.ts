@@ -5,22 +5,21 @@ import { DateTimeFieldUpdateOperationsInput } from '../prisma/date-time-field-up
 
 @InputType()
 export class IngredientUncheckedUpdateWithoutUsedRecipeInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	materialId?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    materialId?: IntFieldUpdateOperationsInput;
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	amount?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    amount?: IntFieldUpdateOperationsInput;
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	materiaUnitId?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    materiaUnitId?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 }

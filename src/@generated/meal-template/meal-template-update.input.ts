@@ -7,19 +7,22 @@ import { DishTemplateUpdateManyWithoutUsedMealTemplatesNestedInput } from '../di
 
 @InputType()
 export class MealTemplateUpdateInput {
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => UserUpdateOneRequiredWithoutMyMealTemplatesNestedInput, {
+		nullable: true,
+	})
+	createBy?: UserUpdateOneRequiredWithoutMyMealTemplatesNestedInput;
 
-    @Field(() => UserUpdateOneRequiredWithoutMyMealTemplatesNestedInput, {nullable:true})
-    createBy?: UserUpdateOneRequiredWithoutMyMealTemplatesNestedInput;
-
-    @Field(() => DishTemplateUpdateManyWithoutUsedMealTemplatesNestedInput, {nullable:true})
-    dishTemplates?: DishTemplateUpdateManyWithoutUsedMealTemplatesNestedInput;
+	@Field(() => DishTemplateUpdateManyWithoutUsedMealTemplatesNestedInput, {
+		nullable: true,
+	})
+	dishTemplates?: DishTemplateUpdateManyWithoutUsedMealTemplatesNestedInput;
 }

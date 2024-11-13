@@ -7,12 +7,11 @@ import { DishPlanCreateWithoutUsedMealPlanInput } from './dish-plan-create-witho
 
 @InputType()
 export class DishPlanCreateOrConnectWithoutUsedMealPlanInput {
+	@Field(() => DishPlanWhereUniqueInput, { nullable: false })
+	@Type(() => DishPlanWhereUniqueInput)
+	where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
 
-    @Field(() => DishPlanWhereUniqueInput, {nullable:false})
-    @Type(() => DishPlanWhereUniqueInput)
-    where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
-
-    @Field(() => DishPlanCreateWithoutUsedMealPlanInput, {nullable:false})
-    @Type(() => DishPlanCreateWithoutUsedMealPlanInput)
-    create!: DishPlanCreateWithoutUsedMealPlanInput;
+	@Field(() => DishPlanCreateWithoutUsedMealPlanInput, { nullable: false })
+	@Type(() => DishPlanCreateWithoutUsedMealPlanInput)
+	create!: DishPlanCreateWithoutUsedMealPlanInput;
 }

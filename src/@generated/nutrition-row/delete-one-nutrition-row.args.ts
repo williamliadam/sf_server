@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneNutritionRowArgs {
-
-    @Field(() => NutritionRowWhereUniqueInput, {nullable:false})
-    @Type(() => NutritionRowWhereUniqueInput)
-    where!: Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>;
+	@Field(() => NutritionRowWhereUniqueInput, { nullable: false })
+	@Type(() => NutritionRowWhereUniqueInput)
+	where!: Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>;
 }

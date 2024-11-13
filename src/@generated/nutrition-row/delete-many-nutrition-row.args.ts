@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyNutritionRowArgs {
-
-    @Field(() => NutritionRowWhereInput, {nullable:true})
-    @Type(() => NutritionRowWhereInput)
-    where?: NutritionRowWhereInput;
+	@Field(() => NutritionRowWhereInput, { nullable: true })
+	@Type(() => NutritionRowWhereInput)
+	where?: NutritionRowWhereInput;
 }

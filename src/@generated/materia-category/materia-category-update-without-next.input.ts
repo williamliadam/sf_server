@@ -7,22 +7,23 @@ import { MateriaCategoryUpdateOneWithoutNextNestedInput } from './materia-catego
 
 @InputType()
 export class MateriaCategoryUpdateWithoutNextInput {
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => MaterialUpdateManyWithoutCategoryNestedInput, { nullable: true })
+	materials?: MaterialUpdateManyWithoutCategoryNestedInput;
 
-    @Field(() => MaterialUpdateManyWithoutCategoryNestedInput, {nullable:true})
-    materials?: MaterialUpdateManyWithoutCategoryNestedInput;
-
-    @Field(() => MateriaCategoryUpdateOneWithoutNextNestedInput, {nullable:true})
-    last?: MateriaCategoryUpdateOneWithoutNextNestedInput;
+	@Field(() => MateriaCategoryUpdateOneWithoutNextNestedInput, {
+		nullable: true,
+	})
+	last?: MateriaCategoryUpdateOneWithoutNextNestedInput;
 }

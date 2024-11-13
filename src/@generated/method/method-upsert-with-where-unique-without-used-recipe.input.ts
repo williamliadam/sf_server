@@ -8,16 +8,15 @@ import { MethodCreateWithoutUsedRecipeInput } from './method-create-without-used
 
 @InputType()
 export class MethodUpsertWithWhereUniqueWithoutUsedRecipeInput {
+	@Field(() => MethodWhereUniqueInput, { nullable: false })
+	@Type(() => MethodWhereUniqueInput)
+	where!: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MethodWhereUniqueInput, {nullable:false})
-    @Type(() => MethodWhereUniqueInput)
-    where!: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MethodUpdateWithoutUsedRecipeInput, { nullable: false })
+	@Type(() => MethodUpdateWithoutUsedRecipeInput)
+	update!: MethodUpdateWithoutUsedRecipeInput;
 
-    @Field(() => MethodUpdateWithoutUsedRecipeInput, {nullable:false})
-    @Type(() => MethodUpdateWithoutUsedRecipeInput)
-    update!: MethodUpdateWithoutUsedRecipeInput;
-
-    @Field(() => MethodCreateWithoutUsedRecipeInput, {nullable:false})
-    @Type(() => MethodCreateWithoutUsedRecipeInput)
-    create!: MethodCreateWithoutUsedRecipeInput;
+	@Field(() => MethodCreateWithoutUsedRecipeInput, { nullable: false })
+	@Type(() => MethodCreateWithoutUsedRecipeInput)
+	create!: MethodCreateWithoutUsedRecipeInput;
 }

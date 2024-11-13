@@ -9,34 +9,33 @@ import { IngredientListRelationFilter } from '../ingredient/ingredient-list-rela
 
 @InputType()
 export class MateriaUnitWhereUniqueInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => String, { nullable: true })
+	code?: string;
 
-    @Field(() => String, {nullable:true})
-    code?: string;
+	@Field(() => [MateriaUnitWhereInput], { nullable: true })
+	AND?: Array<MateriaUnitWhereInput>;
 
-    @Field(() => [MateriaUnitWhereInput], {nullable:true})
-    AND?: Array<MateriaUnitWhereInput>;
+	@Field(() => [MateriaUnitWhereInput], { nullable: true })
+	OR?: Array<MateriaUnitWhereInput>;
 
-    @Field(() => [MateriaUnitWhereInput], {nullable:true})
-    OR?: Array<MateriaUnitWhereInput>;
+	@Field(() => [MateriaUnitWhereInput], { nullable: true })
+	NOT?: Array<MateriaUnitWhereInput>;
 
-    @Field(() => [MateriaUnitWhereInput], {nullable:true})
-    NOT?: Array<MateriaUnitWhereInput>;
+	@Field(() => StringFilter, { nullable: true })
+	name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+	@Field(() => IntFilter, { nullable: true })
+	toKilo?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    toKilo?: IntFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
-
-    @Field(() => IngredientListRelationFilter, {nullable:true})
-    ingredients?: IngredientListRelationFilter;
+	@Field(() => IngredientListRelationFilter, { nullable: true })
+	ingredients?: IngredientListRelationFilter;
 }

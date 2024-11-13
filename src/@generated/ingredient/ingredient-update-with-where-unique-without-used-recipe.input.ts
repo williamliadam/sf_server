@@ -7,12 +7,11 @@ import { IngredientUpdateWithoutUsedRecipeInput } from './ingredient-update-with
 
 @InputType()
 export class IngredientUpdateWithWhereUniqueWithoutUsedRecipeInput {
+	@Field(() => IngredientWhereUniqueInput, { nullable: false })
+	@Type(() => IngredientWhereUniqueInput)
+	where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
 
-    @Field(() => IngredientWhereUniqueInput, {nullable:false})
-    @Type(() => IngredientWhereUniqueInput)
-    where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
-
-    @Field(() => IngredientUpdateWithoutUsedRecipeInput, {nullable:false})
-    @Type(() => IngredientUpdateWithoutUsedRecipeInput)
-    data!: IngredientUpdateWithoutUsedRecipeInput;
+	@Field(() => IngredientUpdateWithoutUsedRecipeInput, { nullable: false })
+	@Type(() => IngredientUpdateWithoutUsedRecipeInput)
+	data!: IngredientUpdateWithoutUsedRecipeInput;
 }

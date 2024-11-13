@@ -8,16 +8,15 @@ import { IngredientCreateWithoutMaterialInput } from './ingredient-create-withou
 
 @InputType()
 export class IngredientUpsertWithWhereUniqueWithoutMaterialInput {
+	@Field(() => IngredientWhereUniqueInput, { nullable: false })
+	@Type(() => IngredientWhereUniqueInput)
+	where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
 
-    @Field(() => IngredientWhereUniqueInput, {nullable:false})
-    @Type(() => IngredientWhereUniqueInput)
-    where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
+	@Field(() => IngredientUpdateWithoutMaterialInput, { nullable: false })
+	@Type(() => IngredientUpdateWithoutMaterialInput)
+	update!: IngredientUpdateWithoutMaterialInput;
 
-    @Field(() => IngredientUpdateWithoutMaterialInput, {nullable:false})
-    @Type(() => IngredientUpdateWithoutMaterialInput)
-    update!: IngredientUpdateWithoutMaterialInput;
-
-    @Field(() => IngredientCreateWithoutMaterialInput, {nullable:false})
-    @Type(() => IngredientCreateWithoutMaterialInput)
-    create!: IngredientCreateWithoutMaterialInput;
+	@Field(() => IngredientCreateWithoutMaterialInput, { nullable: false })
+	@Type(() => IngredientCreateWithoutMaterialInput)
+	create!: IngredientCreateWithoutMaterialInput;
 }

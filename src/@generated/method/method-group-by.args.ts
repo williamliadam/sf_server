@@ -14,38 +14,37 @@ import { MethodMaxAggregateInput } from './method-max-aggregate.input';
 
 @ArgsType()
 export class MethodGroupByArgs {
+	@Field(() => MethodWhereInput, { nullable: true })
+	@Type(() => MethodWhereInput)
+	where?: MethodWhereInput;
 
-    @Field(() => MethodWhereInput, {nullable:true})
-    @Type(() => MethodWhereInput)
-    where?: MethodWhereInput;
+	@Field(() => [MethodOrderByWithAggregationInput], { nullable: true })
+	orderBy?: Array<MethodOrderByWithAggregationInput>;
 
-    @Field(() => [MethodOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<MethodOrderByWithAggregationInput>;
+	@Field(() => [MethodScalarFieldEnum], { nullable: false })
+	by!: Array<keyof typeof MethodScalarFieldEnum>;
 
-    @Field(() => [MethodScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof MethodScalarFieldEnum>;
+	@Field(() => MethodScalarWhereWithAggregatesInput, { nullable: true })
+	having?: MethodScalarWhereWithAggregatesInput;
 
-    @Field(() => MethodScalarWhereWithAggregatesInput, {nullable:true})
-    having?: MethodScalarWhereWithAggregatesInput;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => MethodCountAggregateInput, { nullable: true })
+	_count?: MethodCountAggregateInput;
 
-    @Field(() => MethodCountAggregateInput, {nullable:true})
-    _count?: MethodCountAggregateInput;
+	@Field(() => MethodAvgAggregateInput, { nullable: true })
+	_avg?: MethodAvgAggregateInput;
 
-    @Field(() => MethodAvgAggregateInput, {nullable:true})
-    _avg?: MethodAvgAggregateInput;
+	@Field(() => MethodSumAggregateInput, { nullable: true })
+	_sum?: MethodSumAggregateInput;
 
-    @Field(() => MethodSumAggregateInput, {nullable:true})
-    _sum?: MethodSumAggregateInput;
+	@Field(() => MethodMinAggregateInput, { nullable: true })
+	_min?: MethodMinAggregateInput;
 
-    @Field(() => MethodMinAggregateInput, {nullable:true})
-    _min?: MethodMinAggregateInput;
-
-    @Field(() => MethodMaxAggregateInput, {nullable:true})
-    _max?: MethodMaxAggregateInput;
+	@Field(() => MethodMaxAggregateInput, { nullable: true })
+	_max?: MethodMaxAggregateInput;
 }

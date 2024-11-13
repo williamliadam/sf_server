@@ -4,13 +4,12 @@ import { IngredientWhereInput } from './ingredient-where.input';
 
 @InputType()
 export class IngredientListRelationFilter {
+	@Field(() => IngredientWhereInput, { nullable: true })
+	every?: IngredientWhereInput;
 
-    @Field(() => IngredientWhereInput, {nullable:true})
-    every?: IngredientWhereInput;
+	@Field(() => IngredientWhereInput, { nullable: true })
+	some?: IngredientWhereInput;
 
-    @Field(() => IngredientWhereInput, {nullable:true})
-    some?: IngredientWhereInput;
-
-    @Field(() => IngredientWhereInput, {nullable:true})
-    none?: IngredientWhereInput;
+	@Field(() => IngredientWhereInput, { nullable: true })
+	none?: IngredientWhereInput;
 }

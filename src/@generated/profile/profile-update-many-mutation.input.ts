@@ -6,19 +6,18 @@ import { EnumGoalFieldUpdateOperationsInput } from '../prisma/enum-goal-field-up
 
 @InputType()
 export class ProfileUpdateManyMutationInput {
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	avatar?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    avatar?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	nickName?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    nickName?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => EnumGoalFieldUpdateOperationsInput, {nullable:true})
-    goal?: EnumGoalFieldUpdateOperationsInput;
+	@Field(() => EnumGoalFieldUpdateOperationsInput, { nullable: true })
+	goal?: EnumGoalFieldUpdateOperationsInput;
 }

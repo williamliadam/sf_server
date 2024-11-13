@@ -7,34 +7,33 @@ import { IngredientOrderByRelationAggregateInput } from '../ingredient/ingredien
 
 @InputType()
 export class MaterialOrderByWithRelationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	name?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    name?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	code?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    code?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	nickName?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    nickName?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	materiaCategoryId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    materiaCategoryId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => MateriaCategoryOrderByWithRelationInput, { nullable: true })
+	category?: MateriaCategoryOrderByWithRelationInput;
 
-    @Field(() => MateriaCategoryOrderByWithRelationInput, {nullable:true})
-    category?: MateriaCategoryOrderByWithRelationInput;
+	@Field(() => NutritionRowOrderByRelationAggregateInput, { nullable: true })
+	nutritionMatrix?: NutritionRowOrderByRelationAggregateInput;
 
-    @Field(() => NutritionRowOrderByRelationAggregateInput, {nullable:true})
-    nutritionMatrix?: NutritionRowOrderByRelationAggregateInput;
-
-    @Field(() => IngredientOrderByRelationAggregateInput, {nullable:true})
-    ingredients?: IngredientOrderByRelationAggregateInput;
+	@Field(() => IngredientOrderByRelationAggregateInput, { nullable: true })
+	ingredients?: IngredientOrderByRelationAggregateInput;
 }

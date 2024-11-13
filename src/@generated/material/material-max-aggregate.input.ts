@@ -3,25 +3,24 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class MaterialMaxAggregateInput {
+	@Field(() => Boolean, { nullable: true })
+	id?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    id?: true;
+	@Field(() => Boolean, { nullable: true })
+	name?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    name?: true;
+	@Field(() => Boolean, { nullable: true })
+	code?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    code?: true;
+	@Field(() => Boolean, { nullable: true })
+	nickName?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    nickName?: true;
+	@Field(() => Boolean, { nullable: true })
+	materiaCategoryId?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    materiaCategoryId?: true;
+	@Field(() => Boolean, { nullable: true })
+	createdAt?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    createdAt?: true;
-
-    @Field(() => Boolean, {nullable:true})
-    updatedAt?: true;
+	@Field(() => Boolean, { nullable: true })
+	updatedAt?: true;
 }

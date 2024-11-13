@@ -7,12 +7,11 @@ import { IngredientCreateWithoutUsedRecipeInput } from './ingredient-create-with
 
 @InputType()
 export class IngredientCreateOrConnectWithoutUsedRecipeInput {
+	@Field(() => IngredientWhereUniqueInput, { nullable: false })
+	@Type(() => IngredientWhereUniqueInput)
+	where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
 
-    @Field(() => IngredientWhereUniqueInput, {nullable:false})
-    @Type(() => IngredientWhereUniqueInput)
-    where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
-
-    @Field(() => IngredientCreateWithoutUsedRecipeInput, {nullable:false})
-    @Type(() => IngredientCreateWithoutUsedRecipeInput)
-    create!: IngredientCreateWithoutUsedRecipeInput;
+	@Field(() => IngredientCreateWithoutUsedRecipeInput, { nullable: false })
+	@Type(() => IngredientCreateWithoutUsedRecipeInput)
+	create!: IngredientCreateWithoutUsedRecipeInput;
 }

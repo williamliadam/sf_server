@@ -3,10 +3,9 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class MaterialSumAggregateInput {
+	@Field(() => Boolean, { nullable: true })
+	id?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    id?: true;
-
-    @Field(() => Boolean, {nullable:true})
-    materiaCategoryId?: true;
+	@Field(() => Boolean, { nullable: true })
+	materiaCategoryId?: true;
 }

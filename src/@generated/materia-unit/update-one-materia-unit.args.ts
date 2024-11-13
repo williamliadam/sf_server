@@ -7,12 +7,11 @@ import { MateriaUnitWhereUniqueInput } from './materia-unit-where-unique.input';
 
 @ArgsType()
 export class UpdateOneMateriaUnitArgs {
+	@Field(() => MateriaUnitUpdateInput, { nullable: false })
+	@Type(() => MateriaUnitUpdateInput)
+	data!: MateriaUnitUpdateInput;
 
-    @Field(() => MateriaUnitUpdateInput, {nullable:false})
-    @Type(() => MateriaUnitUpdateInput)
-    data!: MateriaUnitUpdateInput;
-
-    @Field(() => MateriaUnitWhereUniqueInput, {nullable:false})
-    @Type(() => MateriaUnitWhereUniqueInput)
-    where!: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MateriaUnitWhereUniqueInput, { nullable: false })
+	@Type(() => MateriaUnitWhereUniqueInput)
+	where!: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
 }

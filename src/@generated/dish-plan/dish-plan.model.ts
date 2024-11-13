@@ -8,34 +8,33 @@ import { MealPlan } from '../meal-plan/meal-plan.model';
 
 @ObjectType()
 export class DishPlan {
+	@Field(() => ID, { nullable: false })
+	id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+	@Field(() => Int, { nullable: false })
+	recipeId!: number;
 
-    @Field(() => Int, {nullable:false})
-    recipeId!: number;
+	@Field(() => Int, { nullable: false })
+	amount!: number;
 
-    @Field(() => Int, {nullable:false})
-    amount!: number;
+	@Field(() => Int, { nullable: false })
+	planCookerId!: number;
 
-    @Field(() => Int, {nullable:false})
-    planCookerId!: number;
+	@Field(() => Int, { nullable: true })
+	mealPlanId!: number | null;
 
-    @Field(() => Int, {nullable:true})
-    mealPlanId!: number | null;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+	@Field(() => User, { nullable: false })
+	planCooker?: User;
 
-    @Field(() => User, {nullable:false})
-    planCooker?: User;
+	@Field(() => Recipe, { nullable: false })
+	recipe?: Recipe;
 
-    @Field(() => Recipe, {nullable:false})
-    recipe?: Recipe;
-
-    @Field(() => MealPlan, {nullable:true})
-    usedMealPlan?: MealPlan | null;
+	@Field(() => MealPlan, { nullable: true })
+	usedMealPlan?: MealPlan | null;
 }

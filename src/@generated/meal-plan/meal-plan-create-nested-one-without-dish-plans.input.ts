@@ -8,16 +8,15 @@ import { MealPlanWhereUniqueInput } from './meal-plan-where-unique.input';
 
 @InputType()
 export class MealPlanCreateNestedOneWithoutDishPlansInput {
+	@Field(() => MealPlanCreateWithoutDishPlansInput, { nullable: true })
+	@Type(() => MealPlanCreateWithoutDishPlansInput)
+	create?: MealPlanCreateWithoutDishPlansInput;
 
-    @Field(() => MealPlanCreateWithoutDishPlansInput, {nullable:true})
-    @Type(() => MealPlanCreateWithoutDishPlansInput)
-    create?: MealPlanCreateWithoutDishPlansInput;
+	@Field(() => MealPlanCreateOrConnectWithoutDishPlansInput, { nullable: true })
+	@Type(() => MealPlanCreateOrConnectWithoutDishPlansInput)
+	connectOrCreate?: MealPlanCreateOrConnectWithoutDishPlansInput;
 
-    @Field(() => MealPlanCreateOrConnectWithoutDishPlansInput, {nullable:true})
-    @Type(() => MealPlanCreateOrConnectWithoutDishPlansInput)
-    connectOrCreate?: MealPlanCreateOrConnectWithoutDishPlansInput;
-
-    @Field(() => MealPlanWhereUniqueInput, {nullable:true})
-    @Type(() => MealPlanWhereUniqueInput)
-    connect?: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
+	@Field(() => MealPlanWhereUniqueInput, { nullable: true })
+	@Type(() => MealPlanWhereUniqueInput)
+	connect?: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
 }

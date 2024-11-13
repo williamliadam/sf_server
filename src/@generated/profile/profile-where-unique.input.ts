@@ -9,37 +9,36 @@ import { UserRelationFilter } from '../user/user-relation-filter.input';
 
 @InputType()
 export class ProfileWhereUniqueInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => Int, { nullable: true })
+	userId?: number;
 
-    @Field(() => Int, {nullable:true})
-    userId?: number;
+	@Field(() => [ProfileWhereInput], { nullable: true })
+	AND?: Array<ProfileWhereInput>;
 
-    @Field(() => [ProfileWhereInput], {nullable:true})
-    AND?: Array<ProfileWhereInput>;
+	@Field(() => [ProfileWhereInput], { nullable: true })
+	OR?: Array<ProfileWhereInput>;
 
-    @Field(() => [ProfileWhereInput], {nullable:true})
-    OR?: Array<ProfileWhereInput>;
+	@Field(() => [ProfileWhereInput], { nullable: true })
+	NOT?: Array<ProfileWhereInput>;
 
-    @Field(() => [ProfileWhereInput], {nullable:true})
-    NOT?: Array<ProfileWhereInput>;
+	@Field(() => StringNullableFilter, { nullable: true })
+	avatar?: StringNullableFilter;
 
-    @Field(() => StringNullableFilter, {nullable:true})
-    avatar?: StringNullableFilter;
+	@Field(() => StringNullableFilter, { nullable: true })
+	nickName?: StringNullableFilter;
 
-    @Field(() => StringNullableFilter, {nullable:true})
-    nickName?: StringNullableFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => EnumGoalFilter, { nullable: true })
+	goal?: EnumGoalFilter;
 
-    @Field(() => EnumGoalFilter, {nullable:true})
-    goal?: EnumGoalFilter;
-
-    @Field(() => UserRelationFilter, {nullable:true})
-    user?: UserRelationFilter;
+	@Field(() => UserRelationFilter, { nullable: true })
+	user?: UserRelationFilter;
 }

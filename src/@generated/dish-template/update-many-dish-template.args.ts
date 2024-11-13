@@ -6,12 +6,11 @@ import { DishTemplateWhereInput } from './dish-template-where.input';
 
 @ArgsType()
 export class UpdateManyDishTemplateArgs {
+	@Field(() => DishTemplateUpdateManyMutationInput, { nullable: false })
+	@Type(() => DishTemplateUpdateManyMutationInput)
+	data!: DishTemplateUpdateManyMutationInput;
 
-    @Field(() => DishTemplateUpdateManyMutationInput, {nullable:false})
-    @Type(() => DishTemplateUpdateManyMutationInput)
-    data!: DishTemplateUpdateManyMutationInput;
-
-    @Field(() => DishTemplateWhereInput, {nullable:true})
-    @Type(() => DishTemplateWhereInput)
-    where?: DishTemplateWhereInput;
+	@Field(() => DishTemplateWhereInput, { nullable: true })
+	@Type(() => DishTemplateWhereInput)
+	where?: DishTemplateWhereInput;
 }

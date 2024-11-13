@@ -5,19 +5,18 @@ import { UserCreateNestedOneWithoutMyMealPlansInput } from '../user/user-create-
 
 @InputType()
 export class MealPlanCreateWithoutDishPlansInput {
+	@Field(() => Date, { nullable: true })
+	planTime?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    planTime?: Date | string;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => MealType, { nullable: true })
+	type?: keyof typeof MealType;
 
-    @Field(() => MealType, {nullable:true})
-    type?: keyof typeof MealType;
-
-    @Field(() => UserCreateNestedOneWithoutMyMealPlansInput, {nullable:false})
-    createBy!: UserCreateNestedOneWithoutMyMealPlansInput;
+	@Field(() => UserCreateNestedOneWithoutMyMealPlansInput, { nullable: false })
+	createBy!: UserCreateNestedOneWithoutMyMealPlansInput;
 }

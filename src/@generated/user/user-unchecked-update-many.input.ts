@@ -8,31 +8,30 @@ import { EnumRoleFieldUpdateOperationsInput } from '../prisma/enum-role-field-up
 
 @InputType()
 export class UserUncheckedUpdateManyInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	email?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    email?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	name?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    name?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	password?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    password?: StringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	phone?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    phone?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	wxId?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    wxId?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => EnumRoleFieldUpdateOperationsInput, {nullable:true})
-    role?: EnumRoleFieldUpdateOperationsInput;
+	@Field(() => EnumRoleFieldUpdateOperationsInput, { nullable: true })
+	role?: EnumRoleFieldUpdateOperationsInput;
 }

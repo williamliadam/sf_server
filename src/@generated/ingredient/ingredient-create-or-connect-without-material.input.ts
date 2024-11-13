@@ -7,12 +7,11 @@ import { IngredientCreateWithoutMaterialInput } from './ingredient-create-withou
 
 @InputType()
 export class IngredientCreateOrConnectWithoutMaterialInput {
+	@Field(() => IngredientWhereUniqueInput, { nullable: false })
+	@Type(() => IngredientWhereUniqueInput)
+	where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
 
-    @Field(() => IngredientWhereUniqueInput, {nullable:false})
-    @Type(() => IngredientWhereUniqueInput)
-    where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
-
-    @Field(() => IngredientCreateWithoutMaterialInput, {nullable:false})
-    @Type(() => IngredientCreateWithoutMaterialInput)
-    create!: IngredientCreateWithoutMaterialInput;
+	@Field(() => IngredientCreateWithoutMaterialInput, { nullable: false })
+	@Type(() => IngredientCreateWithoutMaterialInput)
+	create!: IngredientCreateWithoutMaterialInput;
 }

@@ -8,40 +8,39 @@ import { EnumRoleWithAggregatesFilter } from '../prisma/enum-role-with-aggregate
 
 @InputType()
 export class UserScalarWhereWithAggregatesInput {
+	@Field(() => [UserScalarWhereWithAggregatesInput], { nullable: true })
+	AND?: Array<UserScalarWhereWithAggregatesInput>;
 
-    @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<UserScalarWhereWithAggregatesInput>;
+	@Field(() => [UserScalarWhereWithAggregatesInput], { nullable: true })
+	OR?: Array<UserScalarWhereWithAggregatesInput>;
 
-    @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<UserScalarWhereWithAggregatesInput>;
+	@Field(() => [UserScalarWhereWithAggregatesInput], { nullable: true })
+	NOT?: Array<UserScalarWhereWithAggregatesInput>;
 
-    @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<UserScalarWhereWithAggregatesInput>;
+	@Field(() => IntWithAggregatesFilter, { nullable: true })
+	id?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    id?: IntWithAggregatesFilter;
+	@Field(() => StringNullableWithAggregatesFilter, { nullable: true })
+	email?: StringNullableWithAggregatesFilter;
 
-    @Field(() => StringNullableWithAggregatesFilter, {nullable:true})
-    email?: StringNullableWithAggregatesFilter;
+	@Field(() => StringNullableWithAggregatesFilter, { nullable: true })
+	name?: StringNullableWithAggregatesFilter;
 
-    @Field(() => StringNullableWithAggregatesFilter, {nullable:true})
-    name?: StringNullableWithAggregatesFilter;
+	@Field(() => StringWithAggregatesFilter, { nullable: true })
+	password?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    password?: StringWithAggregatesFilter;
+	@Field(() => StringNullableWithAggregatesFilter, { nullable: true })
+	phone?: StringNullableWithAggregatesFilter;
 
-    @Field(() => StringNullableWithAggregatesFilter, {nullable:true})
-    phone?: StringNullableWithAggregatesFilter;
+	@Field(() => StringNullableWithAggregatesFilter, { nullable: true })
+	wxId?: StringNullableWithAggregatesFilter;
 
-    @Field(() => StringNullableWithAggregatesFilter, {nullable:true})
-    wxId?: StringNullableWithAggregatesFilter;
+	@Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+	createdAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    createdAt?: DateTimeWithAggregatesFilter;
+	@Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+	updatedAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    updatedAt?: DateTimeWithAggregatesFilter;
-
-    @Field(() => EnumRoleWithAggregatesFilter, {nullable:true})
-    role?: EnumRoleWithAggregatesFilter;
+	@Field(() => EnumRoleWithAggregatesFilter, { nullable: true })
+	role?: EnumRoleWithAggregatesFilter;
 }

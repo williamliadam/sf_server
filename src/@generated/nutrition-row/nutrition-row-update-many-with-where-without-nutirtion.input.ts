@@ -6,12 +6,11 @@ import { NutritionRowUpdateManyMutationInput } from './nutrition-row-update-many
 
 @InputType()
 export class NutritionRowUpdateManyWithWhereWithoutNutirtionInput {
+	@Field(() => NutritionRowScalarWhereInput, { nullable: false })
+	@Type(() => NutritionRowScalarWhereInput)
+	where!: NutritionRowScalarWhereInput;
 
-    @Field(() => NutritionRowScalarWhereInput, {nullable:false})
-    @Type(() => NutritionRowScalarWhereInput)
-    where!: NutritionRowScalarWhereInput;
-
-    @Field(() => NutritionRowUpdateManyMutationInput, {nullable:false})
-    @Type(() => NutritionRowUpdateManyMutationInput)
-    data!: NutritionRowUpdateManyMutationInput;
+	@Field(() => NutritionRowUpdateManyMutationInput, { nullable: false })
+	@Type(() => NutritionRowUpdateManyMutationInput)
+	data!: NutritionRowUpdateManyMutationInput;
 }

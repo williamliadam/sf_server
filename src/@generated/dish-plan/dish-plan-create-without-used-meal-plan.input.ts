@@ -6,19 +6,22 @@ import { RecipeCreateNestedOneWithoutUsedDishPlansInput } from '../recipe/recipe
 
 @InputType()
 export class DishPlanCreateWithoutUsedMealPlanInput {
+	@Field(() => Int, { nullable: false })
+	amount!: number;
 
-    @Field(() => Int, {nullable:false})
-    amount!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => UserCreateNestedOneWithoutChargeDishPlansInput, {
+		nullable: false,
+	})
+	planCooker!: UserCreateNestedOneWithoutChargeDishPlansInput;
 
-    @Field(() => UserCreateNestedOneWithoutChargeDishPlansInput, {nullable:false})
-    planCooker!: UserCreateNestedOneWithoutChargeDishPlansInput;
-
-    @Field(() => RecipeCreateNestedOneWithoutUsedDishPlansInput, {nullable:false})
-    recipe!: RecipeCreateNestedOneWithoutUsedDishPlansInput;
+	@Field(() => RecipeCreateNestedOneWithoutUsedDishPlansInput, {
+		nullable: false,
+	})
+	recipe!: RecipeCreateNestedOneWithoutUsedDishPlansInput;
 }

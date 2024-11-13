@@ -6,34 +6,33 @@ import { DateTimeFilter } from '../prisma/date-time-filter.input';
 
 @InputType()
 export class DishPlanScalarWhereInput {
+	@Field(() => [DishPlanScalarWhereInput], { nullable: true })
+	AND?: Array<DishPlanScalarWhereInput>;
 
-    @Field(() => [DishPlanScalarWhereInput], {nullable:true})
-    AND?: Array<DishPlanScalarWhereInput>;
+	@Field(() => [DishPlanScalarWhereInput], { nullable: true })
+	OR?: Array<DishPlanScalarWhereInput>;
 
-    @Field(() => [DishPlanScalarWhereInput], {nullable:true})
-    OR?: Array<DishPlanScalarWhereInput>;
+	@Field(() => [DishPlanScalarWhereInput], { nullable: true })
+	NOT?: Array<DishPlanScalarWhereInput>;
 
-    @Field(() => [DishPlanScalarWhereInput], {nullable:true})
-    NOT?: Array<DishPlanScalarWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	recipeId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    recipeId?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	amount?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    amount?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	planCookerId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    planCookerId?: IntFilter;
+	@Field(() => IntNullableFilter, { nullable: true })
+	mealPlanId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    mealPlanId?: IntNullableFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
-
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 }

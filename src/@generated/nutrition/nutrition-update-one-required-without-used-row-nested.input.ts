@@ -10,24 +10,25 @@ import { NutritionUpdateToOneWithWhereWithoutUsedRowInput } from './nutrition-up
 
 @InputType()
 export class NutritionUpdateOneRequiredWithoutUsedRowNestedInput {
+	@Field(() => NutritionCreateWithoutUsedRowInput, { nullable: true })
+	@Type(() => NutritionCreateWithoutUsedRowInput)
+	create?: NutritionCreateWithoutUsedRowInput;
 
-    @Field(() => NutritionCreateWithoutUsedRowInput, {nullable:true})
-    @Type(() => NutritionCreateWithoutUsedRowInput)
-    create?: NutritionCreateWithoutUsedRowInput;
+	@Field(() => NutritionCreateOrConnectWithoutUsedRowInput, { nullable: true })
+	@Type(() => NutritionCreateOrConnectWithoutUsedRowInput)
+	connectOrCreate?: NutritionCreateOrConnectWithoutUsedRowInput;
 
-    @Field(() => NutritionCreateOrConnectWithoutUsedRowInput, {nullable:true})
-    @Type(() => NutritionCreateOrConnectWithoutUsedRowInput)
-    connectOrCreate?: NutritionCreateOrConnectWithoutUsedRowInput;
+	@Field(() => NutritionUpsertWithoutUsedRowInput, { nullable: true })
+	@Type(() => NutritionUpsertWithoutUsedRowInput)
+	upsert?: NutritionUpsertWithoutUsedRowInput;
 
-    @Field(() => NutritionUpsertWithoutUsedRowInput, {nullable:true})
-    @Type(() => NutritionUpsertWithoutUsedRowInput)
-    upsert?: NutritionUpsertWithoutUsedRowInput;
+	@Field(() => NutritionWhereUniqueInput, { nullable: true })
+	@Type(() => NutritionWhereUniqueInput)
+	connect?: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => NutritionWhereUniqueInput, {nullable:true})
-    @Type(() => NutritionWhereUniqueInput)
-    connect?: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => NutritionUpdateToOneWithWhereWithoutUsedRowInput, {nullable:true})
-    @Type(() => NutritionUpdateToOneWithWhereWithoutUsedRowInput)
-    update?: NutritionUpdateToOneWithWhereWithoutUsedRowInput;
+	@Field(() => NutritionUpdateToOneWithWhereWithoutUsedRowInput, {
+		nullable: true,
+	})
+	@Type(() => NutritionUpdateToOneWithWhereWithoutUsedRowInput)
+	update?: NutritionUpdateToOneWithWhereWithoutUsedRowInput;
 }

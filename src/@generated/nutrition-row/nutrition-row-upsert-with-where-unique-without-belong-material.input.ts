@@ -8,16 +8,19 @@ import { NutritionRowCreateWithoutBelongMaterialInput } from './nutrition-row-cr
 
 @InputType()
 export class NutritionRowUpsertWithWhereUniqueWithoutBelongMaterialInput {
+	@Field(() => NutritionRowWhereUniqueInput, { nullable: false })
+	@Type(() => NutritionRowWhereUniqueInput)
+	where!: Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>;
 
-    @Field(() => NutritionRowWhereUniqueInput, {nullable:false})
-    @Type(() => NutritionRowWhereUniqueInput)
-    where!: Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>;
+	@Field(() => NutritionRowUpdateWithoutBelongMaterialInput, {
+		nullable: false,
+	})
+	@Type(() => NutritionRowUpdateWithoutBelongMaterialInput)
+	update!: NutritionRowUpdateWithoutBelongMaterialInput;
 
-    @Field(() => NutritionRowUpdateWithoutBelongMaterialInput, {nullable:false})
-    @Type(() => NutritionRowUpdateWithoutBelongMaterialInput)
-    update!: NutritionRowUpdateWithoutBelongMaterialInput;
-
-    @Field(() => NutritionRowCreateWithoutBelongMaterialInput, {nullable:false})
-    @Type(() => NutritionRowCreateWithoutBelongMaterialInput)
-    create!: NutritionRowCreateWithoutBelongMaterialInput;
+	@Field(() => NutritionRowCreateWithoutBelongMaterialInput, {
+		nullable: false,
+	})
+	@Type(() => NutritionRowCreateWithoutBelongMaterialInput)
+	create!: NutritionRowCreateWithoutBelongMaterialInput;
 }

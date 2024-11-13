@@ -10,23 +10,22 @@ import { MealTemplateScalarFieldEnum } from './meal-template-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstMealTemplateArgs {
+	@Field(() => MealTemplateWhereInput, { nullable: true })
+	@Type(() => MealTemplateWhereInput)
+	where?: MealTemplateWhereInput;
 
-    @Field(() => MealTemplateWhereInput, {nullable:true})
-    @Type(() => MealTemplateWhereInput)
-    where?: MealTemplateWhereInput;
+	@Field(() => [MealTemplateOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<MealTemplateOrderByWithRelationInput>;
 
-    @Field(() => [MealTemplateOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<MealTemplateOrderByWithRelationInput>;
+	@Field(() => MealTemplateWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => MealTemplateWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [MealTemplateScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof MealTemplateScalarFieldEnum>;
+	@Field(() => [MealTemplateScalarFieldEnum], { nullable: true })
+	distinct?: Array<keyof typeof MealTemplateScalarFieldEnum>;
 }

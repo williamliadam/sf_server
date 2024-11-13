@@ -6,16 +6,17 @@ import { NutritionUpdateOneRequiredWithoutUsedRowNestedInput } from '../nutritio
 
 @InputType()
 export class NutritionRowUpdateWithoutBelongMaterialInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	percent?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    percent?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => NutritionUpdateOneRequiredWithoutUsedRowNestedInput, {nullable:true})
-    nutirtion?: NutritionUpdateOneRequiredWithoutUsedRowNestedInput;
+	@Field(() => NutritionUpdateOneRequiredWithoutUsedRowNestedInput, {
+		nullable: true,
+	})
+	nutirtion?: NutritionUpdateOneRequiredWithoutUsedRowNestedInput;
 }

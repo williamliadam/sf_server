@@ -14,38 +14,37 @@ import { RecipeMaxAggregateInput } from './recipe-max-aggregate.input';
 
 @ArgsType()
 export class RecipeGroupByArgs {
+	@Field(() => RecipeWhereInput, { nullable: true })
+	@Type(() => RecipeWhereInput)
+	where?: RecipeWhereInput;
 
-    @Field(() => RecipeWhereInput, {nullable:true})
-    @Type(() => RecipeWhereInput)
-    where?: RecipeWhereInput;
+	@Field(() => [RecipeOrderByWithAggregationInput], { nullable: true })
+	orderBy?: Array<RecipeOrderByWithAggregationInput>;
 
-    @Field(() => [RecipeOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<RecipeOrderByWithAggregationInput>;
+	@Field(() => [RecipeScalarFieldEnum], { nullable: false })
+	by!: Array<keyof typeof RecipeScalarFieldEnum>;
 
-    @Field(() => [RecipeScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof RecipeScalarFieldEnum>;
+	@Field(() => RecipeScalarWhereWithAggregatesInput, { nullable: true })
+	having?: RecipeScalarWhereWithAggregatesInput;
 
-    @Field(() => RecipeScalarWhereWithAggregatesInput, {nullable:true})
-    having?: RecipeScalarWhereWithAggregatesInput;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => RecipeCountAggregateInput, { nullable: true })
+	_count?: RecipeCountAggregateInput;
 
-    @Field(() => RecipeCountAggregateInput, {nullable:true})
-    _count?: RecipeCountAggregateInput;
+	@Field(() => RecipeAvgAggregateInput, { nullable: true })
+	_avg?: RecipeAvgAggregateInput;
 
-    @Field(() => RecipeAvgAggregateInput, {nullable:true})
-    _avg?: RecipeAvgAggregateInput;
+	@Field(() => RecipeSumAggregateInput, { nullable: true })
+	_sum?: RecipeSumAggregateInput;
 
-    @Field(() => RecipeSumAggregateInput, {nullable:true})
-    _sum?: RecipeSumAggregateInput;
+	@Field(() => RecipeMinAggregateInput, { nullable: true })
+	_min?: RecipeMinAggregateInput;
 
-    @Field(() => RecipeMinAggregateInput, {nullable:true})
-    _min?: RecipeMinAggregateInput;
-
-    @Field(() => RecipeMaxAggregateInput, {nullable:true})
-    _max?: RecipeMaxAggregateInput;
+	@Field(() => RecipeMaxAggregateInput, { nullable: true })
+	_max?: RecipeMaxAggregateInput;
 }

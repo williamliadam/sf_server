@@ -7,12 +7,11 @@ import { DishPlanUpdateWithoutRecipeInput } from './dish-plan-update-without-rec
 
 @InputType()
 export class DishPlanUpdateWithWhereUniqueWithoutRecipeInput {
+	@Field(() => DishPlanWhereUniqueInput, { nullable: false })
+	@Type(() => DishPlanWhereUniqueInput)
+	where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
 
-    @Field(() => DishPlanWhereUniqueInput, {nullable:false})
-    @Type(() => DishPlanWhereUniqueInput)
-    where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
-
-    @Field(() => DishPlanUpdateWithoutRecipeInput, {nullable:false})
-    @Type(() => DishPlanUpdateWithoutRecipeInput)
-    data!: DishPlanUpdateWithoutRecipeInput;
+	@Field(() => DishPlanUpdateWithoutRecipeInput, { nullable: false })
+	@Type(() => DishPlanUpdateWithoutRecipeInput)
+	data!: DishPlanUpdateWithoutRecipeInput;
 }

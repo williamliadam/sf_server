@@ -9,37 +9,36 @@ import { MaterialCount } from './material-count.output';
 
 @ObjectType()
 export class Material {
+	@Field(() => ID, { nullable: false })
+	id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	nickName!: string;
 
-    @Field(() => String, {nullable:false})
-    nickName!: string;
+	@Field(() => Int, { nullable: false })
+	materiaCategoryId!: number;
 
-    @Field(() => Int, {nullable:false})
-    materiaCategoryId!: number;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+	@Field(() => MateriaCategory, { nullable: false })
+	category?: MateriaCategory;
 
-    @Field(() => MateriaCategory, {nullable:false})
-    category?: MateriaCategory;
+	@Field(() => [NutritionRow], { nullable: true })
+	nutritionMatrix?: Array<NutritionRow>;
 
-    @Field(() => [NutritionRow], {nullable:true})
-    nutritionMatrix?: Array<NutritionRow>;
+	@Field(() => [Ingredient], { nullable: true })
+	ingredients?: Array<Ingredient>;
 
-    @Field(() => [Ingredient], {nullable:true})
-    ingredients?: Array<Ingredient>;
-
-    @Field(() => MaterialCount, {nullable:false})
-    _count?: MaterialCount;
+	@Field(() => MaterialCount, { nullable: false })
+	_count?: MaterialCount;
 }

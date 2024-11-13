@@ -7,12 +7,11 @@ import { MateriaCategoryCreateWithoutLastInput } from './materia-category-create
 
 @InputType()
 export class MateriaCategoryCreateOrConnectWithoutLastInput {
+	@Field(() => MateriaCategoryWhereUniqueInput, { nullable: false })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaCategoryWhereUniqueInput, {nullable:false})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MateriaCategoryCreateWithoutLastInput, {nullable:false})
-    @Type(() => MateriaCategoryCreateWithoutLastInput)
-    create!: MateriaCategoryCreateWithoutLastInput;
+	@Field(() => MateriaCategoryCreateWithoutLastInput, { nullable: false })
+	@Type(() => MateriaCategoryCreateWithoutLastInput)
+	create!: MateriaCategoryCreateWithoutLastInput;
 }

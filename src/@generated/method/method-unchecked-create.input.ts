@@ -4,25 +4,24 @@ import { Int } from '@nestjs/graphql';
 
 @InputType()
 export class MethodUncheckedCreateInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => String, { nullable: false })
+	desc!: string;
 
-    @Field(() => String, {nullable:false})
-    desc!: string;
+	@Field(() => Int, { nullable: true })
+	recipeId?: number;
 
-    @Field(() => Int, {nullable:true})
-    recipeId?: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
-
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 }

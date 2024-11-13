@@ -5,11 +5,10 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateManyMateriaUnitArgs {
+	@Field(() => [MateriaUnitCreateManyInput], { nullable: false })
+	@Type(() => MateriaUnitCreateManyInput)
+	data!: Array<MateriaUnitCreateManyInput>;
 
-    @Field(() => [MateriaUnitCreateManyInput], {nullable:false})
-    @Type(() => MateriaUnitCreateManyInput)
-    data!: Array<MateriaUnitCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+	@Field(() => Boolean, { nullable: true })
+	skipDuplicates?: boolean;
 }

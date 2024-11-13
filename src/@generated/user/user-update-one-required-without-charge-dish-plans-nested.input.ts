@@ -10,24 +10,30 @@ import { UserUpdateToOneWithWhereWithoutChargeDishPlansInput } from './user-upda
 
 @InputType()
 export class UserUpdateOneRequiredWithoutChargeDishPlansNestedInput {
+	@Field(() => UserCreateWithoutChargeDishPlansInput, { nullable: true })
+	@Type(() => UserCreateWithoutChargeDishPlansInput)
+	create?: UserCreateWithoutChargeDishPlansInput;
 
-    @Field(() => UserCreateWithoutChargeDishPlansInput, {nullable:true})
-    @Type(() => UserCreateWithoutChargeDishPlansInput)
-    create?: UserCreateWithoutChargeDishPlansInput;
+	@Field(() => UserCreateOrConnectWithoutChargeDishPlansInput, {
+		nullable: true,
+	})
+	@Type(() => UserCreateOrConnectWithoutChargeDishPlansInput)
+	connectOrCreate?: UserCreateOrConnectWithoutChargeDishPlansInput;
 
-    @Field(() => UserCreateOrConnectWithoutChargeDishPlansInput, {nullable:true})
-    @Type(() => UserCreateOrConnectWithoutChargeDishPlansInput)
-    connectOrCreate?: UserCreateOrConnectWithoutChargeDishPlansInput;
+	@Field(() => UserUpsertWithoutChargeDishPlansInput, { nullable: true })
+	@Type(() => UserUpsertWithoutChargeDishPlansInput)
+	upsert?: UserUpsertWithoutChargeDishPlansInput;
 
-    @Field(() => UserUpsertWithoutChargeDishPlansInput, {nullable:true})
-    @Type(() => UserUpsertWithoutChargeDishPlansInput)
-    upsert?: UserUpsertWithoutChargeDishPlansInput;
+	@Field(() => UserWhereUniqueInput, { nullable: true })
+	@Type(() => UserWhereUniqueInput)
+	connect?: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:true})
-    @Type(() => UserWhereUniqueInput)
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
-
-    @Field(() => UserUpdateToOneWithWhereWithoutChargeDishPlansInput, {nullable:true})
-    @Type(() => UserUpdateToOneWithWhereWithoutChargeDishPlansInput)
-    update?: UserUpdateToOneWithWhereWithoutChargeDishPlansInput;
+	@Field(() => UserUpdateToOneWithWhereWithoutChargeDishPlansInput, {
+		nullable: true,
+	})
+	@Type(() => UserUpdateToOneWithWhereWithoutChargeDishPlansInput)
+	update?: UserUpdateToOneWithWhereWithoutChargeDishPlansInput;
 }

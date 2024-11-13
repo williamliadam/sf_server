@@ -7,12 +7,11 @@ import { IngredientCreateWithoutUnitInput } from './ingredient-create-without-un
 
 @InputType()
 export class IngredientCreateOrConnectWithoutUnitInput {
+	@Field(() => IngredientWhereUniqueInput, { nullable: false })
+	@Type(() => IngredientWhereUniqueInput)
+	where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
 
-    @Field(() => IngredientWhereUniqueInput, {nullable:false})
-    @Type(() => IngredientWhereUniqueInput)
-    where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
-
-    @Field(() => IngredientCreateWithoutUnitInput, {nullable:false})
-    @Type(() => IngredientCreateWithoutUnitInput)
-    create!: IngredientCreateWithoutUnitInput;
+	@Field(() => IngredientCreateWithoutUnitInput, { nullable: false })
+	@Type(() => IngredientCreateWithoutUnitInput)
+	create!: IngredientCreateWithoutUnitInput;
 }

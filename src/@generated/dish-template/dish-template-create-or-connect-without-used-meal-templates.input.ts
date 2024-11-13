@@ -7,12 +7,13 @@ import { DishTemplateCreateWithoutUsedMealTemplatesInput } from './dish-template
 
 @InputType()
 export class DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput {
+	@Field(() => DishTemplateWhereUniqueInput, { nullable: false })
+	@Type(() => DishTemplateWhereUniqueInput)
+	where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => DishTemplateWhereUniqueInput, {nullable:false})
-    @Type(() => DishTemplateWhereUniqueInput)
-    where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
-
-    @Field(() => DishTemplateCreateWithoutUsedMealTemplatesInput, {nullable:false})
-    @Type(() => DishTemplateCreateWithoutUsedMealTemplatesInput)
-    create!: DishTemplateCreateWithoutUsedMealTemplatesInput;
+	@Field(() => DishTemplateCreateWithoutUsedMealTemplatesInput, {
+		nullable: false,
+	})
+	@Type(() => DishTemplateCreateWithoutUsedMealTemplatesInput)
+	create!: DishTemplateCreateWithoutUsedMealTemplatesInput;
 }

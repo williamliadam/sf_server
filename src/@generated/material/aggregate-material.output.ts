@@ -8,19 +8,18 @@ import { MaterialMaxAggregate } from './material-max-aggregate.output';
 
 @ObjectType()
 export class AggregateMaterial {
+	@Field(() => MaterialCountAggregate, { nullable: true })
+	_count?: MaterialCountAggregate;
 
-    @Field(() => MaterialCountAggregate, {nullable:true})
-    _count?: MaterialCountAggregate;
+	@Field(() => MaterialAvgAggregate, { nullable: true })
+	_avg?: MaterialAvgAggregate;
 
-    @Field(() => MaterialAvgAggregate, {nullable:true})
-    _avg?: MaterialAvgAggregate;
+	@Field(() => MaterialSumAggregate, { nullable: true })
+	_sum?: MaterialSumAggregate;
 
-    @Field(() => MaterialSumAggregate, {nullable:true})
-    _sum?: MaterialSumAggregate;
+	@Field(() => MaterialMinAggregate, { nullable: true })
+	_min?: MaterialMinAggregate;
 
-    @Field(() => MaterialMinAggregate, {nullable:true})
-    _min?: MaterialMinAggregate;
-
-    @Field(() => MaterialMaxAggregate, {nullable:true})
-    _max?: MaterialMaxAggregate;
+	@Field(() => MaterialMaxAggregate, { nullable: true })
+	_max?: MaterialMaxAggregate;
 }

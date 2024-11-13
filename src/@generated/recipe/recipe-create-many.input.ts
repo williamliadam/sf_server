@@ -4,22 +4,21 @@ import { Int } from '@nestjs/graphql';
 
 @InputType()
 export class RecipeCreateManyInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Int, { nullable: false })
+	stars!: number;
 
-    @Field(() => Int, {nullable:false})
-    stars!: number;
+	@Field(() => Int, { nullable: false })
+	authorId!: number;
 
-    @Field(() => Int, {nullable:false})
-    authorId!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
-
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 }

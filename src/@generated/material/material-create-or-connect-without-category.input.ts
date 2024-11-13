@@ -7,12 +7,11 @@ import { MaterialCreateWithoutCategoryInput } from './material-create-without-ca
 
 @InputType()
 export class MaterialCreateOrConnectWithoutCategoryInput {
+	@Field(() => MaterialWhereUniqueInput, { nullable: false })
+	@Type(() => MaterialWhereUniqueInput)
+	where!: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MaterialWhereUniqueInput, {nullable:false})
-    @Type(() => MaterialWhereUniqueInput)
-    where!: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MaterialCreateWithoutCategoryInput, {nullable:false})
-    @Type(() => MaterialCreateWithoutCategoryInput)
-    create!: MaterialCreateWithoutCategoryInput;
+	@Field(() => MaterialCreateWithoutCategoryInput, { nullable: false })
+	@Type(() => MaterialCreateWithoutCategoryInput)
+	create!: MaterialCreateWithoutCategoryInput;
 }

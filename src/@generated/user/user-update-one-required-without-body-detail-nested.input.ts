@@ -10,24 +10,28 @@ import { UserUpdateToOneWithWhereWithoutBodyDetailInput } from './user-update-to
 
 @InputType()
 export class UserUpdateOneRequiredWithoutBodyDetailNestedInput {
+	@Field(() => UserCreateWithoutBodyDetailInput, { nullable: true })
+	@Type(() => UserCreateWithoutBodyDetailInput)
+	create?: UserCreateWithoutBodyDetailInput;
 
-    @Field(() => UserCreateWithoutBodyDetailInput, {nullable:true})
-    @Type(() => UserCreateWithoutBodyDetailInput)
-    create?: UserCreateWithoutBodyDetailInput;
+	@Field(() => UserCreateOrConnectWithoutBodyDetailInput, { nullable: true })
+	@Type(() => UserCreateOrConnectWithoutBodyDetailInput)
+	connectOrCreate?: UserCreateOrConnectWithoutBodyDetailInput;
 
-    @Field(() => UserCreateOrConnectWithoutBodyDetailInput, {nullable:true})
-    @Type(() => UserCreateOrConnectWithoutBodyDetailInput)
-    connectOrCreate?: UserCreateOrConnectWithoutBodyDetailInput;
+	@Field(() => UserUpsertWithoutBodyDetailInput, { nullable: true })
+	@Type(() => UserUpsertWithoutBodyDetailInput)
+	upsert?: UserUpsertWithoutBodyDetailInput;
 
-    @Field(() => UserUpsertWithoutBodyDetailInput, {nullable:true})
-    @Type(() => UserUpsertWithoutBodyDetailInput)
-    upsert?: UserUpsertWithoutBodyDetailInput;
+	@Field(() => UserWhereUniqueInput, { nullable: true })
+	@Type(() => UserWhereUniqueInput)
+	connect?: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:true})
-    @Type(() => UserWhereUniqueInput)
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
-
-    @Field(() => UserUpdateToOneWithWhereWithoutBodyDetailInput, {nullable:true})
-    @Type(() => UserUpdateToOneWithWhereWithoutBodyDetailInput)
-    update?: UserUpdateToOneWithWhereWithoutBodyDetailInput;
+	@Field(() => UserUpdateToOneWithWhereWithoutBodyDetailInput, {
+		nullable: true,
+	})
+	@Type(() => UserUpdateToOneWithWhereWithoutBodyDetailInput)
+	update?: UserUpdateToOneWithWhereWithoutBodyDetailInput;
 }

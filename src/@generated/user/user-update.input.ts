@@ -14,49 +14,52 @@ import { DishPlanUpdateManyWithoutPlanCookerNestedInput } from '../dish-plan/dis
 
 @InputType()
 export class UserUpdateInput {
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	email?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    email?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	name?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    name?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	password?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    password?: StringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	phone?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    phone?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	wxId?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    wxId?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => EnumRoleFieldUpdateOperationsInput, { nullable: true })
+	role?: EnumRoleFieldUpdateOperationsInput;
 
-    @Field(() => EnumRoleFieldUpdateOperationsInput, {nullable:true})
-    role?: EnumRoleFieldUpdateOperationsInput;
+	@Field(() => ProfileUpdateOneWithoutUserNestedInput, { nullable: true })
+	profile?: ProfileUpdateOneWithoutUserNestedInput;
 
-    @Field(() => ProfileUpdateOneWithoutUserNestedInput, {nullable:true})
-    profile?: ProfileUpdateOneWithoutUserNestedInput;
+	@Field(() => BodyDetailUpdateOneWithoutUserNestedInput, { nullable: true })
+	bodyDetail?: BodyDetailUpdateOneWithoutUserNestedInput;
 
-    @Field(() => BodyDetailUpdateOneWithoutUserNestedInput, {nullable:true})
-    bodyDetail?: BodyDetailUpdateOneWithoutUserNestedInput;
+	@Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
+	myPosts?: PostUpdateManyWithoutAuthorNestedInput;
 
-    @Field(() => PostUpdateManyWithoutAuthorNestedInput, {nullable:true})
-    myPosts?: PostUpdateManyWithoutAuthorNestedInput;
+	@Field(() => RecipeUpdateManyWithoutAuthorNestedInput, { nullable: true })
+	myRecipes?: RecipeUpdateManyWithoutAuthorNestedInput;
 
-    @Field(() => RecipeUpdateManyWithoutAuthorNestedInput, {nullable:true})
-    myRecipes?: RecipeUpdateManyWithoutAuthorNestedInput;
+	@Field(() => MealTemplateUpdateManyWithoutCreateByNestedInput, {
+		nullable: true,
+	})
+	myMealTemplates?: MealTemplateUpdateManyWithoutCreateByNestedInput;
 
-    @Field(() => MealTemplateUpdateManyWithoutCreateByNestedInput, {nullable:true})
-    myMealTemplates?: MealTemplateUpdateManyWithoutCreateByNestedInput;
+	@Field(() => MealPlanUpdateManyWithoutCreateByNestedInput, { nullable: true })
+	myMealPlans?: MealPlanUpdateManyWithoutCreateByNestedInput;
 
-    @Field(() => MealPlanUpdateManyWithoutCreateByNestedInput, {nullable:true})
-    myMealPlans?: MealPlanUpdateManyWithoutCreateByNestedInput;
-
-    @Field(() => DishPlanUpdateManyWithoutPlanCookerNestedInput, {nullable:true})
-    chargeDishPlans?: DishPlanUpdateManyWithoutPlanCookerNestedInput;
+	@Field(() => DishPlanUpdateManyWithoutPlanCookerNestedInput, {
+		nullable: true,
+	})
+	chargeDishPlans?: DishPlanUpdateManyWithoutPlanCookerNestedInput;
 }

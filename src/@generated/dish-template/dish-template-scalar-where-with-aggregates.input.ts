@@ -6,31 +6,30 @@ import { IntNullableWithAggregatesFilter } from '../prisma/int-nullable-with-agg
 
 @InputType()
 export class DishTemplateScalarWhereWithAggregatesInput {
+	@Field(() => [DishTemplateScalarWhereWithAggregatesInput], { nullable: true })
+	AND?: Array<DishTemplateScalarWhereWithAggregatesInput>;
 
-    @Field(() => [DishTemplateScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<DishTemplateScalarWhereWithAggregatesInput>;
+	@Field(() => [DishTemplateScalarWhereWithAggregatesInput], { nullable: true })
+	OR?: Array<DishTemplateScalarWhereWithAggregatesInput>;
 
-    @Field(() => [DishTemplateScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<DishTemplateScalarWhereWithAggregatesInput>;
+	@Field(() => [DishTemplateScalarWhereWithAggregatesInput], { nullable: true })
+	NOT?: Array<DishTemplateScalarWhereWithAggregatesInput>;
 
-    @Field(() => [DishTemplateScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<DishTemplateScalarWhereWithAggregatesInput>;
+	@Field(() => IntWithAggregatesFilter, { nullable: true })
+	id?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    id?: IntWithAggregatesFilter;
+	@Field(() => IntWithAggregatesFilter, { nullable: true })
+	recipeId?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    recipeId?: IntWithAggregatesFilter;
+	@Field(() => IntWithAggregatesFilter, { nullable: true })
+	amount?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    amount?: IntWithAggregatesFilter;
+	@Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+	createdAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    createdAt?: DateTimeWithAggregatesFilter;
+	@Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+	updatedAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    updatedAt?: DateTimeWithAggregatesFilter;
-
-    @Field(() => IntNullableWithAggregatesFilter, {nullable:true})
-    mealTemplateId?: IntNullableWithAggregatesFilter;
+	@Field(() => IntNullableWithAggregatesFilter, { nullable: true })
+	mealTemplateId?: IntNullableWithAggregatesFilter;
 }

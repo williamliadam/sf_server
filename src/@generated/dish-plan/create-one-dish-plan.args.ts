@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneDishPlanArgs {
-
-    @Field(() => DishPlanCreateInput, {nullable:false})
-    @Type(() => DishPlanCreateInput)
-    data!: DishPlanCreateInput;
+	@Field(() => DishPlanCreateInput, { nullable: false })
+	@Type(() => DishPlanCreateInput)
+	data!: DishPlanCreateInput;
 }

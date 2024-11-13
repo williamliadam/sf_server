@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyMealTemplateArgs {
-
-    @Field(() => MealTemplateWhereInput, {nullable:true})
-    @Type(() => MealTemplateWhereInput)
-    where?: MealTemplateWhereInput;
+	@Field(() => MealTemplateWhereInput, { nullable: true })
+	@Type(() => MealTemplateWhereInput)
+	where?: MealTemplateWhereInput;
 }

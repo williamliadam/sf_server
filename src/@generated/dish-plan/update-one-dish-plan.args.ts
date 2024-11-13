@@ -7,12 +7,11 @@ import { DishPlanWhereUniqueInput } from './dish-plan-where-unique.input';
 
 @ArgsType()
 export class UpdateOneDishPlanArgs {
+	@Field(() => DishPlanUpdateInput, { nullable: false })
+	@Type(() => DishPlanUpdateInput)
+	data!: DishPlanUpdateInput;
 
-    @Field(() => DishPlanUpdateInput, {nullable:false})
-    @Type(() => DishPlanUpdateInput)
-    data!: DishPlanUpdateInput;
-
-    @Field(() => DishPlanWhereUniqueInput, {nullable:false})
-    @Type(() => DishPlanWhereUniqueInput)
-    where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
+	@Field(() => DishPlanWhereUniqueInput, { nullable: false })
+	@Type(() => DishPlanWhereUniqueInput)
+	where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
 }

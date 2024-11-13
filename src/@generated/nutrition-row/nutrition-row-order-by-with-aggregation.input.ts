@@ -9,37 +9,36 @@ import { NutritionRowSumOrderByAggregateInput } from './nutrition-row-sum-order-
 
 @InputType()
 export class NutritionRowOrderByWithAggregationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	nutirtionId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    nutirtionId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	percent?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    percent?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	belongToId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    belongToId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => NutritionRowCountOrderByAggregateInput, { nullable: true })
+	_count?: NutritionRowCountOrderByAggregateInput;
 
-    @Field(() => NutritionRowCountOrderByAggregateInput, {nullable:true})
-    _count?: NutritionRowCountOrderByAggregateInput;
+	@Field(() => NutritionRowAvgOrderByAggregateInput, { nullable: true })
+	_avg?: NutritionRowAvgOrderByAggregateInput;
 
-    @Field(() => NutritionRowAvgOrderByAggregateInput, {nullable:true})
-    _avg?: NutritionRowAvgOrderByAggregateInput;
+	@Field(() => NutritionRowMaxOrderByAggregateInput, { nullable: true })
+	_max?: NutritionRowMaxOrderByAggregateInput;
 
-    @Field(() => NutritionRowMaxOrderByAggregateInput, {nullable:true})
-    _max?: NutritionRowMaxOrderByAggregateInput;
+	@Field(() => NutritionRowMinOrderByAggregateInput, { nullable: true })
+	_min?: NutritionRowMinOrderByAggregateInput;
 
-    @Field(() => NutritionRowMinOrderByAggregateInput, {nullable:true})
-    _min?: NutritionRowMinOrderByAggregateInput;
-
-    @Field(() => NutritionRowSumOrderByAggregateInput, {nullable:true})
-    _sum?: NutritionRowSumOrderByAggregateInput;
+	@Field(() => NutritionRowSumOrderByAggregateInput, { nullable: true })
+	_sum?: NutritionRowSumOrderByAggregateInput;
 }

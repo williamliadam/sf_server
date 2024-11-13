@@ -6,28 +6,27 @@ import { UserOrderByWithRelationInput } from '../user/user-order-by-with-relatio
 
 @InputType()
 export class ProfileOrderByWithRelationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrderInput, { nullable: true })
+	avatar?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    avatar?: SortOrderInput;
+	@Field(() => SortOrderInput, { nullable: true })
+	nickName?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    nickName?: SortOrderInput;
+	@Field(() => SortOrder, { nullable: true })
+	userId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    userId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	goal?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    goal?: keyof typeof SortOrder;
-
-    @Field(() => UserOrderByWithRelationInput, {nullable:true})
-    user?: UserOrderByWithRelationInput;
+	@Field(() => UserOrderByWithRelationInput, { nullable: true })
+	user?: UserOrderByWithRelationInput;
 }

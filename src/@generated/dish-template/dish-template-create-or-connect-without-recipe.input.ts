@@ -7,12 +7,11 @@ import { DishTemplateCreateWithoutRecipeInput } from './dish-template-create-wit
 
 @InputType()
 export class DishTemplateCreateOrConnectWithoutRecipeInput {
+	@Field(() => DishTemplateWhereUniqueInput, { nullable: false })
+	@Type(() => DishTemplateWhereUniqueInput)
+	where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => DishTemplateWhereUniqueInput, {nullable:false})
-    @Type(() => DishTemplateWhereUniqueInput)
-    where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
-
-    @Field(() => DishTemplateCreateWithoutRecipeInput, {nullable:false})
-    @Type(() => DishTemplateCreateWithoutRecipeInput)
-    create!: DishTemplateCreateWithoutRecipeInput;
+	@Field(() => DishTemplateCreateWithoutRecipeInput, { nullable: false })
+	@Type(() => DishTemplateCreateWithoutRecipeInput)
+	create!: DishTemplateCreateWithoutRecipeInput;
 }

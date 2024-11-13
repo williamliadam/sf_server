@@ -7,12 +7,11 @@ import { MealPlanCreateWithoutDishPlansInput } from './meal-plan-create-without-
 
 @InputType()
 export class MealPlanCreateOrConnectWithoutDishPlansInput {
+	@Field(() => MealPlanWhereUniqueInput, { nullable: false })
+	@Type(() => MealPlanWhereUniqueInput)
+	where!: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
 
-    @Field(() => MealPlanWhereUniqueInput, {nullable:false})
-    @Type(() => MealPlanWhereUniqueInput)
-    where!: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
-
-    @Field(() => MealPlanCreateWithoutDishPlansInput, {nullable:false})
-    @Type(() => MealPlanCreateWithoutDishPlansInput)
-    create!: MealPlanCreateWithoutDishPlansInput;
+	@Field(() => MealPlanCreateWithoutDishPlansInput, { nullable: false })
+	@Type(() => MealPlanCreateWithoutDishPlansInput)
+	create!: MealPlanCreateWithoutDishPlansInput;
 }

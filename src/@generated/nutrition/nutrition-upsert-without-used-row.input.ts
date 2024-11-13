@@ -7,16 +7,15 @@ import { NutritionWhereInput } from './nutrition-where.input';
 
 @InputType()
 export class NutritionUpsertWithoutUsedRowInput {
+	@Field(() => NutritionUpdateWithoutUsedRowInput, { nullable: false })
+	@Type(() => NutritionUpdateWithoutUsedRowInput)
+	update!: NutritionUpdateWithoutUsedRowInput;
 
-    @Field(() => NutritionUpdateWithoutUsedRowInput, {nullable:false})
-    @Type(() => NutritionUpdateWithoutUsedRowInput)
-    update!: NutritionUpdateWithoutUsedRowInput;
+	@Field(() => NutritionCreateWithoutUsedRowInput, { nullable: false })
+	@Type(() => NutritionCreateWithoutUsedRowInput)
+	create!: NutritionCreateWithoutUsedRowInput;
 
-    @Field(() => NutritionCreateWithoutUsedRowInput, {nullable:false})
-    @Type(() => NutritionCreateWithoutUsedRowInput)
-    create!: NutritionCreateWithoutUsedRowInput;
-
-    @Field(() => NutritionWhereInput, {nullable:true})
-    @Type(() => NutritionWhereInput)
-    where?: NutritionWhereInput;
+	@Field(() => NutritionWhereInput, { nullable: true })
+	@Type(() => NutritionWhereInput)
+	where?: NutritionWhereInput;
 }

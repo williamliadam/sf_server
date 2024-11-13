@@ -6,12 +6,11 @@ import { MaterialUpdateWithoutNutritionMatrixInput } from './material-update-wit
 
 @InputType()
 export class MaterialUpdateToOneWithWhereWithoutNutritionMatrixInput {
+	@Field(() => MaterialWhereInput, { nullable: true })
+	@Type(() => MaterialWhereInput)
+	where?: MaterialWhereInput;
 
-    @Field(() => MaterialWhereInput, {nullable:true})
-    @Type(() => MaterialWhereInput)
-    where?: MaterialWhereInput;
-
-    @Field(() => MaterialUpdateWithoutNutritionMatrixInput, {nullable:false})
-    @Type(() => MaterialUpdateWithoutNutritionMatrixInput)
-    data!: MaterialUpdateWithoutNutritionMatrixInput;
+	@Field(() => MaterialUpdateWithoutNutritionMatrixInput, { nullable: false })
+	@Type(() => MaterialUpdateWithoutNutritionMatrixInput)
+	data!: MaterialUpdateWithoutNutritionMatrixInput;
 }

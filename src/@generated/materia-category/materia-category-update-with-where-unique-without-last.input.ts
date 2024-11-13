@@ -7,12 +7,11 @@ import { MateriaCategoryUpdateWithoutLastInput } from './materia-category-update
 
 @InputType()
 export class MateriaCategoryUpdateWithWhereUniqueWithoutLastInput {
+	@Field(() => MateriaCategoryWhereUniqueInput, { nullable: false })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaCategoryWhereUniqueInput, {nullable:false})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MateriaCategoryUpdateWithoutLastInput, {nullable:false})
-    @Type(() => MateriaCategoryUpdateWithoutLastInput)
-    data!: MateriaCategoryUpdateWithoutLastInput;
+	@Field(() => MateriaCategoryUpdateWithoutLastInput, { nullable: false })
+	@Type(() => MateriaCategoryUpdateWithoutLastInput)
+	data!: MateriaCategoryUpdateWithoutLastInput;
 }

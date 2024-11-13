@@ -6,12 +6,11 @@ import { MethodWhereInput } from './method-where.input';
 
 @ArgsType()
 export class UpdateManyMethodArgs {
+	@Field(() => MethodUpdateManyMutationInput, { nullable: false })
+	@Type(() => MethodUpdateManyMutationInput)
+	data!: MethodUpdateManyMutationInput;
 
-    @Field(() => MethodUpdateManyMutationInput, {nullable:false})
-    @Type(() => MethodUpdateManyMutationInput)
-    data!: MethodUpdateManyMutationInput;
-
-    @Field(() => MethodWhereInput, {nullable:true})
-    @Type(() => MethodWhereInput)
-    where?: MethodWhereInput;
+	@Field(() => MethodWhereInput, { nullable: true })
+	@Type(() => MethodWhereInput)
+	where?: MethodWhereInput;
 }

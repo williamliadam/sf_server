@@ -7,19 +7,22 @@ import { MateriaUnitUpdateOneRequiredWithoutIngredientsNestedInput } from '../ma
 
 @InputType()
 export class IngredientUpdateWithoutUsedRecipeInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	amount?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    amount?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => MaterialUpdateOneRequiredWithoutIngredientsNestedInput, {
+		nullable: true,
+	})
+	material?: MaterialUpdateOneRequiredWithoutIngredientsNestedInput;
 
-    @Field(() => MaterialUpdateOneRequiredWithoutIngredientsNestedInput, {nullable:true})
-    material?: MaterialUpdateOneRequiredWithoutIngredientsNestedInput;
-
-    @Field(() => MateriaUnitUpdateOneRequiredWithoutIngredientsNestedInput, {nullable:true})
-    unit?: MateriaUnitUpdateOneRequiredWithoutIngredientsNestedInput;
+	@Field(() => MateriaUnitUpdateOneRequiredWithoutIngredientsNestedInput, {
+		nullable: true,
+	})
+	unit?: MateriaUnitUpdateOneRequiredWithoutIngredientsNestedInput;
 }

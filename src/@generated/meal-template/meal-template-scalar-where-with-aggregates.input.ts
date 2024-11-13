@@ -6,28 +6,27 @@ import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregate
 
 @InputType()
 export class MealTemplateScalarWhereWithAggregatesInput {
+	@Field(() => [MealTemplateScalarWhereWithAggregatesInput], { nullable: true })
+	AND?: Array<MealTemplateScalarWhereWithAggregatesInput>;
 
-    @Field(() => [MealTemplateScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<MealTemplateScalarWhereWithAggregatesInput>;
+	@Field(() => [MealTemplateScalarWhereWithAggregatesInput], { nullable: true })
+	OR?: Array<MealTemplateScalarWhereWithAggregatesInput>;
 
-    @Field(() => [MealTemplateScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<MealTemplateScalarWhereWithAggregatesInput>;
+	@Field(() => [MealTemplateScalarWhereWithAggregatesInput], { nullable: true })
+	NOT?: Array<MealTemplateScalarWhereWithAggregatesInput>;
 
-    @Field(() => [MealTemplateScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<MealTemplateScalarWhereWithAggregatesInput>;
+	@Field(() => IntWithAggregatesFilter, { nullable: true })
+	id?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    id?: IntWithAggregatesFilter;
+	@Field(() => StringWithAggregatesFilter, { nullable: true })
+	name?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    name?: StringWithAggregatesFilter;
+	@Field(() => IntWithAggregatesFilter, { nullable: true })
+	userId?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    userId?: IntWithAggregatesFilter;
+	@Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+	createdAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    createdAt?: DateTimeWithAggregatesFilter;
-
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    updatedAt?: DateTimeWithAggregatesFilter;
+	@Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+	updatedAt?: DateTimeWithAggregatesFilter;
 }

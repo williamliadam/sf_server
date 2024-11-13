@@ -9,34 +9,33 @@ import { MealTemplateSumOrderByAggregateInput } from './meal-template-sum-order-
 
 @InputType()
 export class MealTemplateOrderByWithAggregationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	name?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    name?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	userId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    userId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => MealTemplateCountOrderByAggregateInput, { nullable: true })
+	_count?: MealTemplateCountOrderByAggregateInput;
 
-    @Field(() => MealTemplateCountOrderByAggregateInput, {nullable:true})
-    _count?: MealTemplateCountOrderByAggregateInput;
+	@Field(() => MealTemplateAvgOrderByAggregateInput, { nullable: true })
+	_avg?: MealTemplateAvgOrderByAggregateInput;
 
-    @Field(() => MealTemplateAvgOrderByAggregateInput, {nullable:true})
-    _avg?: MealTemplateAvgOrderByAggregateInput;
+	@Field(() => MealTemplateMaxOrderByAggregateInput, { nullable: true })
+	_max?: MealTemplateMaxOrderByAggregateInput;
 
-    @Field(() => MealTemplateMaxOrderByAggregateInput, {nullable:true})
-    _max?: MealTemplateMaxOrderByAggregateInput;
+	@Field(() => MealTemplateMinOrderByAggregateInput, { nullable: true })
+	_min?: MealTemplateMinOrderByAggregateInput;
 
-    @Field(() => MealTemplateMinOrderByAggregateInput, {nullable:true})
-    _min?: MealTemplateMinOrderByAggregateInput;
-
-    @Field(() => MealTemplateSumOrderByAggregateInput, {nullable:true})
-    _sum?: MealTemplateSumOrderByAggregateInput;
+	@Field(() => MealTemplateSumOrderByAggregateInput, { nullable: true })
+	_sum?: MealTemplateSumOrderByAggregateInput;
 }

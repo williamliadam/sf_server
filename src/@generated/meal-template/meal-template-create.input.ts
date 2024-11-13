@@ -5,19 +5,22 @@ import { DishTemplateCreateNestedManyWithoutUsedMealTemplatesInput } from '../di
 
 @InputType()
 export class MealTemplateCreateInput {
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => UserCreateNestedOneWithoutMyMealTemplatesInput, {
+		nullable: false,
+	})
+	createBy!: UserCreateNestedOneWithoutMyMealTemplatesInput;
 
-    @Field(() => UserCreateNestedOneWithoutMyMealTemplatesInput, {nullable:false})
-    createBy!: UserCreateNestedOneWithoutMyMealTemplatesInput;
-
-    @Field(() => DishTemplateCreateNestedManyWithoutUsedMealTemplatesInput, {nullable:true})
-    dishTemplates?: DishTemplateCreateNestedManyWithoutUsedMealTemplatesInput;
+	@Field(() => DishTemplateCreateNestedManyWithoutUsedMealTemplatesInput, {
+		nullable: true,
+	})
+	dishTemplates?: DishTemplateCreateNestedManyWithoutUsedMealTemplatesInput;
 }

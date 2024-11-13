@@ -7,12 +7,11 @@ import { MealTemplateCreateWithoutCreateByInput } from './meal-template-create-w
 
 @InputType()
 export class MealTemplateCreateOrConnectWithoutCreateByInput {
+	@Field(() => MealTemplateWhereUniqueInput, { nullable: false })
+	@Type(() => MealTemplateWhereUniqueInput)
+	where!: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => MealTemplateWhereUniqueInput, {nullable:false})
-    @Type(() => MealTemplateWhereUniqueInput)
-    where!: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
-
-    @Field(() => MealTemplateCreateWithoutCreateByInput, {nullable:false})
-    @Type(() => MealTemplateCreateWithoutCreateByInput)
-    create!: MealTemplateCreateWithoutCreateByInput;
+	@Field(() => MealTemplateCreateWithoutCreateByInput, { nullable: false })
+	@Type(() => MealTemplateCreateWithoutCreateByInput)
+	create!: MealTemplateCreateWithoutCreateByInput;
 }

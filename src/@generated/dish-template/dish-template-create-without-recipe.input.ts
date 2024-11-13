@@ -5,16 +5,17 @@ import { MealTemplateCreateNestedOneWithoutDishTemplatesInput } from '../meal-te
 
 @InputType()
 export class DishTemplateCreateWithoutRecipeInput {
+	@Field(() => Int, { nullable: false })
+	amount!: number;
 
-    @Field(() => Int, {nullable:false})
-    amount!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
-
-    @Field(() => MealTemplateCreateNestedOneWithoutDishTemplatesInput, {nullable:true})
-    usedMealTemplates?: MealTemplateCreateNestedOneWithoutDishTemplatesInput;
+	@Field(() => MealTemplateCreateNestedOneWithoutDishTemplatesInput, {
+		nullable: true,
+	})
+	usedMealTemplates?: MealTemplateCreateNestedOneWithoutDishTemplatesInput;
 }

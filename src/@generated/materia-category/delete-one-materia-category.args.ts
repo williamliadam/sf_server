@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneMateriaCategoryArgs {
-
-    @Field(() => MateriaCategoryWhereUniqueInput, {nullable:false})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MateriaCategoryWhereUniqueInput, { nullable: false })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
 }

@@ -8,19 +8,18 @@ import { BodyDetailMaxAggregate } from './body-detail-max-aggregate.output';
 
 @ObjectType()
 export class AggregateBodyDetail {
+	@Field(() => BodyDetailCountAggregate, { nullable: true })
+	_count?: BodyDetailCountAggregate;
 
-    @Field(() => BodyDetailCountAggregate, {nullable:true})
-    _count?: BodyDetailCountAggregate;
+	@Field(() => BodyDetailAvgAggregate, { nullable: true })
+	_avg?: BodyDetailAvgAggregate;
 
-    @Field(() => BodyDetailAvgAggregate, {nullable:true})
-    _avg?: BodyDetailAvgAggregate;
+	@Field(() => BodyDetailSumAggregate, { nullable: true })
+	_sum?: BodyDetailSumAggregate;
 
-    @Field(() => BodyDetailSumAggregate, {nullable:true})
-    _sum?: BodyDetailSumAggregate;
+	@Field(() => BodyDetailMinAggregate, { nullable: true })
+	_min?: BodyDetailMinAggregate;
 
-    @Field(() => BodyDetailMinAggregate, {nullable:true})
-    _min?: BodyDetailMinAggregate;
-
-    @Field(() => BodyDetailMaxAggregate, {nullable:true})
-    _max?: BodyDetailMaxAggregate;
+	@Field(() => BodyDetailMaxAggregate, { nullable: true })
+	_max?: BodyDetailMaxAggregate;
 }

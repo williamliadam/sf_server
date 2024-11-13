@@ -7,28 +7,30 @@ import { NutritionRowUncheckedUpdateManyWithoutBelongMaterialNestedInput } from 
 
 @InputType()
 export class MaterialUncheckedUpdateWithoutIngredientsInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	nickName?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    nickName?: StringFieldUpdateOperationsInput;
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	materiaCategoryId?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    materiaCategoryId?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => NutritionRowUncheckedUpdateManyWithoutBelongMaterialNestedInput, {nullable:true})
-    nutritionMatrix?: NutritionRowUncheckedUpdateManyWithoutBelongMaterialNestedInput;
+	@Field(
+		() => NutritionRowUncheckedUpdateManyWithoutBelongMaterialNestedInput,
+		{ nullable: true },
+	)
+	nutritionMatrix?: NutritionRowUncheckedUpdateManyWithoutBelongMaterialNestedInput;
 }

@@ -14,35 +14,34 @@ import { DishPlanMaxAggregateInput } from './dish-plan-max-aggregate.input';
 
 @ArgsType()
 export class DishPlanAggregateArgs {
+	@Field(() => DishPlanWhereInput, { nullable: true })
+	@Type(() => DishPlanWhereInput)
+	where?: DishPlanWhereInput;
 
-    @Field(() => DishPlanWhereInput, {nullable:true})
-    @Type(() => DishPlanWhereInput)
-    where?: DishPlanWhereInput;
+	@Field(() => [DishPlanOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<DishPlanOrderByWithRelationInput>;
 
-    @Field(() => [DishPlanOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<DishPlanOrderByWithRelationInput>;
+	@Field(() => DishPlanWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
 
-    @Field(() => DishPlanWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => DishPlanCountAggregateInput, { nullable: true })
+	_count?: DishPlanCountAggregateInput;
 
-    @Field(() => DishPlanCountAggregateInput, {nullable:true})
-    _count?: DishPlanCountAggregateInput;
+	@Field(() => DishPlanAvgAggregateInput, { nullable: true })
+	_avg?: DishPlanAvgAggregateInput;
 
-    @Field(() => DishPlanAvgAggregateInput, {nullable:true})
-    _avg?: DishPlanAvgAggregateInput;
+	@Field(() => DishPlanSumAggregateInput, { nullable: true })
+	_sum?: DishPlanSumAggregateInput;
 
-    @Field(() => DishPlanSumAggregateInput, {nullable:true})
-    _sum?: DishPlanSumAggregateInput;
+	@Field(() => DishPlanMinAggregateInput, { nullable: true })
+	_min?: DishPlanMinAggregateInput;
 
-    @Field(() => DishPlanMinAggregateInput, {nullable:true})
-    _min?: DishPlanMinAggregateInput;
-
-    @Field(() => DishPlanMaxAggregateInput, {nullable:true})
-    _max?: DishPlanMaxAggregateInput;
+	@Field(() => DishPlanMaxAggregateInput, { nullable: true })
+	_max?: DishPlanMaxAggregateInput;
 }

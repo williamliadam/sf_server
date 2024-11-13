@@ -7,25 +7,24 @@ import { EnumGoalFieldUpdateOperationsInput } from '../prisma/enum-goal-field-up
 
 @InputType()
 export class ProfileUncheckedUpdateInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	avatar?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    avatar?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	nickName?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    nickName?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	userId?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    userId?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => EnumGoalFieldUpdateOperationsInput, {nullable:true})
-    goal?: EnumGoalFieldUpdateOperationsInput;
+	@Field(() => EnumGoalFieldUpdateOperationsInput, { nullable: true })
+	goal?: EnumGoalFieldUpdateOperationsInput;
 }

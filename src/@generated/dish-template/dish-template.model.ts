@@ -7,28 +7,27 @@ import { Recipe } from '../recipe/recipe.model';
 
 @ObjectType()
 export class DishTemplate {
+	@Field(() => ID, { nullable: false })
+	id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+	@Field(() => Int, { nullable: false })
+	recipeId!: number;
 
-    @Field(() => Int, {nullable:false})
-    recipeId!: number;
+	@Field(() => Int, { nullable: false })
+	amount!: number;
 
-    @Field(() => Int, {nullable:false})
-    amount!: number;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+	@Field(() => Int, { nullable: true })
+	mealTemplateId!: number | null;
 
-    @Field(() => Int, {nullable:true})
-    mealTemplateId!: number | null;
+	@Field(() => MealTemplate, { nullable: true })
+	usedMealTemplates?: MealTemplate | null;
 
-    @Field(() => MealTemplate, {nullable:true})
-    usedMealTemplates?: MealTemplate | null;
-
-    @Field(() => Recipe, {nullable:false})
-    recipe?: Recipe;
+	@Field(() => Recipe, { nullable: false })
+	recipe?: Recipe;
 }

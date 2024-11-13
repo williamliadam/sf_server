@@ -4,10 +4,9 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class MaterialCount {
+	@Field(() => Int, { nullable: false })
+	nutritionMatrix?: number;
 
-    @Field(() => Int, {nullable:false})
-    nutritionMatrix?: number;
-
-    @Field(() => Int, {nullable:false})
-    ingredients?: number;
+	@Field(() => Int, { nullable: false })
+	ingredients?: number;
 }

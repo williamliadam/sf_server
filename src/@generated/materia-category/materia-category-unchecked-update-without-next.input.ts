@@ -8,25 +8,26 @@ import { MaterialUncheckedUpdateManyWithoutCategoryNestedInput } from '../materi
 
 @InputType()
 export class MateriaCategoryUncheckedUpdateWithoutNextInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
+	lastId?: NullableIntFieldUpdateOperationsInput;
 
-    @Field(() => NullableIntFieldUpdateOperationsInput, {nullable:true})
-    lastId?: NullableIntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => MaterialUncheckedUpdateManyWithoutCategoryNestedInput, {nullable:true})
-    materials?: MaterialUncheckedUpdateManyWithoutCategoryNestedInput;
+	@Field(() => MaterialUncheckedUpdateManyWithoutCategoryNestedInput, {
+		nullable: true,
+	})
+	materials?: MaterialUncheckedUpdateManyWithoutCategoryNestedInput;
 }

@@ -8,16 +8,17 @@ import { MateriaCategoryWhereUniqueInput } from './materia-category-where-unique
 
 @InputType()
 export class MateriaCategoryCreateNestedOneWithoutNextInput {
+	@Field(() => MateriaCategoryCreateWithoutNextInput, { nullable: true })
+	@Type(() => MateriaCategoryCreateWithoutNextInput)
+	create?: MateriaCategoryCreateWithoutNextInput;
 
-    @Field(() => MateriaCategoryCreateWithoutNextInput, {nullable:true})
-    @Type(() => MateriaCategoryCreateWithoutNextInput)
-    create?: MateriaCategoryCreateWithoutNextInput;
+	@Field(() => MateriaCategoryCreateOrConnectWithoutNextInput, {
+		nullable: true,
+	})
+	@Type(() => MateriaCategoryCreateOrConnectWithoutNextInput)
+	connectOrCreate?: MateriaCategoryCreateOrConnectWithoutNextInput;
 
-    @Field(() => MateriaCategoryCreateOrConnectWithoutNextInput, {nullable:true})
-    @Type(() => MateriaCategoryCreateOrConnectWithoutNextInput)
-    connectOrCreate?: MateriaCategoryCreateOrConnectWithoutNextInput;
-
-    @Field(() => MateriaCategoryWhereUniqueInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    connect?: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MateriaCategoryWhereUniqueInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	connect?: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
 }

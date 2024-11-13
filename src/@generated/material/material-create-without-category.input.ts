@@ -5,25 +5,28 @@ import { IngredientCreateNestedManyWithoutMaterialInput } from '../ingredient/in
 
 @InputType()
 export class MaterialCreateWithoutCategoryInput {
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	nickName!: string;
 
-    @Field(() => String, {nullable:false})
-    nickName!: string;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => NutritionRowCreateNestedManyWithoutBelongMaterialInput, {
+		nullable: true,
+	})
+	nutritionMatrix?: NutritionRowCreateNestedManyWithoutBelongMaterialInput;
 
-    @Field(() => NutritionRowCreateNestedManyWithoutBelongMaterialInput, {nullable:true})
-    nutritionMatrix?: NutritionRowCreateNestedManyWithoutBelongMaterialInput;
-
-    @Field(() => IngredientCreateNestedManyWithoutMaterialInput, {nullable:true})
-    ingredients?: IngredientCreateNestedManyWithoutMaterialInput;
+	@Field(() => IngredientCreateNestedManyWithoutMaterialInput, {
+		nullable: true,
+	})
+	ingredients?: IngredientCreateNestedManyWithoutMaterialInput;
 }

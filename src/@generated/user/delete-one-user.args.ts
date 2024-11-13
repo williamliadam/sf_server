@@ -6,8 +6,10 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneUserArgs {
-
-    @Field(() => UserWhereUniqueInput, {nullable:false})
-    @Type(() => UserWhereUniqueInput)
-    where!: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
+	@Field(() => UserWhereUniqueInput, { nullable: false })
+	@Type(() => UserWhereUniqueInput)
+	where!: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 }

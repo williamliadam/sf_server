@@ -6,12 +6,11 @@ import { UserUpdateWithoutMyPostsInput } from './user-update-without-my-posts.in
 
 @InputType()
 export class UserUpdateToOneWithWhereWithoutMyPostsInput {
+	@Field(() => UserWhereInput, { nullable: true })
+	@Type(() => UserWhereInput)
+	where?: UserWhereInput;
 
-    @Field(() => UserWhereInput, {nullable:true})
-    @Type(() => UserWhereInput)
-    where?: UserWhereInput;
-
-    @Field(() => UserUpdateWithoutMyPostsInput, {nullable:false})
-    @Type(() => UserUpdateWithoutMyPostsInput)
-    data!: UserUpdateWithoutMyPostsInput;
+	@Field(() => UserUpdateWithoutMyPostsInput, { nullable: false })
+	@Type(() => UserUpdateWithoutMyPostsInput)
+	data!: UserUpdateWithoutMyPostsInput;
 }

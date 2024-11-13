@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneNutritionArgs {
-
-    @Field(() => NutritionCreateInput, {nullable:false})
-    @Type(() => NutritionCreateInput)
-    data!: NutritionCreateInput;
+	@Field(() => NutritionCreateInput, { nullable: false })
+	@Type(() => NutritionCreateInput)
+	data!: NutritionCreateInput;
 }

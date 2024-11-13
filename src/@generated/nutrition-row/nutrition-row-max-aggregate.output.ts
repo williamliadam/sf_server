@@ -4,22 +4,21 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class NutritionRowMaxAggregate {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => Int, { nullable: true })
+	nutirtionId?: number;
 
-    @Field(() => Int, {nullable:true})
-    nutirtionId?: number;
+	@Field(() => Int, { nullable: true })
+	percent?: number;
 
-    @Field(() => Int, {nullable:true})
-    percent?: number;
+	@Field(() => Int, { nullable: true })
+	belongToId?: number;
 
-    @Field(() => Int, {nullable:true})
-    belongToId?: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
-
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 }

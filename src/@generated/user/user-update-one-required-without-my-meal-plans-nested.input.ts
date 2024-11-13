@@ -10,24 +10,28 @@ import { UserUpdateToOneWithWhereWithoutMyMealPlansInput } from './user-update-t
 
 @InputType()
 export class UserUpdateOneRequiredWithoutMyMealPlansNestedInput {
+	@Field(() => UserCreateWithoutMyMealPlansInput, { nullable: true })
+	@Type(() => UserCreateWithoutMyMealPlansInput)
+	create?: UserCreateWithoutMyMealPlansInput;
 
-    @Field(() => UserCreateWithoutMyMealPlansInput, {nullable:true})
-    @Type(() => UserCreateWithoutMyMealPlansInput)
-    create?: UserCreateWithoutMyMealPlansInput;
+	@Field(() => UserCreateOrConnectWithoutMyMealPlansInput, { nullable: true })
+	@Type(() => UserCreateOrConnectWithoutMyMealPlansInput)
+	connectOrCreate?: UserCreateOrConnectWithoutMyMealPlansInput;
 
-    @Field(() => UserCreateOrConnectWithoutMyMealPlansInput, {nullable:true})
-    @Type(() => UserCreateOrConnectWithoutMyMealPlansInput)
-    connectOrCreate?: UserCreateOrConnectWithoutMyMealPlansInput;
+	@Field(() => UserUpsertWithoutMyMealPlansInput, { nullable: true })
+	@Type(() => UserUpsertWithoutMyMealPlansInput)
+	upsert?: UserUpsertWithoutMyMealPlansInput;
 
-    @Field(() => UserUpsertWithoutMyMealPlansInput, {nullable:true})
-    @Type(() => UserUpsertWithoutMyMealPlansInput)
-    upsert?: UserUpsertWithoutMyMealPlansInput;
+	@Field(() => UserWhereUniqueInput, { nullable: true })
+	@Type(() => UserWhereUniqueInput)
+	connect?: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:true})
-    @Type(() => UserWhereUniqueInput)
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
-
-    @Field(() => UserUpdateToOneWithWhereWithoutMyMealPlansInput, {nullable:true})
-    @Type(() => UserUpdateToOneWithWhereWithoutMyMealPlansInput)
-    update?: UserUpdateToOneWithWhereWithoutMyMealPlansInput;
+	@Field(() => UserUpdateToOneWithWhereWithoutMyMealPlansInput, {
+		nullable: true,
+	})
+	@Type(() => UserUpdateToOneWithWhereWithoutMyMealPlansInput)
+	update?: UserUpdateToOneWithWhereWithoutMyMealPlansInput;
 }

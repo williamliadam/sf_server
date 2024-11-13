@@ -8,16 +8,15 @@ import { MateriaCategoryUpdateInput } from './materia-category-update.input';
 
 @ArgsType()
 export class UpsertOneMateriaCategoryArgs {
+	@Field(() => MateriaCategoryWhereUniqueInput, { nullable: false })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaCategoryWhereUniqueInput, {nullable:false})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MateriaCategoryCreateInput, { nullable: false })
+	@Type(() => MateriaCategoryCreateInput)
+	create!: MateriaCategoryCreateInput;
 
-    @Field(() => MateriaCategoryCreateInput, {nullable:false})
-    @Type(() => MateriaCategoryCreateInput)
-    create!: MateriaCategoryCreateInput;
-
-    @Field(() => MateriaCategoryUpdateInput, {nullable:false})
-    @Type(() => MateriaCategoryUpdateInput)
-    update!: MateriaCategoryUpdateInput;
+	@Field(() => MateriaCategoryUpdateInput, { nullable: false })
+	@Type(() => MateriaCategoryUpdateInput)
+	update!: MateriaCategoryUpdateInput;
 }

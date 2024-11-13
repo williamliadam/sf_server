@@ -7,12 +7,14 @@ import { UserCreateWithoutMyPostsInput } from './user-create-without-my-posts.in
 
 @InputType()
 export class UserCreateOrConnectWithoutMyPostsInput {
+	@Field(() => UserWhereUniqueInput, { nullable: false })
+	@Type(() => UserWhereUniqueInput)
+	where!: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:false})
-    @Type(() => UserWhereUniqueInput)
-    where!: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
-
-    @Field(() => UserCreateWithoutMyPostsInput, {nullable:false})
-    @Type(() => UserCreateWithoutMyPostsInput)
-    create!: UserCreateWithoutMyPostsInput;
+	@Field(() => UserCreateWithoutMyPostsInput, { nullable: false })
+	@Type(() => UserCreateWithoutMyPostsInput)
+	create!: UserCreateWithoutMyPostsInput;
 }

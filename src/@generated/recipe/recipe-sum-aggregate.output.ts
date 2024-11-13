@@ -4,13 +4,12 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class RecipeSumAggregate {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => Int, { nullable: true })
+	stars?: number;
 
-    @Field(() => Int, {nullable:true})
-    stars?: number;
-
-    @Field(() => Int, {nullable:true})
-    authorId?: number;
+	@Field(() => Int, { nullable: true })
+	authorId?: number;
 }

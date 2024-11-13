@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneMethodArgs {
-
-    @Field(() => MethodWhereUniqueInput, {nullable:false})
-    @Type(() => MethodWhereUniqueInput)
-    where!: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MethodWhereUniqueInput, { nullable: false })
+	@Type(() => MethodWhereUniqueInput)
+	where!: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
 }

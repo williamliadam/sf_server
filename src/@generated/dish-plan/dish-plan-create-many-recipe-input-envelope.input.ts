@@ -5,11 +5,10 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class DishPlanCreateManyRecipeInputEnvelope {
+	@Field(() => [DishPlanCreateManyRecipeInput], { nullable: false })
+	@Type(() => DishPlanCreateManyRecipeInput)
+	data!: Array<DishPlanCreateManyRecipeInput>;
 
-    @Field(() => [DishPlanCreateManyRecipeInput], {nullable:false})
-    @Type(() => DishPlanCreateManyRecipeInput)
-    data!: Array<DishPlanCreateManyRecipeInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+	@Field(() => Boolean, { nullable: true })
+	skipDuplicates?: boolean;
 }

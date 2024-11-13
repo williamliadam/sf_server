@@ -10,23 +10,22 @@ import { MateriaCategoryScalarFieldEnum } from './materia-category-scalar-field.
 
 @ArgsType()
 export class FindManyMateriaCategoryArgs {
+	@Field(() => MateriaCategoryWhereInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereInput)
+	where?: MateriaCategoryWhereInput;
 
-    @Field(() => MateriaCategoryWhereInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereInput)
-    where?: MateriaCategoryWhereInput;
+	@Field(() => [MateriaCategoryOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<MateriaCategoryOrderByWithRelationInput>;
 
-    @Field(() => [MateriaCategoryOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<MateriaCategoryOrderByWithRelationInput>;
+	@Field(() => MateriaCategoryWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaCategoryWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [MateriaCategoryScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof MateriaCategoryScalarFieldEnum>;
+	@Field(() => [MateriaCategoryScalarFieldEnum], { nullable: true })
+	distinct?: Array<keyof typeof MateriaCategoryScalarFieldEnum>;
 }

@@ -7,12 +7,11 @@ import { NutritionRowUpdateWithoutNutirtionInput } from './nutrition-row-update-
 
 @InputType()
 export class NutritionRowUpdateWithWhereUniqueWithoutNutirtionInput {
+	@Field(() => NutritionRowWhereUniqueInput, { nullable: false })
+	@Type(() => NutritionRowWhereUniqueInput)
+	where!: Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>;
 
-    @Field(() => NutritionRowWhereUniqueInput, {nullable:false})
-    @Type(() => NutritionRowWhereUniqueInput)
-    where!: Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>;
-
-    @Field(() => NutritionRowUpdateWithoutNutirtionInput, {nullable:false})
-    @Type(() => NutritionRowUpdateWithoutNutirtionInput)
-    data!: NutritionRowUpdateWithoutNutirtionInput;
+	@Field(() => NutritionRowUpdateWithoutNutirtionInput, { nullable: false })
+	@Type(() => NutritionRowUpdateWithoutNutirtionInput)
+	data!: NutritionRowUpdateWithoutNutirtionInput;
 }

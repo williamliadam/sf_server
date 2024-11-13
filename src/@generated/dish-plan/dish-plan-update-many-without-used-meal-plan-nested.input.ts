@@ -13,48 +13,55 @@ import { DishPlanScalarWhereInput } from './dish-plan-scalar-where.input';
 
 @InputType()
 export class DishPlanUpdateManyWithoutUsedMealPlanNestedInput {
+	@Field(() => [DishPlanCreateWithoutUsedMealPlanInput], { nullable: true })
+	@Type(() => DishPlanCreateWithoutUsedMealPlanInput)
+	create?: Array<DishPlanCreateWithoutUsedMealPlanInput>;
 
-    @Field(() => [DishPlanCreateWithoutUsedMealPlanInput], {nullable:true})
-    @Type(() => DishPlanCreateWithoutUsedMealPlanInput)
-    create?: Array<DishPlanCreateWithoutUsedMealPlanInput>;
+	@Field(() => [DishPlanCreateOrConnectWithoutUsedMealPlanInput], {
+		nullable: true,
+	})
+	@Type(() => DishPlanCreateOrConnectWithoutUsedMealPlanInput)
+	connectOrCreate?: Array<DishPlanCreateOrConnectWithoutUsedMealPlanInput>;
 
-    @Field(() => [DishPlanCreateOrConnectWithoutUsedMealPlanInput], {nullable:true})
-    @Type(() => DishPlanCreateOrConnectWithoutUsedMealPlanInput)
-    connectOrCreate?: Array<DishPlanCreateOrConnectWithoutUsedMealPlanInput>;
+	@Field(() => [DishPlanUpsertWithWhereUniqueWithoutUsedMealPlanInput], {
+		nullable: true,
+	})
+	@Type(() => DishPlanUpsertWithWhereUniqueWithoutUsedMealPlanInput)
+	upsert?: Array<DishPlanUpsertWithWhereUniqueWithoutUsedMealPlanInput>;
 
-    @Field(() => [DishPlanUpsertWithWhereUniqueWithoutUsedMealPlanInput], {nullable:true})
-    @Type(() => DishPlanUpsertWithWhereUniqueWithoutUsedMealPlanInput)
-    upsert?: Array<DishPlanUpsertWithWhereUniqueWithoutUsedMealPlanInput>;
+	@Field(() => DishPlanCreateManyUsedMealPlanInputEnvelope, { nullable: true })
+	@Type(() => DishPlanCreateManyUsedMealPlanInputEnvelope)
+	createMany?: DishPlanCreateManyUsedMealPlanInputEnvelope;
 
-    @Field(() => DishPlanCreateManyUsedMealPlanInputEnvelope, {nullable:true})
-    @Type(() => DishPlanCreateManyUsedMealPlanInputEnvelope)
-    createMany?: DishPlanCreateManyUsedMealPlanInputEnvelope;
+	@Field(() => [DishPlanWhereUniqueInput], { nullable: true })
+	@Type(() => DishPlanWhereUniqueInput)
+	set?: Array<Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishPlanWhereUniqueInput], {nullable:true})
-    @Type(() => DishPlanWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>>;
+	@Field(() => [DishPlanWhereUniqueInput], { nullable: true })
+	@Type(() => DishPlanWhereUniqueInput)
+	disconnect?: Array<Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishPlanWhereUniqueInput], {nullable:true})
-    @Type(() => DishPlanWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>>;
+	@Field(() => [DishPlanWhereUniqueInput], { nullable: true })
+	@Type(() => DishPlanWhereUniqueInput)
+	delete?: Array<Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishPlanWhereUniqueInput], {nullable:true})
-    @Type(() => DishPlanWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>>;
+	@Field(() => [DishPlanWhereUniqueInput], { nullable: true })
+	@Type(() => DishPlanWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishPlanWhereUniqueInput], {nullable:true})
-    @Type(() => DishPlanWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>>;
+	@Field(() => [DishPlanUpdateWithWhereUniqueWithoutUsedMealPlanInput], {
+		nullable: true,
+	})
+	@Type(() => DishPlanUpdateWithWhereUniqueWithoutUsedMealPlanInput)
+	update?: Array<DishPlanUpdateWithWhereUniqueWithoutUsedMealPlanInput>;
 
-    @Field(() => [DishPlanUpdateWithWhereUniqueWithoutUsedMealPlanInput], {nullable:true})
-    @Type(() => DishPlanUpdateWithWhereUniqueWithoutUsedMealPlanInput)
-    update?: Array<DishPlanUpdateWithWhereUniqueWithoutUsedMealPlanInput>;
+	@Field(() => [DishPlanUpdateManyWithWhereWithoutUsedMealPlanInput], {
+		nullable: true,
+	})
+	@Type(() => DishPlanUpdateManyWithWhereWithoutUsedMealPlanInput)
+	updateMany?: Array<DishPlanUpdateManyWithWhereWithoutUsedMealPlanInput>;
 
-    @Field(() => [DishPlanUpdateManyWithWhereWithoutUsedMealPlanInput], {nullable:true})
-    @Type(() => DishPlanUpdateManyWithWhereWithoutUsedMealPlanInput)
-    updateMany?: Array<DishPlanUpdateManyWithWhereWithoutUsedMealPlanInput>;
-
-    @Field(() => [DishPlanScalarWhereInput], {nullable:true})
-    @Type(() => DishPlanScalarWhereInput)
-    deleteMany?: Array<DishPlanScalarWhereInput>;
+	@Field(() => [DishPlanScalarWhereInput], { nullable: true })
+	@Type(() => DishPlanScalarWhereInput)
+	deleteMany?: Array<DishPlanScalarWhereInput>;
 }

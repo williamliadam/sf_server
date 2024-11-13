@@ -9,34 +9,33 @@ import { DateTimeFilter } from '../prisma/date-time-filter.input';
 
 @InputType()
 export class PostScalarWhereInput {
+	@Field(() => [PostScalarWhereInput], { nullable: true })
+	AND?: Array<PostScalarWhereInput>;
 
-    @Field(() => [PostScalarWhereInput], {nullable:true})
-    AND?: Array<PostScalarWhereInput>;
+	@Field(() => [PostScalarWhereInput], { nullable: true })
+	OR?: Array<PostScalarWhereInput>;
 
-    @Field(() => [PostScalarWhereInput], {nullable:true})
-    OR?: Array<PostScalarWhereInput>;
+	@Field(() => [PostScalarWhereInput], { nullable: true })
+	NOT?: Array<PostScalarWhereInput>;
 
-    @Field(() => [PostScalarWhereInput], {nullable:true})
-    NOT?: Array<PostScalarWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => StringFilter, { nullable: true })
+	title?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    title?: StringFilter;
+	@Field(() => StringNullableFilter, { nullable: true })
+	content?: StringNullableFilter;
 
-    @Field(() => StringNullableFilter, {nullable:true})
-    content?: StringNullableFilter;
+	@Field(() => BoolNullableFilter, { nullable: true })
+	published?: BoolNullableFilter;
 
-    @Field(() => BoolNullableFilter, {nullable:true})
-    published?: BoolNullableFilter;
+	@Field(() => IntNullableFilter, { nullable: true })
+	authorId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    authorId?: IntNullableFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
-
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 }

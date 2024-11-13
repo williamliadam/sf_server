@@ -5,11 +5,10 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class MealTemplateCreateManyCreateByInputEnvelope {
+	@Field(() => [MealTemplateCreateManyCreateByInput], { nullable: false })
+	@Type(() => MealTemplateCreateManyCreateByInput)
+	data!: Array<MealTemplateCreateManyCreateByInput>;
 
-    @Field(() => [MealTemplateCreateManyCreateByInput], {nullable:false})
-    @Type(() => MealTemplateCreateManyCreateByInput)
-    data!: Array<MealTemplateCreateManyCreateByInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+	@Field(() => Boolean, { nullable: true })
+	skipDuplicates?: boolean;
 }

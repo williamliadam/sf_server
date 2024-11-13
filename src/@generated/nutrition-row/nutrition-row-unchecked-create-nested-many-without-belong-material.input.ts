@@ -9,20 +9,25 @@ import { NutritionRowWhereUniqueInput } from './nutrition-row-where-unique.input
 
 @InputType()
 export class NutritionRowUncheckedCreateNestedManyWithoutBelongMaterialInput {
+	@Field(() => [NutritionRowCreateWithoutBelongMaterialInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowCreateWithoutBelongMaterialInput)
+	create?: Array<NutritionRowCreateWithoutBelongMaterialInput>;
 
-    @Field(() => [NutritionRowCreateWithoutBelongMaterialInput], {nullable:true})
-    @Type(() => NutritionRowCreateWithoutBelongMaterialInput)
-    create?: Array<NutritionRowCreateWithoutBelongMaterialInput>;
+	@Field(() => [NutritionRowCreateOrConnectWithoutBelongMaterialInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowCreateOrConnectWithoutBelongMaterialInput)
+	connectOrCreate?: Array<NutritionRowCreateOrConnectWithoutBelongMaterialInput>;
 
-    @Field(() => [NutritionRowCreateOrConnectWithoutBelongMaterialInput], {nullable:true})
-    @Type(() => NutritionRowCreateOrConnectWithoutBelongMaterialInput)
-    connectOrCreate?: Array<NutritionRowCreateOrConnectWithoutBelongMaterialInput>;
+	@Field(() => NutritionRowCreateManyBelongMaterialInputEnvelope, {
+		nullable: true,
+	})
+	@Type(() => NutritionRowCreateManyBelongMaterialInputEnvelope)
+	createMany?: NutritionRowCreateManyBelongMaterialInputEnvelope;
 
-    @Field(() => NutritionRowCreateManyBelongMaterialInputEnvelope, {nullable:true})
-    @Type(() => NutritionRowCreateManyBelongMaterialInputEnvelope)
-    createMany?: NutritionRowCreateManyBelongMaterialInputEnvelope;
-
-    @Field(() => [NutritionRowWhereUniqueInput], {nullable:true})
-    @Type(() => NutritionRowWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
+	@Field(() => [NutritionRowWhereUniqueInput], { nullable: true })
+	@Type(() => NutritionRowWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
 }

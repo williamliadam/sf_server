@@ -13,48 +13,55 @@ import { IngredientScalarWhereInput } from './ingredient-scalar-where.input';
 
 @InputType()
 export class IngredientUncheckedUpdateManyWithoutUsedRecipeNestedInput {
+	@Field(() => [IngredientCreateWithoutUsedRecipeInput], { nullable: true })
+	@Type(() => IngredientCreateWithoutUsedRecipeInput)
+	create?: Array<IngredientCreateWithoutUsedRecipeInput>;
 
-    @Field(() => [IngredientCreateWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => IngredientCreateWithoutUsedRecipeInput)
-    create?: Array<IngredientCreateWithoutUsedRecipeInput>;
+	@Field(() => [IngredientCreateOrConnectWithoutUsedRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => IngredientCreateOrConnectWithoutUsedRecipeInput)
+	connectOrCreate?: Array<IngredientCreateOrConnectWithoutUsedRecipeInput>;
 
-    @Field(() => [IngredientCreateOrConnectWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => IngredientCreateOrConnectWithoutUsedRecipeInput)
-    connectOrCreate?: Array<IngredientCreateOrConnectWithoutUsedRecipeInput>;
+	@Field(() => [IngredientUpsertWithWhereUniqueWithoutUsedRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => IngredientUpsertWithWhereUniqueWithoutUsedRecipeInput)
+	upsert?: Array<IngredientUpsertWithWhereUniqueWithoutUsedRecipeInput>;
 
-    @Field(() => [IngredientUpsertWithWhereUniqueWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => IngredientUpsertWithWhereUniqueWithoutUsedRecipeInput)
-    upsert?: Array<IngredientUpsertWithWhereUniqueWithoutUsedRecipeInput>;
+	@Field(() => IngredientCreateManyUsedRecipeInputEnvelope, { nullable: true })
+	@Type(() => IngredientCreateManyUsedRecipeInputEnvelope)
+	createMany?: IngredientCreateManyUsedRecipeInputEnvelope;
 
-    @Field(() => IngredientCreateManyUsedRecipeInputEnvelope, {nullable:true})
-    @Type(() => IngredientCreateManyUsedRecipeInputEnvelope)
-    createMany?: IngredientCreateManyUsedRecipeInputEnvelope;
+	@Field(() => [IngredientWhereUniqueInput], { nullable: true })
+	@Type(() => IngredientWhereUniqueInput)
+	set?: Array<Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>>;
 
-    @Field(() => [IngredientWhereUniqueInput], {nullable:true})
-    @Type(() => IngredientWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>>;
+	@Field(() => [IngredientWhereUniqueInput], { nullable: true })
+	@Type(() => IngredientWhereUniqueInput)
+	disconnect?: Array<Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>>;
 
-    @Field(() => [IngredientWhereUniqueInput], {nullable:true})
-    @Type(() => IngredientWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>>;
+	@Field(() => [IngredientWhereUniqueInput], { nullable: true })
+	@Type(() => IngredientWhereUniqueInput)
+	delete?: Array<Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>>;
 
-    @Field(() => [IngredientWhereUniqueInput], {nullable:true})
-    @Type(() => IngredientWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>>;
+	@Field(() => [IngredientWhereUniqueInput], { nullable: true })
+	@Type(() => IngredientWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>>;
 
-    @Field(() => [IngredientWhereUniqueInput], {nullable:true})
-    @Type(() => IngredientWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>>;
+	@Field(() => [IngredientUpdateWithWhereUniqueWithoutUsedRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => IngredientUpdateWithWhereUniqueWithoutUsedRecipeInput)
+	update?: Array<IngredientUpdateWithWhereUniqueWithoutUsedRecipeInput>;
 
-    @Field(() => [IngredientUpdateWithWhereUniqueWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => IngredientUpdateWithWhereUniqueWithoutUsedRecipeInput)
-    update?: Array<IngredientUpdateWithWhereUniqueWithoutUsedRecipeInput>;
+	@Field(() => [IngredientUpdateManyWithWhereWithoutUsedRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => IngredientUpdateManyWithWhereWithoutUsedRecipeInput)
+	updateMany?: Array<IngredientUpdateManyWithWhereWithoutUsedRecipeInput>;
 
-    @Field(() => [IngredientUpdateManyWithWhereWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => IngredientUpdateManyWithWhereWithoutUsedRecipeInput)
-    updateMany?: Array<IngredientUpdateManyWithWhereWithoutUsedRecipeInput>;
-
-    @Field(() => [IngredientScalarWhereInput], {nullable:true})
-    @Type(() => IngredientScalarWhereInput)
-    deleteMany?: Array<IngredientScalarWhereInput>;
+	@Field(() => [IngredientScalarWhereInput], { nullable: true })
+	@Type(() => IngredientScalarWhereInput)
+	deleteMany?: Array<IngredientScalarWhereInput>;
 }

@@ -9,40 +9,39 @@ import { MethodMaxAggregate } from './method-max-aggregate.output';
 
 @ObjectType()
 export class MethodGroupBy {
+	@Field(() => Int, { nullable: false })
+	id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => String, { nullable: false })
+	desc!: string;
 
-    @Field(() => String, {nullable:false})
-    desc!: string;
+	@Field(() => Int, { nullable: true })
+	recipeId?: number;
 
-    @Field(() => Int, {nullable:true})
-    recipeId?: number;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+	@Field(() => MethodCountAggregate, { nullable: true })
+	_count?: MethodCountAggregate;
 
-    @Field(() => MethodCountAggregate, {nullable:true})
-    _count?: MethodCountAggregate;
+	@Field(() => MethodAvgAggregate, { nullable: true })
+	_avg?: MethodAvgAggregate;
 
-    @Field(() => MethodAvgAggregate, {nullable:true})
-    _avg?: MethodAvgAggregate;
+	@Field(() => MethodSumAggregate, { nullable: true })
+	_sum?: MethodSumAggregate;
 
-    @Field(() => MethodSumAggregate, {nullable:true})
-    _sum?: MethodSumAggregate;
+	@Field(() => MethodMinAggregate, { nullable: true })
+	_min?: MethodMinAggregate;
 
-    @Field(() => MethodMinAggregate, {nullable:true})
-    _min?: MethodMinAggregate;
-
-    @Field(() => MethodMaxAggregate, {nullable:true})
-    _max?: MethodMaxAggregate;
+	@Field(() => MethodMaxAggregate, { nullable: true })
+	_max?: MethodMaxAggregate;
 }

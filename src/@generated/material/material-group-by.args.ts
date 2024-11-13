@@ -14,38 +14,37 @@ import { MaterialMaxAggregateInput } from './material-max-aggregate.input';
 
 @ArgsType()
 export class MaterialGroupByArgs {
+	@Field(() => MaterialWhereInput, { nullable: true })
+	@Type(() => MaterialWhereInput)
+	where?: MaterialWhereInput;
 
-    @Field(() => MaterialWhereInput, {nullable:true})
-    @Type(() => MaterialWhereInput)
-    where?: MaterialWhereInput;
+	@Field(() => [MaterialOrderByWithAggregationInput], { nullable: true })
+	orderBy?: Array<MaterialOrderByWithAggregationInput>;
 
-    @Field(() => [MaterialOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<MaterialOrderByWithAggregationInput>;
+	@Field(() => [MaterialScalarFieldEnum], { nullable: false })
+	by!: Array<keyof typeof MaterialScalarFieldEnum>;
 
-    @Field(() => [MaterialScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof MaterialScalarFieldEnum>;
+	@Field(() => MaterialScalarWhereWithAggregatesInput, { nullable: true })
+	having?: MaterialScalarWhereWithAggregatesInput;
 
-    @Field(() => MaterialScalarWhereWithAggregatesInput, {nullable:true})
-    having?: MaterialScalarWhereWithAggregatesInput;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => MaterialCountAggregateInput, { nullable: true })
+	_count?: MaterialCountAggregateInput;
 
-    @Field(() => MaterialCountAggregateInput, {nullable:true})
-    _count?: MaterialCountAggregateInput;
+	@Field(() => MaterialAvgAggregateInput, { nullable: true })
+	_avg?: MaterialAvgAggregateInput;
 
-    @Field(() => MaterialAvgAggregateInput, {nullable:true})
-    _avg?: MaterialAvgAggregateInput;
+	@Field(() => MaterialSumAggregateInput, { nullable: true })
+	_sum?: MaterialSumAggregateInput;
 
-    @Field(() => MaterialSumAggregateInput, {nullable:true})
-    _sum?: MaterialSumAggregateInput;
+	@Field(() => MaterialMinAggregateInput, { nullable: true })
+	_min?: MaterialMinAggregateInput;
 
-    @Field(() => MaterialMinAggregateInput, {nullable:true})
-    _min?: MaterialMinAggregateInput;
-
-    @Field(() => MaterialMaxAggregateInput, {nullable:true})
-    _max?: MaterialMaxAggregateInput;
+	@Field(() => MaterialMaxAggregateInput, { nullable: true })
+	_max?: MaterialMaxAggregateInput;
 }

@@ -7,12 +7,11 @@ import { RecipeCreateWithoutUsedDishPlansInput } from './recipe-create-without-u
 
 @InputType()
 export class RecipeCreateOrConnectWithoutUsedDishPlansInput {
+	@Field(() => RecipeWhereUniqueInput, { nullable: false })
+	@Type(() => RecipeWhereUniqueInput)
+	where!: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 
-    @Field(() => RecipeWhereUniqueInput, {nullable:false})
-    @Type(() => RecipeWhereUniqueInput)
-    where!: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
-
-    @Field(() => RecipeCreateWithoutUsedDishPlansInput, {nullable:false})
-    @Type(() => RecipeCreateWithoutUsedDishPlansInput)
-    create!: RecipeCreateWithoutUsedDishPlansInput;
+	@Field(() => RecipeCreateWithoutUsedDishPlansInput, { nullable: false })
+	@Type(() => RecipeCreateWithoutUsedDishPlansInput)
+	create!: RecipeCreateWithoutUsedDishPlansInput;
 }

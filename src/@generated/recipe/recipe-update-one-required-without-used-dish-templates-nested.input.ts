@@ -10,24 +10,27 @@ import { RecipeUpdateToOneWithWhereWithoutUsedDishTemplatesInput } from './recip
 
 @InputType()
 export class RecipeUpdateOneRequiredWithoutUsedDishTemplatesNestedInput {
+	@Field(() => RecipeCreateWithoutUsedDishTemplatesInput, { nullable: true })
+	@Type(() => RecipeCreateWithoutUsedDishTemplatesInput)
+	create?: RecipeCreateWithoutUsedDishTemplatesInput;
 
-    @Field(() => RecipeCreateWithoutUsedDishTemplatesInput, {nullable:true})
-    @Type(() => RecipeCreateWithoutUsedDishTemplatesInput)
-    create?: RecipeCreateWithoutUsedDishTemplatesInput;
+	@Field(() => RecipeCreateOrConnectWithoutUsedDishTemplatesInput, {
+		nullable: true,
+	})
+	@Type(() => RecipeCreateOrConnectWithoutUsedDishTemplatesInput)
+	connectOrCreate?: RecipeCreateOrConnectWithoutUsedDishTemplatesInput;
 
-    @Field(() => RecipeCreateOrConnectWithoutUsedDishTemplatesInput, {nullable:true})
-    @Type(() => RecipeCreateOrConnectWithoutUsedDishTemplatesInput)
-    connectOrCreate?: RecipeCreateOrConnectWithoutUsedDishTemplatesInput;
+	@Field(() => RecipeUpsertWithoutUsedDishTemplatesInput, { nullable: true })
+	@Type(() => RecipeUpsertWithoutUsedDishTemplatesInput)
+	upsert?: RecipeUpsertWithoutUsedDishTemplatesInput;
 
-    @Field(() => RecipeUpsertWithoutUsedDishTemplatesInput, {nullable:true})
-    @Type(() => RecipeUpsertWithoutUsedDishTemplatesInput)
-    upsert?: RecipeUpsertWithoutUsedDishTemplatesInput;
+	@Field(() => RecipeWhereUniqueInput, { nullable: true })
+	@Type(() => RecipeWhereUniqueInput)
+	connect?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 
-    @Field(() => RecipeWhereUniqueInput, {nullable:true})
-    @Type(() => RecipeWhereUniqueInput)
-    connect?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
-
-    @Field(() => RecipeUpdateToOneWithWhereWithoutUsedDishTemplatesInput, {nullable:true})
-    @Type(() => RecipeUpdateToOneWithWhereWithoutUsedDishTemplatesInput)
-    update?: RecipeUpdateToOneWithWhereWithoutUsedDishTemplatesInput;
+	@Field(() => RecipeUpdateToOneWithWhereWithoutUsedDishTemplatesInput, {
+		nullable: true,
+	})
+	@Type(() => RecipeUpdateToOneWithWhereWithoutUsedDishTemplatesInput)
+	update?: RecipeUpdateToOneWithWhereWithoutUsedDishTemplatesInput;
 }

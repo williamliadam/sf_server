@@ -6,12 +6,11 @@ import { MateriaCategoryWhereInput } from './materia-category-where.input';
 
 @ArgsType()
 export class UpdateManyMateriaCategoryArgs {
+	@Field(() => MateriaCategoryUpdateManyMutationInput, { nullable: false })
+	@Type(() => MateriaCategoryUpdateManyMutationInput)
+	data!: MateriaCategoryUpdateManyMutationInput;
 
-    @Field(() => MateriaCategoryUpdateManyMutationInput, {nullable:false})
-    @Type(() => MateriaCategoryUpdateManyMutationInput)
-    data!: MateriaCategoryUpdateManyMutationInput;
-
-    @Field(() => MateriaCategoryWhereInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereInput)
-    where?: MateriaCategoryWhereInput;
+	@Field(() => MateriaCategoryWhereInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereInput)
+	where?: MateriaCategoryWhereInput;
 }

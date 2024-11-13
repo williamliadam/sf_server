@@ -8,19 +8,18 @@ import { RecipeMaxAggregate } from './recipe-max-aggregate.output';
 
 @ObjectType()
 export class AggregateRecipe {
+	@Field(() => RecipeCountAggregate, { nullable: true })
+	_count?: RecipeCountAggregate;
 
-    @Field(() => RecipeCountAggregate, {nullable:true})
-    _count?: RecipeCountAggregate;
+	@Field(() => RecipeAvgAggregate, { nullable: true })
+	_avg?: RecipeAvgAggregate;
 
-    @Field(() => RecipeAvgAggregate, {nullable:true})
-    _avg?: RecipeAvgAggregate;
+	@Field(() => RecipeSumAggregate, { nullable: true })
+	_sum?: RecipeSumAggregate;
 
-    @Field(() => RecipeSumAggregate, {nullable:true})
-    _sum?: RecipeSumAggregate;
+	@Field(() => RecipeMinAggregate, { nullable: true })
+	_min?: RecipeMinAggregate;
 
-    @Field(() => RecipeMinAggregate, {nullable:true})
-    _min?: RecipeMinAggregate;
-
-    @Field(() => RecipeMaxAggregate, {nullable:true})
-    _max?: RecipeMaxAggregate;
+	@Field(() => RecipeMaxAggregate, { nullable: true })
+	_max?: RecipeMaxAggregate;
 }

@@ -6,12 +6,11 @@ import { BodyDetailWhereInput } from './body-detail-where.input';
 
 @ArgsType()
 export class UpdateManyBodyDetailArgs {
+	@Field(() => BodyDetailUpdateManyMutationInput, { nullable: false })
+	@Type(() => BodyDetailUpdateManyMutationInput)
+	data!: BodyDetailUpdateManyMutationInput;
 
-    @Field(() => BodyDetailUpdateManyMutationInput, {nullable:false})
-    @Type(() => BodyDetailUpdateManyMutationInput)
-    data!: BodyDetailUpdateManyMutationInput;
-
-    @Field(() => BodyDetailWhereInput, {nullable:true})
-    @Type(() => BodyDetailWhereInput)
-    where?: BodyDetailWhereInput;
+	@Field(() => BodyDetailWhereInput, { nullable: true })
+	@Type(() => BodyDetailWhereInput)
+	where?: BodyDetailWhereInput;
 }

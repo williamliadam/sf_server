@@ -5,19 +5,20 @@ import { DishPlanCreateNestedManyWithoutUsedMealPlanInput } from '../dish-plan/d
 
 @InputType()
 export class MealPlanCreateWithoutCreateByInput {
+	@Field(() => Date, { nullable: true })
+	planTime?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    planTime?: Date | string;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => MealType, { nullable: true })
+	type?: keyof typeof MealType;
 
-    @Field(() => MealType, {nullable:true})
-    type?: keyof typeof MealType;
-
-    @Field(() => DishPlanCreateNestedManyWithoutUsedMealPlanInput, {nullable:true})
-    dishPlans?: DishPlanCreateNestedManyWithoutUsedMealPlanInput;
+	@Field(() => DishPlanCreateNestedManyWithoutUsedMealPlanInput, {
+		nullable: true,
+	})
+	dishPlans?: DishPlanCreateNestedManyWithoutUsedMealPlanInput;
 }

@@ -8,19 +8,18 @@ import { IngredientMaxAggregate } from './ingredient-max-aggregate.output';
 
 @ObjectType()
 export class AggregateIngredient {
+	@Field(() => IngredientCountAggregate, { nullable: true })
+	_count?: IngredientCountAggregate;
 
-    @Field(() => IngredientCountAggregate, {nullable:true})
-    _count?: IngredientCountAggregate;
+	@Field(() => IngredientAvgAggregate, { nullable: true })
+	_avg?: IngredientAvgAggregate;
 
-    @Field(() => IngredientAvgAggregate, {nullable:true})
-    _avg?: IngredientAvgAggregate;
+	@Field(() => IngredientSumAggregate, { nullable: true })
+	_sum?: IngredientSumAggregate;
 
-    @Field(() => IngredientSumAggregate, {nullable:true})
-    _sum?: IngredientSumAggregate;
+	@Field(() => IngredientMinAggregate, { nullable: true })
+	_min?: IngredientMinAggregate;
 
-    @Field(() => IngredientMinAggregate, {nullable:true})
-    _min?: IngredientMinAggregate;
-
-    @Field(() => IngredientMaxAggregate, {nullable:true})
-    _max?: IngredientMaxAggregate;
+	@Field(() => IngredientMaxAggregate, { nullable: true })
+	_max?: IngredientMaxAggregate;
 }

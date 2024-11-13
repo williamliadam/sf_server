@@ -7,31 +7,30 @@ import { MateriaCategoryOrderByRelationAggregateInput } from './materia-category
 
 @InputType()
 export class MateriaCategoryOrderByWithRelationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	code?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    code?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	name?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    name?: keyof typeof SortOrder;
+	@Field(() => SortOrderInput, { nullable: true })
+	lastId?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    lastId?: SortOrderInput;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => MaterialOrderByRelationAggregateInput, { nullable: true })
+	materials?: MaterialOrderByRelationAggregateInput;
 
-    @Field(() => MaterialOrderByRelationAggregateInput, {nullable:true})
-    materials?: MaterialOrderByRelationAggregateInput;
+	@Field(() => MateriaCategoryOrderByRelationAggregateInput, { nullable: true })
+	next?: MateriaCategoryOrderByRelationAggregateInput;
 
-    @Field(() => MateriaCategoryOrderByRelationAggregateInput, {nullable:true})
-    next?: MateriaCategoryOrderByRelationAggregateInput;
-
-    @Field(() => MateriaCategoryOrderByWithRelationInput, {nullable:true})
-    last?: MateriaCategoryOrderByWithRelationInput;
+	@Field(() => MateriaCategoryOrderByWithRelationInput, { nullable: true })
+	last?: MateriaCategoryOrderByWithRelationInput;
 }

@@ -5,22 +5,21 @@ import { NutritionRowOrderByRelationAggregateInput } from '../nutrition-row/nutr
 
 @InputType()
 export class NutritionOrderByWithRelationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	code?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    code?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	name?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    name?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
-
-    @Field(() => NutritionRowOrderByRelationAggregateInput, {nullable:true})
-    usedRow?: NutritionRowOrderByRelationAggregateInput;
+	@Field(() => NutritionRowOrderByRelationAggregateInput, { nullable: true })
+	usedRow?: NutritionRowOrderByRelationAggregateInput;
 }

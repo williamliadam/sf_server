@@ -4,10 +4,9 @@ import { MealTemplateWhereInput } from './meal-template-where.input';
 
 @InputType()
 export class MealTemplateNullableRelationFilter {
+	@Field(() => MealTemplateWhereInput, { nullable: true })
+	is?: MealTemplateWhereInput;
 
-    @Field(() => MealTemplateWhereInput, {nullable:true})
-    is?: MealTemplateWhereInput;
-
-    @Field(() => MealTemplateWhereInput, {nullable:true})
-    isNot?: MealTemplateWhereInput;
+	@Field(() => MealTemplateWhereInput, { nullable: true })
+	isNot?: MealTemplateWhereInput;
 }

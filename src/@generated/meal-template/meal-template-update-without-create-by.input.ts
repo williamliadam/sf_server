@@ -6,16 +6,17 @@ import { DishTemplateUpdateManyWithoutUsedMealTemplatesNestedInput } from '../di
 
 @InputType()
 export class MealTemplateUpdateWithoutCreateByInput {
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => DishTemplateUpdateManyWithoutUsedMealTemplatesNestedInput, {nullable:true})
-    dishTemplates?: DishTemplateUpdateManyWithoutUsedMealTemplatesNestedInput;
+	@Field(() => DishTemplateUpdateManyWithoutUsedMealTemplatesNestedInput, {
+		nullable: true,
+	})
+	dishTemplates?: DishTemplateUpdateManyWithoutUsedMealTemplatesNestedInput;
 }

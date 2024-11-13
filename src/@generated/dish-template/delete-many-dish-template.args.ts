@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyDishTemplateArgs {
-
-    @Field(() => DishTemplateWhereInput, {nullable:true})
-    @Type(() => DishTemplateWhereInput)
-    where?: DishTemplateWhereInput;
+	@Field(() => DishTemplateWhereInput, { nullable: true })
+	@Type(() => DishTemplateWhereInput)
+	where?: DishTemplateWhereInput;
 }

@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneDishTemplateArgs {
-
-    @Field(() => DishTemplateCreateInput, {nullable:false})
-    @Type(() => DishTemplateCreateInput)
-    data!: DishTemplateCreateInput;
+	@Field(() => DishTemplateCreateInput, { nullable: false })
+	@Type(() => DishTemplateCreateInput)
+	data!: DishTemplateCreateInput;
 }

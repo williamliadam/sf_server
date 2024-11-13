@@ -6,12 +6,11 @@ import { DishPlanUpdateManyMutationInput } from './dish-plan-update-many-mutatio
 
 @InputType()
 export class DishPlanUpdateManyWithWhereWithoutRecipeInput {
+	@Field(() => DishPlanScalarWhereInput, { nullable: false })
+	@Type(() => DishPlanScalarWhereInput)
+	where!: DishPlanScalarWhereInput;
 
-    @Field(() => DishPlanScalarWhereInput, {nullable:false})
-    @Type(() => DishPlanScalarWhereInput)
-    where!: DishPlanScalarWhereInput;
-
-    @Field(() => DishPlanUpdateManyMutationInput, {nullable:false})
-    @Type(() => DishPlanUpdateManyMutationInput)
-    data!: DishPlanUpdateManyMutationInput;
+	@Field(() => DishPlanUpdateManyMutationInput, { nullable: false })
+	@Type(() => DishPlanUpdateManyMutationInput)
+	data!: DishPlanUpdateManyMutationInput;
 }

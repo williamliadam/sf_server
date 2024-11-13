@@ -6,16 +6,17 @@ import { UserUpdateOneRequiredWithoutMyMealTemplatesNestedInput } from '../user/
 
 @InputType()
 export class MealTemplateUpdateWithoutDishTemplatesInput {
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => UserUpdateOneRequiredWithoutMyMealTemplatesNestedInput, {nullable:true})
-    createBy?: UserUpdateOneRequiredWithoutMyMealTemplatesNestedInput;
+	@Field(() => UserUpdateOneRequiredWithoutMyMealTemplatesNestedInput, {
+		nullable: true,
+	})
+	createBy?: UserUpdateOneRequiredWithoutMyMealTemplatesNestedInput;
 }

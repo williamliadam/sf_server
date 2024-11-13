@@ -9,28 +9,31 @@ import { MateriaCategoryUncheckedUpdateManyWithoutLastNestedInput } from './mate
 
 @InputType()
 export class MateriaCategoryUncheckedUpdateInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
+	lastId?: NullableIntFieldUpdateOperationsInput;
 
-    @Field(() => NullableIntFieldUpdateOperationsInput, {nullable:true})
-    lastId?: NullableIntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => MaterialUncheckedUpdateManyWithoutCategoryNestedInput, {
+		nullable: true,
+	})
+	materials?: MaterialUncheckedUpdateManyWithoutCategoryNestedInput;
 
-    @Field(() => MaterialUncheckedUpdateManyWithoutCategoryNestedInput, {nullable:true})
-    materials?: MaterialUncheckedUpdateManyWithoutCategoryNestedInput;
-
-    @Field(() => MateriaCategoryUncheckedUpdateManyWithoutLastNestedInput, {nullable:true})
-    next?: MateriaCategoryUncheckedUpdateManyWithoutLastNestedInput;
+	@Field(() => MateriaCategoryUncheckedUpdateManyWithoutLastNestedInput, {
+		nullable: true,
+	})
+	next?: MateriaCategoryUncheckedUpdateManyWithoutLastNestedInput;
 }

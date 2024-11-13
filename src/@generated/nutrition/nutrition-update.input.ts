@@ -6,19 +6,20 @@ import { NutritionRowUpdateManyWithoutNutirtionNestedInput } from '../nutrition-
 
 @InputType()
 export class NutritionUpdateInput {
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => NutritionRowUpdateManyWithoutNutirtionNestedInput, {nullable:true})
-    usedRow?: NutritionRowUpdateManyWithoutNutirtionNestedInput;
+	@Field(() => NutritionRowUpdateManyWithoutNutirtionNestedInput, {
+		nullable: true,
+	})
+	usedRow?: NutritionRowUpdateManyWithoutNutirtionNestedInput;
 }

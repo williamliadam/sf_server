@@ -7,16 +7,15 @@ import { MaterialWhereInput } from './material-where.input';
 
 @InputType()
 export class MaterialUpsertWithoutIngredientsInput {
+	@Field(() => MaterialUpdateWithoutIngredientsInput, { nullable: false })
+	@Type(() => MaterialUpdateWithoutIngredientsInput)
+	update!: MaterialUpdateWithoutIngredientsInput;
 
-    @Field(() => MaterialUpdateWithoutIngredientsInput, {nullable:false})
-    @Type(() => MaterialUpdateWithoutIngredientsInput)
-    update!: MaterialUpdateWithoutIngredientsInput;
+	@Field(() => MaterialCreateWithoutIngredientsInput, { nullable: false })
+	@Type(() => MaterialCreateWithoutIngredientsInput)
+	create!: MaterialCreateWithoutIngredientsInput;
 
-    @Field(() => MaterialCreateWithoutIngredientsInput, {nullable:false})
-    @Type(() => MaterialCreateWithoutIngredientsInput)
-    create!: MaterialCreateWithoutIngredientsInput;
-
-    @Field(() => MaterialWhereInput, {nullable:true})
-    @Type(() => MaterialWhereInput)
-    where?: MaterialWhereInput;
+	@Field(() => MaterialWhereInput, { nullable: true })
+	@Type(() => MaterialWhereInput)
+	where?: MaterialWhereInput;
 }

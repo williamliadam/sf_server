@@ -6,12 +6,11 @@ import { MateriaCategoryUpdateWithoutMaterialsInput } from './materia-category-u
 
 @InputType()
 export class MateriaCategoryUpdateToOneWithWhereWithoutMaterialsInput {
+	@Field(() => MateriaCategoryWhereInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereInput)
+	where?: MateriaCategoryWhereInput;
 
-    @Field(() => MateriaCategoryWhereInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereInput)
-    where?: MateriaCategoryWhereInput;
-
-    @Field(() => MateriaCategoryUpdateWithoutMaterialsInput, {nullable:false})
-    @Type(() => MateriaCategoryUpdateWithoutMaterialsInput)
-    data!: MateriaCategoryUpdateWithoutMaterialsInput;
+	@Field(() => MateriaCategoryUpdateWithoutMaterialsInput, { nullable: false })
+	@Type(() => MateriaCategoryUpdateWithoutMaterialsInput)
+	data!: MateriaCategoryUpdateWithoutMaterialsInput;
 }

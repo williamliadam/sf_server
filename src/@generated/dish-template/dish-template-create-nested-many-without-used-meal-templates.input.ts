@@ -9,20 +9,25 @@ import { DishTemplateWhereUniqueInput } from './dish-template-where-unique.input
 
 @InputType()
 export class DishTemplateCreateNestedManyWithoutUsedMealTemplatesInput {
+	@Field(() => [DishTemplateCreateWithoutUsedMealTemplatesInput], {
+		nullable: true,
+	})
+	@Type(() => DishTemplateCreateWithoutUsedMealTemplatesInput)
+	create?: Array<DishTemplateCreateWithoutUsedMealTemplatesInput>;
 
-    @Field(() => [DishTemplateCreateWithoutUsedMealTemplatesInput], {nullable:true})
-    @Type(() => DishTemplateCreateWithoutUsedMealTemplatesInput)
-    create?: Array<DishTemplateCreateWithoutUsedMealTemplatesInput>;
+	@Field(() => [DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput], {
+		nullable: true,
+	})
+	@Type(() => DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput)
+	connectOrCreate?: Array<DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput>;
 
-    @Field(() => [DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput], {nullable:true})
-    @Type(() => DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput)
-    connectOrCreate?: Array<DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput>;
+	@Field(() => DishTemplateCreateManyUsedMealTemplatesInputEnvelope, {
+		nullable: true,
+	})
+	@Type(() => DishTemplateCreateManyUsedMealTemplatesInputEnvelope)
+	createMany?: DishTemplateCreateManyUsedMealTemplatesInputEnvelope;
 
-    @Field(() => DishTemplateCreateManyUsedMealTemplatesInputEnvelope, {nullable:true})
-    @Type(() => DishTemplateCreateManyUsedMealTemplatesInputEnvelope)
-    createMany?: DishTemplateCreateManyUsedMealTemplatesInputEnvelope;
-
-    @Field(() => [DishTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => DishTemplateWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [DishTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => DishTemplateWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
 }

@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneBodyDetailArgs {
-
-    @Field(() => BodyDetailCreateInput, {nullable:false})
-    @Type(() => BodyDetailCreateInput)
-    data!: BodyDetailCreateInput;
+	@Field(() => BodyDetailCreateInput, { nullable: false })
+	@Type(() => BodyDetailCreateInput)
+	data!: BodyDetailCreateInput;
 }

@@ -12,52 +12,51 @@ import { DishPlanOrderByRelationAggregateInput } from '../dish-plan/dish-plan-or
 
 @InputType()
 export class UserOrderByWithRelationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrderInput, { nullable: true })
+	email?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    email?: SortOrderInput;
+	@Field(() => SortOrderInput, { nullable: true })
+	name?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    name?: SortOrderInput;
+	@Field(() => SortOrder, { nullable: true })
+	password?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    password?: keyof typeof SortOrder;
+	@Field(() => SortOrderInput, { nullable: true })
+	phone?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    phone?: SortOrderInput;
+	@Field(() => SortOrderInput, { nullable: true })
+	wxId?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    wxId?: SortOrderInput;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	role?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    role?: keyof typeof SortOrder;
+	@Field(() => ProfileOrderByWithRelationInput, { nullable: true })
+	profile?: ProfileOrderByWithRelationInput;
 
-    @Field(() => ProfileOrderByWithRelationInput, {nullable:true})
-    profile?: ProfileOrderByWithRelationInput;
+	@Field(() => BodyDetailOrderByWithRelationInput, { nullable: true })
+	bodyDetail?: BodyDetailOrderByWithRelationInput;
 
-    @Field(() => BodyDetailOrderByWithRelationInput, {nullable:true})
-    bodyDetail?: BodyDetailOrderByWithRelationInput;
+	@Field(() => PostOrderByRelationAggregateInput, { nullable: true })
+	myPosts?: PostOrderByRelationAggregateInput;
 
-    @Field(() => PostOrderByRelationAggregateInput, {nullable:true})
-    myPosts?: PostOrderByRelationAggregateInput;
+	@Field(() => RecipeOrderByRelationAggregateInput, { nullable: true })
+	myRecipes?: RecipeOrderByRelationAggregateInput;
 
-    @Field(() => RecipeOrderByRelationAggregateInput, {nullable:true})
-    myRecipes?: RecipeOrderByRelationAggregateInput;
+	@Field(() => MealTemplateOrderByRelationAggregateInput, { nullable: true })
+	myMealTemplates?: MealTemplateOrderByRelationAggregateInput;
 
-    @Field(() => MealTemplateOrderByRelationAggregateInput, {nullable:true})
-    myMealTemplates?: MealTemplateOrderByRelationAggregateInput;
+	@Field(() => MealPlanOrderByRelationAggregateInput, { nullable: true })
+	myMealPlans?: MealPlanOrderByRelationAggregateInput;
 
-    @Field(() => MealPlanOrderByRelationAggregateInput, {nullable:true})
-    myMealPlans?: MealPlanOrderByRelationAggregateInput;
-
-    @Field(() => DishPlanOrderByRelationAggregateInput, {nullable:true})
-    chargeDishPlans?: DishPlanOrderByRelationAggregateInput;
+	@Field(() => DishPlanOrderByRelationAggregateInput, { nullable: true })
+	chargeDishPlans?: DishPlanOrderByRelationAggregateInput;
 }

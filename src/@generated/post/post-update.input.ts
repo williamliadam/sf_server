@@ -8,22 +8,21 @@ import { UserUpdateOneWithoutMyPostsNestedInput } from '../user/user-update-one-
 
 @InputType()
 export class PostUpdateInput {
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	title?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    title?: StringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	content?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    content?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => NullableBoolFieldUpdateOperationsInput, { nullable: true })
+	published?: NullableBoolFieldUpdateOperationsInput;
 
-    @Field(() => NullableBoolFieldUpdateOperationsInput, {nullable:true})
-    published?: NullableBoolFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => UserUpdateOneWithoutMyPostsNestedInput, {nullable:true})
-    author?: UserUpdateOneWithoutMyPostsNestedInput;
+	@Field(() => UserUpdateOneWithoutMyPostsNestedInput, { nullable: true })
+	author?: UserUpdateOneWithoutMyPostsNestedInput;
 }

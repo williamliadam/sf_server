@@ -8,16 +8,15 @@ import { ProfileWhereUniqueInput } from './profile-where-unique.input';
 
 @InputType()
 export class ProfileUncheckedCreateNestedOneWithoutUserInput {
+	@Field(() => ProfileCreateWithoutUserInput, { nullable: true })
+	@Type(() => ProfileCreateWithoutUserInput)
+	create?: ProfileCreateWithoutUserInput;
 
-    @Field(() => ProfileCreateWithoutUserInput, {nullable:true})
-    @Type(() => ProfileCreateWithoutUserInput)
-    create?: ProfileCreateWithoutUserInput;
+	@Field(() => ProfileCreateOrConnectWithoutUserInput, { nullable: true })
+	@Type(() => ProfileCreateOrConnectWithoutUserInput)
+	connectOrCreate?: ProfileCreateOrConnectWithoutUserInput;
 
-    @Field(() => ProfileCreateOrConnectWithoutUserInput, {nullable:true})
-    @Type(() => ProfileCreateOrConnectWithoutUserInput)
-    connectOrCreate?: ProfileCreateOrConnectWithoutUserInput;
-
-    @Field(() => ProfileWhereUniqueInput, {nullable:true})
-    @Type(() => ProfileWhereUniqueInput)
-    connect?: Prisma.AtLeast<ProfileWhereUniqueInput, 'id' | 'userId'>;
+	@Field(() => ProfileWhereUniqueInput, { nullable: true })
+	@Type(() => ProfileWhereUniqueInput)
+	connect?: Prisma.AtLeast<ProfileWhereUniqueInput, 'id' | 'userId'>;
 }

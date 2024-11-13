@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class FindUniqueNutritionArgs {
-
-    @Field(() => NutritionWhereUniqueInput, {nullable:false})
-    @Type(() => NutritionWhereUniqueInput)
-    where!: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => NutritionWhereUniqueInput, { nullable: false })
+	@Type(() => NutritionWhereUniqueInput)
+	where!: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
 }

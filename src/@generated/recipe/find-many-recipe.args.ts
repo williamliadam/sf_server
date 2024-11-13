@@ -10,23 +10,22 @@ import { RecipeScalarFieldEnum } from './recipe-scalar-field.enum';
 
 @ArgsType()
 export class FindManyRecipeArgs {
+	@Field(() => RecipeWhereInput, { nullable: true })
+	@Type(() => RecipeWhereInput)
+	where?: RecipeWhereInput;
 
-    @Field(() => RecipeWhereInput, {nullable:true})
-    @Type(() => RecipeWhereInput)
-    where?: RecipeWhereInput;
+	@Field(() => [RecipeOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<RecipeOrderByWithRelationInput>;
 
-    @Field(() => [RecipeOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<RecipeOrderByWithRelationInput>;
+	@Field(() => RecipeWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 
-    @Field(() => RecipeWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [RecipeScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof RecipeScalarFieldEnum>;
+	@Field(() => [RecipeScalarFieldEnum], { nullable: true })
+	distinct?: Array<keyof typeof RecipeScalarFieldEnum>;
 }

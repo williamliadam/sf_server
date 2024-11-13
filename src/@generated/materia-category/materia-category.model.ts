@@ -7,34 +7,33 @@ import { MateriaCategoryCount } from './materia-category-count.output';
 
 @ObjectType()
 export class MateriaCategory {
+	@Field(() => ID, { nullable: false })
+	id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Int, { nullable: true })
+	lastId!: number | null;
 
-    @Field(() => Int, {nullable:true})
-    lastId!: number | null;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+	@Field(() => [Material], { nullable: true })
+	materials?: Array<Material>;
 
-    @Field(() => [Material], {nullable:true})
-    materials?: Array<Material>;
+	@Field(() => [MateriaCategory], { nullable: true })
+	next?: Array<MateriaCategory>;
 
-    @Field(() => [MateriaCategory], {nullable:true})
-    next?: Array<MateriaCategory>;
+	@Field(() => MateriaCategory, { nullable: true })
+	last?: MateriaCategory | null;
 
-    @Field(() => MateriaCategory, {nullable:true})
-    last?: MateriaCategory | null;
-
-    @Field(() => MateriaCategoryCount, {nullable:false})
-    _count?: MateriaCategoryCount;
+	@Field(() => MateriaCategoryCount, { nullable: false })
+	_count?: MateriaCategoryCount;
 }

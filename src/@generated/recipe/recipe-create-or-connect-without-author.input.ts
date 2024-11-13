@@ -7,12 +7,11 @@ import { RecipeCreateWithoutAuthorInput } from './recipe-create-without-author.i
 
 @InputType()
 export class RecipeCreateOrConnectWithoutAuthorInput {
+	@Field(() => RecipeWhereUniqueInput, { nullable: false })
+	@Type(() => RecipeWhereUniqueInput)
+	where!: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 
-    @Field(() => RecipeWhereUniqueInput, {nullable:false})
-    @Type(() => RecipeWhereUniqueInput)
-    where!: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
-
-    @Field(() => RecipeCreateWithoutAuthorInput, {nullable:false})
-    @Type(() => RecipeCreateWithoutAuthorInput)
-    create!: RecipeCreateWithoutAuthorInput;
+	@Field(() => RecipeCreateWithoutAuthorInput, { nullable: false })
+	@Type(() => RecipeCreateWithoutAuthorInput)
+	create!: RecipeCreateWithoutAuthorInput;
 }

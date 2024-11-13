@@ -9,37 +9,36 @@ import { DishTemplateOrderByRelationAggregateInput } from '../dish-template/dish
 
 @InputType()
 export class RecipeOrderByWithRelationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	name?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    name?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	stars?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    stars?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	authorId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    authorId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => UserOrderByWithRelationInput, { nullable: true })
+	author?: UserOrderByWithRelationInput;
 
-    @Field(() => UserOrderByWithRelationInput, {nullable:true})
-    author?: UserOrderByWithRelationInput;
+	@Field(() => IngredientOrderByRelationAggregateInput, { nullable: true })
+	ingredients?: IngredientOrderByRelationAggregateInput;
 
-    @Field(() => IngredientOrderByRelationAggregateInput, {nullable:true})
-    ingredients?: IngredientOrderByRelationAggregateInput;
+	@Field(() => MethodOrderByRelationAggregateInput, { nullable: true })
+	methods?: MethodOrderByRelationAggregateInput;
 
-    @Field(() => MethodOrderByRelationAggregateInput, {nullable:true})
-    methods?: MethodOrderByRelationAggregateInput;
+	@Field(() => DishPlanOrderByRelationAggregateInput, { nullable: true })
+	usedDishPlans?: DishPlanOrderByRelationAggregateInput;
 
-    @Field(() => DishPlanOrderByRelationAggregateInput, {nullable:true})
-    usedDishPlans?: DishPlanOrderByRelationAggregateInput;
-
-    @Field(() => DishTemplateOrderByRelationAggregateInput, {nullable:true})
-    usedDishTemplates?: DishTemplateOrderByRelationAggregateInput;
+	@Field(() => DishTemplateOrderByRelationAggregateInput, { nullable: true })
+	usedDishTemplates?: DishTemplateOrderByRelationAggregateInput;
 }

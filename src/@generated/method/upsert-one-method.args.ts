@@ -8,16 +8,15 @@ import { MethodUpdateInput } from './method-update.input';
 
 @ArgsType()
 export class UpsertOneMethodArgs {
+	@Field(() => MethodWhereUniqueInput, { nullable: false })
+	@Type(() => MethodWhereUniqueInput)
+	where!: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MethodWhereUniqueInput, {nullable:false})
-    @Type(() => MethodWhereUniqueInput)
-    where!: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MethodCreateInput, { nullable: false })
+	@Type(() => MethodCreateInput)
+	create!: MethodCreateInput;
 
-    @Field(() => MethodCreateInput, {nullable:false})
-    @Type(() => MethodCreateInput)
-    create!: MethodCreateInput;
-
-    @Field(() => MethodUpdateInput, {nullable:false})
-    @Type(() => MethodUpdateInput)
-    update!: MethodUpdateInput;
+	@Field(() => MethodUpdateInput, { nullable: false })
+	@Type(() => MethodUpdateInput)
+	update!: MethodUpdateInput;
 }

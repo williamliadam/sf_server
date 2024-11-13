@@ -5,16 +5,15 @@ import { NutritionCreateNestedOneWithoutUsedRowInput } from '../nutrition/nutrit
 
 @InputType()
 export class NutritionRowCreateWithoutBelongMaterialInput {
+	@Field(() => Int, { nullable: false })
+	percent!: number;
 
-    @Field(() => Int, {nullable:false})
-    percent!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
-
-    @Field(() => NutritionCreateNestedOneWithoutUsedRowInput, {nullable:false})
-    nutirtion!: NutritionCreateNestedOneWithoutUsedRowInput;
+	@Field(() => NutritionCreateNestedOneWithoutUsedRowInput, { nullable: false })
+	nutirtion!: NutritionCreateNestedOneWithoutUsedRowInput;
 }

@@ -7,12 +7,11 @@ import { MealPlanWhereUniqueInput } from './meal-plan-where-unique.input';
 
 @ArgsType()
 export class UpdateOneMealPlanArgs {
+	@Field(() => MealPlanUpdateInput, { nullable: false })
+	@Type(() => MealPlanUpdateInput)
+	data!: MealPlanUpdateInput;
 
-    @Field(() => MealPlanUpdateInput, {nullable:false})
-    @Type(() => MealPlanUpdateInput)
-    data!: MealPlanUpdateInput;
-
-    @Field(() => MealPlanWhereUniqueInput, {nullable:false})
-    @Type(() => MealPlanWhereUniqueInput)
-    where!: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
+	@Field(() => MealPlanWhereUniqueInput, { nullable: false })
+	@Type(() => MealPlanWhereUniqueInput)
+	where!: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
 }

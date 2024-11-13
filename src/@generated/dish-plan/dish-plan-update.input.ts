@@ -8,22 +8,25 @@ import { MealPlanUpdateOneWithoutDishPlansNestedInput } from '../meal-plan/meal-
 
 @InputType()
 export class DishPlanUpdateInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	amount?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    amount?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => UserUpdateOneRequiredWithoutChargeDishPlansNestedInput, {
+		nullable: true,
+	})
+	planCooker?: UserUpdateOneRequiredWithoutChargeDishPlansNestedInput;
 
-    @Field(() => UserUpdateOneRequiredWithoutChargeDishPlansNestedInput, {nullable:true})
-    planCooker?: UserUpdateOneRequiredWithoutChargeDishPlansNestedInput;
+	@Field(() => RecipeUpdateOneRequiredWithoutUsedDishPlansNestedInput, {
+		nullable: true,
+	})
+	recipe?: RecipeUpdateOneRequiredWithoutUsedDishPlansNestedInput;
 
-    @Field(() => RecipeUpdateOneRequiredWithoutUsedDishPlansNestedInput, {nullable:true})
-    recipe?: RecipeUpdateOneRequiredWithoutUsedDishPlansNestedInput;
-
-    @Field(() => MealPlanUpdateOneWithoutDishPlansNestedInput, {nullable:true})
-    usedMealPlan?: MealPlanUpdateOneWithoutDishPlansNestedInput;
+	@Field(() => MealPlanUpdateOneWithoutDishPlansNestedInput, { nullable: true })
+	usedMealPlan?: MealPlanUpdateOneWithoutDishPlansNestedInput;
 }

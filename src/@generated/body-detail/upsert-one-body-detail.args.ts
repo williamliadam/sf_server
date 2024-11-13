@@ -8,16 +8,15 @@ import { BodyDetailUpdateInput } from './body-detail-update.input';
 
 @ArgsType()
 export class UpsertOneBodyDetailArgs {
+	@Field(() => BodyDetailWhereUniqueInput, { nullable: false })
+	@Type(() => BodyDetailWhereUniqueInput)
+	where!: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
 
-    @Field(() => BodyDetailWhereUniqueInput, {nullable:false})
-    @Type(() => BodyDetailWhereUniqueInput)
-    where!: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
+	@Field(() => BodyDetailCreateInput, { nullable: false })
+	@Type(() => BodyDetailCreateInput)
+	create!: BodyDetailCreateInput;
 
-    @Field(() => BodyDetailCreateInput, {nullable:false})
-    @Type(() => BodyDetailCreateInput)
-    create!: BodyDetailCreateInput;
-
-    @Field(() => BodyDetailUpdateInput, {nullable:false})
-    @Type(() => BodyDetailUpdateInput)
-    update!: BodyDetailUpdateInput;
+	@Field(() => BodyDetailUpdateInput, { nullable: false })
+	@Type(() => BodyDetailUpdateInput)
+	update!: BodyDetailUpdateInput;
 }

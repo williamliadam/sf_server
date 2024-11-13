@@ -8,16 +8,15 @@ import { NutritionWhereUniqueInput } from './nutrition-where-unique.input';
 
 @InputType()
 export class NutritionCreateNestedOneWithoutUsedRowInput {
+	@Field(() => NutritionCreateWithoutUsedRowInput, { nullable: true })
+	@Type(() => NutritionCreateWithoutUsedRowInput)
+	create?: NutritionCreateWithoutUsedRowInput;
 
-    @Field(() => NutritionCreateWithoutUsedRowInput, {nullable:true})
-    @Type(() => NutritionCreateWithoutUsedRowInput)
-    create?: NutritionCreateWithoutUsedRowInput;
+	@Field(() => NutritionCreateOrConnectWithoutUsedRowInput, { nullable: true })
+	@Type(() => NutritionCreateOrConnectWithoutUsedRowInput)
+	connectOrCreate?: NutritionCreateOrConnectWithoutUsedRowInput;
 
-    @Field(() => NutritionCreateOrConnectWithoutUsedRowInput, {nullable:true})
-    @Type(() => NutritionCreateOrConnectWithoutUsedRowInput)
-    connectOrCreate?: NutritionCreateOrConnectWithoutUsedRowInput;
-
-    @Field(() => NutritionWhereUniqueInput, {nullable:true})
-    @Type(() => NutritionWhereUniqueInput)
-    connect?: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => NutritionWhereUniqueInput, { nullable: true })
+	@Type(() => NutritionWhereUniqueInput)
+	connect?: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
 }

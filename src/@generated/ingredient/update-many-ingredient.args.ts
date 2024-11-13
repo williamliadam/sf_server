@@ -6,12 +6,11 @@ import { IngredientWhereInput } from './ingredient-where.input';
 
 @ArgsType()
 export class UpdateManyIngredientArgs {
+	@Field(() => IngredientUpdateManyMutationInput, { nullable: false })
+	@Type(() => IngredientUpdateManyMutationInput)
+	data!: IngredientUpdateManyMutationInput;
 
-    @Field(() => IngredientUpdateManyMutationInput, {nullable:false})
-    @Type(() => IngredientUpdateManyMutationInput)
-    data!: IngredientUpdateManyMutationInput;
-
-    @Field(() => IngredientWhereInput, {nullable:true})
-    @Type(() => IngredientWhereInput)
-    where?: IngredientWhereInput;
+	@Field(() => IngredientWhereInput, { nullable: true })
+	@Type(() => IngredientWhereInput)
+	where?: IngredientWhereInput;
 }

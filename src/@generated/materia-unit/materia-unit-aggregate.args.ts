@@ -14,35 +14,34 @@ import { MateriaUnitMaxAggregateInput } from './materia-unit-max-aggregate.input
 
 @ArgsType()
 export class MateriaUnitAggregateArgs {
+	@Field(() => MateriaUnitWhereInput, { nullable: true })
+	@Type(() => MateriaUnitWhereInput)
+	where?: MateriaUnitWhereInput;
 
-    @Field(() => MateriaUnitWhereInput, {nullable:true})
-    @Type(() => MateriaUnitWhereInput)
-    where?: MateriaUnitWhereInput;
+	@Field(() => [MateriaUnitOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<MateriaUnitOrderByWithRelationInput>;
 
-    @Field(() => [MateriaUnitOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<MateriaUnitOrderByWithRelationInput>;
+	@Field(() => MateriaUnitWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaUnitWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => MateriaUnitCountAggregateInput, { nullable: true })
+	_count?: MateriaUnitCountAggregateInput;
 
-    @Field(() => MateriaUnitCountAggregateInput, {nullable:true})
-    _count?: MateriaUnitCountAggregateInput;
+	@Field(() => MateriaUnitAvgAggregateInput, { nullable: true })
+	_avg?: MateriaUnitAvgAggregateInput;
 
-    @Field(() => MateriaUnitAvgAggregateInput, {nullable:true})
-    _avg?: MateriaUnitAvgAggregateInput;
+	@Field(() => MateriaUnitSumAggregateInput, { nullable: true })
+	_sum?: MateriaUnitSumAggregateInput;
 
-    @Field(() => MateriaUnitSumAggregateInput, {nullable:true})
-    _sum?: MateriaUnitSumAggregateInput;
+	@Field(() => MateriaUnitMinAggregateInput, { nullable: true })
+	_min?: MateriaUnitMinAggregateInput;
 
-    @Field(() => MateriaUnitMinAggregateInput, {nullable:true})
-    _min?: MateriaUnitMinAggregateInput;
-
-    @Field(() => MateriaUnitMaxAggregateInput, {nullable:true})
-    _max?: MateriaUnitMaxAggregateInput;
+	@Field(() => MateriaUnitMaxAggregateInput, { nullable: true })
+	_max?: MateriaUnitMaxAggregateInput;
 }

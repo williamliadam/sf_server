@@ -7,12 +7,11 @@ import { MealTemplateWhereUniqueInput } from './meal-template-where-unique.input
 
 @ArgsType()
 export class UpdateOneMealTemplateArgs {
+	@Field(() => MealTemplateUpdateInput, { nullable: false })
+	@Type(() => MealTemplateUpdateInput)
+	data!: MealTemplateUpdateInput;
 
-    @Field(() => MealTemplateUpdateInput, {nullable:false})
-    @Type(() => MealTemplateUpdateInput)
-    data!: MealTemplateUpdateInput;
-
-    @Field(() => MealTemplateWhereUniqueInput, {nullable:false})
-    @Type(() => MealTemplateWhereUniqueInput)
-    where!: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
+	@Field(() => MealTemplateWhereUniqueInput, { nullable: false })
+	@Type(() => MealTemplateWhereUniqueInput)
+	where!: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
 }

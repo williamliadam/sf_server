@@ -14,38 +14,39 @@ import { MateriaCategoryMaxAggregateInput } from './materia-category-max-aggrega
 
 @ArgsType()
 export class MateriaCategoryGroupByArgs {
+	@Field(() => MateriaCategoryWhereInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereInput)
+	where?: MateriaCategoryWhereInput;
 
-    @Field(() => MateriaCategoryWhereInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereInput)
-    where?: MateriaCategoryWhereInput;
+	@Field(() => [MateriaCategoryOrderByWithAggregationInput], { nullable: true })
+	orderBy?: Array<MateriaCategoryOrderByWithAggregationInput>;
 
-    @Field(() => [MateriaCategoryOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<MateriaCategoryOrderByWithAggregationInput>;
+	@Field(() => [MateriaCategoryScalarFieldEnum], { nullable: false })
+	by!: Array<keyof typeof MateriaCategoryScalarFieldEnum>;
 
-    @Field(() => [MateriaCategoryScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof MateriaCategoryScalarFieldEnum>;
+	@Field(() => MateriaCategoryScalarWhereWithAggregatesInput, {
+		nullable: true,
+	})
+	having?: MateriaCategoryScalarWhereWithAggregatesInput;
 
-    @Field(() => MateriaCategoryScalarWhereWithAggregatesInput, {nullable:true})
-    having?: MateriaCategoryScalarWhereWithAggregatesInput;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => MateriaCategoryCountAggregateInput, { nullable: true })
+	_count?: MateriaCategoryCountAggregateInput;
 
-    @Field(() => MateriaCategoryCountAggregateInput, {nullable:true})
-    _count?: MateriaCategoryCountAggregateInput;
+	@Field(() => MateriaCategoryAvgAggregateInput, { nullable: true })
+	_avg?: MateriaCategoryAvgAggregateInput;
 
-    @Field(() => MateriaCategoryAvgAggregateInput, {nullable:true})
-    _avg?: MateriaCategoryAvgAggregateInput;
+	@Field(() => MateriaCategorySumAggregateInput, { nullable: true })
+	_sum?: MateriaCategorySumAggregateInput;
 
-    @Field(() => MateriaCategorySumAggregateInput, {nullable:true})
-    _sum?: MateriaCategorySumAggregateInput;
+	@Field(() => MateriaCategoryMinAggregateInput, { nullable: true })
+	_min?: MateriaCategoryMinAggregateInput;
 
-    @Field(() => MateriaCategoryMinAggregateInput, {nullable:true})
-    _min?: MateriaCategoryMinAggregateInput;
-
-    @Field(() => MateriaCategoryMaxAggregateInput, {nullable:true})
-    _max?: MateriaCategoryMaxAggregateInput;
+	@Field(() => MateriaCategoryMaxAggregateInput, { nullable: true })
+	_max?: MateriaCategoryMaxAggregateInput;
 }

@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneMaterialArgs {
-
-    @Field(() => MaterialCreateInput, {nullable:false})
-    @Type(() => MaterialCreateInput)
-    data!: MaterialCreateInput;
+	@Field(() => MaterialCreateInput, { nullable: false })
+	@Type(() => MaterialCreateInput)
+	data!: MaterialCreateInput;
 }

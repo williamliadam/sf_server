@@ -7,12 +7,11 @@ import { MateriaCategoryWhereUniqueInput } from './materia-category-where-unique
 
 @ArgsType()
 export class UpdateOneMateriaCategoryArgs {
+	@Field(() => MateriaCategoryUpdateInput, { nullable: false })
+	@Type(() => MateriaCategoryUpdateInput)
+	data!: MateriaCategoryUpdateInput;
 
-    @Field(() => MateriaCategoryUpdateInput, {nullable:false})
-    @Type(() => MateriaCategoryUpdateInput)
-    data!: MateriaCategoryUpdateInput;
-
-    @Field(() => MateriaCategoryWhereUniqueInput, {nullable:false})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MateriaCategoryWhereUniqueInput, { nullable: false })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
 }

@@ -7,12 +7,11 @@ import { IngredientWhereUniqueInput } from './ingredient-where-unique.input';
 
 @ArgsType()
 export class UpdateOneIngredientArgs {
+	@Field(() => IngredientUpdateInput, { nullable: false })
+	@Type(() => IngredientUpdateInput)
+	data!: IngredientUpdateInput;
 
-    @Field(() => IngredientUpdateInput, {nullable:false})
-    @Type(() => IngredientUpdateInput)
-    data!: IngredientUpdateInput;
-
-    @Field(() => IngredientWhereUniqueInput, {nullable:false})
-    @Type(() => IngredientWhereUniqueInput)
-    where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
+	@Field(() => IngredientWhereUniqueInput, { nullable: false })
+	@Type(() => IngredientWhereUniqueInput)
+	where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
 }

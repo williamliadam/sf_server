@@ -9,40 +9,39 @@ import { MaterialSumOrderByAggregateInput } from './material-sum-order-by-aggreg
 
 @InputType()
 export class MaterialOrderByWithAggregationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	name?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    name?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	code?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    code?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	nickName?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    nickName?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	materiaCategoryId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    materiaCategoryId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => MaterialCountOrderByAggregateInput, { nullable: true })
+	_count?: MaterialCountOrderByAggregateInput;
 
-    @Field(() => MaterialCountOrderByAggregateInput, {nullable:true})
-    _count?: MaterialCountOrderByAggregateInput;
+	@Field(() => MaterialAvgOrderByAggregateInput, { nullable: true })
+	_avg?: MaterialAvgOrderByAggregateInput;
 
-    @Field(() => MaterialAvgOrderByAggregateInput, {nullable:true})
-    _avg?: MaterialAvgOrderByAggregateInput;
+	@Field(() => MaterialMaxOrderByAggregateInput, { nullable: true })
+	_max?: MaterialMaxOrderByAggregateInput;
 
-    @Field(() => MaterialMaxOrderByAggregateInput, {nullable:true})
-    _max?: MaterialMaxOrderByAggregateInput;
+	@Field(() => MaterialMinOrderByAggregateInput, { nullable: true })
+	_min?: MaterialMinOrderByAggregateInput;
 
-    @Field(() => MaterialMinOrderByAggregateInput, {nullable:true})
-    _min?: MaterialMinOrderByAggregateInput;
-
-    @Field(() => MaterialSumOrderByAggregateInput, {nullable:true})
-    _sum?: MaterialSumOrderByAggregateInput;
+	@Field(() => MaterialSumOrderByAggregateInput, { nullable: true })
+	_sum?: MaterialSumOrderByAggregateInput;
 }

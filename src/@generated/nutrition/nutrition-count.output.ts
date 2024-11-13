@@ -4,7 +4,6 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class NutritionCount {
-
-    @Field(() => Int, {nullable:false})
-    usedRow?: number;
+	@Field(() => Int, { nullable: false })
+	usedRow?: number;
 }

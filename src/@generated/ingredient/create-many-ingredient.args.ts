@@ -5,11 +5,10 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateManyIngredientArgs {
+	@Field(() => [IngredientCreateManyInput], { nullable: false })
+	@Type(() => IngredientCreateManyInput)
+	data!: Array<IngredientCreateManyInput>;
 
-    @Field(() => [IngredientCreateManyInput], {nullable:false})
-    @Type(() => IngredientCreateManyInput)
-    data!: Array<IngredientCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+	@Field(() => Boolean, { nullable: true })
+	skipDuplicates?: boolean;
 }

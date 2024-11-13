@@ -11,32 +11,35 @@ import { MealTemplateUpdateToOneWithWhereWithoutDishTemplatesInput } from './mea
 
 @InputType()
 export class MealTemplateUpdateOneWithoutDishTemplatesNestedInput {
+	@Field(() => MealTemplateCreateWithoutDishTemplatesInput, { nullable: true })
+	@Type(() => MealTemplateCreateWithoutDishTemplatesInput)
+	create?: MealTemplateCreateWithoutDishTemplatesInput;
 
-    @Field(() => MealTemplateCreateWithoutDishTemplatesInput, {nullable:true})
-    @Type(() => MealTemplateCreateWithoutDishTemplatesInput)
-    create?: MealTemplateCreateWithoutDishTemplatesInput;
+	@Field(() => MealTemplateCreateOrConnectWithoutDishTemplatesInput, {
+		nullable: true,
+	})
+	@Type(() => MealTemplateCreateOrConnectWithoutDishTemplatesInput)
+	connectOrCreate?: MealTemplateCreateOrConnectWithoutDishTemplatesInput;
 
-    @Field(() => MealTemplateCreateOrConnectWithoutDishTemplatesInput, {nullable:true})
-    @Type(() => MealTemplateCreateOrConnectWithoutDishTemplatesInput)
-    connectOrCreate?: MealTemplateCreateOrConnectWithoutDishTemplatesInput;
+	@Field(() => MealTemplateUpsertWithoutDishTemplatesInput, { nullable: true })
+	@Type(() => MealTemplateUpsertWithoutDishTemplatesInput)
+	upsert?: MealTemplateUpsertWithoutDishTemplatesInput;
 
-    @Field(() => MealTemplateUpsertWithoutDishTemplatesInput, {nullable:true})
-    @Type(() => MealTemplateUpsertWithoutDishTemplatesInput)
-    upsert?: MealTemplateUpsertWithoutDishTemplatesInput;
+	@Field(() => MealTemplateWhereInput, { nullable: true })
+	@Type(() => MealTemplateWhereInput)
+	disconnect?: MealTemplateWhereInput;
 
-    @Field(() => MealTemplateWhereInput, {nullable:true})
-    @Type(() => MealTemplateWhereInput)
-    disconnect?: MealTemplateWhereInput;
+	@Field(() => MealTemplateWhereInput, { nullable: true })
+	@Type(() => MealTemplateWhereInput)
+	delete?: MealTemplateWhereInput;
 
-    @Field(() => MealTemplateWhereInput, {nullable:true})
-    @Type(() => MealTemplateWhereInput)
-    delete?: MealTemplateWhereInput;
+	@Field(() => MealTemplateWhereUniqueInput, { nullable: true })
+	@Type(() => MealTemplateWhereUniqueInput)
+	connect?: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => MealTemplateWhereUniqueInput, {nullable:true})
-    @Type(() => MealTemplateWhereUniqueInput)
-    connect?: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
-
-    @Field(() => MealTemplateUpdateToOneWithWhereWithoutDishTemplatesInput, {nullable:true})
-    @Type(() => MealTemplateUpdateToOneWithWhereWithoutDishTemplatesInput)
-    update?: MealTemplateUpdateToOneWithWhereWithoutDishTemplatesInput;
+	@Field(() => MealTemplateUpdateToOneWithWhereWithoutDishTemplatesInput, {
+		nullable: true,
+	})
+	@Type(() => MealTemplateUpdateToOneWithWhereWithoutDishTemplatesInput)
+	update?: MealTemplateUpdateToOneWithWhereWithoutDishTemplatesInput;
 }

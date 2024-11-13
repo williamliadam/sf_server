@@ -7,25 +7,28 @@ import { IngredientUpdateManyWithoutMaterialNestedInput } from '../ingredient/in
 
 @InputType()
 export class MaterialUpdateWithoutCategoryInput {
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	nickName?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    nickName?: StringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => NutritionRowUpdateManyWithoutBelongMaterialNestedInput, {
+		nullable: true,
+	})
+	nutritionMatrix?: NutritionRowUpdateManyWithoutBelongMaterialNestedInput;
 
-    @Field(() => NutritionRowUpdateManyWithoutBelongMaterialNestedInput, {nullable:true})
-    nutritionMatrix?: NutritionRowUpdateManyWithoutBelongMaterialNestedInput;
-
-    @Field(() => IngredientUpdateManyWithoutMaterialNestedInput, {nullable:true})
-    ingredients?: IngredientUpdateManyWithoutMaterialNestedInput;
+	@Field(() => IngredientUpdateManyWithoutMaterialNestedInput, {
+		nullable: true,
+	})
+	ingredients?: IngredientUpdateManyWithoutMaterialNestedInput;
 }

@@ -6,25 +6,24 @@ import { DishTemplateOrderByRelationAggregateInput } from '../dish-template/dish
 
 @InputType()
 export class MealTemplateOrderByWithRelationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	name?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    name?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	userId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    userId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => UserOrderByWithRelationInput, { nullable: true })
+	createBy?: UserOrderByWithRelationInput;
 
-    @Field(() => UserOrderByWithRelationInput, {nullable:true})
-    createBy?: UserOrderByWithRelationInput;
-
-    @Field(() => DishTemplateOrderByRelationAggregateInput, {nullable:true})
-    dishTemplates?: DishTemplateOrderByRelationAggregateInput;
+	@Field(() => DishTemplateOrderByRelationAggregateInput, { nullable: true })
+	dishTemplates?: DishTemplateOrderByRelationAggregateInput;
 }

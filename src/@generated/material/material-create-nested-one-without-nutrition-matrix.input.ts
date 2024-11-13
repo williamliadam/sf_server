@@ -8,16 +8,17 @@ import { MaterialWhereUniqueInput } from './material-where-unique.input';
 
 @InputType()
 export class MaterialCreateNestedOneWithoutNutritionMatrixInput {
+	@Field(() => MaterialCreateWithoutNutritionMatrixInput, { nullable: true })
+	@Type(() => MaterialCreateWithoutNutritionMatrixInput)
+	create?: MaterialCreateWithoutNutritionMatrixInput;
 
-    @Field(() => MaterialCreateWithoutNutritionMatrixInput, {nullable:true})
-    @Type(() => MaterialCreateWithoutNutritionMatrixInput)
-    create?: MaterialCreateWithoutNutritionMatrixInput;
+	@Field(() => MaterialCreateOrConnectWithoutNutritionMatrixInput, {
+		nullable: true,
+	})
+	@Type(() => MaterialCreateOrConnectWithoutNutritionMatrixInput)
+	connectOrCreate?: MaterialCreateOrConnectWithoutNutritionMatrixInput;
 
-    @Field(() => MaterialCreateOrConnectWithoutNutritionMatrixInput, {nullable:true})
-    @Type(() => MaterialCreateOrConnectWithoutNutritionMatrixInput)
-    connectOrCreate?: MaterialCreateOrConnectWithoutNutritionMatrixInput;
-
-    @Field(() => MaterialWhereUniqueInput, {nullable:true})
-    @Type(() => MaterialWhereUniqueInput)
-    connect?: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MaterialWhereUniqueInput, { nullable: true })
+	@Type(() => MaterialWhereUniqueInput)
+	connect?: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
 }

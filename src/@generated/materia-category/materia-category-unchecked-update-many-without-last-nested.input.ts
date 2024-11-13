@@ -13,48 +13,61 @@ import { MateriaCategoryScalarWhereInput } from './materia-category-scalar-where
 
 @InputType()
 export class MateriaCategoryUncheckedUpdateManyWithoutLastNestedInput {
+	@Field(() => [MateriaCategoryCreateWithoutLastInput], { nullable: true })
+	@Type(() => MateriaCategoryCreateWithoutLastInput)
+	create?: Array<MateriaCategoryCreateWithoutLastInput>;
 
-    @Field(() => [MateriaCategoryCreateWithoutLastInput], {nullable:true})
-    @Type(() => MateriaCategoryCreateWithoutLastInput)
-    create?: Array<MateriaCategoryCreateWithoutLastInput>;
+	@Field(() => [MateriaCategoryCreateOrConnectWithoutLastInput], {
+		nullable: true,
+	})
+	@Type(() => MateriaCategoryCreateOrConnectWithoutLastInput)
+	connectOrCreate?: Array<MateriaCategoryCreateOrConnectWithoutLastInput>;
 
-    @Field(() => [MateriaCategoryCreateOrConnectWithoutLastInput], {nullable:true})
-    @Type(() => MateriaCategoryCreateOrConnectWithoutLastInput)
-    connectOrCreate?: Array<MateriaCategoryCreateOrConnectWithoutLastInput>;
+	@Field(() => [MateriaCategoryUpsertWithWhereUniqueWithoutLastInput], {
+		nullable: true,
+	})
+	@Type(() => MateriaCategoryUpsertWithWhereUniqueWithoutLastInput)
+	upsert?: Array<MateriaCategoryUpsertWithWhereUniqueWithoutLastInput>;
 
-    @Field(() => [MateriaCategoryUpsertWithWhereUniqueWithoutLastInput], {nullable:true})
-    @Type(() => MateriaCategoryUpsertWithWhereUniqueWithoutLastInput)
-    upsert?: Array<MateriaCategoryUpsertWithWhereUniqueWithoutLastInput>;
+	@Field(() => MateriaCategoryCreateManyLastInputEnvelope, { nullable: true })
+	@Type(() => MateriaCategoryCreateManyLastInputEnvelope)
+	createMany?: MateriaCategoryCreateManyLastInputEnvelope;
 
-    @Field(() => MateriaCategoryCreateManyLastInputEnvelope, {nullable:true})
-    @Type(() => MateriaCategoryCreateManyLastInputEnvelope)
-    createMany?: MateriaCategoryCreateManyLastInputEnvelope;
+	@Field(() => [MateriaCategoryWhereUniqueInput], { nullable: true })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	set?: Array<Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>>;
 
-    @Field(() => [MateriaCategoryWhereUniqueInput], {nullable:true})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MateriaCategoryWhereUniqueInput], { nullable: true })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	disconnect?: Array<
+		Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>
+	>;
 
-    @Field(() => [MateriaCategoryWhereUniqueInput], {nullable:true})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MateriaCategoryWhereUniqueInput], { nullable: true })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	delete?: Array<
+		Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>
+	>;
 
-    @Field(() => [MateriaCategoryWhereUniqueInput], {nullable:true})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MateriaCategoryWhereUniqueInput], { nullable: true })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	connect?: Array<
+		Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>
+	>;
 
-    @Field(() => [MateriaCategoryWhereUniqueInput], {nullable:true})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MateriaCategoryUpdateWithWhereUniqueWithoutLastInput], {
+		nullable: true,
+	})
+	@Type(() => MateriaCategoryUpdateWithWhereUniqueWithoutLastInput)
+	update?: Array<MateriaCategoryUpdateWithWhereUniqueWithoutLastInput>;
 
-    @Field(() => [MateriaCategoryUpdateWithWhereUniqueWithoutLastInput], {nullable:true})
-    @Type(() => MateriaCategoryUpdateWithWhereUniqueWithoutLastInput)
-    update?: Array<MateriaCategoryUpdateWithWhereUniqueWithoutLastInput>;
+	@Field(() => [MateriaCategoryUpdateManyWithWhereWithoutLastInput], {
+		nullable: true,
+	})
+	@Type(() => MateriaCategoryUpdateManyWithWhereWithoutLastInput)
+	updateMany?: Array<MateriaCategoryUpdateManyWithWhereWithoutLastInput>;
 
-    @Field(() => [MateriaCategoryUpdateManyWithWhereWithoutLastInput], {nullable:true})
-    @Type(() => MateriaCategoryUpdateManyWithWhereWithoutLastInput)
-    updateMany?: Array<MateriaCategoryUpdateManyWithWhereWithoutLastInput>;
-
-    @Field(() => [MateriaCategoryScalarWhereInput], {nullable:true})
-    @Type(() => MateriaCategoryScalarWhereInput)
-    deleteMany?: Array<MateriaCategoryScalarWhereInput>;
+	@Field(() => [MateriaCategoryScalarWhereInput], { nullable: true })
+	@Type(() => MateriaCategoryScalarWhereInput)
+	deleteMany?: Array<MateriaCategoryScalarWhereInput>;
 }

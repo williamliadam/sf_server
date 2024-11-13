@@ -8,34 +8,33 @@ import { Recipe } from '../recipe/recipe.model';
 
 @ObjectType()
 export class Ingredient {
+	@Field(() => ID, { nullable: false })
+	id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+	@Field(() => Int, { nullable: false })
+	materialId!: number;
 
-    @Field(() => Int, {nullable:false})
-    materialId!: number;
+	@Field(() => Int, { nullable: false })
+	amount!: number;
 
-    @Field(() => Int, {nullable:false})
-    amount!: number;
+	@Field(() => Int, { nullable: false })
+	materiaUnitId!: number;
 
-    @Field(() => Int, {nullable:false})
-    materiaUnitId!: number;
+	@Field(() => Int, { nullable: true })
+	recipeId!: number | null;
 
-    @Field(() => Int, {nullable:true})
-    recipeId!: number | null;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+	@Field(() => Material, { nullable: false })
+	material?: Material;
 
-    @Field(() => Material, {nullable:false})
-    material?: Material;
+	@Field(() => MateriaUnit, { nullable: false })
+	unit?: MateriaUnit;
 
-    @Field(() => MateriaUnit, {nullable:false})
-    unit?: MateriaUnit;
-
-    @Field(() => Recipe, {nullable:true})
-    usedRecipe?: Recipe | null;
+	@Field(() => Recipe, { nullable: true })
+	usedRecipe?: Recipe | null;
 }

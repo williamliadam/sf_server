@@ -10,23 +10,22 @@ import { MateriaUnitScalarFieldEnum } from './materia-unit-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstMateriaUnitArgs {
+	@Field(() => MateriaUnitWhereInput, { nullable: true })
+	@Type(() => MateriaUnitWhereInput)
+	where?: MateriaUnitWhereInput;
 
-    @Field(() => MateriaUnitWhereInput, {nullable:true})
-    @Type(() => MateriaUnitWhereInput)
-    where?: MateriaUnitWhereInput;
+	@Field(() => [MateriaUnitOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<MateriaUnitOrderByWithRelationInput>;
 
-    @Field(() => [MateriaUnitOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<MateriaUnitOrderByWithRelationInput>;
+	@Field(() => MateriaUnitWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaUnitWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [MateriaUnitScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof MateriaUnitScalarFieldEnum>;
+	@Field(() => [MateriaUnitScalarFieldEnum], { nullable: true })
+	distinct?: Array<keyof typeof MateriaUnitScalarFieldEnum>;
 }

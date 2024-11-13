@@ -8,16 +8,15 @@ import { RecipeWhereUniqueInput } from './recipe-where-unique.input';
 
 @InputType()
 export class RecipeCreateNestedOneWithoutIngredientsInput {
+	@Field(() => RecipeCreateWithoutIngredientsInput, { nullable: true })
+	@Type(() => RecipeCreateWithoutIngredientsInput)
+	create?: RecipeCreateWithoutIngredientsInput;
 
-    @Field(() => RecipeCreateWithoutIngredientsInput, {nullable:true})
-    @Type(() => RecipeCreateWithoutIngredientsInput)
-    create?: RecipeCreateWithoutIngredientsInput;
+	@Field(() => RecipeCreateOrConnectWithoutIngredientsInput, { nullable: true })
+	@Type(() => RecipeCreateOrConnectWithoutIngredientsInput)
+	connectOrCreate?: RecipeCreateOrConnectWithoutIngredientsInput;
 
-    @Field(() => RecipeCreateOrConnectWithoutIngredientsInput, {nullable:true})
-    @Type(() => RecipeCreateOrConnectWithoutIngredientsInput)
-    connectOrCreate?: RecipeCreateOrConnectWithoutIngredientsInput;
-
-    @Field(() => RecipeWhereUniqueInput, {nullable:true})
-    @Type(() => RecipeWhereUniqueInput)
-    connect?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
+	@Field(() => RecipeWhereUniqueInput, { nullable: true })
+	@Type(() => RecipeWhereUniqueInput)
+	connect?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 }

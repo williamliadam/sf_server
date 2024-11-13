@@ -10,37 +10,36 @@ import { DishTemplateSumOrderByAggregateInput } from './dish-template-sum-order-
 
 @InputType()
 export class DishTemplateOrderByWithAggregationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	recipeId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    recipeId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	amount?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    amount?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => SortOrderInput, { nullable: true })
+	mealTemplateId?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    mealTemplateId?: SortOrderInput;
+	@Field(() => DishTemplateCountOrderByAggregateInput, { nullable: true })
+	_count?: DishTemplateCountOrderByAggregateInput;
 
-    @Field(() => DishTemplateCountOrderByAggregateInput, {nullable:true})
-    _count?: DishTemplateCountOrderByAggregateInput;
+	@Field(() => DishTemplateAvgOrderByAggregateInput, { nullable: true })
+	_avg?: DishTemplateAvgOrderByAggregateInput;
 
-    @Field(() => DishTemplateAvgOrderByAggregateInput, {nullable:true})
-    _avg?: DishTemplateAvgOrderByAggregateInput;
+	@Field(() => DishTemplateMaxOrderByAggregateInput, { nullable: true })
+	_max?: DishTemplateMaxOrderByAggregateInput;
 
-    @Field(() => DishTemplateMaxOrderByAggregateInput, {nullable:true})
-    _max?: DishTemplateMaxOrderByAggregateInput;
+	@Field(() => DishTemplateMinOrderByAggregateInput, { nullable: true })
+	_min?: DishTemplateMinOrderByAggregateInput;
 
-    @Field(() => DishTemplateMinOrderByAggregateInput, {nullable:true})
-    _min?: DishTemplateMinOrderByAggregateInput;
-
-    @Field(() => DishTemplateSumOrderByAggregateInput, {nullable:true})
-    _sum?: DishTemplateSumOrderByAggregateInput;
+	@Field(() => DishTemplateSumOrderByAggregateInput, { nullable: true })
+	_sum?: DishTemplateSumOrderByAggregateInput;
 }

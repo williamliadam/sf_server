@@ -4,10 +4,9 @@ import { MateriaCategoryWhereInput } from './materia-category-where.input';
 
 @InputType()
 export class MateriaCategoryNullableRelationFilter {
+	@Field(() => MateriaCategoryWhereInput, { nullable: true })
+	is?: MateriaCategoryWhereInput;
 
-    @Field(() => MateriaCategoryWhereInput, {nullable:true})
-    is?: MateriaCategoryWhereInput;
-
-    @Field(() => MateriaCategoryWhereInput, {nullable:true})
-    isNot?: MateriaCategoryWhereInput;
+	@Field(() => MateriaCategoryWhereInput, { nullable: true })
+	isNot?: MateriaCategoryWhereInput;
 }

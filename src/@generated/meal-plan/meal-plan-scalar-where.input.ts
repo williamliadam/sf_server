@@ -7,31 +7,30 @@ import { EnumMealTypeFilter } from '../prisma/enum-meal-type-filter.input';
 
 @InputType()
 export class MealPlanScalarWhereInput {
+	@Field(() => [MealPlanScalarWhereInput], { nullable: true })
+	AND?: Array<MealPlanScalarWhereInput>;
 
-    @Field(() => [MealPlanScalarWhereInput], {nullable:true})
-    AND?: Array<MealPlanScalarWhereInput>;
+	@Field(() => [MealPlanScalarWhereInput], { nullable: true })
+	OR?: Array<MealPlanScalarWhereInput>;
 
-    @Field(() => [MealPlanScalarWhereInput], {nullable:true})
-    OR?: Array<MealPlanScalarWhereInput>;
+	@Field(() => [MealPlanScalarWhereInput], { nullable: true })
+	NOT?: Array<MealPlanScalarWhereInput>;
 
-    @Field(() => [MealPlanScalarWhereInput], {nullable:true})
-    NOT?: Array<MealPlanScalarWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => DateTimeNullableFilter, { nullable: true })
+	planTime?: DateTimeNullableFilter;
 
-    @Field(() => DateTimeNullableFilter, {nullable:true})
-    planTime?: DateTimeNullableFilter;
+	@Field(() => IntFilter, { nullable: true })
+	userId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    userId?: IntFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
-
-    @Field(() => EnumMealTypeFilter, {nullable:true})
-    type?: EnumMealTypeFilter;
+	@Field(() => EnumMealTypeFilter, { nullable: true })
+	type?: EnumMealTypeFilter;
 }

@@ -7,25 +7,24 @@ import { NestedEnumMealTypeFilter } from './nested-enum-meal-type-filter.input';
 
 @InputType()
 export class EnumMealTypeWithAggregatesFilter {
+	@Field(() => MealType, { nullable: true })
+	equals?: keyof typeof MealType;
 
-    @Field(() => MealType, {nullable:true})
-    equals?: keyof typeof MealType;
+	@Field(() => [MealType], { nullable: true })
+	in?: Array<keyof typeof MealType>;
 
-    @Field(() => [MealType], {nullable:true})
-    in?: Array<keyof typeof MealType>;
+	@Field(() => [MealType], { nullable: true })
+	notIn?: Array<keyof typeof MealType>;
 
-    @Field(() => [MealType], {nullable:true})
-    notIn?: Array<keyof typeof MealType>;
+	@Field(() => NestedEnumMealTypeWithAggregatesFilter, { nullable: true })
+	not?: NestedEnumMealTypeWithAggregatesFilter;
 
-    @Field(() => NestedEnumMealTypeWithAggregatesFilter, {nullable:true})
-    not?: NestedEnumMealTypeWithAggregatesFilter;
+	@Field(() => NestedIntFilter, { nullable: true })
+	_count?: NestedIntFilter;
 
-    @Field(() => NestedIntFilter, {nullable:true})
-    _count?: NestedIntFilter;
+	@Field(() => NestedEnumMealTypeFilter, { nullable: true })
+	_min?: NestedEnumMealTypeFilter;
 
-    @Field(() => NestedEnumMealTypeFilter, {nullable:true})
-    _min?: NestedEnumMealTypeFilter;
-
-    @Field(() => NestedEnumMealTypeFilter, {nullable:true})
-    _max?: NestedEnumMealTypeFilter;
+	@Field(() => NestedEnumMealTypeFilter, { nullable: true })
+	_max?: NestedEnumMealTypeFilter;
 }

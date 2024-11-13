@@ -9,43 +9,42 @@ import { RecipeNullableRelationFilter } from '../recipe/recipe-nullable-relation
 
 @InputType()
 export class IngredientWhereInput {
+	@Field(() => [IngredientWhereInput], { nullable: true })
+	AND?: Array<IngredientWhereInput>;
 
-    @Field(() => [IngredientWhereInput], {nullable:true})
-    AND?: Array<IngredientWhereInput>;
+	@Field(() => [IngredientWhereInput], { nullable: true })
+	OR?: Array<IngredientWhereInput>;
 
-    @Field(() => [IngredientWhereInput], {nullable:true})
-    OR?: Array<IngredientWhereInput>;
+	@Field(() => [IngredientWhereInput], { nullable: true })
+	NOT?: Array<IngredientWhereInput>;
 
-    @Field(() => [IngredientWhereInput], {nullable:true})
-    NOT?: Array<IngredientWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	materialId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    materialId?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	amount?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    amount?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	materiaUnitId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    materiaUnitId?: IntFilter;
+	@Field(() => IntNullableFilter, { nullable: true })
+	recipeId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    recipeId?: IntNullableFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => MaterialRelationFilter, { nullable: true })
+	material?: MaterialRelationFilter;
 
-    @Field(() => MaterialRelationFilter, {nullable:true})
-    material?: MaterialRelationFilter;
+	@Field(() => MateriaUnitRelationFilter, { nullable: true })
+	unit?: MateriaUnitRelationFilter;
 
-    @Field(() => MateriaUnitRelationFilter, {nullable:true})
-    unit?: MateriaUnitRelationFilter;
-
-    @Field(() => RecipeNullableRelationFilter, {nullable:true})
-    usedRecipe?: RecipeNullableRelationFilter;
+	@Field(() => RecipeNullableRelationFilter, { nullable: true })
+	usedRecipe?: RecipeNullableRelationFilter;
 }

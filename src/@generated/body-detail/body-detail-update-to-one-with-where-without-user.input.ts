@@ -6,12 +6,11 @@ import { BodyDetailUpdateWithoutUserInput } from './body-detail-update-without-u
 
 @InputType()
 export class BodyDetailUpdateToOneWithWhereWithoutUserInput {
+	@Field(() => BodyDetailWhereInput, { nullable: true })
+	@Type(() => BodyDetailWhereInput)
+	where?: BodyDetailWhereInput;
 
-    @Field(() => BodyDetailWhereInput, {nullable:true})
-    @Type(() => BodyDetailWhereInput)
-    where?: BodyDetailWhereInput;
-
-    @Field(() => BodyDetailUpdateWithoutUserInput, {nullable:false})
-    @Type(() => BodyDetailUpdateWithoutUserInput)
-    data!: BodyDetailUpdateWithoutUserInput;
+	@Field(() => BodyDetailUpdateWithoutUserInput, { nullable: false })
+	@Type(() => BodyDetailUpdateWithoutUserInput)
+	data!: BodyDetailUpdateWithoutUserInput;
 }

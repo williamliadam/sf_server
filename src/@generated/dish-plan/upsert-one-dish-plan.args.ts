@@ -8,16 +8,15 @@ import { DishPlanUpdateInput } from './dish-plan-update.input';
 
 @ArgsType()
 export class UpsertOneDishPlanArgs {
+	@Field(() => DishPlanWhereUniqueInput, { nullable: false })
+	@Type(() => DishPlanWhereUniqueInput)
+	where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
 
-    @Field(() => DishPlanWhereUniqueInput, {nullable:false})
-    @Type(() => DishPlanWhereUniqueInput)
-    where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
+	@Field(() => DishPlanCreateInput, { nullable: false })
+	@Type(() => DishPlanCreateInput)
+	create!: DishPlanCreateInput;
 
-    @Field(() => DishPlanCreateInput, {nullable:false})
-    @Type(() => DishPlanCreateInput)
-    create!: DishPlanCreateInput;
-
-    @Field(() => DishPlanUpdateInput, {nullable:false})
-    @Type(() => DishPlanUpdateInput)
-    update!: DishPlanUpdateInput;
+	@Field(() => DishPlanUpdateInput, { nullable: false })
+	@Type(() => DishPlanUpdateInput)
+	update!: DishPlanUpdateInput;
 }

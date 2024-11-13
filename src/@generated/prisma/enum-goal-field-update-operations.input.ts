@@ -4,7 +4,6 @@ import { Goal } from './goal.enum';
 
 @InputType()
 export class EnumGoalFieldUpdateOperationsInput {
-
-    @Field(() => Goal, {nullable:true})
-    set?: keyof typeof Goal;
+	@Field(() => Goal, { nullable: true })
+	set?: keyof typeof Goal;
 }

@@ -7,12 +7,11 @@ import { RecipeCreateWithoutMethodsInput } from './recipe-create-without-methods
 
 @InputType()
 export class RecipeCreateOrConnectWithoutMethodsInput {
+	@Field(() => RecipeWhereUniqueInput, { nullable: false })
+	@Type(() => RecipeWhereUniqueInput)
+	where!: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 
-    @Field(() => RecipeWhereUniqueInput, {nullable:false})
-    @Type(() => RecipeWhereUniqueInput)
-    where!: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
-
-    @Field(() => RecipeCreateWithoutMethodsInput, {nullable:false})
-    @Type(() => RecipeCreateWithoutMethodsInput)
-    create!: RecipeCreateWithoutMethodsInput;
+	@Field(() => RecipeCreateWithoutMethodsInput, { nullable: false })
+	@Type(() => RecipeCreateWithoutMethodsInput)
+	create!: RecipeCreateWithoutMethodsInput;
 }

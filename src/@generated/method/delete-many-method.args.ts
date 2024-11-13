@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyMethodArgs {
-
-    @Field(() => MethodWhereInput, {nullable:true})
-    @Type(() => MethodWhereInput)
-    where?: MethodWhereInput;
+	@Field(() => MethodWhereInput, { nullable: true })
+	@Type(() => MethodWhereInput)
+	where?: MethodWhereInput;
 }

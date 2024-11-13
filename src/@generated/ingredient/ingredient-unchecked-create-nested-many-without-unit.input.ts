@@ -9,20 +9,19 @@ import { IngredientWhereUniqueInput } from './ingredient-where-unique.input';
 
 @InputType()
 export class IngredientUncheckedCreateNestedManyWithoutUnitInput {
+	@Field(() => [IngredientCreateWithoutUnitInput], { nullable: true })
+	@Type(() => IngredientCreateWithoutUnitInput)
+	create?: Array<IngredientCreateWithoutUnitInput>;
 
-    @Field(() => [IngredientCreateWithoutUnitInput], {nullable:true})
-    @Type(() => IngredientCreateWithoutUnitInput)
-    create?: Array<IngredientCreateWithoutUnitInput>;
+	@Field(() => [IngredientCreateOrConnectWithoutUnitInput], { nullable: true })
+	@Type(() => IngredientCreateOrConnectWithoutUnitInput)
+	connectOrCreate?: Array<IngredientCreateOrConnectWithoutUnitInput>;
 
-    @Field(() => [IngredientCreateOrConnectWithoutUnitInput], {nullable:true})
-    @Type(() => IngredientCreateOrConnectWithoutUnitInput)
-    connectOrCreate?: Array<IngredientCreateOrConnectWithoutUnitInput>;
+	@Field(() => IngredientCreateManyUnitInputEnvelope, { nullable: true })
+	@Type(() => IngredientCreateManyUnitInputEnvelope)
+	createMany?: IngredientCreateManyUnitInputEnvelope;
 
-    @Field(() => IngredientCreateManyUnitInputEnvelope, {nullable:true})
-    @Type(() => IngredientCreateManyUnitInputEnvelope)
-    createMany?: IngredientCreateManyUnitInputEnvelope;
-
-    @Field(() => [IngredientWhereUniqueInput], {nullable:true})
-    @Type(() => IngredientWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>>;
+	@Field(() => [IngredientWhereUniqueInput], { nullable: true })
+	@Type(() => IngredientWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>>;
 }

@@ -4,10 +4,9 @@ import { MateriaUnitWhereInput } from './materia-unit-where.input';
 
 @InputType()
 export class MateriaUnitRelationFilter {
+	@Field(() => MateriaUnitWhereInput, { nullable: true })
+	is?: MateriaUnitWhereInput;
 
-    @Field(() => MateriaUnitWhereInput, {nullable:true})
-    is?: MateriaUnitWhereInput;
-
-    @Field(() => MateriaUnitWhereInput, {nullable:true})
-    isNot?: MateriaUnitWhereInput;
+	@Field(() => MateriaUnitWhereInput, { nullable: true })
+	isNot?: MateriaUnitWhereInput;
 }

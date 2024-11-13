@@ -14,38 +14,37 @@ import { DishTemplateMaxAggregateInput } from './dish-template-max-aggregate.inp
 
 @ArgsType()
 export class DishTemplateGroupByArgs {
+	@Field(() => DishTemplateWhereInput, { nullable: true })
+	@Type(() => DishTemplateWhereInput)
+	where?: DishTemplateWhereInput;
 
-    @Field(() => DishTemplateWhereInput, {nullable:true})
-    @Type(() => DishTemplateWhereInput)
-    where?: DishTemplateWhereInput;
+	@Field(() => [DishTemplateOrderByWithAggregationInput], { nullable: true })
+	orderBy?: Array<DishTemplateOrderByWithAggregationInput>;
 
-    @Field(() => [DishTemplateOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<DishTemplateOrderByWithAggregationInput>;
+	@Field(() => [DishTemplateScalarFieldEnum], { nullable: false })
+	by!: Array<keyof typeof DishTemplateScalarFieldEnum>;
 
-    @Field(() => [DishTemplateScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof DishTemplateScalarFieldEnum>;
+	@Field(() => DishTemplateScalarWhereWithAggregatesInput, { nullable: true })
+	having?: DishTemplateScalarWhereWithAggregatesInput;
 
-    @Field(() => DishTemplateScalarWhereWithAggregatesInput, {nullable:true})
-    having?: DishTemplateScalarWhereWithAggregatesInput;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => DishTemplateCountAggregateInput, { nullable: true })
+	_count?: DishTemplateCountAggregateInput;
 
-    @Field(() => DishTemplateCountAggregateInput, {nullable:true})
-    _count?: DishTemplateCountAggregateInput;
+	@Field(() => DishTemplateAvgAggregateInput, { nullable: true })
+	_avg?: DishTemplateAvgAggregateInput;
 
-    @Field(() => DishTemplateAvgAggregateInput, {nullable:true})
-    _avg?: DishTemplateAvgAggregateInput;
+	@Field(() => DishTemplateSumAggregateInput, { nullable: true })
+	_sum?: DishTemplateSumAggregateInput;
 
-    @Field(() => DishTemplateSumAggregateInput, {nullable:true})
-    _sum?: DishTemplateSumAggregateInput;
+	@Field(() => DishTemplateMinAggregateInput, { nullable: true })
+	_min?: DishTemplateMinAggregateInput;
 
-    @Field(() => DishTemplateMinAggregateInput, {nullable:true})
-    _min?: DishTemplateMinAggregateInput;
-
-    @Field(() => DishTemplateMaxAggregateInput, {nullable:true})
-    _max?: DishTemplateMaxAggregateInput;
+	@Field(() => DishTemplateMaxAggregateInput, { nullable: true })
+	_max?: DishTemplateMaxAggregateInput;
 }

@@ -3,10 +3,9 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class MethodSumAggregateInput {
+	@Field(() => Boolean, { nullable: true })
+	id?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    id?: true;
-
-    @Field(() => Boolean, {nullable:true})
-    recipeId?: true;
+	@Field(() => Boolean, { nullable: true })
+	recipeId?: true;
 }

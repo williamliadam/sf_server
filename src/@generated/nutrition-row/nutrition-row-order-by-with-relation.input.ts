@@ -6,28 +6,27 @@ import { MaterialOrderByWithRelationInput } from '../material/material-order-by-
 
 @InputType()
 export class NutritionRowOrderByWithRelationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	nutirtionId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    nutirtionId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	percent?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    percent?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	belongToId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    belongToId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => NutritionOrderByWithRelationInput, { nullable: true })
+	nutirtion?: NutritionOrderByWithRelationInput;
 
-    @Field(() => NutritionOrderByWithRelationInput, {nullable:true})
-    nutirtion?: NutritionOrderByWithRelationInput;
-
-    @Field(() => MaterialOrderByWithRelationInput, {nullable:true})
-    belongMaterial?: MaterialOrderByWithRelationInput;
+	@Field(() => MaterialOrderByWithRelationInput, { nullable: true })
+	belongMaterial?: MaterialOrderByWithRelationInput;
 }

@@ -7,31 +7,30 @@ import { DateTimeFilter } from '../prisma/date-time-filter.input';
 
 @InputType()
 export class MateriaCategoryScalarWhereInput {
+	@Field(() => [MateriaCategoryScalarWhereInput], { nullable: true })
+	AND?: Array<MateriaCategoryScalarWhereInput>;
 
-    @Field(() => [MateriaCategoryScalarWhereInput], {nullable:true})
-    AND?: Array<MateriaCategoryScalarWhereInput>;
+	@Field(() => [MateriaCategoryScalarWhereInput], { nullable: true })
+	OR?: Array<MateriaCategoryScalarWhereInput>;
 
-    @Field(() => [MateriaCategoryScalarWhereInput], {nullable:true})
-    OR?: Array<MateriaCategoryScalarWhereInput>;
+	@Field(() => [MateriaCategoryScalarWhereInput], { nullable: true })
+	NOT?: Array<MateriaCategoryScalarWhereInput>;
 
-    @Field(() => [MateriaCategoryScalarWhereInput], {nullable:true})
-    NOT?: Array<MateriaCategoryScalarWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => StringFilter, { nullable: true })
+	code?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    code?: StringFilter;
+	@Field(() => StringFilter, { nullable: true })
+	name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+	@Field(() => IntNullableFilter, { nullable: true })
+	lastId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    lastId?: IntNullableFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
-
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 }

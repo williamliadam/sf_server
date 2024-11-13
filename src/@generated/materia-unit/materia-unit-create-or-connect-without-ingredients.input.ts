@@ -7,12 +7,11 @@ import { MateriaUnitCreateWithoutIngredientsInput } from './materia-unit-create-
 
 @InputType()
 export class MateriaUnitCreateOrConnectWithoutIngredientsInput {
+	@Field(() => MateriaUnitWhereUniqueInput, { nullable: false })
+	@Type(() => MateriaUnitWhereUniqueInput)
+	where!: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaUnitWhereUniqueInput, {nullable:false})
-    @Type(() => MateriaUnitWhereUniqueInput)
-    where!: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MateriaUnitCreateWithoutIngredientsInput, {nullable:false})
-    @Type(() => MateriaUnitCreateWithoutIngredientsInput)
-    create!: MateriaUnitCreateWithoutIngredientsInput;
+	@Field(() => MateriaUnitCreateWithoutIngredientsInput, { nullable: false })
+	@Type(() => MateriaUnitCreateWithoutIngredientsInput)
+	create!: MateriaUnitCreateWithoutIngredientsInput;
 }

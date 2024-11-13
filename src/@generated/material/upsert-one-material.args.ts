@@ -8,16 +8,15 @@ import { MaterialUpdateInput } from './material-update.input';
 
 @ArgsType()
 export class UpsertOneMaterialArgs {
+	@Field(() => MaterialWhereUniqueInput, { nullable: false })
+	@Type(() => MaterialWhereUniqueInput)
+	where!: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MaterialWhereUniqueInput, {nullable:false})
-    @Type(() => MaterialWhereUniqueInput)
-    where!: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MaterialCreateInput, { nullable: false })
+	@Type(() => MaterialCreateInput)
+	create!: MaterialCreateInput;
 
-    @Field(() => MaterialCreateInput, {nullable:false})
-    @Type(() => MaterialCreateInput)
-    create!: MaterialCreateInput;
-
-    @Field(() => MaterialUpdateInput, {nullable:false})
-    @Type(() => MaterialUpdateInput)
-    update!: MaterialUpdateInput;
+	@Field(() => MaterialUpdateInput, { nullable: false })
+	@Type(() => MaterialUpdateInput)
+	update!: MaterialUpdateInput;
 }

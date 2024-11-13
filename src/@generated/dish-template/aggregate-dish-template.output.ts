@@ -8,19 +8,18 @@ import { DishTemplateMaxAggregate } from './dish-template-max-aggregate.output';
 
 @ObjectType()
 export class AggregateDishTemplate {
+	@Field(() => DishTemplateCountAggregate, { nullable: true })
+	_count?: DishTemplateCountAggregate;
 
-    @Field(() => DishTemplateCountAggregate, {nullable:true})
-    _count?: DishTemplateCountAggregate;
+	@Field(() => DishTemplateAvgAggregate, { nullable: true })
+	_avg?: DishTemplateAvgAggregate;
 
-    @Field(() => DishTemplateAvgAggregate, {nullable:true})
-    _avg?: DishTemplateAvgAggregate;
+	@Field(() => DishTemplateSumAggregate, { nullable: true })
+	_sum?: DishTemplateSumAggregate;
 
-    @Field(() => DishTemplateSumAggregate, {nullable:true})
-    _sum?: DishTemplateSumAggregate;
+	@Field(() => DishTemplateMinAggregate, { nullable: true })
+	_min?: DishTemplateMinAggregate;
 
-    @Field(() => DishTemplateMinAggregate, {nullable:true})
-    _min?: DishTemplateMinAggregate;
-
-    @Field(() => DishTemplateMaxAggregate, {nullable:true})
-    _max?: DishTemplateMaxAggregate;
+	@Field(() => DishTemplateMaxAggregate, { nullable: true })
+	_max?: DishTemplateMaxAggregate;
 }

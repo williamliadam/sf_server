@@ -7,31 +7,30 @@ import { EnumMealTypeWithAggregatesFilter } from '../prisma/enum-meal-type-with-
 
 @InputType()
 export class MealPlanScalarWhereWithAggregatesInput {
+	@Field(() => [MealPlanScalarWhereWithAggregatesInput], { nullable: true })
+	AND?: Array<MealPlanScalarWhereWithAggregatesInput>;
 
-    @Field(() => [MealPlanScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<MealPlanScalarWhereWithAggregatesInput>;
+	@Field(() => [MealPlanScalarWhereWithAggregatesInput], { nullable: true })
+	OR?: Array<MealPlanScalarWhereWithAggregatesInput>;
 
-    @Field(() => [MealPlanScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<MealPlanScalarWhereWithAggregatesInput>;
+	@Field(() => [MealPlanScalarWhereWithAggregatesInput], { nullable: true })
+	NOT?: Array<MealPlanScalarWhereWithAggregatesInput>;
 
-    @Field(() => [MealPlanScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<MealPlanScalarWhereWithAggregatesInput>;
+	@Field(() => IntWithAggregatesFilter, { nullable: true })
+	id?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    id?: IntWithAggregatesFilter;
+	@Field(() => DateTimeNullableWithAggregatesFilter, { nullable: true })
+	planTime?: DateTimeNullableWithAggregatesFilter;
 
-    @Field(() => DateTimeNullableWithAggregatesFilter, {nullable:true})
-    planTime?: DateTimeNullableWithAggregatesFilter;
+	@Field(() => IntWithAggregatesFilter, { nullable: true })
+	userId?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    userId?: IntWithAggregatesFilter;
+	@Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+	createdAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    createdAt?: DateTimeWithAggregatesFilter;
+	@Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+	updatedAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    updatedAt?: DateTimeWithAggregatesFilter;
-
-    @Field(() => EnumMealTypeWithAggregatesFilter, {nullable:true})
-    type?: EnumMealTypeWithAggregatesFilter;
+	@Field(() => EnumMealTypeWithAggregatesFilter, { nullable: true })
+	type?: EnumMealTypeWithAggregatesFilter;
 }

@@ -8,16 +8,15 @@ import { IngredientUpdateInput } from './ingredient-update.input';
 
 @ArgsType()
 export class UpsertOneIngredientArgs {
+	@Field(() => IngredientWhereUniqueInput, { nullable: false })
+	@Type(() => IngredientWhereUniqueInput)
+	where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
 
-    @Field(() => IngredientWhereUniqueInput, {nullable:false})
-    @Type(() => IngredientWhereUniqueInput)
-    where!: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
+	@Field(() => IngredientCreateInput, { nullable: false })
+	@Type(() => IngredientCreateInput)
+	create!: IngredientCreateInput;
 
-    @Field(() => IngredientCreateInput, {nullable:false})
-    @Type(() => IngredientCreateInput)
-    create!: IngredientCreateInput;
-
-    @Field(() => IngredientUpdateInput, {nullable:false})
-    @Type(() => IngredientUpdateInput)
-    update!: IngredientUpdateInput;
+	@Field(() => IngredientUpdateInput, { nullable: false })
+	@Type(() => IngredientUpdateInput)
+	update!: IngredientUpdateInput;
 }

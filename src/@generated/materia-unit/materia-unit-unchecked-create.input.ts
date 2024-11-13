@@ -5,25 +5,26 @@ import { IngredientUncheckedCreateNestedManyWithoutUnitInput } from '../ingredie
 
 @InputType()
 export class MateriaUnitUncheckedCreateInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Int, { nullable: false })
+	toKilo!: number;
 
-    @Field(() => Int, {nullable:false})
-    toKilo!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
-
-    @Field(() => IngredientUncheckedCreateNestedManyWithoutUnitInput, {nullable:true})
-    ingredients?: IngredientUncheckedCreateNestedManyWithoutUnitInput;
+	@Field(() => IngredientUncheckedCreateNestedManyWithoutUnitInput, {
+		nullable: true,
+	})
+	ingredients?: IngredientUncheckedCreateNestedManyWithoutUnitInput;
 }

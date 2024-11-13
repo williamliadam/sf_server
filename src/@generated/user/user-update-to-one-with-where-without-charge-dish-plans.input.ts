@@ -6,12 +6,11 @@ import { UserUpdateWithoutChargeDishPlansInput } from './user-update-without-cha
 
 @InputType()
 export class UserUpdateToOneWithWhereWithoutChargeDishPlansInput {
+	@Field(() => UserWhereInput, { nullable: true })
+	@Type(() => UserWhereInput)
+	where?: UserWhereInput;
 
-    @Field(() => UserWhereInput, {nullable:true})
-    @Type(() => UserWhereInput)
-    where?: UserWhereInput;
-
-    @Field(() => UserUpdateWithoutChargeDishPlansInput, {nullable:false})
-    @Type(() => UserUpdateWithoutChargeDishPlansInput)
-    data!: UserUpdateWithoutChargeDishPlansInput;
+	@Field(() => UserUpdateWithoutChargeDishPlansInput, { nullable: false })
+	@Type(() => UserUpdateWithoutChargeDishPlansInput)
+	data!: UserUpdateWithoutChargeDishPlansInput;
 }

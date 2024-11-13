@@ -11,46 +11,45 @@ import { DishTemplateListRelationFilter } from '../dish-template/dish-template-l
 
 @InputType()
 export class RecipeWhereInput {
+	@Field(() => [RecipeWhereInput], { nullable: true })
+	AND?: Array<RecipeWhereInput>;
 
-    @Field(() => [RecipeWhereInput], {nullable:true})
-    AND?: Array<RecipeWhereInput>;
+	@Field(() => [RecipeWhereInput], { nullable: true })
+	OR?: Array<RecipeWhereInput>;
 
-    @Field(() => [RecipeWhereInput], {nullable:true})
-    OR?: Array<RecipeWhereInput>;
+	@Field(() => [RecipeWhereInput], { nullable: true })
+	NOT?: Array<RecipeWhereInput>;
 
-    @Field(() => [RecipeWhereInput], {nullable:true})
-    NOT?: Array<RecipeWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => StringFilter, { nullable: true })
+	name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+	@Field(() => IntFilter, { nullable: true })
+	stars?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    stars?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	authorId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    authorId?: IntFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => UserRelationFilter, { nullable: true })
+	author?: UserRelationFilter;
 
-    @Field(() => UserRelationFilter, {nullable:true})
-    author?: UserRelationFilter;
+	@Field(() => IngredientListRelationFilter, { nullable: true })
+	ingredients?: IngredientListRelationFilter;
 
-    @Field(() => IngredientListRelationFilter, {nullable:true})
-    ingredients?: IngredientListRelationFilter;
+	@Field(() => MethodListRelationFilter, { nullable: true })
+	methods?: MethodListRelationFilter;
 
-    @Field(() => MethodListRelationFilter, {nullable:true})
-    methods?: MethodListRelationFilter;
+	@Field(() => DishPlanListRelationFilter, { nullable: true })
+	usedDishPlans?: DishPlanListRelationFilter;
 
-    @Field(() => DishPlanListRelationFilter, {nullable:true})
-    usedDishPlans?: DishPlanListRelationFilter;
-
-    @Field(() => DishTemplateListRelationFilter, {nullable:true})
-    usedDishTemplates?: DishTemplateListRelationFilter;
+	@Field(() => DishTemplateListRelationFilter, { nullable: true })
+	usedDishTemplates?: DishTemplateListRelationFilter;
 }

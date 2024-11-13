@@ -10,24 +10,27 @@ import { MaterialUpdateToOneWithWhereWithoutIngredientsInput } from './material-
 
 @InputType()
 export class MaterialUpdateOneRequiredWithoutIngredientsNestedInput {
+	@Field(() => MaterialCreateWithoutIngredientsInput, { nullable: true })
+	@Type(() => MaterialCreateWithoutIngredientsInput)
+	create?: MaterialCreateWithoutIngredientsInput;
 
-    @Field(() => MaterialCreateWithoutIngredientsInput, {nullable:true})
-    @Type(() => MaterialCreateWithoutIngredientsInput)
-    create?: MaterialCreateWithoutIngredientsInput;
+	@Field(() => MaterialCreateOrConnectWithoutIngredientsInput, {
+		nullable: true,
+	})
+	@Type(() => MaterialCreateOrConnectWithoutIngredientsInput)
+	connectOrCreate?: MaterialCreateOrConnectWithoutIngredientsInput;
 
-    @Field(() => MaterialCreateOrConnectWithoutIngredientsInput, {nullable:true})
-    @Type(() => MaterialCreateOrConnectWithoutIngredientsInput)
-    connectOrCreate?: MaterialCreateOrConnectWithoutIngredientsInput;
+	@Field(() => MaterialUpsertWithoutIngredientsInput, { nullable: true })
+	@Type(() => MaterialUpsertWithoutIngredientsInput)
+	upsert?: MaterialUpsertWithoutIngredientsInput;
 
-    @Field(() => MaterialUpsertWithoutIngredientsInput, {nullable:true})
-    @Type(() => MaterialUpsertWithoutIngredientsInput)
-    upsert?: MaterialUpsertWithoutIngredientsInput;
+	@Field(() => MaterialWhereUniqueInput, { nullable: true })
+	@Type(() => MaterialWhereUniqueInput)
+	connect?: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MaterialWhereUniqueInput, {nullable:true})
-    @Type(() => MaterialWhereUniqueInput)
-    connect?: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MaterialUpdateToOneWithWhereWithoutIngredientsInput, {nullable:true})
-    @Type(() => MaterialUpdateToOneWithWhereWithoutIngredientsInput)
-    update?: MaterialUpdateToOneWithWhereWithoutIngredientsInput;
+	@Field(() => MaterialUpdateToOneWithWhereWithoutIngredientsInput, {
+		nullable: true,
+	})
+	@Type(() => MaterialUpdateToOneWithWhereWithoutIngredientsInput)
+	update?: MaterialUpdateToOneWithWhereWithoutIngredientsInput;
 }

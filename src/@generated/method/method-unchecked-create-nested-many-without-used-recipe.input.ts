@@ -9,20 +9,21 @@ import { MethodWhereUniqueInput } from './method-where-unique.input';
 
 @InputType()
 export class MethodUncheckedCreateNestedManyWithoutUsedRecipeInput {
+	@Field(() => [MethodCreateWithoutUsedRecipeInput], { nullable: true })
+	@Type(() => MethodCreateWithoutUsedRecipeInput)
+	create?: Array<MethodCreateWithoutUsedRecipeInput>;
 
-    @Field(() => [MethodCreateWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => MethodCreateWithoutUsedRecipeInput)
-    create?: Array<MethodCreateWithoutUsedRecipeInput>;
+	@Field(() => [MethodCreateOrConnectWithoutUsedRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => MethodCreateOrConnectWithoutUsedRecipeInput)
+	connectOrCreate?: Array<MethodCreateOrConnectWithoutUsedRecipeInput>;
 
-    @Field(() => [MethodCreateOrConnectWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => MethodCreateOrConnectWithoutUsedRecipeInput)
-    connectOrCreate?: Array<MethodCreateOrConnectWithoutUsedRecipeInput>;
+	@Field(() => MethodCreateManyUsedRecipeInputEnvelope, { nullable: true })
+	@Type(() => MethodCreateManyUsedRecipeInputEnvelope)
+	createMany?: MethodCreateManyUsedRecipeInputEnvelope;
 
-    @Field(() => MethodCreateManyUsedRecipeInputEnvelope, {nullable:true})
-    @Type(() => MethodCreateManyUsedRecipeInputEnvelope)
-    createMany?: MethodCreateManyUsedRecipeInputEnvelope;
-
-    @Field(() => [MethodWhereUniqueInput], {nullable:true})
-    @Type(() => MethodWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MethodWhereUniqueInput], { nullable: true })
+	@Type(() => MethodWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>>;
 }

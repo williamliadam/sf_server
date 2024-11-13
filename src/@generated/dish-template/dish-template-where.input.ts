@@ -8,37 +8,36 @@ import { RecipeRelationFilter } from '../recipe/recipe-relation-filter.input';
 
 @InputType()
 export class DishTemplateWhereInput {
+	@Field(() => [DishTemplateWhereInput], { nullable: true })
+	AND?: Array<DishTemplateWhereInput>;
 
-    @Field(() => [DishTemplateWhereInput], {nullable:true})
-    AND?: Array<DishTemplateWhereInput>;
+	@Field(() => [DishTemplateWhereInput], { nullable: true })
+	OR?: Array<DishTemplateWhereInput>;
 
-    @Field(() => [DishTemplateWhereInput], {nullable:true})
-    OR?: Array<DishTemplateWhereInput>;
+	@Field(() => [DishTemplateWhereInput], { nullable: true })
+	NOT?: Array<DishTemplateWhereInput>;
 
-    @Field(() => [DishTemplateWhereInput], {nullable:true})
-    NOT?: Array<DishTemplateWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	recipeId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    recipeId?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	amount?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    amount?: IntFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => IntNullableFilter, { nullable: true })
+	mealTemplateId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    mealTemplateId?: IntNullableFilter;
+	@Field(() => MealTemplateNullableRelationFilter, { nullable: true })
+	usedMealTemplates?: MealTemplateNullableRelationFilter;
 
-    @Field(() => MealTemplateNullableRelationFilter, {nullable:true})
-    usedMealTemplates?: MealTemplateNullableRelationFilter;
-
-    @Field(() => RecipeRelationFilter, {nullable:true})
-    recipe?: RecipeRelationFilter;
+	@Field(() => RecipeRelationFilter, { nullable: true })
+	recipe?: RecipeRelationFilter;
 }

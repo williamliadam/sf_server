@@ -14,38 +14,37 @@ import { IngredientMaxAggregateInput } from './ingredient-max-aggregate.input';
 
 @ArgsType()
 export class IngredientGroupByArgs {
+	@Field(() => IngredientWhereInput, { nullable: true })
+	@Type(() => IngredientWhereInput)
+	where?: IngredientWhereInput;
 
-    @Field(() => IngredientWhereInput, {nullable:true})
-    @Type(() => IngredientWhereInput)
-    where?: IngredientWhereInput;
+	@Field(() => [IngredientOrderByWithAggregationInput], { nullable: true })
+	orderBy?: Array<IngredientOrderByWithAggregationInput>;
 
-    @Field(() => [IngredientOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<IngredientOrderByWithAggregationInput>;
+	@Field(() => [IngredientScalarFieldEnum], { nullable: false })
+	by!: Array<keyof typeof IngredientScalarFieldEnum>;
 
-    @Field(() => [IngredientScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof IngredientScalarFieldEnum>;
+	@Field(() => IngredientScalarWhereWithAggregatesInput, { nullable: true })
+	having?: IngredientScalarWhereWithAggregatesInput;
 
-    @Field(() => IngredientScalarWhereWithAggregatesInput, {nullable:true})
-    having?: IngredientScalarWhereWithAggregatesInput;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => IngredientCountAggregateInput, { nullable: true })
+	_count?: IngredientCountAggregateInput;
 
-    @Field(() => IngredientCountAggregateInput, {nullable:true})
-    _count?: IngredientCountAggregateInput;
+	@Field(() => IngredientAvgAggregateInput, { nullable: true })
+	_avg?: IngredientAvgAggregateInput;
 
-    @Field(() => IngredientAvgAggregateInput, {nullable:true})
-    _avg?: IngredientAvgAggregateInput;
+	@Field(() => IngredientSumAggregateInput, { nullable: true })
+	_sum?: IngredientSumAggregateInput;
 
-    @Field(() => IngredientSumAggregateInput, {nullable:true})
-    _sum?: IngredientSumAggregateInput;
+	@Field(() => IngredientMinAggregateInput, { nullable: true })
+	_min?: IngredientMinAggregateInput;
 
-    @Field(() => IngredientMinAggregateInput, {nullable:true})
-    _min?: IngredientMinAggregateInput;
-
-    @Field(() => IngredientMaxAggregateInput, {nullable:true})
-    _max?: IngredientMaxAggregateInput;
+	@Field(() => IngredientMaxAggregateInput, { nullable: true })
+	_max?: IngredientMaxAggregateInput;
 }

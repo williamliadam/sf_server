@@ -7,16 +7,15 @@ import { MealPlanWhereInput } from './meal-plan-where.input';
 
 @InputType()
 export class MealPlanUpsertWithoutDishPlansInput {
+	@Field(() => MealPlanUpdateWithoutDishPlansInput, { nullable: false })
+	@Type(() => MealPlanUpdateWithoutDishPlansInput)
+	update!: MealPlanUpdateWithoutDishPlansInput;
 
-    @Field(() => MealPlanUpdateWithoutDishPlansInput, {nullable:false})
-    @Type(() => MealPlanUpdateWithoutDishPlansInput)
-    update!: MealPlanUpdateWithoutDishPlansInput;
+	@Field(() => MealPlanCreateWithoutDishPlansInput, { nullable: false })
+	@Type(() => MealPlanCreateWithoutDishPlansInput)
+	create!: MealPlanCreateWithoutDishPlansInput;
 
-    @Field(() => MealPlanCreateWithoutDishPlansInput, {nullable:false})
-    @Type(() => MealPlanCreateWithoutDishPlansInput)
-    create!: MealPlanCreateWithoutDishPlansInput;
-
-    @Field(() => MealPlanWhereInput, {nullable:true})
-    @Type(() => MealPlanWhereInput)
-    where?: MealPlanWhereInput;
+	@Field(() => MealPlanWhereInput, { nullable: true })
+	@Type(() => MealPlanWhereInput)
+	where?: MealPlanWhereInput;
 }

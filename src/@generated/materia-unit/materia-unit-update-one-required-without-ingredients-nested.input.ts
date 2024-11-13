@@ -10,24 +10,27 @@ import { MateriaUnitUpdateToOneWithWhereWithoutIngredientsInput } from './materi
 
 @InputType()
 export class MateriaUnitUpdateOneRequiredWithoutIngredientsNestedInput {
+	@Field(() => MateriaUnitCreateWithoutIngredientsInput, { nullable: true })
+	@Type(() => MateriaUnitCreateWithoutIngredientsInput)
+	create?: MateriaUnitCreateWithoutIngredientsInput;
 
-    @Field(() => MateriaUnitCreateWithoutIngredientsInput, {nullable:true})
-    @Type(() => MateriaUnitCreateWithoutIngredientsInput)
-    create?: MateriaUnitCreateWithoutIngredientsInput;
+	@Field(() => MateriaUnitCreateOrConnectWithoutIngredientsInput, {
+		nullable: true,
+	})
+	@Type(() => MateriaUnitCreateOrConnectWithoutIngredientsInput)
+	connectOrCreate?: MateriaUnitCreateOrConnectWithoutIngredientsInput;
 
-    @Field(() => MateriaUnitCreateOrConnectWithoutIngredientsInput, {nullable:true})
-    @Type(() => MateriaUnitCreateOrConnectWithoutIngredientsInput)
-    connectOrCreate?: MateriaUnitCreateOrConnectWithoutIngredientsInput;
+	@Field(() => MateriaUnitUpsertWithoutIngredientsInput, { nullable: true })
+	@Type(() => MateriaUnitUpsertWithoutIngredientsInput)
+	upsert?: MateriaUnitUpsertWithoutIngredientsInput;
 
-    @Field(() => MateriaUnitUpsertWithoutIngredientsInput, {nullable:true})
-    @Type(() => MateriaUnitUpsertWithoutIngredientsInput)
-    upsert?: MateriaUnitUpsertWithoutIngredientsInput;
+	@Field(() => MateriaUnitWhereUniqueInput, { nullable: true })
+	@Type(() => MateriaUnitWhereUniqueInput)
+	connect?: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaUnitWhereUniqueInput, {nullable:true})
-    @Type(() => MateriaUnitWhereUniqueInput)
-    connect?: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MateriaUnitUpdateToOneWithWhereWithoutIngredientsInput, {nullable:true})
-    @Type(() => MateriaUnitUpdateToOneWithWhereWithoutIngredientsInput)
-    update?: MateriaUnitUpdateToOneWithWhereWithoutIngredientsInput;
+	@Field(() => MateriaUnitUpdateToOneWithWhereWithoutIngredientsInput, {
+		nullable: true,
+	})
+	@Type(() => MateriaUnitUpdateToOneWithWhereWithoutIngredientsInput)
+	update?: MateriaUnitUpdateToOneWithWhereWithoutIngredientsInput;
 }

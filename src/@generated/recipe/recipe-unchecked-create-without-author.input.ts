@@ -8,31 +8,38 @@ import { DishTemplateUncheckedCreateNestedManyWithoutRecipeInput } from '../dish
 
 @InputType()
 export class RecipeUncheckedCreateWithoutAuthorInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Int, { nullable: false })
+	stars!: number;
 
-    @Field(() => Int, {nullable:false})
-    stars!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => IngredientUncheckedCreateNestedManyWithoutUsedRecipeInput, {
+		nullable: true,
+	})
+	ingredients?: IngredientUncheckedCreateNestedManyWithoutUsedRecipeInput;
 
-    @Field(() => IngredientUncheckedCreateNestedManyWithoutUsedRecipeInput, {nullable:true})
-    ingredients?: IngredientUncheckedCreateNestedManyWithoutUsedRecipeInput;
+	@Field(() => MethodUncheckedCreateNestedManyWithoutUsedRecipeInput, {
+		nullable: true,
+	})
+	methods?: MethodUncheckedCreateNestedManyWithoutUsedRecipeInput;
 
-    @Field(() => MethodUncheckedCreateNestedManyWithoutUsedRecipeInput, {nullable:true})
-    methods?: MethodUncheckedCreateNestedManyWithoutUsedRecipeInput;
+	@Field(() => DishPlanUncheckedCreateNestedManyWithoutRecipeInput, {
+		nullable: true,
+	})
+	usedDishPlans?: DishPlanUncheckedCreateNestedManyWithoutRecipeInput;
 
-    @Field(() => DishPlanUncheckedCreateNestedManyWithoutRecipeInput, {nullable:true})
-    usedDishPlans?: DishPlanUncheckedCreateNestedManyWithoutRecipeInput;
-
-    @Field(() => DishTemplateUncheckedCreateNestedManyWithoutRecipeInput, {nullable:true})
-    usedDishTemplates?: DishTemplateUncheckedCreateNestedManyWithoutRecipeInput;
+	@Field(() => DishTemplateUncheckedCreateNestedManyWithoutRecipeInput, {
+		nullable: true,
+	})
+	usedDishTemplates?: DishTemplateUncheckedCreateNestedManyWithoutRecipeInput;
 }

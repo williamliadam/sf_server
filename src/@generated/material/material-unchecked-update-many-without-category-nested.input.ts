@@ -13,48 +13,55 @@ import { MaterialScalarWhereInput } from './material-scalar-where.input';
 
 @InputType()
 export class MaterialUncheckedUpdateManyWithoutCategoryNestedInput {
+	@Field(() => [MaterialCreateWithoutCategoryInput], { nullable: true })
+	@Type(() => MaterialCreateWithoutCategoryInput)
+	create?: Array<MaterialCreateWithoutCategoryInput>;
 
-    @Field(() => [MaterialCreateWithoutCategoryInput], {nullable:true})
-    @Type(() => MaterialCreateWithoutCategoryInput)
-    create?: Array<MaterialCreateWithoutCategoryInput>;
+	@Field(() => [MaterialCreateOrConnectWithoutCategoryInput], {
+		nullable: true,
+	})
+	@Type(() => MaterialCreateOrConnectWithoutCategoryInput)
+	connectOrCreate?: Array<MaterialCreateOrConnectWithoutCategoryInput>;
 
-    @Field(() => [MaterialCreateOrConnectWithoutCategoryInput], {nullable:true})
-    @Type(() => MaterialCreateOrConnectWithoutCategoryInput)
-    connectOrCreate?: Array<MaterialCreateOrConnectWithoutCategoryInput>;
+	@Field(() => [MaterialUpsertWithWhereUniqueWithoutCategoryInput], {
+		nullable: true,
+	})
+	@Type(() => MaterialUpsertWithWhereUniqueWithoutCategoryInput)
+	upsert?: Array<MaterialUpsertWithWhereUniqueWithoutCategoryInput>;
 
-    @Field(() => [MaterialUpsertWithWhereUniqueWithoutCategoryInput], {nullable:true})
-    @Type(() => MaterialUpsertWithWhereUniqueWithoutCategoryInput)
-    upsert?: Array<MaterialUpsertWithWhereUniqueWithoutCategoryInput>;
+	@Field(() => MaterialCreateManyCategoryInputEnvelope, { nullable: true })
+	@Type(() => MaterialCreateManyCategoryInputEnvelope)
+	createMany?: MaterialCreateManyCategoryInputEnvelope;
 
-    @Field(() => MaterialCreateManyCategoryInputEnvelope, {nullable:true})
-    @Type(() => MaterialCreateManyCategoryInputEnvelope)
-    createMany?: MaterialCreateManyCategoryInputEnvelope;
+	@Field(() => [MaterialWhereUniqueInput], { nullable: true })
+	@Type(() => MaterialWhereUniqueInput)
+	set?: Array<Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>>;
 
-    @Field(() => [MaterialWhereUniqueInput], {nullable:true})
-    @Type(() => MaterialWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MaterialWhereUniqueInput], { nullable: true })
+	@Type(() => MaterialWhereUniqueInput)
+	disconnect?: Array<Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>>;
 
-    @Field(() => [MaterialWhereUniqueInput], {nullable:true})
-    @Type(() => MaterialWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MaterialWhereUniqueInput], { nullable: true })
+	@Type(() => MaterialWhereUniqueInput)
+	delete?: Array<Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>>;
 
-    @Field(() => [MaterialWhereUniqueInput], {nullable:true})
-    @Type(() => MaterialWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MaterialWhereUniqueInput], { nullable: true })
+	@Type(() => MaterialWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>>;
 
-    @Field(() => [MaterialWhereUniqueInput], {nullable:true})
-    @Type(() => MaterialWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MaterialUpdateWithWhereUniqueWithoutCategoryInput], {
+		nullable: true,
+	})
+	@Type(() => MaterialUpdateWithWhereUniqueWithoutCategoryInput)
+	update?: Array<MaterialUpdateWithWhereUniqueWithoutCategoryInput>;
 
-    @Field(() => [MaterialUpdateWithWhereUniqueWithoutCategoryInput], {nullable:true})
-    @Type(() => MaterialUpdateWithWhereUniqueWithoutCategoryInput)
-    update?: Array<MaterialUpdateWithWhereUniqueWithoutCategoryInput>;
+	@Field(() => [MaterialUpdateManyWithWhereWithoutCategoryInput], {
+		nullable: true,
+	})
+	@Type(() => MaterialUpdateManyWithWhereWithoutCategoryInput)
+	updateMany?: Array<MaterialUpdateManyWithWhereWithoutCategoryInput>;
 
-    @Field(() => [MaterialUpdateManyWithWhereWithoutCategoryInput], {nullable:true})
-    @Type(() => MaterialUpdateManyWithWhereWithoutCategoryInput)
-    updateMany?: Array<MaterialUpdateManyWithWhereWithoutCategoryInput>;
-
-    @Field(() => [MaterialScalarWhereInput], {nullable:true})
-    @Type(() => MaterialScalarWhereInput)
-    deleteMany?: Array<MaterialScalarWhereInput>;
+	@Field(() => [MaterialScalarWhereInput], { nullable: true })
+	@Type(() => MaterialScalarWhereInput)
+	deleteMany?: Array<MaterialScalarWhereInput>;
 }

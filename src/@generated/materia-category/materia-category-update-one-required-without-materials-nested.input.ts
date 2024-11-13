@@ -10,24 +10,27 @@ import { MateriaCategoryUpdateToOneWithWhereWithoutMaterialsInput } from './mate
 
 @InputType()
 export class MateriaCategoryUpdateOneRequiredWithoutMaterialsNestedInput {
+	@Field(() => MateriaCategoryCreateWithoutMaterialsInput, { nullable: true })
+	@Type(() => MateriaCategoryCreateWithoutMaterialsInput)
+	create?: MateriaCategoryCreateWithoutMaterialsInput;
 
-    @Field(() => MateriaCategoryCreateWithoutMaterialsInput, {nullable:true})
-    @Type(() => MateriaCategoryCreateWithoutMaterialsInput)
-    create?: MateriaCategoryCreateWithoutMaterialsInput;
+	@Field(() => MateriaCategoryCreateOrConnectWithoutMaterialsInput, {
+		nullable: true,
+	})
+	@Type(() => MateriaCategoryCreateOrConnectWithoutMaterialsInput)
+	connectOrCreate?: MateriaCategoryCreateOrConnectWithoutMaterialsInput;
 
-    @Field(() => MateriaCategoryCreateOrConnectWithoutMaterialsInput, {nullable:true})
-    @Type(() => MateriaCategoryCreateOrConnectWithoutMaterialsInput)
-    connectOrCreate?: MateriaCategoryCreateOrConnectWithoutMaterialsInput;
+	@Field(() => MateriaCategoryUpsertWithoutMaterialsInput, { nullable: true })
+	@Type(() => MateriaCategoryUpsertWithoutMaterialsInput)
+	upsert?: MateriaCategoryUpsertWithoutMaterialsInput;
 
-    @Field(() => MateriaCategoryUpsertWithoutMaterialsInput, {nullable:true})
-    @Type(() => MateriaCategoryUpsertWithoutMaterialsInput)
-    upsert?: MateriaCategoryUpsertWithoutMaterialsInput;
+	@Field(() => MateriaCategoryWhereUniqueInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	connect?: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaCategoryWhereUniqueInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    connect?: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MateriaCategoryUpdateToOneWithWhereWithoutMaterialsInput, {nullable:true})
-    @Type(() => MateriaCategoryUpdateToOneWithWhereWithoutMaterialsInput)
-    update?: MateriaCategoryUpdateToOneWithWhereWithoutMaterialsInput;
+	@Field(() => MateriaCategoryUpdateToOneWithWhereWithoutMaterialsInput, {
+		nullable: true,
+	})
+	@Type(() => MateriaCategoryUpdateToOneWithWhereWithoutMaterialsInput)
+	update?: MateriaCategoryUpdateToOneWithWhereWithoutMaterialsInput;
 }

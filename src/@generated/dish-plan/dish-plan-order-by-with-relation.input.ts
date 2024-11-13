@@ -8,34 +8,33 @@ import { MealPlanOrderByWithRelationInput } from '../meal-plan/meal-plan-order-b
 
 @InputType()
 export class DishPlanOrderByWithRelationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	recipeId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    recipeId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	amount?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    amount?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	planCookerId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    planCookerId?: keyof typeof SortOrder;
+	@Field(() => SortOrderInput, { nullable: true })
+	mealPlanId?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    mealPlanId?: SortOrderInput;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => UserOrderByWithRelationInput, { nullable: true })
+	planCooker?: UserOrderByWithRelationInput;
 
-    @Field(() => UserOrderByWithRelationInput, {nullable:true})
-    planCooker?: UserOrderByWithRelationInput;
+	@Field(() => RecipeOrderByWithRelationInput, { nullable: true })
+	recipe?: RecipeOrderByWithRelationInput;
 
-    @Field(() => RecipeOrderByWithRelationInput, {nullable:true})
-    recipe?: RecipeOrderByWithRelationInput;
-
-    @Field(() => MealPlanOrderByWithRelationInput, {nullable:true})
-    usedMealPlan?: MealPlanOrderByWithRelationInput;
+	@Field(() => MealPlanOrderByWithRelationInput, { nullable: true })
+	usedMealPlan?: MealPlanOrderByWithRelationInput;
 }

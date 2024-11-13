@@ -9,37 +9,36 @@ import { RecipeNullableRelationFilter } from '../recipe/recipe-nullable-relation
 
 @InputType()
 export class MethodWhereUniqueInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => String, { nullable: true })
+	code?: string;
 
-    @Field(() => String, {nullable:true})
-    code?: string;
+	@Field(() => [MethodWhereInput], { nullable: true })
+	AND?: Array<MethodWhereInput>;
 
-    @Field(() => [MethodWhereInput], {nullable:true})
-    AND?: Array<MethodWhereInput>;
+	@Field(() => [MethodWhereInput], { nullable: true })
+	OR?: Array<MethodWhereInput>;
 
-    @Field(() => [MethodWhereInput], {nullable:true})
-    OR?: Array<MethodWhereInput>;
+	@Field(() => [MethodWhereInput], { nullable: true })
+	NOT?: Array<MethodWhereInput>;
 
-    @Field(() => [MethodWhereInput], {nullable:true})
-    NOT?: Array<MethodWhereInput>;
+	@Field(() => StringFilter, { nullable: true })
+	name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+	@Field(() => StringFilter, { nullable: true })
+	desc?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    desc?: StringFilter;
+	@Field(() => IntNullableFilter, { nullable: true })
+	recipeId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    recipeId?: IntNullableFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
-
-    @Field(() => RecipeNullableRelationFilter, {nullable:true})
-    usedRecipe?: RecipeNullableRelationFilter;
+	@Field(() => RecipeNullableRelationFilter, { nullable: true })
+	usedRecipe?: RecipeNullableRelationFilter;
 }

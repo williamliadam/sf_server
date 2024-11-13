@@ -14,35 +14,34 @@ import { MaterialMaxAggregateInput } from './material-max-aggregate.input';
 
 @ArgsType()
 export class MaterialAggregateArgs {
+	@Field(() => MaterialWhereInput, { nullable: true })
+	@Type(() => MaterialWhereInput)
+	where?: MaterialWhereInput;
 
-    @Field(() => MaterialWhereInput, {nullable:true})
-    @Type(() => MaterialWhereInput)
-    where?: MaterialWhereInput;
+	@Field(() => [MaterialOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<MaterialOrderByWithRelationInput>;
 
-    @Field(() => [MaterialOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<MaterialOrderByWithRelationInput>;
+	@Field(() => MaterialWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MaterialWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => MaterialCountAggregateInput, { nullable: true })
+	_count?: MaterialCountAggregateInput;
 
-    @Field(() => MaterialCountAggregateInput, {nullable:true})
-    _count?: MaterialCountAggregateInput;
+	@Field(() => MaterialAvgAggregateInput, { nullable: true })
+	_avg?: MaterialAvgAggregateInput;
 
-    @Field(() => MaterialAvgAggregateInput, {nullable:true})
-    _avg?: MaterialAvgAggregateInput;
+	@Field(() => MaterialSumAggregateInput, { nullable: true })
+	_sum?: MaterialSumAggregateInput;
 
-    @Field(() => MaterialSumAggregateInput, {nullable:true})
-    _sum?: MaterialSumAggregateInput;
+	@Field(() => MaterialMinAggregateInput, { nullable: true })
+	_min?: MaterialMinAggregateInput;
 
-    @Field(() => MaterialMinAggregateInput, {nullable:true})
-    _min?: MaterialMinAggregateInput;
-
-    @Field(() => MaterialMaxAggregateInput, {nullable:true})
-    _max?: MaterialMaxAggregateInput;
+	@Field(() => MaterialMaxAggregateInput, { nullable: true })
+	_max?: MaterialMaxAggregateInput;
 }

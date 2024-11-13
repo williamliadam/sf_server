@@ -14,49 +14,60 @@ import { DishPlanUncheckedUpdateManyWithoutPlanCookerNestedInput } from '../dish
 
 @InputType()
 export class UserUncheckedUpdateWithoutMyRecipesInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	email?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    email?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	name?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    name?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	password?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    password?: StringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	phone?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    phone?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	wxId?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    wxId?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => EnumRoleFieldUpdateOperationsInput, { nullable: true })
+	role?: EnumRoleFieldUpdateOperationsInput;
 
-    @Field(() => EnumRoleFieldUpdateOperationsInput, {nullable:true})
-    role?: EnumRoleFieldUpdateOperationsInput;
+	@Field(() => ProfileUncheckedUpdateOneWithoutUserNestedInput, {
+		nullable: true,
+	})
+	profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput;
 
-    @Field(() => ProfileUncheckedUpdateOneWithoutUserNestedInput, {nullable:true})
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput;
+	@Field(() => BodyDetailUncheckedUpdateOneWithoutUserNestedInput, {
+		nullable: true,
+	})
+	bodyDetail?: BodyDetailUncheckedUpdateOneWithoutUserNestedInput;
 
-    @Field(() => BodyDetailUncheckedUpdateOneWithoutUserNestedInput, {nullable:true})
-    bodyDetail?: BodyDetailUncheckedUpdateOneWithoutUserNestedInput;
+	@Field(() => PostUncheckedUpdateManyWithoutAuthorNestedInput, {
+		nullable: true,
+	})
+	myPosts?: PostUncheckedUpdateManyWithoutAuthorNestedInput;
 
-    @Field(() => PostUncheckedUpdateManyWithoutAuthorNestedInput, {nullable:true})
-    myPosts?: PostUncheckedUpdateManyWithoutAuthorNestedInput;
+	@Field(() => MealTemplateUncheckedUpdateManyWithoutCreateByNestedInput, {
+		nullable: true,
+	})
+	myMealTemplates?: MealTemplateUncheckedUpdateManyWithoutCreateByNestedInput;
 
-    @Field(() => MealTemplateUncheckedUpdateManyWithoutCreateByNestedInput, {nullable:true})
-    myMealTemplates?: MealTemplateUncheckedUpdateManyWithoutCreateByNestedInput;
+	@Field(() => MealPlanUncheckedUpdateManyWithoutCreateByNestedInput, {
+		nullable: true,
+	})
+	myMealPlans?: MealPlanUncheckedUpdateManyWithoutCreateByNestedInput;
 
-    @Field(() => MealPlanUncheckedUpdateManyWithoutCreateByNestedInput, {nullable:true})
-    myMealPlans?: MealPlanUncheckedUpdateManyWithoutCreateByNestedInput;
-
-    @Field(() => DishPlanUncheckedUpdateManyWithoutPlanCookerNestedInput, {nullable:true})
-    chargeDishPlans?: DishPlanUncheckedUpdateManyWithoutPlanCookerNestedInput;
+	@Field(() => DishPlanUncheckedUpdateManyWithoutPlanCookerNestedInput, {
+		nullable: true,
+	})
+	chargeDishPlans?: DishPlanUncheckedUpdateManyWithoutPlanCookerNestedInput;
 }

@@ -7,16 +7,15 @@ import { UserWhereInput } from './user-where.input';
 
 @InputType()
 export class UserUpsertWithoutMyMealPlansInput {
+	@Field(() => UserUpdateWithoutMyMealPlansInput, { nullable: false })
+	@Type(() => UserUpdateWithoutMyMealPlansInput)
+	update!: UserUpdateWithoutMyMealPlansInput;
 
-    @Field(() => UserUpdateWithoutMyMealPlansInput, {nullable:false})
-    @Type(() => UserUpdateWithoutMyMealPlansInput)
-    update!: UserUpdateWithoutMyMealPlansInput;
+	@Field(() => UserCreateWithoutMyMealPlansInput, { nullable: false })
+	@Type(() => UserCreateWithoutMyMealPlansInput)
+	create!: UserCreateWithoutMyMealPlansInput;
 
-    @Field(() => UserCreateWithoutMyMealPlansInput, {nullable:false})
-    @Type(() => UserCreateWithoutMyMealPlansInput)
-    create!: UserCreateWithoutMyMealPlansInput;
-
-    @Field(() => UserWhereInput, {nullable:true})
-    @Type(() => UserWhereInput)
-    where?: UserWhereInput;
+	@Field(() => UserWhereInput, { nullable: true })
+	@Type(() => UserWhereInput)
+	where?: UserWhereInput;
 }

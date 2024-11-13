@@ -9,37 +9,36 @@ import { MateriaCategoryMaxAggregate } from './materia-category-max-aggregate.ou
 
 @ObjectType()
 export class MateriaCategoryGroupBy {
+	@Field(() => Int, { nullable: false })
+	id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Int, { nullable: true })
+	lastId?: number;
 
-    @Field(() => Int, {nullable:true})
-    lastId?: number;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+	@Field(() => MateriaCategoryCountAggregate, { nullable: true })
+	_count?: MateriaCategoryCountAggregate;
 
-    @Field(() => MateriaCategoryCountAggregate, {nullable:true})
-    _count?: MateriaCategoryCountAggregate;
+	@Field(() => MateriaCategoryAvgAggregate, { nullable: true })
+	_avg?: MateriaCategoryAvgAggregate;
 
-    @Field(() => MateriaCategoryAvgAggregate, {nullable:true})
-    _avg?: MateriaCategoryAvgAggregate;
+	@Field(() => MateriaCategorySumAggregate, { nullable: true })
+	_sum?: MateriaCategorySumAggregate;
 
-    @Field(() => MateriaCategorySumAggregate, {nullable:true})
-    _sum?: MateriaCategorySumAggregate;
+	@Field(() => MateriaCategoryMinAggregate, { nullable: true })
+	_min?: MateriaCategoryMinAggregate;
 
-    @Field(() => MateriaCategoryMinAggregate, {nullable:true})
-    _min?: MateriaCategoryMinAggregate;
-
-    @Field(() => MateriaCategoryMaxAggregate, {nullable:true})
-    _max?: MateriaCategoryMaxAggregate;
+	@Field(() => MateriaCategoryMaxAggregate, { nullable: true })
+	_max?: MateriaCategoryMaxAggregate;
 }

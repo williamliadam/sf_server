@@ -10,23 +10,22 @@ import { MethodScalarFieldEnum } from './method-scalar-field.enum';
 
 @ArgsType()
 export class FindManyMethodArgs {
+	@Field(() => MethodWhereInput, { nullable: true })
+	@Type(() => MethodWhereInput)
+	where?: MethodWhereInput;
 
-    @Field(() => MethodWhereInput, {nullable:true})
-    @Type(() => MethodWhereInput)
-    where?: MethodWhereInput;
+	@Field(() => [MethodOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<MethodOrderByWithRelationInput>;
 
-    @Field(() => [MethodOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<MethodOrderByWithRelationInput>;
+	@Field(() => MethodWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MethodWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [MethodScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof MethodScalarFieldEnum>;
+	@Field(() => [MethodScalarFieldEnum], { nullable: true })
+	distinct?: Array<keyof typeof MethodScalarFieldEnum>;
 }

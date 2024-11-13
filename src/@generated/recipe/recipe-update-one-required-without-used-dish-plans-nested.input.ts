@@ -10,24 +10,27 @@ import { RecipeUpdateToOneWithWhereWithoutUsedDishPlansInput } from './recipe-up
 
 @InputType()
 export class RecipeUpdateOneRequiredWithoutUsedDishPlansNestedInput {
+	@Field(() => RecipeCreateWithoutUsedDishPlansInput, { nullable: true })
+	@Type(() => RecipeCreateWithoutUsedDishPlansInput)
+	create?: RecipeCreateWithoutUsedDishPlansInput;
 
-    @Field(() => RecipeCreateWithoutUsedDishPlansInput, {nullable:true})
-    @Type(() => RecipeCreateWithoutUsedDishPlansInput)
-    create?: RecipeCreateWithoutUsedDishPlansInput;
+	@Field(() => RecipeCreateOrConnectWithoutUsedDishPlansInput, {
+		nullable: true,
+	})
+	@Type(() => RecipeCreateOrConnectWithoutUsedDishPlansInput)
+	connectOrCreate?: RecipeCreateOrConnectWithoutUsedDishPlansInput;
 
-    @Field(() => RecipeCreateOrConnectWithoutUsedDishPlansInput, {nullable:true})
-    @Type(() => RecipeCreateOrConnectWithoutUsedDishPlansInput)
-    connectOrCreate?: RecipeCreateOrConnectWithoutUsedDishPlansInput;
+	@Field(() => RecipeUpsertWithoutUsedDishPlansInput, { nullable: true })
+	@Type(() => RecipeUpsertWithoutUsedDishPlansInput)
+	upsert?: RecipeUpsertWithoutUsedDishPlansInput;
 
-    @Field(() => RecipeUpsertWithoutUsedDishPlansInput, {nullable:true})
-    @Type(() => RecipeUpsertWithoutUsedDishPlansInput)
-    upsert?: RecipeUpsertWithoutUsedDishPlansInput;
+	@Field(() => RecipeWhereUniqueInput, { nullable: true })
+	@Type(() => RecipeWhereUniqueInput)
+	connect?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 
-    @Field(() => RecipeWhereUniqueInput, {nullable:true})
-    @Type(() => RecipeWhereUniqueInput)
-    connect?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
-
-    @Field(() => RecipeUpdateToOneWithWhereWithoutUsedDishPlansInput, {nullable:true})
-    @Type(() => RecipeUpdateToOneWithWhereWithoutUsedDishPlansInput)
-    update?: RecipeUpdateToOneWithWhereWithoutUsedDishPlansInput;
+	@Field(() => RecipeUpdateToOneWithWhereWithoutUsedDishPlansInput, {
+		nullable: true,
+	})
+	@Type(() => RecipeUpdateToOneWithWhereWithoutUsedDishPlansInput)
+	update?: RecipeUpdateToOneWithWhereWithoutUsedDishPlansInput;
 }

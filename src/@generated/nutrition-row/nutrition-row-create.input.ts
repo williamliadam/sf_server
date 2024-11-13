@@ -6,19 +6,20 @@ import { MaterialCreateNestedOneWithoutNutritionMatrixInput } from '../material/
 
 @InputType()
 export class NutritionRowCreateInput {
+	@Field(() => Int, { nullable: false })
+	percent!: number;
 
-    @Field(() => Int, {nullable:false})
-    percent!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => NutritionCreateNestedOneWithoutUsedRowInput, { nullable: false })
+	nutirtion!: NutritionCreateNestedOneWithoutUsedRowInput;
 
-    @Field(() => NutritionCreateNestedOneWithoutUsedRowInput, {nullable:false})
-    nutirtion!: NutritionCreateNestedOneWithoutUsedRowInput;
-
-    @Field(() => MaterialCreateNestedOneWithoutNutritionMatrixInput, {nullable:false})
-    belongMaterial!: MaterialCreateNestedOneWithoutNutritionMatrixInput;
+	@Field(() => MaterialCreateNestedOneWithoutNutritionMatrixInput, {
+		nullable: false,
+	})
+	belongMaterial!: MaterialCreateNestedOneWithoutNutritionMatrixInput;
 }

@@ -6,16 +6,17 @@ import { MaterialUpdateOneRequiredWithoutNutritionMatrixNestedInput } from '../m
 
 @InputType()
 export class NutritionRowUpdateWithoutNutirtionInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	percent?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    percent?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => MaterialUpdateOneRequiredWithoutNutritionMatrixNestedInput, {nullable:true})
-    belongMaterial?: MaterialUpdateOneRequiredWithoutNutritionMatrixNestedInput;
+	@Field(() => MaterialUpdateOneRequiredWithoutNutritionMatrixNestedInput, {
+		nullable: true,
+	})
+	belongMaterial?: MaterialUpdateOneRequiredWithoutNutritionMatrixNestedInput;
 }

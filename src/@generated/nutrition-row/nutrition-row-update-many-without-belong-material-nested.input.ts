@@ -13,48 +13,59 @@ import { NutritionRowScalarWhereInput } from './nutrition-row-scalar-where.input
 
 @InputType()
 export class NutritionRowUpdateManyWithoutBelongMaterialNestedInput {
+	@Field(() => [NutritionRowCreateWithoutBelongMaterialInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowCreateWithoutBelongMaterialInput)
+	create?: Array<NutritionRowCreateWithoutBelongMaterialInput>;
 
-    @Field(() => [NutritionRowCreateWithoutBelongMaterialInput], {nullable:true})
-    @Type(() => NutritionRowCreateWithoutBelongMaterialInput)
-    create?: Array<NutritionRowCreateWithoutBelongMaterialInput>;
+	@Field(() => [NutritionRowCreateOrConnectWithoutBelongMaterialInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowCreateOrConnectWithoutBelongMaterialInput)
+	connectOrCreate?: Array<NutritionRowCreateOrConnectWithoutBelongMaterialInput>;
 
-    @Field(() => [NutritionRowCreateOrConnectWithoutBelongMaterialInput], {nullable:true})
-    @Type(() => NutritionRowCreateOrConnectWithoutBelongMaterialInput)
-    connectOrCreate?: Array<NutritionRowCreateOrConnectWithoutBelongMaterialInput>;
+	@Field(() => [NutritionRowUpsertWithWhereUniqueWithoutBelongMaterialInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowUpsertWithWhereUniqueWithoutBelongMaterialInput)
+	upsert?: Array<NutritionRowUpsertWithWhereUniqueWithoutBelongMaterialInput>;
 
-    @Field(() => [NutritionRowUpsertWithWhereUniqueWithoutBelongMaterialInput], {nullable:true})
-    @Type(() => NutritionRowUpsertWithWhereUniqueWithoutBelongMaterialInput)
-    upsert?: Array<NutritionRowUpsertWithWhereUniqueWithoutBelongMaterialInput>;
+	@Field(() => NutritionRowCreateManyBelongMaterialInputEnvelope, {
+		nullable: true,
+	})
+	@Type(() => NutritionRowCreateManyBelongMaterialInputEnvelope)
+	createMany?: NutritionRowCreateManyBelongMaterialInputEnvelope;
 
-    @Field(() => NutritionRowCreateManyBelongMaterialInputEnvelope, {nullable:true})
-    @Type(() => NutritionRowCreateManyBelongMaterialInputEnvelope)
-    createMany?: NutritionRowCreateManyBelongMaterialInputEnvelope;
+	@Field(() => [NutritionRowWhereUniqueInput], { nullable: true })
+	@Type(() => NutritionRowWhereUniqueInput)
+	set?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
 
-    @Field(() => [NutritionRowWhereUniqueInput], {nullable:true})
-    @Type(() => NutritionRowWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
+	@Field(() => [NutritionRowWhereUniqueInput], { nullable: true })
+	@Type(() => NutritionRowWhereUniqueInput)
+	disconnect?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
 
-    @Field(() => [NutritionRowWhereUniqueInput], {nullable:true})
-    @Type(() => NutritionRowWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
+	@Field(() => [NutritionRowWhereUniqueInput], { nullable: true })
+	@Type(() => NutritionRowWhereUniqueInput)
+	delete?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
 
-    @Field(() => [NutritionRowWhereUniqueInput], {nullable:true})
-    @Type(() => NutritionRowWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
+	@Field(() => [NutritionRowWhereUniqueInput], { nullable: true })
+	@Type(() => NutritionRowWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
 
-    @Field(() => [NutritionRowWhereUniqueInput], {nullable:true})
-    @Type(() => NutritionRowWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
+	@Field(() => [NutritionRowUpdateWithWhereUniqueWithoutBelongMaterialInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowUpdateWithWhereUniqueWithoutBelongMaterialInput)
+	update?: Array<NutritionRowUpdateWithWhereUniqueWithoutBelongMaterialInput>;
 
-    @Field(() => [NutritionRowUpdateWithWhereUniqueWithoutBelongMaterialInput], {nullable:true})
-    @Type(() => NutritionRowUpdateWithWhereUniqueWithoutBelongMaterialInput)
-    update?: Array<NutritionRowUpdateWithWhereUniqueWithoutBelongMaterialInput>;
+	@Field(() => [NutritionRowUpdateManyWithWhereWithoutBelongMaterialInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowUpdateManyWithWhereWithoutBelongMaterialInput)
+	updateMany?: Array<NutritionRowUpdateManyWithWhereWithoutBelongMaterialInput>;
 
-    @Field(() => [NutritionRowUpdateManyWithWhereWithoutBelongMaterialInput], {nullable:true})
-    @Type(() => NutritionRowUpdateManyWithWhereWithoutBelongMaterialInput)
-    updateMany?: Array<NutritionRowUpdateManyWithWhereWithoutBelongMaterialInput>;
-
-    @Field(() => [NutritionRowScalarWhereInput], {nullable:true})
-    @Type(() => NutritionRowScalarWhereInput)
-    deleteMany?: Array<NutritionRowScalarWhereInput>;
+	@Field(() => [NutritionRowScalarWhereInput], { nullable: true })
+	@Type(() => NutritionRowScalarWhereInput)
+	deleteMany?: Array<NutritionRowScalarWhereInput>;
 }

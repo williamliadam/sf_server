@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class FindUniqueMealPlanArgs {
-
-    @Field(() => MealPlanWhereUniqueInput, {nullable:false})
-    @Type(() => MealPlanWhereUniqueInput)
-    where!: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
+	@Field(() => MealPlanWhereUniqueInput, { nullable: false })
+	@Type(() => MealPlanWhereUniqueInput)
+	where!: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
 }

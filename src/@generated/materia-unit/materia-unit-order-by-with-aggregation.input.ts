@@ -9,37 +9,36 @@ import { MateriaUnitSumOrderByAggregateInput } from './materia-unit-sum-order-by
 
 @InputType()
 export class MateriaUnitOrderByWithAggregationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	code?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    code?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	name?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    name?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	toKilo?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    toKilo?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => MateriaUnitCountOrderByAggregateInput, { nullable: true })
+	_count?: MateriaUnitCountOrderByAggregateInput;
 
-    @Field(() => MateriaUnitCountOrderByAggregateInput, {nullable:true})
-    _count?: MateriaUnitCountOrderByAggregateInput;
+	@Field(() => MateriaUnitAvgOrderByAggregateInput, { nullable: true })
+	_avg?: MateriaUnitAvgOrderByAggregateInput;
 
-    @Field(() => MateriaUnitAvgOrderByAggregateInput, {nullable:true})
-    _avg?: MateriaUnitAvgOrderByAggregateInput;
+	@Field(() => MateriaUnitMaxOrderByAggregateInput, { nullable: true })
+	_max?: MateriaUnitMaxOrderByAggregateInput;
 
-    @Field(() => MateriaUnitMaxOrderByAggregateInput, {nullable:true})
-    _max?: MateriaUnitMaxOrderByAggregateInput;
+	@Field(() => MateriaUnitMinOrderByAggregateInput, { nullable: true })
+	_min?: MateriaUnitMinOrderByAggregateInput;
 
-    @Field(() => MateriaUnitMinOrderByAggregateInput, {nullable:true})
-    _min?: MateriaUnitMinOrderByAggregateInput;
-
-    @Field(() => MateriaUnitSumOrderByAggregateInput, {nullable:true})
-    _sum?: MateriaUnitSumOrderByAggregateInput;
+	@Field(() => MateriaUnitSumOrderByAggregateInput, { nullable: true })
+	_sum?: MateriaUnitSumOrderByAggregateInput;
 }

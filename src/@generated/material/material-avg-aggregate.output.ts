@@ -4,10 +4,9 @@ import { Float } from '@nestjs/graphql';
 
 @ObjectType()
 export class MaterialAvgAggregate {
+	@Field(() => Float, { nullable: true })
+	id?: number;
 
-    @Field(() => Float, {nullable:true})
-    id?: number;
-
-    @Field(() => Float, {nullable:true})
-    materiaCategoryId?: number;
+	@Field(() => Float, { nullable: true })
+	materiaCategoryId?: number;
 }

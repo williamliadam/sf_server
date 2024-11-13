@@ -7,19 +7,20 @@ import { DishPlanUpdateManyWithoutUsedMealPlanNestedInput } from '../dish-plan/d
 
 @InputType()
 export class MealPlanUpdateWithoutCreateByInput {
+	@Field(() => NullableDateTimeFieldUpdateOperationsInput, { nullable: true })
+	planTime?: NullableDateTimeFieldUpdateOperationsInput;
 
-    @Field(() => NullableDateTimeFieldUpdateOperationsInput, {nullable:true})
-    planTime?: NullableDateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => EnumMealTypeFieldUpdateOperationsInput, { nullable: true })
+	type?: EnumMealTypeFieldUpdateOperationsInput;
 
-    @Field(() => EnumMealTypeFieldUpdateOperationsInput, {nullable:true})
-    type?: EnumMealTypeFieldUpdateOperationsInput;
-
-    @Field(() => DishPlanUpdateManyWithoutUsedMealPlanNestedInput, {nullable:true})
-    dishPlans?: DishPlanUpdateManyWithoutUsedMealPlanNestedInput;
+	@Field(() => DishPlanUpdateManyWithoutUsedMealPlanNestedInput, {
+		nullable: true,
+	})
+	dishPlans?: DishPlanUpdateManyWithoutUsedMealPlanNestedInput;
 }

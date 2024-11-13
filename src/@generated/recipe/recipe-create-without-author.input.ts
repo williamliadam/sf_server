@@ -8,28 +8,31 @@ import { DishTemplateCreateNestedManyWithoutRecipeInput } from '../dish-template
 
 @InputType()
 export class RecipeCreateWithoutAuthorInput {
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Int, { nullable: false })
+	stars!: number;
 
-    @Field(() => Int, {nullable:false})
-    stars!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => IngredientCreateNestedManyWithoutUsedRecipeInput, {
+		nullable: true,
+	})
+	ingredients?: IngredientCreateNestedManyWithoutUsedRecipeInput;
 
-    @Field(() => IngredientCreateNestedManyWithoutUsedRecipeInput, {nullable:true})
-    ingredients?: IngredientCreateNestedManyWithoutUsedRecipeInput;
+	@Field(() => MethodCreateNestedManyWithoutUsedRecipeInput, { nullable: true })
+	methods?: MethodCreateNestedManyWithoutUsedRecipeInput;
 
-    @Field(() => MethodCreateNestedManyWithoutUsedRecipeInput, {nullable:true})
-    methods?: MethodCreateNestedManyWithoutUsedRecipeInput;
+	@Field(() => DishPlanCreateNestedManyWithoutRecipeInput, { nullable: true })
+	usedDishPlans?: DishPlanCreateNestedManyWithoutRecipeInput;
 
-    @Field(() => DishPlanCreateNestedManyWithoutRecipeInput, {nullable:true})
-    usedDishPlans?: DishPlanCreateNestedManyWithoutRecipeInput;
-
-    @Field(() => DishTemplateCreateNestedManyWithoutRecipeInput, {nullable:true})
-    usedDishTemplates?: DishTemplateCreateNestedManyWithoutRecipeInput;
+	@Field(() => DishTemplateCreateNestedManyWithoutRecipeInput, {
+		nullable: true,
+	})
+	usedDishTemplates?: DishTemplateCreateNestedManyWithoutRecipeInput;
 }

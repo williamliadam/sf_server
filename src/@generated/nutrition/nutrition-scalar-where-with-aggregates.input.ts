@@ -6,28 +6,27 @@ import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregate
 
 @InputType()
 export class NutritionScalarWhereWithAggregatesInput {
+	@Field(() => [NutritionScalarWhereWithAggregatesInput], { nullable: true })
+	AND?: Array<NutritionScalarWhereWithAggregatesInput>;
 
-    @Field(() => [NutritionScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<NutritionScalarWhereWithAggregatesInput>;
+	@Field(() => [NutritionScalarWhereWithAggregatesInput], { nullable: true })
+	OR?: Array<NutritionScalarWhereWithAggregatesInput>;
 
-    @Field(() => [NutritionScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<NutritionScalarWhereWithAggregatesInput>;
+	@Field(() => [NutritionScalarWhereWithAggregatesInput], { nullable: true })
+	NOT?: Array<NutritionScalarWhereWithAggregatesInput>;
 
-    @Field(() => [NutritionScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<NutritionScalarWhereWithAggregatesInput>;
+	@Field(() => IntWithAggregatesFilter, { nullable: true })
+	id?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    id?: IntWithAggregatesFilter;
+	@Field(() => StringWithAggregatesFilter, { nullable: true })
+	code?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    code?: StringWithAggregatesFilter;
+	@Field(() => StringWithAggregatesFilter, { nullable: true })
+	name?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    name?: StringWithAggregatesFilter;
+	@Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+	createdAt?: DateTimeWithAggregatesFilter;
 
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    createdAt?: DateTimeWithAggregatesFilter;
-
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    updatedAt?: DateTimeWithAggregatesFilter;
+	@Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+	updatedAt?: DateTimeWithAggregatesFilter;
 }

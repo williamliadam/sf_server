@@ -7,12 +7,14 @@ import { UserCreateWithoutBodyDetailInput } from './user-create-without-body-det
 
 @InputType()
 export class UserCreateOrConnectWithoutBodyDetailInput {
+	@Field(() => UserWhereUniqueInput, { nullable: false })
+	@Type(() => UserWhereUniqueInput)
+	where!: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:false})
-    @Type(() => UserWhereUniqueInput)
-    where!: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
-
-    @Field(() => UserCreateWithoutBodyDetailInput, {nullable:false})
-    @Type(() => UserCreateWithoutBodyDetailInput)
-    create!: UserCreateWithoutBodyDetailInput;
+	@Field(() => UserCreateWithoutBodyDetailInput, { nullable: false })
+	@Type(() => UserCreateWithoutBodyDetailInput)
+	create!: UserCreateWithoutBodyDetailInput;
 }

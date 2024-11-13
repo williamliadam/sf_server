@@ -10,40 +10,39 @@ import { MateriaCategoryNullableRelationFilter } from './materia-category-nullab
 
 @InputType()
 export class MateriaCategoryWhereInput {
+	@Field(() => [MateriaCategoryWhereInput], { nullable: true })
+	AND?: Array<MateriaCategoryWhereInput>;
 
-    @Field(() => [MateriaCategoryWhereInput], {nullable:true})
-    AND?: Array<MateriaCategoryWhereInput>;
+	@Field(() => [MateriaCategoryWhereInput], { nullable: true })
+	OR?: Array<MateriaCategoryWhereInput>;
 
-    @Field(() => [MateriaCategoryWhereInput], {nullable:true})
-    OR?: Array<MateriaCategoryWhereInput>;
+	@Field(() => [MateriaCategoryWhereInput], { nullable: true })
+	NOT?: Array<MateriaCategoryWhereInput>;
 
-    @Field(() => [MateriaCategoryWhereInput], {nullable:true})
-    NOT?: Array<MateriaCategoryWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => StringFilter, { nullable: true })
+	code?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    code?: StringFilter;
+	@Field(() => StringFilter, { nullable: true })
+	name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+	@Field(() => IntNullableFilter, { nullable: true })
+	lastId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    lastId?: IntNullableFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => MaterialListRelationFilter, { nullable: true })
+	materials?: MaterialListRelationFilter;
 
-    @Field(() => MaterialListRelationFilter, {nullable:true})
-    materials?: MaterialListRelationFilter;
+	@Field(() => MateriaCategoryListRelationFilter, { nullable: true })
+	next?: MateriaCategoryListRelationFilter;
 
-    @Field(() => MateriaCategoryListRelationFilter, {nullable:true})
-    next?: MateriaCategoryListRelationFilter;
-
-    @Field(() => MateriaCategoryNullableRelationFilter, {nullable:true})
-    last?: MateriaCategoryNullableRelationFilter;
+	@Field(() => MateriaCategoryNullableRelationFilter, { nullable: true })
+	last?: MateriaCategoryNullableRelationFilter;
 }

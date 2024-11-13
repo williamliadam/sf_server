@@ -4,10 +4,9 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class MaterialSumAggregate {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
-
-    @Field(() => Int, {nullable:true})
-    materiaCategoryId?: number;
+	@Field(() => Int, { nullable: true })
+	materiaCategoryId?: number;
 }

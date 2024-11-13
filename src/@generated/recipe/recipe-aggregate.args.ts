@@ -14,35 +14,34 @@ import { RecipeMaxAggregateInput } from './recipe-max-aggregate.input';
 
 @ArgsType()
 export class RecipeAggregateArgs {
+	@Field(() => RecipeWhereInput, { nullable: true })
+	@Type(() => RecipeWhereInput)
+	where?: RecipeWhereInput;
 
-    @Field(() => RecipeWhereInput, {nullable:true})
-    @Type(() => RecipeWhereInput)
-    where?: RecipeWhereInput;
+	@Field(() => [RecipeOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<RecipeOrderByWithRelationInput>;
 
-    @Field(() => [RecipeOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<RecipeOrderByWithRelationInput>;
+	@Field(() => RecipeWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 
-    @Field(() => RecipeWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => RecipeCountAggregateInput, { nullable: true })
+	_count?: RecipeCountAggregateInput;
 
-    @Field(() => RecipeCountAggregateInput, {nullable:true})
-    _count?: RecipeCountAggregateInput;
+	@Field(() => RecipeAvgAggregateInput, { nullable: true })
+	_avg?: RecipeAvgAggregateInput;
 
-    @Field(() => RecipeAvgAggregateInput, {nullable:true})
-    _avg?: RecipeAvgAggregateInput;
+	@Field(() => RecipeSumAggregateInput, { nullable: true })
+	_sum?: RecipeSumAggregateInput;
 
-    @Field(() => RecipeSumAggregateInput, {nullable:true})
-    _sum?: RecipeSumAggregateInput;
+	@Field(() => RecipeMinAggregateInput, { nullable: true })
+	_min?: RecipeMinAggregateInput;
 
-    @Field(() => RecipeMinAggregateInput, {nullable:true})
-    _min?: RecipeMinAggregateInput;
-
-    @Field(() => RecipeMaxAggregateInput, {nullable:true})
-    _max?: RecipeMaxAggregateInput;
+	@Field(() => RecipeMaxAggregateInput, { nullable: true })
+	_max?: RecipeMaxAggregateInput;
 }

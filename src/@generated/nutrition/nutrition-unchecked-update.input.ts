@@ -7,22 +7,23 @@ import { NutritionRowUncheckedUpdateManyWithoutNutirtionNestedInput } from '../n
 
 @InputType()
 export class NutritionUncheckedUpdateInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => NutritionRowUncheckedUpdateManyWithoutNutirtionNestedInput, {nullable:true})
-    usedRow?: NutritionRowUncheckedUpdateManyWithoutNutirtionNestedInput;
+	@Field(() => NutritionRowUncheckedUpdateManyWithoutNutirtionNestedInput, {
+		nullable: true,
+	})
+	usedRow?: NutritionRowUncheckedUpdateManyWithoutNutirtionNestedInput;
 }

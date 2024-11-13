@@ -14,38 +14,37 @@ import { NutritionRowMaxAggregateInput } from './nutrition-row-max-aggregate.inp
 
 @ArgsType()
 export class NutritionRowGroupByArgs {
+	@Field(() => NutritionRowWhereInput, { nullable: true })
+	@Type(() => NutritionRowWhereInput)
+	where?: NutritionRowWhereInput;
 
-    @Field(() => NutritionRowWhereInput, {nullable:true})
-    @Type(() => NutritionRowWhereInput)
-    where?: NutritionRowWhereInput;
+	@Field(() => [NutritionRowOrderByWithAggregationInput], { nullable: true })
+	orderBy?: Array<NutritionRowOrderByWithAggregationInput>;
 
-    @Field(() => [NutritionRowOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<NutritionRowOrderByWithAggregationInput>;
+	@Field(() => [NutritionRowScalarFieldEnum], { nullable: false })
+	by!: Array<keyof typeof NutritionRowScalarFieldEnum>;
 
-    @Field(() => [NutritionRowScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof NutritionRowScalarFieldEnum>;
+	@Field(() => NutritionRowScalarWhereWithAggregatesInput, { nullable: true })
+	having?: NutritionRowScalarWhereWithAggregatesInput;
 
-    @Field(() => NutritionRowScalarWhereWithAggregatesInput, {nullable:true})
-    having?: NutritionRowScalarWhereWithAggregatesInput;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => NutritionRowCountAggregateInput, { nullable: true })
+	_count?: NutritionRowCountAggregateInput;
 
-    @Field(() => NutritionRowCountAggregateInput, {nullable:true})
-    _count?: NutritionRowCountAggregateInput;
+	@Field(() => NutritionRowAvgAggregateInput, { nullable: true })
+	_avg?: NutritionRowAvgAggregateInput;
 
-    @Field(() => NutritionRowAvgAggregateInput, {nullable:true})
-    _avg?: NutritionRowAvgAggregateInput;
+	@Field(() => NutritionRowSumAggregateInput, { nullable: true })
+	_sum?: NutritionRowSumAggregateInput;
 
-    @Field(() => NutritionRowSumAggregateInput, {nullable:true})
-    _sum?: NutritionRowSumAggregateInput;
+	@Field(() => NutritionRowMinAggregateInput, { nullable: true })
+	_min?: NutritionRowMinAggregateInput;
 
-    @Field(() => NutritionRowMinAggregateInput, {nullable:true})
-    _min?: NutritionRowMinAggregateInput;
-
-    @Field(() => NutritionRowMaxAggregateInput, {nullable:true})
-    _max?: NutritionRowMaxAggregateInput;
+	@Field(() => NutritionRowMaxAggregateInput, { nullable: true })
+	_max?: NutritionRowMaxAggregateInput;
 }

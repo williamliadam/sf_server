@@ -7,22 +7,24 @@ import { DishTemplateUncheckedUpdateManyWithoutUsedMealTemplatesNestedInput } fr
 
 @InputType()
 export class MealTemplateUncheckedUpdateInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	userId?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    userId?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => DishTemplateUncheckedUpdateManyWithoutUsedMealTemplatesNestedInput, {nullable:true})
-    dishTemplates?: DishTemplateUncheckedUpdateManyWithoutUsedMealTemplatesNestedInput;
+	@Field(
+		() => DishTemplateUncheckedUpdateManyWithoutUsedMealTemplatesNestedInput,
+		{ nullable: true },
+	)
+	dishTemplates?: DishTemplateUncheckedUpdateManyWithoutUsedMealTemplatesNestedInput;
 }

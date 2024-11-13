@@ -7,16 +7,15 @@ import { MateriaCategoryWhereInput } from './materia-category-where.input';
 
 @InputType()
 export class MateriaCategoryUpsertWithoutMaterialsInput {
+	@Field(() => MateriaCategoryUpdateWithoutMaterialsInput, { nullable: false })
+	@Type(() => MateriaCategoryUpdateWithoutMaterialsInput)
+	update!: MateriaCategoryUpdateWithoutMaterialsInput;
 
-    @Field(() => MateriaCategoryUpdateWithoutMaterialsInput, {nullable:false})
-    @Type(() => MateriaCategoryUpdateWithoutMaterialsInput)
-    update!: MateriaCategoryUpdateWithoutMaterialsInput;
+	@Field(() => MateriaCategoryCreateWithoutMaterialsInput, { nullable: false })
+	@Type(() => MateriaCategoryCreateWithoutMaterialsInput)
+	create!: MateriaCategoryCreateWithoutMaterialsInput;
 
-    @Field(() => MateriaCategoryCreateWithoutMaterialsInput, {nullable:false})
-    @Type(() => MateriaCategoryCreateWithoutMaterialsInput)
-    create!: MateriaCategoryCreateWithoutMaterialsInput;
-
-    @Field(() => MateriaCategoryWhereInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereInput)
-    where?: MateriaCategoryWhereInput;
+	@Field(() => MateriaCategoryWhereInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereInput)
+	where?: MateriaCategoryWhereInput;
 }

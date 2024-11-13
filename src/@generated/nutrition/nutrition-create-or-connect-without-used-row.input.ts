@@ -7,12 +7,11 @@ import { NutritionCreateWithoutUsedRowInput } from './nutrition-create-without-u
 
 @InputType()
 export class NutritionCreateOrConnectWithoutUsedRowInput {
+	@Field(() => NutritionWhereUniqueInput, { nullable: false })
+	@Type(() => NutritionWhereUniqueInput)
+	where!: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => NutritionWhereUniqueInput, {nullable:false})
-    @Type(() => NutritionWhereUniqueInput)
-    where!: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => NutritionCreateWithoutUsedRowInput, {nullable:false})
-    @Type(() => NutritionCreateWithoutUsedRowInput)
-    create!: NutritionCreateWithoutUsedRowInput;
+	@Field(() => NutritionCreateWithoutUsedRowInput, { nullable: false })
+	@Type(() => NutritionCreateWithoutUsedRowInput)
+	create!: NutritionCreateWithoutUsedRowInput;
 }

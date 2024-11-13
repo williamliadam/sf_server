@@ -9,31 +9,36 @@ import { DishTemplateUncheckedUpdateManyWithoutRecipeNestedInput } from '../dish
 
 @InputType()
 export class RecipeUncheckedUpdateWithoutIngredientsInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	stars?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    stars?: IntFieldUpdateOperationsInput;
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	authorId?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    authorId?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => MethodUncheckedUpdateManyWithoutUsedRecipeNestedInput, {
+		nullable: true,
+	})
+	methods?: MethodUncheckedUpdateManyWithoutUsedRecipeNestedInput;
 
-    @Field(() => MethodUncheckedUpdateManyWithoutUsedRecipeNestedInput, {nullable:true})
-    methods?: MethodUncheckedUpdateManyWithoutUsedRecipeNestedInput;
+	@Field(() => DishPlanUncheckedUpdateManyWithoutRecipeNestedInput, {
+		nullable: true,
+	})
+	usedDishPlans?: DishPlanUncheckedUpdateManyWithoutRecipeNestedInput;
 
-    @Field(() => DishPlanUncheckedUpdateManyWithoutRecipeNestedInput, {nullable:true})
-    usedDishPlans?: DishPlanUncheckedUpdateManyWithoutRecipeNestedInput;
-
-    @Field(() => DishTemplateUncheckedUpdateManyWithoutRecipeNestedInput, {nullable:true})
-    usedDishTemplates?: DishTemplateUncheckedUpdateManyWithoutRecipeNestedInput;
+	@Field(() => DishTemplateUncheckedUpdateManyWithoutRecipeNestedInput, {
+		nullable: true,
+	})
+	usedDishTemplates?: DishTemplateUncheckedUpdateManyWithoutRecipeNestedInput;
 }

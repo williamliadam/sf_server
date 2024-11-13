@@ -7,28 +7,27 @@ import { RecipeOrderByWithRelationInput } from '../recipe/recipe-order-by-with-r
 
 @InputType()
 export class DishTemplateOrderByWithRelationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	recipeId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    recipeId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	amount?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    amount?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => SortOrderInput, { nullable: true })
+	mealTemplateId?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    mealTemplateId?: SortOrderInput;
+	@Field(() => MealTemplateOrderByWithRelationInput, { nullable: true })
+	usedMealTemplates?: MealTemplateOrderByWithRelationInput;
 
-    @Field(() => MealTemplateOrderByWithRelationInput, {nullable:true})
-    usedMealTemplates?: MealTemplateOrderByWithRelationInput;
-
-    @Field(() => RecipeOrderByWithRelationInput, {nullable:true})
-    recipe?: RecipeOrderByWithRelationInput;
+	@Field(() => RecipeOrderByWithRelationInput, { nullable: true })
+	recipe?: RecipeOrderByWithRelationInput;
 }

@@ -7,19 +7,22 @@ import { RecipeUpdateOneRequiredWithoutUsedDishTemplatesNestedInput } from '../r
 
 @InputType()
 export class DishTemplateUpdateInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	amount?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    amount?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => MealTemplateUpdateOneWithoutDishTemplatesNestedInput, {
+		nullable: true,
+	})
+	usedMealTemplates?: MealTemplateUpdateOneWithoutDishTemplatesNestedInput;
 
-    @Field(() => MealTemplateUpdateOneWithoutDishTemplatesNestedInput, {nullable:true})
-    usedMealTemplates?: MealTemplateUpdateOneWithoutDishTemplatesNestedInput;
-
-    @Field(() => RecipeUpdateOneRequiredWithoutUsedDishTemplatesNestedInput, {nullable:true})
-    recipe?: RecipeUpdateOneRequiredWithoutUsedDishTemplatesNestedInput;
+	@Field(() => RecipeUpdateOneRequiredWithoutUsedDishTemplatesNestedInput, {
+		nullable: true,
+	})
+	recipe?: RecipeUpdateOneRequiredWithoutUsedDishTemplatesNestedInput;
 }

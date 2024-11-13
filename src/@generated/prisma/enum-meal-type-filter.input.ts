@@ -5,16 +5,15 @@ import { NestedEnumMealTypeFilter } from './nested-enum-meal-type-filter.input';
 
 @InputType()
 export class EnumMealTypeFilter {
+	@Field(() => MealType, { nullable: true })
+	equals?: keyof typeof MealType;
 
-    @Field(() => MealType, {nullable:true})
-    equals?: keyof typeof MealType;
+	@Field(() => [MealType], { nullable: true })
+	in?: Array<keyof typeof MealType>;
 
-    @Field(() => [MealType], {nullable:true})
-    in?: Array<keyof typeof MealType>;
+	@Field(() => [MealType], { nullable: true })
+	notIn?: Array<keyof typeof MealType>;
 
-    @Field(() => [MealType], {nullable:true})
-    notIn?: Array<keyof typeof MealType>;
-
-    @Field(() => NestedEnumMealTypeFilter, {nullable:true})
-    not?: NestedEnumMealTypeFilter;
+	@Field(() => NestedEnumMealTypeFilter, { nullable: true })
+	not?: NestedEnumMealTypeFilter;
 }

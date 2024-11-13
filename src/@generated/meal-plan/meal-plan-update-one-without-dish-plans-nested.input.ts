@@ -11,32 +11,33 @@ import { MealPlanUpdateToOneWithWhereWithoutDishPlansInput } from './meal-plan-u
 
 @InputType()
 export class MealPlanUpdateOneWithoutDishPlansNestedInput {
+	@Field(() => MealPlanCreateWithoutDishPlansInput, { nullable: true })
+	@Type(() => MealPlanCreateWithoutDishPlansInput)
+	create?: MealPlanCreateWithoutDishPlansInput;
 
-    @Field(() => MealPlanCreateWithoutDishPlansInput, {nullable:true})
-    @Type(() => MealPlanCreateWithoutDishPlansInput)
-    create?: MealPlanCreateWithoutDishPlansInput;
+	@Field(() => MealPlanCreateOrConnectWithoutDishPlansInput, { nullable: true })
+	@Type(() => MealPlanCreateOrConnectWithoutDishPlansInput)
+	connectOrCreate?: MealPlanCreateOrConnectWithoutDishPlansInput;
 
-    @Field(() => MealPlanCreateOrConnectWithoutDishPlansInput, {nullable:true})
-    @Type(() => MealPlanCreateOrConnectWithoutDishPlansInput)
-    connectOrCreate?: MealPlanCreateOrConnectWithoutDishPlansInput;
+	@Field(() => MealPlanUpsertWithoutDishPlansInput, { nullable: true })
+	@Type(() => MealPlanUpsertWithoutDishPlansInput)
+	upsert?: MealPlanUpsertWithoutDishPlansInput;
 
-    @Field(() => MealPlanUpsertWithoutDishPlansInput, {nullable:true})
-    @Type(() => MealPlanUpsertWithoutDishPlansInput)
-    upsert?: MealPlanUpsertWithoutDishPlansInput;
+	@Field(() => MealPlanWhereInput, { nullable: true })
+	@Type(() => MealPlanWhereInput)
+	disconnect?: MealPlanWhereInput;
 
-    @Field(() => MealPlanWhereInput, {nullable:true})
-    @Type(() => MealPlanWhereInput)
-    disconnect?: MealPlanWhereInput;
+	@Field(() => MealPlanWhereInput, { nullable: true })
+	@Type(() => MealPlanWhereInput)
+	delete?: MealPlanWhereInput;
 
-    @Field(() => MealPlanWhereInput, {nullable:true})
-    @Type(() => MealPlanWhereInput)
-    delete?: MealPlanWhereInput;
+	@Field(() => MealPlanWhereUniqueInput, { nullable: true })
+	@Type(() => MealPlanWhereUniqueInput)
+	connect?: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
 
-    @Field(() => MealPlanWhereUniqueInput, {nullable:true})
-    @Type(() => MealPlanWhereUniqueInput)
-    connect?: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
-
-    @Field(() => MealPlanUpdateToOneWithWhereWithoutDishPlansInput, {nullable:true})
-    @Type(() => MealPlanUpdateToOneWithWhereWithoutDishPlansInput)
-    update?: MealPlanUpdateToOneWithWhereWithoutDishPlansInput;
+	@Field(() => MealPlanUpdateToOneWithWhereWithoutDishPlansInput, {
+		nullable: true,
+	})
+	@Type(() => MealPlanUpdateToOneWithWhereWithoutDishPlansInput)
+	update?: MealPlanUpdateToOneWithWhereWithoutDishPlansInput;
 }

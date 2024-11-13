@@ -7,22 +7,23 @@ import { UserUpdateOneRequiredWithoutProfileNestedInput } from '../user/user-upd
 
 @InputType()
 export class ProfileUpdateInput {
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	avatar?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    avatar?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+	nickName?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    nickName?: NullableStringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => EnumGoalFieldUpdateOperationsInput, { nullable: true })
+	goal?: EnumGoalFieldUpdateOperationsInput;
 
-    @Field(() => EnumGoalFieldUpdateOperationsInput, {nullable:true})
-    goal?: EnumGoalFieldUpdateOperationsInput;
-
-    @Field(() => UserUpdateOneRequiredWithoutProfileNestedInput, {nullable:true})
-    user?: UserUpdateOneRequiredWithoutProfileNestedInput;
+	@Field(() => UserUpdateOneRequiredWithoutProfileNestedInput, {
+		nullable: true,
+	})
+	user?: UserUpdateOneRequiredWithoutProfileNestedInput;
 }

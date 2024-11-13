@@ -7,12 +7,11 @@ import { MealPlanUpdateWithoutCreateByInput } from './meal-plan-update-without-c
 
 @InputType()
 export class MealPlanUpdateWithWhereUniqueWithoutCreateByInput {
+	@Field(() => MealPlanWhereUniqueInput, { nullable: false })
+	@Type(() => MealPlanWhereUniqueInput)
+	where!: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
 
-    @Field(() => MealPlanWhereUniqueInput, {nullable:false})
-    @Type(() => MealPlanWhereUniqueInput)
-    where!: Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>;
-
-    @Field(() => MealPlanUpdateWithoutCreateByInput, {nullable:false})
-    @Type(() => MealPlanUpdateWithoutCreateByInput)
-    data!: MealPlanUpdateWithoutCreateByInput;
+	@Field(() => MealPlanUpdateWithoutCreateByInput, { nullable: false })
+	@Type(() => MealPlanUpdateWithoutCreateByInput)
+	data!: MealPlanUpdateWithoutCreateByInput;
 }

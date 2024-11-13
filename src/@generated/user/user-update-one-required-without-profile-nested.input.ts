@@ -10,24 +10,26 @@ import { UserUpdateToOneWithWhereWithoutProfileInput } from './user-update-to-on
 
 @InputType()
 export class UserUpdateOneRequiredWithoutProfileNestedInput {
+	@Field(() => UserCreateWithoutProfileInput, { nullable: true })
+	@Type(() => UserCreateWithoutProfileInput)
+	create?: UserCreateWithoutProfileInput;
 
-    @Field(() => UserCreateWithoutProfileInput, {nullable:true})
-    @Type(() => UserCreateWithoutProfileInput)
-    create?: UserCreateWithoutProfileInput;
+	@Field(() => UserCreateOrConnectWithoutProfileInput, { nullable: true })
+	@Type(() => UserCreateOrConnectWithoutProfileInput)
+	connectOrCreate?: UserCreateOrConnectWithoutProfileInput;
 
-    @Field(() => UserCreateOrConnectWithoutProfileInput, {nullable:true})
-    @Type(() => UserCreateOrConnectWithoutProfileInput)
-    connectOrCreate?: UserCreateOrConnectWithoutProfileInput;
+	@Field(() => UserUpsertWithoutProfileInput, { nullable: true })
+	@Type(() => UserUpsertWithoutProfileInput)
+	upsert?: UserUpsertWithoutProfileInput;
 
-    @Field(() => UserUpsertWithoutProfileInput, {nullable:true})
-    @Type(() => UserUpsertWithoutProfileInput)
-    upsert?: UserUpsertWithoutProfileInput;
+	@Field(() => UserWhereUniqueInput, { nullable: true })
+	@Type(() => UserWhereUniqueInput)
+	connect?: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:true})
-    @Type(() => UserWhereUniqueInput)
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
-
-    @Field(() => UserUpdateToOneWithWhereWithoutProfileInput, {nullable:true})
-    @Type(() => UserUpdateToOneWithWhereWithoutProfileInput)
-    update?: UserUpdateToOneWithWhereWithoutProfileInput;
+	@Field(() => UserUpdateToOneWithWhereWithoutProfileInput, { nullable: true })
+	@Type(() => UserUpdateToOneWithWhereWithoutProfileInput)
+	update?: UserUpdateToOneWithWhereWithoutProfileInput;
 }

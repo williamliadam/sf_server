@@ -5,28 +5,30 @@ import { NutritionRowUncheckedCreateNestedManyWithoutBelongMaterialInput } from 
 
 @InputType()
 export class MaterialUncheckedCreateWithoutIngredientsInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	nickName!: string;
 
-    @Field(() => String, {nullable:false})
-    nickName!: string;
+	@Field(() => Int, { nullable: false })
+	materiaCategoryId!: number;
 
-    @Field(() => Int, {nullable:false})
-    materiaCategoryId!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
-
-    @Field(() => NutritionRowUncheckedCreateNestedManyWithoutBelongMaterialInput, {nullable:true})
-    nutritionMatrix?: NutritionRowUncheckedCreateNestedManyWithoutBelongMaterialInput;
+	@Field(
+		() => NutritionRowUncheckedCreateNestedManyWithoutBelongMaterialInput,
+		{ nullable: true },
+	)
+	nutritionMatrix?: NutritionRowUncheckedCreateNestedManyWithoutBelongMaterialInput;
 }

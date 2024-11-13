@@ -8,16 +8,15 @@ import { NutritionRowCreateWithoutNutirtionInput } from './nutrition-row-create-
 
 @InputType()
 export class NutritionRowUpsertWithWhereUniqueWithoutNutirtionInput {
+	@Field(() => NutritionRowWhereUniqueInput, { nullable: false })
+	@Type(() => NutritionRowWhereUniqueInput)
+	where!: Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>;
 
-    @Field(() => NutritionRowWhereUniqueInput, {nullable:false})
-    @Type(() => NutritionRowWhereUniqueInput)
-    where!: Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>;
+	@Field(() => NutritionRowUpdateWithoutNutirtionInput, { nullable: false })
+	@Type(() => NutritionRowUpdateWithoutNutirtionInput)
+	update!: NutritionRowUpdateWithoutNutirtionInput;
 
-    @Field(() => NutritionRowUpdateWithoutNutirtionInput, {nullable:false})
-    @Type(() => NutritionRowUpdateWithoutNutirtionInput)
-    update!: NutritionRowUpdateWithoutNutirtionInput;
-
-    @Field(() => NutritionRowCreateWithoutNutirtionInput, {nullable:false})
-    @Type(() => NutritionRowCreateWithoutNutirtionInput)
-    create!: NutritionRowCreateWithoutNutirtionInput;
+	@Field(() => NutritionRowCreateWithoutNutirtionInput, { nullable: false })
+	@Type(() => NutritionRowCreateWithoutNutirtionInput)
+	create!: NutritionRowCreateWithoutNutirtionInput;
 }

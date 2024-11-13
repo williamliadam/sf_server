@@ -6,12 +6,11 @@ import { NutritionWhereInput } from './nutrition-where.input';
 
 @ArgsType()
 export class UpdateManyNutritionArgs {
+	@Field(() => NutritionUpdateManyMutationInput, { nullable: false })
+	@Type(() => NutritionUpdateManyMutationInput)
+	data!: NutritionUpdateManyMutationInput;
 
-    @Field(() => NutritionUpdateManyMutationInput, {nullable:false})
-    @Type(() => NutritionUpdateManyMutationInput)
-    data!: NutritionUpdateManyMutationInput;
-
-    @Field(() => NutritionWhereInput, {nullable:true})
-    @Type(() => NutritionWhereInput)
-    where?: NutritionWhereInput;
+	@Field(() => NutritionWhereInput, { nullable: true })
+	@Type(() => NutritionWhereInput)
+	where?: NutritionWhereInput;
 }

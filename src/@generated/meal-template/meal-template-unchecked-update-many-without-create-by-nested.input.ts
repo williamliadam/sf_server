@@ -13,48 +13,55 @@ import { MealTemplateScalarWhereInput } from './meal-template-scalar-where.input
 
 @InputType()
 export class MealTemplateUncheckedUpdateManyWithoutCreateByNestedInput {
+	@Field(() => [MealTemplateCreateWithoutCreateByInput], { nullable: true })
+	@Type(() => MealTemplateCreateWithoutCreateByInput)
+	create?: Array<MealTemplateCreateWithoutCreateByInput>;
 
-    @Field(() => [MealTemplateCreateWithoutCreateByInput], {nullable:true})
-    @Type(() => MealTemplateCreateWithoutCreateByInput)
-    create?: Array<MealTemplateCreateWithoutCreateByInput>;
+	@Field(() => [MealTemplateCreateOrConnectWithoutCreateByInput], {
+		nullable: true,
+	})
+	@Type(() => MealTemplateCreateOrConnectWithoutCreateByInput)
+	connectOrCreate?: Array<MealTemplateCreateOrConnectWithoutCreateByInput>;
 
-    @Field(() => [MealTemplateCreateOrConnectWithoutCreateByInput], {nullable:true})
-    @Type(() => MealTemplateCreateOrConnectWithoutCreateByInput)
-    connectOrCreate?: Array<MealTemplateCreateOrConnectWithoutCreateByInput>;
+	@Field(() => [MealTemplateUpsertWithWhereUniqueWithoutCreateByInput], {
+		nullable: true,
+	})
+	@Type(() => MealTemplateUpsertWithWhereUniqueWithoutCreateByInput)
+	upsert?: Array<MealTemplateUpsertWithWhereUniqueWithoutCreateByInput>;
 
-    @Field(() => [MealTemplateUpsertWithWhereUniqueWithoutCreateByInput], {nullable:true})
-    @Type(() => MealTemplateUpsertWithWhereUniqueWithoutCreateByInput)
-    upsert?: Array<MealTemplateUpsertWithWhereUniqueWithoutCreateByInput>;
+	@Field(() => MealTemplateCreateManyCreateByInputEnvelope, { nullable: true })
+	@Type(() => MealTemplateCreateManyCreateByInputEnvelope)
+	createMany?: MealTemplateCreateManyCreateByInputEnvelope;
 
-    @Field(() => MealTemplateCreateManyCreateByInputEnvelope, {nullable:true})
-    @Type(() => MealTemplateCreateManyCreateByInputEnvelope)
-    createMany?: MealTemplateCreateManyCreateByInputEnvelope;
+	@Field(() => [MealTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => MealTemplateWhereUniqueInput)
+	set?: Array<Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [MealTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => MealTemplateWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [MealTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => MealTemplateWhereUniqueInput)
+	disconnect?: Array<Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [MealTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => MealTemplateWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [MealTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => MealTemplateWhereUniqueInput)
+	delete?: Array<Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [MealTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => MealTemplateWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [MealTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => MealTemplateWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [MealTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => MealTemplateWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [MealTemplateUpdateWithWhereUniqueWithoutCreateByInput], {
+		nullable: true,
+	})
+	@Type(() => MealTemplateUpdateWithWhereUniqueWithoutCreateByInput)
+	update?: Array<MealTemplateUpdateWithWhereUniqueWithoutCreateByInput>;
 
-    @Field(() => [MealTemplateUpdateWithWhereUniqueWithoutCreateByInput], {nullable:true})
-    @Type(() => MealTemplateUpdateWithWhereUniqueWithoutCreateByInput)
-    update?: Array<MealTemplateUpdateWithWhereUniqueWithoutCreateByInput>;
+	@Field(() => [MealTemplateUpdateManyWithWhereWithoutCreateByInput], {
+		nullable: true,
+	})
+	@Type(() => MealTemplateUpdateManyWithWhereWithoutCreateByInput)
+	updateMany?: Array<MealTemplateUpdateManyWithWhereWithoutCreateByInput>;
 
-    @Field(() => [MealTemplateUpdateManyWithWhereWithoutCreateByInput], {nullable:true})
-    @Type(() => MealTemplateUpdateManyWithWhereWithoutCreateByInput)
-    updateMany?: Array<MealTemplateUpdateManyWithWhereWithoutCreateByInput>;
-
-    @Field(() => [MealTemplateScalarWhereInput], {nullable:true})
-    @Type(() => MealTemplateScalarWhereInput)
-    deleteMany?: Array<MealTemplateScalarWhereInput>;
+	@Field(() => [MealTemplateScalarWhereInput], { nullable: true })
+	@Type(() => MealTemplateScalarWhereInput)
+	deleteMany?: Array<MealTemplateScalarWhereInput>;
 }

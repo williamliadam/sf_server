@@ -4,7 +4,6 @@ import { MealType } from './meal-type.enum';
 
 @InputType()
 export class EnumMealTypeFieldUpdateOperationsInput {
-
-    @Field(() => MealType, {nullable:true})
-    set?: keyof typeof MealType;
+	@Field(() => MealType, { nullable: true })
+	set?: keyof typeof MealType;
 }

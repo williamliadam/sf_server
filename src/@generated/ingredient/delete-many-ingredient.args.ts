@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyIngredientArgs {
-
-    @Field(() => IngredientWhereInput, {nullable:true})
-    @Type(() => IngredientWhereInput)
-    where?: IngredientWhereInput;
+	@Field(() => IngredientWhereInput, { nullable: true })
+	@Type(() => IngredientWhereInput)
+	where?: IngredientWhereInput;
 }

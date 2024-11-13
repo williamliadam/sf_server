@@ -6,12 +6,11 @@ import { MateriaUnitUpdateWithoutIngredientsInput } from './materia-unit-update-
 
 @InputType()
 export class MateriaUnitUpdateToOneWithWhereWithoutIngredientsInput {
+	@Field(() => MateriaUnitWhereInput, { nullable: true })
+	@Type(() => MateriaUnitWhereInput)
+	where?: MateriaUnitWhereInput;
 
-    @Field(() => MateriaUnitWhereInput, {nullable:true})
-    @Type(() => MateriaUnitWhereInput)
-    where?: MateriaUnitWhereInput;
-
-    @Field(() => MateriaUnitUpdateWithoutIngredientsInput, {nullable:false})
-    @Type(() => MateriaUnitUpdateWithoutIngredientsInput)
-    data!: MateriaUnitUpdateWithoutIngredientsInput;
+	@Field(() => MateriaUnitUpdateWithoutIngredientsInput, { nullable: false })
+	@Type(() => MateriaUnitUpdateWithoutIngredientsInput)
+	data!: MateriaUnitUpdateWithoutIngredientsInput;
 }

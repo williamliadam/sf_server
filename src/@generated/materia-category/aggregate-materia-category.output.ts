@@ -8,19 +8,18 @@ import { MateriaCategoryMaxAggregate } from './materia-category-max-aggregate.ou
 
 @ObjectType()
 export class AggregateMateriaCategory {
+	@Field(() => MateriaCategoryCountAggregate, { nullable: true })
+	_count?: MateriaCategoryCountAggregate;
 
-    @Field(() => MateriaCategoryCountAggregate, {nullable:true})
-    _count?: MateriaCategoryCountAggregate;
+	@Field(() => MateriaCategoryAvgAggregate, { nullable: true })
+	_avg?: MateriaCategoryAvgAggregate;
 
-    @Field(() => MateriaCategoryAvgAggregate, {nullable:true})
-    _avg?: MateriaCategoryAvgAggregate;
+	@Field(() => MateriaCategorySumAggregate, { nullable: true })
+	_sum?: MateriaCategorySumAggregate;
 
-    @Field(() => MateriaCategorySumAggregate, {nullable:true})
-    _sum?: MateriaCategorySumAggregate;
+	@Field(() => MateriaCategoryMinAggregate, { nullable: true })
+	_min?: MateriaCategoryMinAggregate;
 
-    @Field(() => MateriaCategoryMinAggregate, {nullable:true})
-    _min?: MateriaCategoryMinAggregate;
-
-    @Field(() => MateriaCategoryMaxAggregate, {nullable:true})
-    _max?: MateriaCategoryMaxAggregate;
+	@Field(() => MateriaCategoryMaxAggregate, { nullable: true })
+	_max?: MateriaCategoryMaxAggregate;
 }

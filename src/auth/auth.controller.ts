@@ -27,7 +27,7 @@ export class AuthController {
 		private useService: UserService,
 		private mailerService: MailerService,
 		@Inject(CACHE_MANAGER) private cacheManager: Cache,
-	) { }
+	) {}
 
 	@UseGuards(LocalAuthGuard)
 	@Post('login')

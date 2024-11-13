@@ -7,16 +7,15 @@ import { UserWhereInput } from './user-where.input';
 
 @InputType()
 export class UserUpsertWithoutBodyDetailInput {
+	@Field(() => UserUpdateWithoutBodyDetailInput, { nullable: false })
+	@Type(() => UserUpdateWithoutBodyDetailInput)
+	update!: UserUpdateWithoutBodyDetailInput;
 
-    @Field(() => UserUpdateWithoutBodyDetailInput, {nullable:false})
-    @Type(() => UserUpdateWithoutBodyDetailInput)
-    update!: UserUpdateWithoutBodyDetailInput;
+	@Field(() => UserCreateWithoutBodyDetailInput, { nullable: false })
+	@Type(() => UserCreateWithoutBodyDetailInput)
+	create!: UserCreateWithoutBodyDetailInput;
 
-    @Field(() => UserCreateWithoutBodyDetailInput, {nullable:false})
-    @Type(() => UserCreateWithoutBodyDetailInput)
-    create!: UserCreateWithoutBodyDetailInput;
-
-    @Field(() => UserWhereInput, {nullable:true})
-    @Type(() => UserWhereInput)
-    where?: UserWhereInput;
+	@Field(() => UserWhereInput, { nullable: true })
+	@Type(() => UserWhereInput)
+	where?: UserWhereInput;
 }

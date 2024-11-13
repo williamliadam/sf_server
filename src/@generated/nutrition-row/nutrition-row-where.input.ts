@@ -7,37 +7,36 @@ import { MaterialRelationFilter } from '../material/material-relation-filter.inp
 
 @InputType()
 export class NutritionRowWhereInput {
+	@Field(() => [NutritionRowWhereInput], { nullable: true })
+	AND?: Array<NutritionRowWhereInput>;
 
-    @Field(() => [NutritionRowWhereInput], {nullable:true})
-    AND?: Array<NutritionRowWhereInput>;
+	@Field(() => [NutritionRowWhereInput], { nullable: true })
+	OR?: Array<NutritionRowWhereInput>;
 
-    @Field(() => [NutritionRowWhereInput], {nullable:true})
-    OR?: Array<NutritionRowWhereInput>;
+	@Field(() => [NutritionRowWhereInput], { nullable: true })
+	NOT?: Array<NutritionRowWhereInput>;
 
-    @Field(() => [NutritionRowWhereInput], {nullable:true})
-    NOT?: Array<NutritionRowWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	nutirtionId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    nutirtionId?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	percent?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    percent?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	belongToId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    belongToId?: IntFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => NutritionRelationFilter, { nullable: true })
+	nutirtion?: NutritionRelationFilter;
 
-    @Field(() => NutritionRelationFilter, {nullable:true})
-    nutirtion?: NutritionRelationFilter;
-
-    @Field(() => MaterialRelationFilter, {nullable:true})
-    belongMaterial?: MaterialRelationFilter;
+	@Field(() => MaterialRelationFilter, { nullable: true })
+	belongMaterial?: MaterialRelationFilter;
 }

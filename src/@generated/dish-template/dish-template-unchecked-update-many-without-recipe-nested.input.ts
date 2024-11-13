@@ -13,48 +13,55 @@ import { DishTemplateScalarWhereInput } from './dish-template-scalar-where.input
 
 @InputType()
 export class DishTemplateUncheckedUpdateManyWithoutRecipeNestedInput {
+	@Field(() => [DishTemplateCreateWithoutRecipeInput], { nullable: true })
+	@Type(() => DishTemplateCreateWithoutRecipeInput)
+	create?: Array<DishTemplateCreateWithoutRecipeInput>;
 
-    @Field(() => [DishTemplateCreateWithoutRecipeInput], {nullable:true})
-    @Type(() => DishTemplateCreateWithoutRecipeInput)
-    create?: Array<DishTemplateCreateWithoutRecipeInput>;
+	@Field(() => [DishTemplateCreateOrConnectWithoutRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => DishTemplateCreateOrConnectWithoutRecipeInput)
+	connectOrCreate?: Array<DishTemplateCreateOrConnectWithoutRecipeInput>;
 
-    @Field(() => [DishTemplateCreateOrConnectWithoutRecipeInput], {nullable:true})
-    @Type(() => DishTemplateCreateOrConnectWithoutRecipeInput)
-    connectOrCreate?: Array<DishTemplateCreateOrConnectWithoutRecipeInput>;
+	@Field(() => [DishTemplateUpsertWithWhereUniqueWithoutRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => DishTemplateUpsertWithWhereUniqueWithoutRecipeInput)
+	upsert?: Array<DishTemplateUpsertWithWhereUniqueWithoutRecipeInput>;
 
-    @Field(() => [DishTemplateUpsertWithWhereUniqueWithoutRecipeInput], {nullable:true})
-    @Type(() => DishTemplateUpsertWithWhereUniqueWithoutRecipeInput)
-    upsert?: Array<DishTemplateUpsertWithWhereUniqueWithoutRecipeInput>;
+	@Field(() => DishTemplateCreateManyRecipeInputEnvelope, { nullable: true })
+	@Type(() => DishTemplateCreateManyRecipeInputEnvelope)
+	createMany?: DishTemplateCreateManyRecipeInputEnvelope;
 
-    @Field(() => DishTemplateCreateManyRecipeInputEnvelope, {nullable:true})
-    @Type(() => DishTemplateCreateManyRecipeInputEnvelope)
-    createMany?: DishTemplateCreateManyRecipeInputEnvelope;
+	@Field(() => [DishTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => DishTemplateWhereUniqueInput)
+	set?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => DishTemplateWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [DishTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => DishTemplateWhereUniqueInput)
+	disconnect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => DishTemplateWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [DishTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => DishTemplateWhereUniqueInput)
+	delete?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => DishTemplateWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [DishTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => DishTemplateWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => DishTemplateWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [DishTemplateUpdateWithWhereUniqueWithoutRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => DishTemplateUpdateWithWhereUniqueWithoutRecipeInput)
+	update?: Array<DishTemplateUpdateWithWhereUniqueWithoutRecipeInput>;
 
-    @Field(() => [DishTemplateUpdateWithWhereUniqueWithoutRecipeInput], {nullable:true})
-    @Type(() => DishTemplateUpdateWithWhereUniqueWithoutRecipeInput)
-    update?: Array<DishTemplateUpdateWithWhereUniqueWithoutRecipeInput>;
+	@Field(() => [DishTemplateUpdateManyWithWhereWithoutRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => DishTemplateUpdateManyWithWhereWithoutRecipeInput)
+	updateMany?: Array<DishTemplateUpdateManyWithWhereWithoutRecipeInput>;
 
-    @Field(() => [DishTemplateUpdateManyWithWhereWithoutRecipeInput], {nullable:true})
-    @Type(() => DishTemplateUpdateManyWithWhereWithoutRecipeInput)
-    updateMany?: Array<DishTemplateUpdateManyWithWhereWithoutRecipeInput>;
-
-    @Field(() => [DishTemplateScalarWhereInput], {nullable:true})
-    @Type(() => DishTemplateScalarWhereInput)
-    deleteMany?: Array<DishTemplateScalarWhereInput>;
+	@Field(() => [DishTemplateScalarWhereInput], { nullable: true })
+	@Type(() => DishTemplateScalarWhereInput)
+	deleteMany?: Array<DishTemplateScalarWhereInput>;
 }

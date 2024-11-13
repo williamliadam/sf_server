@@ -7,16 +7,15 @@ import { RecipeWhereInput } from './recipe-where.input';
 
 @InputType()
 export class RecipeUpsertWithoutUsedDishTemplatesInput {
+	@Field(() => RecipeUpdateWithoutUsedDishTemplatesInput, { nullable: false })
+	@Type(() => RecipeUpdateWithoutUsedDishTemplatesInput)
+	update!: RecipeUpdateWithoutUsedDishTemplatesInput;
 
-    @Field(() => RecipeUpdateWithoutUsedDishTemplatesInput, {nullable:false})
-    @Type(() => RecipeUpdateWithoutUsedDishTemplatesInput)
-    update!: RecipeUpdateWithoutUsedDishTemplatesInput;
+	@Field(() => RecipeCreateWithoutUsedDishTemplatesInput, { nullable: false })
+	@Type(() => RecipeCreateWithoutUsedDishTemplatesInput)
+	create!: RecipeCreateWithoutUsedDishTemplatesInput;
 
-    @Field(() => RecipeCreateWithoutUsedDishTemplatesInput, {nullable:false})
-    @Type(() => RecipeCreateWithoutUsedDishTemplatesInput)
-    create!: RecipeCreateWithoutUsedDishTemplatesInput;
-
-    @Field(() => RecipeWhereInput, {nullable:true})
-    @Type(() => RecipeWhereInput)
-    where?: RecipeWhereInput;
+	@Field(() => RecipeWhereInput, { nullable: true })
+	@Type(() => RecipeWhereInput)
+	where?: RecipeWhereInput;
 }

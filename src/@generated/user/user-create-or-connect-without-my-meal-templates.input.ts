@@ -7,12 +7,14 @@ import { UserCreateWithoutMyMealTemplatesInput } from './user-create-without-my-
 
 @InputType()
 export class UserCreateOrConnectWithoutMyMealTemplatesInput {
+	@Field(() => UserWhereUniqueInput, { nullable: false })
+	@Type(() => UserWhereUniqueInput)
+	where!: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:false})
-    @Type(() => UserWhereUniqueInput)
-    where!: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
-
-    @Field(() => UserCreateWithoutMyMealTemplatesInput, {nullable:false})
-    @Type(() => UserCreateWithoutMyMealTemplatesInput)
-    create!: UserCreateWithoutMyMealTemplatesInput;
+	@Field(() => UserCreateWithoutMyMealTemplatesInput, { nullable: false })
+	@Type(() => UserCreateWithoutMyMealTemplatesInput)
+	create!: UserCreateWithoutMyMealTemplatesInput;
 }

@@ -7,12 +7,11 @@ import { NutritionWhereUniqueInput } from './nutrition-where-unique.input';
 
 @ArgsType()
 export class UpdateOneNutritionArgs {
+	@Field(() => NutritionUpdateInput, { nullable: false })
+	@Type(() => NutritionUpdateInput)
+	data!: NutritionUpdateInput;
 
-    @Field(() => NutritionUpdateInput, {nullable:false})
-    @Type(() => NutritionUpdateInput)
-    data!: NutritionUpdateInput;
-
-    @Field(() => NutritionWhereUniqueInput, {nullable:false})
-    @Type(() => NutritionWhereUniqueInput)
-    where!: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => NutritionWhereUniqueInput, { nullable: false })
+	@Type(() => NutritionWhereUniqueInput)
+	where!: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
 }

@@ -10,23 +10,22 @@ import { BodyDetailScalarFieldEnum } from './body-detail-scalar-field.enum';
 
 @ArgsType()
 export class FindManyBodyDetailArgs {
+	@Field(() => BodyDetailWhereInput, { nullable: true })
+	@Type(() => BodyDetailWhereInput)
+	where?: BodyDetailWhereInput;
 
-    @Field(() => BodyDetailWhereInput, {nullable:true})
-    @Type(() => BodyDetailWhereInput)
-    where?: BodyDetailWhereInput;
+	@Field(() => [BodyDetailOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<BodyDetailOrderByWithRelationInput>;
 
-    @Field(() => [BodyDetailOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<BodyDetailOrderByWithRelationInput>;
+	@Field(() => BodyDetailWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
 
-    @Field(() => BodyDetailWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [BodyDetailScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof BodyDetailScalarFieldEnum>;
+	@Field(() => [BodyDetailScalarFieldEnum], { nullable: true })
+	distinct?: Array<keyof typeof BodyDetailScalarFieldEnum>;
 }

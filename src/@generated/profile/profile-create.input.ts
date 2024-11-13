@@ -5,22 +5,21 @@ import { UserCreateNestedOneWithoutProfileInput } from '../user/user-create-nest
 
 @InputType()
 export class ProfileCreateInput {
+	@Field(() => String, { nullable: true })
+	avatar?: string;
 
-    @Field(() => String, {nullable:true})
-    avatar?: string;
+	@Field(() => String, { nullable: true })
+	nickName?: string;
 
-    @Field(() => String, {nullable:true})
-    nickName?: string;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => Goal, { nullable: true })
+	goal?: keyof typeof Goal;
 
-    @Field(() => Goal, {nullable:true})
-    goal?: keyof typeof Goal;
-
-    @Field(() => UserCreateNestedOneWithoutProfileInput, {nullable:false})
-    user!: UserCreateNestedOneWithoutProfileInput;
+	@Field(() => UserCreateNestedOneWithoutProfileInput, { nullable: false })
+	user!: UserCreateNestedOneWithoutProfileInput;
 }

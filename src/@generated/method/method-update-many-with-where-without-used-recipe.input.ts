@@ -6,12 +6,11 @@ import { MethodUpdateManyMutationInput } from './method-update-many-mutation.inp
 
 @InputType()
 export class MethodUpdateManyWithWhereWithoutUsedRecipeInput {
+	@Field(() => MethodScalarWhereInput, { nullable: false })
+	@Type(() => MethodScalarWhereInput)
+	where!: MethodScalarWhereInput;
 
-    @Field(() => MethodScalarWhereInput, {nullable:false})
-    @Type(() => MethodScalarWhereInput)
-    where!: MethodScalarWhereInput;
-
-    @Field(() => MethodUpdateManyMutationInput, {nullable:false})
-    @Type(() => MethodUpdateManyMutationInput)
-    data!: MethodUpdateManyMutationInput;
+	@Field(() => MethodUpdateManyMutationInput, { nullable: false })
+	@Type(() => MethodUpdateManyMutationInput)
+	data!: MethodUpdateManyMutationInput;
 }

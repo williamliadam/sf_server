@@ -7,28 +7,27 @@ import { User } from '../user/user.model';
 
 @ObjectType()
 export class Profile {
+	@Field(() => ID, { nullable: false })
+	id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+	@Field(() => String, { nullable: true })
+	avatar!: string | null;
 
-    @Field(() => String, {nullable:true})
-    avatar!: string | null;
+	@Field(() => String, { nullable: true })
+	nickName!: string | null;
 
-    @Field(() => String, {nullable:true})
-    nickName!: string | null;
+	@Field(() => Int, { nullable: false })
+	userId!: number;
 
-    @Field(() => Int, {nullable:false})
-    userId!: number;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+	@Field(() => Goal, { nullable: false, defaultValue: 'KEEP' })
+	goal!: keyof typeof Goal;
 
-    @Field(() => Goal, {nullable:false,defaultValue:'KEEP'})
-    goal!: keyof typeof Goal;
-
-    @Field(() => User, {nullable:false})
-    user?: User;
+	@Field(() => User, { nullable: false })
+	user?: User;
 }

@@ -5,11 +5,10 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class IngredientCreateManyMaterialInputEnvelope {
+	@Field(() => [IngredientCreateManyMaterialInput], { nullable: false })
+	@Type(() => IngredientCreateManyMaterialInput)
+	data!: Array<IngredientCreateManyMaterialInput>;
 
-    @Field(() => [IngredientCreateManyMaterialInput], {nullable:false})
-    @Type(() => IngredientCreateManyMaterialInput)
-    data!: Array<IngredientCreateManyMaterialInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+	@Field(() => Boolean, { nullable: true })
+	skipDuplicates?: boolean;
 }

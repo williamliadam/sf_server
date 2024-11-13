@@ -10,24 +10,27 @@ import { MaterialUpdateToOneWithWhereWithoutNutritionMatrixInput } from './mater
 
 @InputType()
 export class MaterialUpdateOneRequiredWithoutNutritionMatrixNestedInput {
+	@Field(() => MaterialCreateWithoutNutritionMatrixInput, { nullable: true })
+	@Type(() => MaterialCreateWithoutNutritionMatrixInput)
+	create?: MaterialCreateWithoutNutritionMatrixInput;
 
-    @Field(() => MaterialCreateWithoutNutritionMatrixInput, {nullable:true})
-    @Type(() => MaterialCreateWithoutNutritionMatrixInput)
-    create?: MaterialCreateWithoutNutritionMatrixInput;
+	@Field(() => MaterialCreateOrConnectWithoutNutritionMatrixInput, {
+		nullable: true,
+	})
+	@Type(() => MaterialCreateOrConnectWithoutNutritionMatrixInput)
+	connectOrCreate?: MaterialCreateOrConnectWithoutNutritionMatrixInput;
 
-    @Field(() => MaterialCreateOrConnectWithoutNutritionMatrixInput, {nullable:true})
-    @Type(() => MaterialCreateOrConnectWithoutNutritionMatrixInput)
-    connectOrCreate?: MaterialCreateOrConnectWithoutNutritionMatrixInput;
+	@Field(() => MaterialUpsertWithoutNutritionMatrixInput, { nullable: true })
+	@Type(() => MaterialUpsertWithoutNutritionMatrixInput)
+	upsert?: MaterialUpsertWithoutNutritionMatrixInput;
 
-    @Field(() => MaterialUpsertWithoutNutritionMatrixInput, {nullable:true})
-    @Type(() => MaterialUpsertWithoutNutritionMatrixInput)
-    upsert?: MaterialUpsertWithoutNutritionMatrixInput;
+	@Field(() => MaterialWhereUniqueInput, { nullable: true })
+	@Type(() => MaterialWhereUniqueInput)
+	connect?: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MaterialWhereUniqueInput, {nullable:true})
-    @Type(() => MaterialWhereUniqueInput)
-    connect?: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MaterialUpdateToOneWithWhereWithoutNutritionMatrixInput, {nullable:true})
-    @Type(() => MaterialUpdateToOneWithWhereWithoutNutritionMatrixInput)
-    update?: MaterialUpdateToOneWithWhereWithoutNutritionMatrixInput;
+	@Field(() => MaterialUpdateToOneWithWhereWithoutNutritionMatrixInput, {
+		nullable: true,
+	})
+	@Type(() => MaterialUpdateToOneWithWhereWithoutNutritionMatrixInput)
+	update?: MaterialUpdateToOneWithWhereWithoutNutritionMatrixInput;
 }

@@ -4,13 +4,12 @@ import { DishTemplateWhereInput } from './dish-template-where.input';
 
 @InputType()
 export class DishTemplateListRelationFilter {
+	@Field(() => DishTemplateWhereInput, { nullable: true })
+	every?: DishTemplateWhereInput;
 
-    @Field(() => DishTemplateWhereInput, {nullable:true})
-    every?: DishTemplateWhereInput;
+	@Field(() => DishTemplateWhereInput, { nullable: true })
+	some?: DishTemplateWhereInput;
 
-    @Field(() => DishTemplateWhereInput, {nullable:true})
-    some?: DishTemplateWhereInput;
-
-    @Field(() => DishTemplateWhereInput, {nullable:true})
-    none?: DishTemplateWhereInput;
+	@Field(() => DishTemplateWhereInput, { nullable: true })
+	none?: DishTemplateWhereInput;
 }

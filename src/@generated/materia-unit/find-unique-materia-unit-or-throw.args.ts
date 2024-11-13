@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class FindUniqueMateriaUnitOrThrowArgs {
-
-    @Field(() => MateriaUnitWhereUniqueInput, {nullable:false})
-    @Type(() => MateriaUnitWhereUniqueInput)
-    where!: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MateriaUnitWhereUniqueInput, { nullable: false })
+	@Type(() => MateriaUnitWhereUniqueInput)
+	where!: Prisma.AtLeast<MateriaUnitWhereUniqueInput, 'id' | 'code'>;
 }

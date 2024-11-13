@@ -10,23 +10,22 @@ import { DishTemplateScalarFieldEnum } from './dish-template-scalar-field.enum';
 
 @ArgsType()
 export class FindManyDishTemplateArgs {
+	@Field(() => DishTemplateWhereInput, { nullable: true })
+	@Type(() => DishTemplateWhereInput)
+	where?: DishTemplateWhereInput;
 
-    @Field(() => DishTemplateWhereInput, {nullable:true})
-    @Type(() => DishTemplateWhereInput)
-    where?: DishTemplateWhereInput;
+	@Field(() => [DishTemplateOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<DishTemplateOrderByWithRelationInput>;
 
-    @Field(() => [DishTemplateOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<DishTemplateOrderByWithRelationInput>;
+	@Field(() => DishTemplateWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => DishTemplateWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [DishTemplateScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof DishTemplateScalarFieldEnum>;
+	@Field(() => [DishTemplateScalarFieldEnum], { nullable: true })
+	distinct?: Array<keyof typeof DishTemplateScalarFieldEnum>;
 }

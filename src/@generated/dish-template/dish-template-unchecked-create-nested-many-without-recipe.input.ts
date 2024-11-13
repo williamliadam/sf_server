@@ -9,20 +9,21 @@ import { DishTemplateWhereUniqueInput } from './dish-template-where-unique.input
 
 @InputType()
 export class DishTemplateUncheckedCreateNestedManyWithoutRecipeInput {
+	@Field(() => [DishTemplateCreateWithoutRecipeInput], { nullable: true })
+	@Type(() => DishTemplateCreateWithoutRecipeInput)
+	create?: Array<DishTemplateCreateWithoutRecipeInput>;
 
-    @Field(() => [DishTemplateCreateWithoutRecipeInput], {nullable:true})
-    @Type(() => DishTemplateCreateWithoutRecipeInput)
-    create?: Array<DishTemplateCreateWithoutRecipeInput>;
+	@Field(() => [DishTemplateCreateOrConnectWithoutRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => DishTemplateCreateOrConnectWithoutRecipeInput)
+	connectOrCreate?: Array<DishTemplateCreateOrConnectWithoutRecipeInput>;
 
-    @Field(() => [DishTemplateCreateOrConnectWithoutRecipeInput], {nullable:true})
-    @Type(() => DishTemplateCreateOrConnectWithoutRecipeInput)
-    connectOrCreate?: Array<DishTemplateCreateOrConnectWithoutRecipeInput>;
+	@Field(() => DishTemplateCreateManyRecipeInputEnvelope, { nullable: true })
+	@Type(() => DishTemplateCreateManyRecipeInputEnvelope)
+	createMany?: DishTemplateCreateManyRecipeInputEnvelope;
 
-    @Field(() => DishTemplateCreateManyRecipeInputEnvelope, {nullable:true})
-    @Type(() => DishTemplateCreateManyRecipeInputEnvelope)
-    createMany?: DishTemplateCreateManyRecipeInputEnvelope;
-
-    @Field(() => [DishTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => DishTemplateWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [DishTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => DishTemplateWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
 }

@@ -6,12 +6,11 @@ import { IngredientUpdateManyMutationInput } from './ingredient-update-many-muta
 
 @InputType()
 export class IngredientUpdateManyWithWhereWithoutMaterialInput {
+	@Field(() => IngredientScalarWhereInput, { nullable: false })
+	@Type(() => IngredientScalarWhereInput)
+	where!: IngredientScalarWhereInput;
 
-    @Field(() => IngredientScalarWhereInput, {nullable:false})
-    @Type(() => IngredientScalarWhereInput)
-    where!: IngredientScalarWhereInput;
-
-    @Field(() => IngredientUpdateManyMutationInput, {nullable:false})
-    @Type(() => IngredientUpdateManyMutationInput)
-    data!: IngredientUpdateManyMutationInput;
+	@Field(() => IngredientUpdateManyMutationInput, { nullable: false })
+	@Type(() => IngredientUpdateManyMutationInput)
+	data!: IngredientUpdateManyMutationInput;
 }

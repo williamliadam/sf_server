@@ -13,48 +13,55 @@ import { NutritionRowScalarWhereInput } from './nutrition-row-scalar-where.input
 
 @InputType()
 export class NutritionRowUpdateManyWithoutNutirtionNestedInput {
+	@Field(() => [NutritionRowCreateWithoutNutirtionInput], { nullable: true })
+	@Type(() => NutritionRowCreateWithoutNutirtionInput)
+	create?: Array<NutritionRowCreateWithoutNutirtionInput>;
 
-    @Field(() => [NutritionRowCreateWithoutNutirtionInput], {nullable:true})
-    @Type(() => NutritionRowCreateWithoutNutirtionInput)
-    create?: Array<NutritionRowCreateWithoutNutirtionInput>;
+	@Field(() => [NutritionRowCreateOrConnectWithoutNutirtionInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowCreateOrConnectWithoutNutirtionInput)
+	connectOrCreate?: Array<NutritionRowCreateOrConnectWithoutNutirtionInput>;
 
-    @Field(() => [NutritionRowCreateOrConnectWithoutNutirtionInput], {nullable:true})
-    @Type(() => NutritionRowCreateOrConnectWithoutNutirtionInput)
-    connectOrCreate?: Array<NutritionRowCreateOrConnectWithoutNutirtionInput>;
+	@Field(() => [NutritionRowUpsertWithWhereUniqueWithoutNutirtionInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowUpsertWithWhereUniqueWithoutNutirtionInput)
+	upsert?: Array<NutritionRowUpsertWithWhereUniqueWithoutNutirtionInput>;
 
-    @Field(() => [NutritionRowUpsertWithWhereUniqueWithoutNutirtionInput], {nullable:true})
-    @Type(() => NutritionRowUpsertWithWhereUniqueWithoutNutirtionInput)
-    upsert?: Array<NutritionRowUpsertWithWhereUniqueWithoutNutirtionInput>;
+	@Field(() => NutritionRowCreateManyNutirtionInputEnvelope, { nullable: true })
+	@Type(() => NutritionRowCreateManyNutirtionInputEnvelope)
+	createMany?: NutritionRowCreateManyNutirtionInputEnvelope;
 
-    @Field(() => NutritionRowCreateManyNutirtionInputEnvelope, {nullable:true})
-    @Type(() => NutritionRowCreateManyNutirtionInputEnvelope)
-    createMany?: NutritionRowCreateManyNutirtionInputEnvelope;
+	@Field(() => [NutritionRowWhereUniqueInput], { nullable: true })
+	@Type(() => NutritionRowWhereUniqueInput)
+	set?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
 
-    @Field(() => [NutritionRowWhereUniqueInput], {nullable:true})
-    @Type(() => NutritionRowWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
+	@Field(() => [NutritionRowWhereUniqueInput], { nullable: true })
+	@Type(() => NutritionRowWhereUniqueInput)
+	disconnect?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
 
-    @Field(() => [NutritionRowWhereUniqueInput], {nullable:true})
-    @Type(() => NutritionRowWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
+	@Field(() => [NutritionRowWhereUniqueInput], { nullable: true })
+	@Type(() => NutritionRowWhereUniqueInput)
+	delete?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
 
-    @Field(() => [NutritionRowWhereUniqueInput], {nullable:true})
-    @Type(() => NutritionRowWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
+	@Field(() => [NutritionRowWhereUniqueInput], { nullable: true })
+	@Type(() => NutritionRowWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
 
-    @Field(() => [NutritionRowWhereUniqueInput], {nullable:true})
-    @Type(() => NutritionRowWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<NutritionRowWhereUniqueInput, 'id'>>;
+	@Field(() => [NutritionRowUpdateWithWhereUniqueWithoutNutirtionInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowUpdateWithWhereUniqueWithoutNutirtionInput)
+	update?: Array<NutritionRowUpdateWithWhereUniqueWithoutNutirtionInput>;
 
-    @Field(() => [NutritionRowUpdateWithWhereUniqueWithoutNutirtionInput], {nullable:true})
-    @Type(() => NutritionRowUpdateWithWhereUniqueWithoutNutirtionInput)
-    update?: Array<NutritionRowUpdateWithWhereUniqueWithoutNutirtionInput>;
+	@Field(() => [NutritionRowUpdateManyWithWhereWithoutNutirtionInput], {
+		nullable: true,
+	})
+	@Type(() => NutritionRowUpdateManyWithWhereWithoutNutirtionInput)
+	updateMany?: Array<NutritionRowUpdateManyWithWhereWithoutNutirtionInput>;
 
-    @Field(() => [NutritionRowUpdateManyWithWhereWithoutNutirtionInput], {nullable:true})
-    @Type(() => NutritionRowUpdateManyWithWhereWithoutNutirtionInput)
-    updateMany?: Array<NutritionRowUpdateManyWithWhereWithoutNutirtionInput>;
-
-    @Field(() => [NutritionRowScalarWhereInput], {nullable:true})
-    @Type(() => NutritionRowScalarWhereInput)
-    deleteMany?: Array<NutritionRowScalarWhereInput>;
+	@Field(() => [NutritionRowScalarWhereInput], { nullable: true })
+	@Type(() => NutritionRowScalarWhereInput)
+	deleteMany?: Array<NutritionRowScalarWhereInput>;
 }

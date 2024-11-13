@@ -7,16 +7,15 @@ import { MealTemplateWhereInput } from './meal-template-where.input';
 
 @InputType()
 export class MealTemplateUpsertWithoutDishTemplatesInput {
+	@Field(() => MealTemplateUpdateWithoutDishTemplatesInput, { nullable: false })
+	@Type(() => MealTemplateUpdateWithoutDishTemplatesInput)
+	update!: MealTemplateUpdateWithoutDishTemplatesInput;
 
-    @Field(() => MealTemplateUpdateWithoutDishTemplatesInput, {nullable:false})
-    @Type(() => MealTemplateUpdateWithoutDishTemplatesInput)
-    update!: MealTemplateUpdateWithoutDishTemplatesInput;
+	@Field(() => MealTemplateCreateWithoutDishTemplatesInput, { nullable: false })
+	@Type(() => MealTemplateCreateWithoutDishTemplatesInput)
+	create!: MealTemplateCreateWithoutDishTemplatesInput;
 
-    @Field(() => MealTemplateCreateWithoutDishTemplatesInput, {nullable:false})
-    @Type(() => MealTemplateCreateWithoutDishTemplatesInput)
-    create!: MealTemplateCreateWithoutDishTemplatesInput;
-
-    @Field(() => MealTemplateWhereInput, {nullable:true})
-    @Type(() => MealTemplateWhereInput)
-    where?: MealTemplateWhereInput;
+	@Field(() => MealTemplateWhereInput, { nullable: true })
+	@Type(() => MealTemplateWhereInput)
+	where?: MealTemplateWhereInput;
 }

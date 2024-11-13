@@ -7,12 +7,11 @@ import { BodyDetailWhereUniqueInput } from './body-detail-where-unique.input';
 
 @ArgsType()
 export class UpdateOneBodyDetailArgs {
+	@Field(() => BodyDetailUpdateInput, { nullable: false })
+	@Type(() => BodyDetailUpdateInput)
+	data!: BodyDetailUpdateInput;
 
-    @Field(() => BodyDetailUpdateInput, {nullable:false})
-    @Type(() => BodyDetailUpdateInput)
-    data!: BodyDetailUpdateInput;
-
-    @Field(() => BodyDetailWhereUniqueInput, {nullable:false})
-    @Type(() => BodyDetailWhereUniqueInput)
-    where!: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
+	@Field(() => BodyDetailWhereUniqueInput, { nullable: false })
+	@Type(() => BodyDetailWhereUniqueInput)
+	where!: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
 }

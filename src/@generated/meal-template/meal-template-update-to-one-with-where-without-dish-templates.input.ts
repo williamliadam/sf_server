@@ -6,12 +6,11 @@ import { MealTemplateUpdateWithoutDishTemplatesInput } from './meal-template-upd
 
 @InputType()
 export class MealTemplateUpdateToOneWithWhereWithoutDishTemplatesInput {
+	@Field(() => MealTemplateWhereInput, { nullable: true })
+	@Type(() => MealTemplateWhereInput)
+	where?: MealTemplateWhereInput;
 
-    @Field(() => MealTemplateWhereInput, {nullable:true})
-    @Type(() => MealTemplateWhereInput)
-    where?: MealTemplateWhereInput;
-
-    @Field(() => MealTemplateUpdateWithoutDishTemplatesInput, {nullable:false})
-    @Type(() => MealTemplateUpdateWithoutDishTemplatesInput)
-    data!: MealTemplateUpdateWithoutDishTemplatesInput;
+	@Field(() => MealTemplateUpdateWithoutDishTemplatesInput, { nullable: false })
+	@Type(() => MealTemplateUpdateWithoutDishTemplatesInput)
+	data!: MealTemplateUpdateWithoutDishTemplatesInput;
 }

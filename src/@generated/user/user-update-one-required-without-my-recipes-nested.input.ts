@@ -10,24 +10,28 @@ import { UserUpdateToOneWithWhereWithoutMyRecipesInput } from './user-update-to-
 
 @InputType()
 export class UserUpdateOneRequiredWithoutMyRecipesNestedInput {
+	@Field(() => UserCreateWithoutMyRecipesInput, { nullable: true })
+	@Type(() => UserCreateWithoutMyRecipesInput)
+	create?: UserCreateWithoutMyRecipesInput;
 
-    @Field(() => UserCreateWithoutMyRecipesInput, {nullable:true})
-    @Type(() => UserCreateWithoutMyRecipesInput)
-    create?: UserCreateWithoutMyRecipesInput;
+	@Field(() => UserCreateOrConnectWithoutMyRecipesInput, { nullable: true })
+	@Type(() => UserCreateOrConnectWithoutMyRecipesInput)
+	connectOrCreate?: UserCreateOrConnectWithoutMyRecipesInput;
 
-    @Field(() => UserCreateOrConnectWithoutMyRecipesInput, {nullable:true})
-    @Type(() => UserCreateOrConnectWithoutMyRecipesInput)
-    connectOrCreate?: UserCreateOrConnectWithoutMyRecipesInput;
+	@Field(() => UserUpsertWithoutMyRecipesInput, { nullable: true })
+	@Type(() => UserUpsertWithoutMyRecipesInput)
+	upsert?: UserUpsertWithoutMyRecipesInput;
 
-    @Field(() => UserUpsertWithoutMyRecipesInput, {nullable:true})
-    @Type(() => UserUpsertWithoutMyRecipesInput)
-    upsert?: UserUpsertWithoutMyRecipesInput;
+	@Field(() => UserWhereUniqueInput, { nullable: true })
+	@Type(() => UserWhereUniqueInput)
+	connect?: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:true})
-    @Type(() => UserWhereUniqueInput)
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
-
-    @Field(() => UserUpdateToOneWithWhereWithoutMyRecipesInput, {nullable:true})
-    @Type(() => UserUpdateToOneWithWhereWithoutMyRecipesInput)
-    update?: UserUpdateToOneWithWhereWithoutMyRecipesInput;
+	@Field(() => UserUpdateToOneWithWhereWithoutMyRecipesInput, {
+		nullable: true,
+	})
+	@Type(() => UserUpdateToOneWithWhereWithoutMyRecipesInput)
+	update?: UserUpdateToOneWithWhereWithoutMyRecipesInput;
 }

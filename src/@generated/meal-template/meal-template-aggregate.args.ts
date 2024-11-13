@@ -14,35 +14,34 @@ import { MealTemplateMaxAggregateInput } from './meal-template-max-aggregate.inp
 
 @ArgsType()
 export class MealTemplateAggregateArgs {
+	@Field(() => MealTemplateWhereInput, { nullable: true })
+	@Type(() => MealTemplateWhereInput)
+	where?: MealTemplateWhereInput;
 
-    @Field(() => MealTemplateWhereInput, {nullable:true})
-    @Type(() => MealTemplateWhereInput)
-    where?: MealTemplateWhereInput;
+	@Field(() => [MealTemplateOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<MealTemplateOrderByWithRelationInput>;
 
-    @Field(() => [MealTemplateOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<MealTemplateOrderByWithRelationInput>;
+	@Field(() => MealTemplateWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => MealTemplateWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => MealTemplateCountAggregateInput, { nullable: true })
+	_count?: MealTemplateCountAggregateInput;
 
-    @Field(() => MealTemplateCountAggregateInput, {nullable:true})
-    _count?: MealTemplateCountAggregateInput;
+	@Field(() => MealTemplateAvgAggregateInput, { nullable: true })
+	_avg?: MealTemplateAvgAggregateInput;
 
-    @Field(() => MealTemplateAvgAggregateInput, {nullable:true})
-    _avg?: MealTemplateAvgAggregateInput;
+	@Field(() => MealTemplateSumAggregateInput, { nullable: true })
+	_sum?: MealTemplateSumAggregateInput;
 
-    @Field(() => MealTemplateSumAggregateInput, {nullable:true})
-    _sum?: MealTemplateSumAggregateInput;
+	@Field(() => MealTemplateMinAggregateInput, { nullable: true })
+	_min?: MealTemplateMinAggregateInput;
 
-    @Field(() => MealTemplateMinAggregateInput, {nullable:true})
-    _min?: MealTemplateMinAggregateInput;
-
-    @Field(() => MealTemplateMaxAggregateInput, {nullable:true})
-    _max?: MealTemplateMaxAggregateInput;
+	@Field(() => MealTemplateMaxAggregateInput, { nullable: true })
+	_max?: MealTemplateMaxAggregateInput;
 }

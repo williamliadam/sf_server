@@ -16,61 +16,60 @@ import { DishPlanListRelationFilter } from '../dish-plan/dish-plan-list-relation
 
 @InputType()
 export class UserWhereUniqueInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => String, { nullable: true })
+	email?: string;
 
-    @Field(() => String, {nullable:true})
-    email?: string;
+	@Field(() => String, { nullable: true })
+	phone?: string;
 
-    @Field(() => String, {nullable:true})
-    phone?: string;
+	@Field(() => String, { nullable: true })
+	wxId?: string;
 
-    @Field(() => String, {nullable:true})
-    wxId?: string;
+	@Field(() => [UserWhereInput], { nullable: true })
+	AND?: Array<UserWhereInput>;
 
-    @Field(() => [UserWhereInput], {nullable:true})
-    AND?: Array<UserWhereInput>;
+	@Field(() => [UserWhereInput], { nullable: true })
+	OR?: Array<UserWhereInput>;
 
-    @Field(() => [UserWhereInput], {nullable:true})
-    OR?: Array<UserWhereInput>;
+	@Field(() => [UserWhereInput], { nullable: true })
+	NOT?: Array<UserWhereInput>;
 
-    @Field(() => [UserWhereInput], {nullable:true})
-    NOT?: Array<UserWhereInput>;
+	@Field(() => StringNullableFilter, { nullable: true })
+	name?: StringNullableFilter;
 
-    @Field(() => StringNullableFilter, {nullable:true})
-    name?: StringNullableFilter;
+	@Field(() => StringFilter, { nullable: true })
+	password?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    password?: StringFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => EnumRoleFilter, { nullable: true })
+	role?: EnumRoleFilter;
 
-    @Field(() => EnumRoleFilter, {nullable:true})
-    role?: EnumRoleFilter;
+	@Field(() => ProfileNullableRelationFilter, { nullable: true })
+	profile?: ProfileNullableRelationFilter;
 
-    @Field(() => ProfileNullableRelationFilter, {nullable:true})
-    profile?: ProfileNullableRelationFilter;
+	@Field(() => BodyDetailNullableRelationFilter, { nullable: true })
+	bodyDetail?: BodyDetailNullableRelationFilter;
 
-    @Field(() => BodyDetailNullableRelationFilter, {nullable:true})
-    bodyDetail?: BodyDetailNullableRelationFilter;
+	@Field(() => PostListRelationFilter, { nullable: true })
+	myPosts?: PostListRelationFilter;
 
-    @Field(() => PostListRelationFilter, {nullable:true})
-    myPosts?: PostListRelationFilter;
+	@Field(() => RecipeListRelationFilter, { nullable: true })
+	myRecipes?: RecipeListRelationFilter;
 
-    @Field(() => RecipeListRelationFilter, {nullable:true})
-    myRecipes?: RecipeListRelationFilter;
+	@Field(() => MealTemplateListRelationFilter, { nullable: true })
+	myMealTemplates?: MealTemplateListRelationFilter;
 
-    @Field(() => MealTemplateListRelationFilter, {nullable:true})
-    myMealTemplates?: MealTemplateListRelationFilter;
+	@Field(() => MealPlanListRelationFilter, { nullable: true })
+	myMealPlans?: MealPlanListRelationFilter;
 
-    @Field(() => MealPlanListRelationFilter, {nullable:true})
-    myMealPlans?: MealPlanListRelationFilter;
-
-    @Field(() => DishPlanListRelationFilter, {nullable:true})
-    chargeDishPlans?: DishPlanListRelationFilter;
+	@Field(() => DishPlanListRelationFilter, { nullable: true })
+	chargeDishPlans?: DishPlanListRelationFilter;
 }

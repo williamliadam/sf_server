@@ -8,28 +8,33 @@ import { IngredientUpdateManyWithoutMaterialNestedInput } from '../ingredient/in
 
 @InputType()
 export class MaterialUpdateInput {
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+	@Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+	nickName?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    nickName?: StringFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => MateriaCategoryUpdateOneRequiredWithoutMaterialsNestedInput, {
+		nullable: true,
+	})
+	category?: MateriaCategoryUpdateOneRequiredWithoutMaterialsNestedInput;
 
-    @Field(() => MateriaCategoryUpdateOneRequiredWithoutMaterialsNestedInput, {nullable:true})
-    category?: MateriaCategoryUpdateOneRequiredWithoutMaterialsNestedInput;
+	@Field(() => NutritionRowUpdateManyWithoutBelongMaterialNestedInput, {
+		nullable: true,
+	})
+	nutritionMatrix?: NutritionRowUpdateManyWithoutBelongMaterialNestedInput;
 
-    @Field(() => NutritionRowUpdateManyWithoutBelongMaterialNestedInput, {nullable:true})
-    nutritionMatrix?: NutritionRowUpdateManyWithoutBelongMaterialNestedInput;
-
-    @Field(() => IngredientUpdateManyWithoutMaterialNestedInput, {nullable:true})
-    ingredients?: IngredientUpdateManyWithoutMaterialNestedInput;
+	@Field(() => IngredientUpdateManyWithoutMaterialNestedInput, {
+		nullable: true,
+	})
+	ingredients?: IngredientUpdateManyWithoutMaterialNestedInput;
 }

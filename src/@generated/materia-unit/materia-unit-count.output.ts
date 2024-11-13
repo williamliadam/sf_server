@@ -4,7 +4,6 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class MateriaUnitCount {
-
-    @Field(() => Int, {nullable:false})
-    ingredients?: number;
+	@Field(() => Int, { nullable: false })
+	ingredients?: number;
 }

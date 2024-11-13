@@ -7,16 +7,15 @@ import { BodyDetailWhereInput } from './body-detail-where.input';
 
 @InputType()
 export class BodyDetailUpsertWithoutUserInput {
+	@Field(() => BodyDetailUpdateWithoutUserInput, { nullable: false })
+	@Type(() => BodyDetailUpdateWithoutUserInput)
+	update!: BodyDetailUpdateWithoutUserInput;
 
-    @Field(() => BodyDetailUpdateWithoutUserInput, {nullable:false})
-    @Type(() => BodyDetailUpdateWithoutUserInput)
-    update!: BodyDetailUpdateWithoutUserInput;
+	@Field(() => BodyDetailCreateWithoutUserInput, { nullable: false })
+	@Type(() => BodyDetailCreateWithoutUserInput)
+	create!: BodyDetailCreateWithoutUserInput;
 
-    @Field(() => BodyDetailCreateWithoutUserInput, {nullable:false})
-    @Type(() => BodyDetailCreateWithoutUserInput)
-    create!: BodyDetailCreateWithoutUserInput;
-
-    @Field(() => BodyDetailWhereInput, {nullable:true})
-    @Type(() => BodyDetailWhereInput)
-    where?: BodyDetailWhereInput;
+	@Field(() => BodyDetailWhereInput, { nullable: true })
+	@Type(() => BodyDetailWhereInput)
+	where?: BodyDetailWhereInput;
 }

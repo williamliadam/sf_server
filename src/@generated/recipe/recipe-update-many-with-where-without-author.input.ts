@@ -6,12 +6,11 @@ import { RecipeUpdateManyMutationInput } from './recipe-update-many-mutation.inp
 
 @InputType()
 export class RecipeUpdateManyWithWhereWithoutAuthorInput {
+	@Field(() => RecipeScalarWhereInput, { nullable: false })
+	@Type(() => RecipeScalarWhereInput)
+	where!: RecipeScalarWhereInput;
 
-    @Field(() => RecipeScalarWhereInput, {nullable:false})
-    @Type(() => RecipeScalarWhereInput)
-    where!: RecipeScalarWhereInput;
-
-    @Field(() => RecipeUpdateManyMutationInput, {nullable:false})
-    @Type(() => RecipeUpdateManyMutationInput)
-    data!: RecipeUpdateManyMutationInput;
+	@Field(() => RecipeUpdateManyMutationInput, { nullable: false })
+	@Type(() => RecipeUpdateManyMutationInput)
+	data!: RecipeUpdateManyMutationInput;
 }

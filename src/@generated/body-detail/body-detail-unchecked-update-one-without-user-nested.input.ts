@@ -11,32 +11,33 @@ import { BodyDetailUpdateToOneWithWhereWithoutUserInput } from './body-detail-up
 
 @InputType()
 export class BodyDetailUncheckedUpdateOneWithoutUserNestedInput {
+	@Field(() => BodyDetailCreateWithoutUserInput, { nullable: true })
+	@Type(() => BodyDetailCreateWithoutUserInput)
+	create?: BodyDetailCreateWithoutUserInput;
 
-    @Field(() => BodyDetailCreateWithoutUserInput, {nullable:true})
-    @Type(() => BodyDetailCreateWithoutUserInput)
-    create?: BodyDetailCreateWithoutUserInput;
+	@Field(() => BodyDetailCreateOrConnectWithoutUserInput, { nullable: true })
+	@Type(() => BodyDetailCreateOrConnectWithoutUserInput)
+	connectOrCreate?: BodyDetailCreateOrConnectWithoutUserInput;
 
-    @Field(() => BodyDetailCreateOrConnectWithoutUserInput, {nullable:true})
-    @Type(() => BodyDetailCreateOrConnectWithoutUserInput)
-    connectOrCreate?: BodyDetailCreateOrConnectWithoutUserInput;
+	@Field(() => BodyDetailUpsertWithoutUserInput, { nullable: true })
+	@Type(() => BodyDetailUpsertWithoutUserInput)
+	upsert?: BodyDetailUpsertWithoutUserInput;
 
-    @Field(() => BodyDetailUpsertWithoutUserInput, {nullable:true})
-    @Type(() => BodyDetailUpsertWithoutUserInput)
-    upsert?: BodyDetailUpsertWithoutUserInput;
+	@Field(() => BodyDetailWhereInput, { nullable: true })
+	@Type(() => BodyDetailWhereInput)
+	disconnect?: BodyDetailWhereInput;
 
-    @Field(() => BodyDetailWhereInput, {nullable:true})
-    @Type(() => BodyDetailWhereInput)
-    disconnect?: BodyDetailWhereInput;
+	@Field(() => BodyDetailWhereInput, { nullable: true })
+	@Type(() => BodyDetailWhereInput)
+	delete?: BodyDetailWhereInput;
 
-    @Field(() => BodyDetailWhereInput, {nullable:true})
-    @Type(() => BodyDetailWhereInput)
-    delete?: BodyDetailWhereInput;
+	@Field(() => BodyDetailWhereUniqueInput, { nullable: true })
+	@Type(() => BodyDetailWhereUniqueInput)
+	connect?: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
 
-    @Field(() => BodyDetailWhereUniqueInput, {nullable:true})
-    @Type(() => BodyDetailWhereUniqueInput)
-    connect?: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
-
-    @Field(() => BodyDetailUpdateToOneWithWhereWithoutUserInput, {nullable:true})
-    @Type(() => BodyDetailUpdateToOneWithWhereWithoutUserInput)
-    update?: BodyDetailUpdateToOneWithWhereWithoutUserInput;
+	@Field(() => BodyDetailUpdateToOneWithWhereWithoutUserInput, {
+		nullable: true,
+	})
+	@Type(() => BodyDetailUpdateToOneWithWhereWithoutUserInput)
+	update?: BodyDetailUpdateToOneWithWhereWithoutUserInput;
 }

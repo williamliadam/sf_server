@@ -10,40 +10,39 @@ import { IngredientSumOrderByAggregateInput } from './ingredient-sum-order-by-ag
 
 @InputType()
 export class IngredientOrderByWithAggregationInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	materialId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    materialId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	amount?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    amount?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	materiaUnitId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    materiaUnitId?: keyof typeof SortOrder;
+	@Field(() => SortOrderInput, { nullable: true })
+	recipeId?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    recipeId?: SortOrderInput;
+	@Field(() => SortOrder, { nullable: true })
+	createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+	@Field(() => IngredientCountOrderByAggregateInput, { nullable: true })
+	_count?: IngredientCountOrderByAggregateInput;
 
-    @Field(() => IngredientCountOrderByAggregateInput, {nullable:true})
-    _count?: IngredientCountOrderByAggregateInput;
+	@Field(() => IngredientAvgOrderByAggregateInput, { nullable: true })
+	_avg?: IngredientAvgOrderByAggregateInput;
 
-    @Field(() => IngredientAvgOrderByAggregateInput, {nullable:true})
-    _avg?: IngredientAvgOrderByAggregateInput;
+	@Field(() => IngredientMaxOrderByAggregateInput, { nullable: true })
+	_max?: IngredientMaxOrderByAggregateInput;
 
-    @Field(() => IngredientMaxOrderByAggregateInput, {nullable:true})
-    _max?: IngredientMaxOrderByAggregateInput;
+	@Field(() => IngredientMinOrderByAggregateInput, { nullable: true })
+	_min?: IngredientMinOrderByAggregateInput;
 
-    @Field(() => IngredientMinOrderByAggregateInput, {nullable:true})
-    _min?: IngredientMinOrderByAggregateInput;
-
-    @Field(() => IngredientSumOrderByAggregateInput, {nullable:true})
-    _sum?: IngredientSumOrderByAggregateInput;
+	@Field(() => IngredientSumOrderByAggregateInput, { nullable: true })
+	_sum?: IngredientSumOrderByAggregateInput;
 }

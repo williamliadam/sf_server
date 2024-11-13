@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneRecipeArgs {
-
-    @Field(() => RecipeCreateInput, {nullable:false})
-    @Type(() => RecipeCreateInput)
-    data!: RecipeCreateInput;
+	@Field(() => RecipeCreateInput, { nullable: false })
+	@Type(() => RecipeCreateInput)
+	data!: RecipeCreateInput;
 }

@@ -11,32 +11,33 @@ import { RecipeUpdateToOneWithWhereWithoutIngredientsInput } from './recipe-upda
 
 @InputType()
 export class RecipeUpdateOneWithoutIngredientsNestedInput {
+	@Field(() => RecipeCreateWithoutIngredientsInput, { nullable: true })
+	@Type(() => RecipeCreateWithoutIngredientsInput)
+	create?: RecipeCreateWithoutIngredientsInput;
 
-    @Field(() => RecipeCreateWithoutIngredientsInput, {nullable:true})
-    @Type(() => RecipeCreateWithoutIngredientsInput)
-    create?: RecipeCreateWithoutIngredientsInput;
+	@Field(() => RecipeCreateOrConnectWithoutIngredientsInput, { nullable: true })
+	@Type(() => RecipeCreateOrConnectWithoutIngredientsInput)
+	connectOrCreate?: RecipeCreateOrConnectWithoutIngredientsInput;
 
-    @Field(() => RecipeCreateOrConnectWithoutIngredientsInput, {nullable:true})
-    @Type(() => RecipeCreateOrConnectWithoutIngredientsInput)
-    connectOrCreate?: RecipeCreateOrConnectWithoutIngredientsInput;
+	@Field(() => RecipeUpsertWithoutIngredientsInput, { nullable: true })
+	@Type(() => RecipeUpsertWithoutIngredientsInput)
+	upsert?: RecipeUpsertWithoutIngredientsInput;
 
-    @Field(() => RecipeUpsertWithoutIngredientsInput, {nullable:true})
-    @Type(() => RecipeUpsertWithoutIngredientsInput)
-    upsert?: RecipeUpsertWithoutIngredientsInput;
+	@Field(() => RecipeWhereInput, { nullable: true })
+	@Type(() => RecipeWhereInput)
+	disconnect?: RecipeWhereInput;
 
-    @Field(() => RecipeWhereInput, {nullable:true})
-    @Type(() => RecipeWhereInput)
-    disconnect?: RecipeWhereInput;
+	@Field(() => RecipeWhereInput, { nullable: true })
+	@Type(() => RecipeWhereInput)
+	delete?: RecipeWhereInput;
 
-    @Field(() => RecipeWhereInput, {nullable:true})
-    @Type(() => RecipeWhereInput)
-    delete?: RecipeWhereInput;
+	@Field(() => RecipeWhereUniqueInput, { nullable: true })
+	@Type(() => RecipeWhereUniqueInput)
+	connect?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 
-    @Field(() => RecipeWhereUniqueInput, {nullable:true})
-    @Type(() => RecipeWhereUniqueInput)
-    connect?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
-
-    @Field(() => RecipeUpdateToOneWithWhereWithoutIngredientsInput, {nullable:true})
-    @Type(() => RecipeUpdateToOneWithWhereWithoutIngredientsInput)
-    update?: RecipeUpdateToOneWithWhereWithoutIngredientsInput;
+	@Field(() => RecipeUpdateToOneWithWhereWithoutIngredientsInput, {
+		nullable: true,
+	})
+	@Type(() => RecipeUpdateToOneWithWhereWithoutIngredientsInput)
+	update?: RecipeUpdateToOneWithWhereWithoutIngredientsInput;
 }

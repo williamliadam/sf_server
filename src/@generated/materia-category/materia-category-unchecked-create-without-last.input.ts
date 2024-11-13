@@ -6,25 +6,28 @@ import { MateriaCategoryUncheckedCreateNestedManyWithoutLastInput } from './mate
 
 @InputType()
 export class MateriaCategoryUncheckedCreateWithoutLastInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => MaterialUncheckedCreateNestedManyWithoutCategoryInput, {
+		nullable: true,
+	})
+	materials?: MaterialUncheckedCreateNestedManyWithoutCategoryInput;
 
-    @Field(() => MaterialUncheckedCreateNestedManyWithoutCategoryInput, {nullable:true})
-    materials?: MaterialUncheckedCreateNestedManyWithoutCategoryInput;
-
-    @Field(() => MateriaCategoryUncheckedCreateNestedManyWithoutLastInput, {nullable:true})
-    next?: MateriaCategoryUncheckedCreateNestedManyWithoutLastInput;
+	@Field(() => MateriaCategoryUncheckedCreateNestedManyWithoutLastInput, {
+		nullable: true,
+	})
+	next?: MateriaCategoryUncheckedCreateNestedManyWithoutLastInput;
 }

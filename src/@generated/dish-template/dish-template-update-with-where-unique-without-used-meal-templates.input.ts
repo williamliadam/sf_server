@@ -7,12 +7,13 @@ import { DishTemplateUpdateWithoutUsedMealTemplatesInput } from './dish-template
 
 @InputType()
 export class DishTemplateUpdateWithWhereUniqueWithoutUsedMealTemplatesInput {
+	@Field(() => DishTemplateWhereUniqueInput, { nullable: false })
+	@Type(() => DishTemplateWhereUniqueInput)
+	where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => DishTemplateWhereUniqueInput, {nullable:false})
-    @Type(() => DishTemplateWhereUniqueInput)
-    where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
-
-    @Field(() => DishTemplateUpdateWithoutUsedMealTemplatesInput, {nullable:false})
-    @Type(() => DishTemplateUpdateWithoutUsedMealTemplatesInput)
-    data!: DishTemplateUpdateWithoutUsedMealTemplatesInput;
+	@Field(() => DishTemplateUpdateWithoutUsedMealTemplatesInput, {
+		nullable: false,
+	})
+	@Type(() => DishTemplateUpdateWithoutUsedMealTemplatesInput)
+	data!: DishTemplateUpdateWithoutUsedMealTemplatesInput;
 }

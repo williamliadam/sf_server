@@ -4,25 +4,24 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class RecipeCountAggregate {
+	@Field(() => Int, { nullable: false })
+	id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+	@Field(() => Int, { nullable: false })
+	name!: number;
 
-    @Field(() => Int, {nullable:false})
-    name!: number;
+	@Field(() => Int, { nullable: false })
+	stars!: number;
 
-    @Field(() => Int, {nullable:false})
-    stars!: number;
+	@Field(() => Int, { nullable: false })
+	authorId!: number;
 
-    @Field(() => Int, {nullable:false})
-    authorId!: number;
+	@Field(() => Int, { nullable: false })
+	createdAt!: number;
 
-    @Field(() => Int, {nullable:false})
-    createdAt!: number;
+	@Field(() => Int, { nullable: false })
+	updatedAt!: number;
 
-    @Field(() => Int, {nullable:false})
-    updatedAt!: number;
-
-    @Field(() => Int, {nullable:false})
-    _all!: number;
+	@Field(() => Int, { nullable: false })
+	_all!: number;
 }

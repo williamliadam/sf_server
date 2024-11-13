@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneBodyDetailArgs {
-
-    @Field(() => BodyDetailWhereUniqueInput, {nullable:false})
-    @Type(() => BodyDetailWhereUniqueInput)
-    where!: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
+	@Field(() => BodyDetailWhereUniqueInput, { nullable: false })
+	@Type(() => BodyDetailWhereUniqueInput)
+	where!: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
 }

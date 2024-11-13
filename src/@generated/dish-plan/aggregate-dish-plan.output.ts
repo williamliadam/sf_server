@@ -8,19 +8,18 @@ import { DishPlanMaxAggregate } from './dish-plan-max-aggregate.output';
 
 @ObjectType()
 export class AggregateDishPlan {
+	@Field(() => DishPlanCountAggregate, { nullable: true })
+	_count?: DishPlanCountAggregate;
 
-    @Field(() => DishPlanCountAggregate, {nullable:true})
-    _count?: DishPlanCountAggregate;
+	@Field(() => DishPlanAvgAggregate, { nullable: true })
+	_avg?: DishPlanAvgAggregate;
 
-    @Field(() => DishPlanAvgAggregate, {nullable:true})
-    _avg?: DishPlanAvgAggregate;
+	@Field(() => DishPlanSumAggregate, { nullable: true })
+	_sum?: DishPlanSumAggregate;
 
-    @Field(() => DishPlanSumAggregate, {nullable:true})
-    _sum?: DishPlanSumAggregate;
+	@Field(() => DishPlanMinAggregate, { nullable: true })
+	_min?: DishPlanMinAggregate;
 
-    @Field(() => DishPlanMinAggregate, {nullable:true})
-    _min?: DishPlanMinAggregate;
-
-    @Field(() => DishPlanMaxAggregate, {nullable:true})
-    _max?: DishPlanMaxAggregate;
+	@Field(() => DishPlanMaxAggregate, { nullable: true })
+	_max?: DishPlanMaxAggregate;
 }

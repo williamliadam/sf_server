@@ -6,12 +6,11 @@ import { MaterialUpdateWithoutIngredientsInput } from './material-update-without
 
 @InputType()
 export class MaterialUpdateToOneWithWhereWithoutIngredientsInput {
+	@Field(() => MaterialWhereInput, { nullable: true })
+	@Type(() => MaterialWhereInput)
+	where?: MaterialWhereInput;
 
-    @Field(() => MaterialWhereInput, {nullable:true})
-    @Type(() => MaterialWhereInput)
-    where?: MaterialWhereInput;
-
-    @Field(() => MaterialUpdateWithoutIngredientsInput, {nullable:false})
-    @Type(() => MaterialUpdateWithoutIngredientsInput)
-    data!: MaterialUpdateWithoutIngredientsInput;
+	@Field(() => MaterialUpdateWithoutIngredientsInput, { nullable: false })
+	@Type(() => MaterialUpdateWithoutIngredientsInput)
+	data!: MaterialUpdateWithoutIngredientsInput;
 }

@@ -14,35 +14,34 @@ import { BodyDetailMaxAggregateInput } from './body-detail-max-aggregate.input';
 
 @ArgsType()
 export class BodyDetailAggregateArgs {
+	@Field(() => BodyDetailWhereInput, { nullable: true })
+	@Type(() => BodyDetailWhereInput)
+	where?: BodyDetailWhereInput;
 
-    @Field(() => BodyDetailWhereInput, {nullable:true})
-    @Type(() => BodyDetailWhereInput)
-    where?: BodyDetailWhereInput;
+	@Field(() => [BodyDetailOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<BodyDetailOrderByWithRelationInput>;
 
-    @Field(() => [BodyDetailOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<BodyDetailOrderByWithRelationInput>;
+	@Field(() => BodyDetailWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
 
-    @Field(() => BodyDetailWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+	@Field(() => BodyDetailCountAggregateInput, { nullable: true })
+	_count?: BodyDetailCountAggregateInput;
 
-    @Field(() => BodyDetailCountAggregateInput, {nullable:true})
-    _count?: BodyDetailCountAggregateInput;
+	@Field(() => BodyDetailAvgAggregateInput, { nullable: true })
+	_avg?: BodyDetailAvgAggregateInput;
 
-    @Field(() => BodyDetailAvgAggregateInput, {nullable:true})
-    _avg?: BodyDetailAvgAggregateInput;
+	@Field(() => BodyDetailSumAggregateInput, { nullable: true })
+	_sum?: BodyDetailSumAggregateInput;
 
-    @Field(() => BodyDetailSumAggregateInput, {nullable:true})
-    _sum?: BodyDetailSumAggregateInput;
+	@Field(() => BodyDetailMinAggregateInput, { nullable: true })
+	_min?: BodyDetailMinAggregateInput;
 
-    @Field(() => BodyDetailMinAggregateInput, {nullable:true})
-    _min?: BodyDetailMinAggregateInput;
-
-    @Field(() => BodyDetailMaxAggregateInput, {nullable:true})
-    _max?: BodyDetailMaxAggregateInput;
+	@Field(() => BodyDetailMaxAggregateInput, { nullable: true })
+	_max?: BodyDetailMaxAggregateInput;
 }

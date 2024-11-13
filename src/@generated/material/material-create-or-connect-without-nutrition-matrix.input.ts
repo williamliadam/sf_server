@@ -7,12 +7,11 @@ import { MaterialCreateWithoutNutritionMatrixInput } from './material-create-wit
 
 @InputType()
 export class MaterialCreateOrConnectWithoutNutritionMatrixInput {
+	@Field(() => MaterialWhereUniqueInput, { nullable: false })
+	@Type(() => MaterialWhereUniqueInput)
+	where!: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MaterialWhereUniqueInput, {nullable:false})
-    @Type(() => MaterialWhereUniqueInput)
-    where!: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MaterialCreateWithoutNutritionMatrixInput, {nullable:false})
-    @Type(() => MaterialCreateWithoutNutritionMatrixInput)
-    create!: MaterialCreateWithoutNutritionMatrixInput;
+	@Field(() => MaterialCreateWithoutNutritionMatrixInput, { nullable: false })
+	@Type(() => MaterialCreateWithoutNutritionMatrixInput)
+	create!: MaterialCreateWithoutNutritionMatrixInput;
 }

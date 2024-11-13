@@ -8,16 +8,15 @@ import { NutritionUpdateInput } from './nutrition-update.input';
 
 @ArgsType()
 export class UpsertOneNutritionArgs {
+	@Field(() => NutritionWhereUniqueInput, { nullable: false })
+	@Type(() => NutritionWhereUniqueInput)
+	where!: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => NutritionWhereUniqueInput, {nullable:false})
-    @Type(() => NutritionWhereUniqueInput)
-    where!: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => NutritionCreateInput, { nullable: false })
+	@Type(() => NutritionCreateInput)
+	create!: NutritionCreateInput;
 
-    @Field(() => NutritionCreateInput, {nullable:false})
-    @Type(() => NutritionCreateInput)
-    create!: NutritionCreateInput;
-
-    @Field(() => NutritionUpdateInput, {nullable:false})
-    @Type(() => NutritionUpdateInput)
-    update!: NutritionUpdateInput;
+	@Field(() => NutritionUpdateInput, { nullable: false })
+	@Type(() => NutritionUpdateInput)
+	update!: NutritionUpdateInput;
 }

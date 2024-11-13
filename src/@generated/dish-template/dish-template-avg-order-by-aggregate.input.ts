@@ -4,16 +4,15 @@ import { SortOrder } from '../prisma/sort-order.enum';
 
 @InputType()
 export class DishTemplateAvgOrderByAggregateInput {
+	@Field(() => SortOrder, { nullable: true })
+	id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	recipeId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    recipeId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	amount?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    amount?: keyof typeof SortOrder;
-
-    @Field(() => SortOrder, {nullable:true})
-    mealTemplateId?: keyof typeof SortOrder;
+	@Field(() => SortOrder, { nullable: true })
+	mealTemplateId?: keyof typeof SortOrder;
 }

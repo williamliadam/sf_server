@@ -8,16 +8,15 @@ import { DishTemplateUpdateInput } from './dish-template-update.input';
 
 @ArgsType()
 export class UpsertOneDishTemplateArgs {
+	@Field(() => DishTemplateWhereUniqueInput, { nullable: false })
+	@Type(() => DishTemplateWhereUniqueInput)
+	where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => DishTemplateWhereUniqueInput, {nullable:false})
-    @Type(() => DishTemplateWhereUniqueInput)
-    where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
+	@Field(() => DishTemplateCreateInput, { nullable: false })
+	@Type(() => DishTemplateCreateInput)
+	create!: DishTemplateCreateInput;
 
-    @Field(() => DishTemplateCreateInput, {nullable:false})
-    @Type(() => DishTemplateCreateInput)
-    create!: DishTemplateCreateInput;
-
-    @Field(() => DishTemplateUpdateInput, {nullable:false})
-    @Type(() => DishTemplateUpdateInput)
-    update!: DishTemplateUpdateInput;
+	@Field(() => DishTemplateUpdateInput, { nullable: false })
+	@Type(() => DishTemplateUpdateInput)
+	update!: DishTemplateUpdateInput;
 }

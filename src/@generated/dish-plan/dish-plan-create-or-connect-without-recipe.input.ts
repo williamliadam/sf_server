@@ -7,12 +7,11 @@ import { DishPlanCreateWithoutRecipeInput } from './dish-plan-create-without-rec
 
 @InputType()
 export class DishPlanCreateOrConnectWithoutRecipeInput {
+	@Field(() => DishPlanWhereUniqueInput, { nullable: false })
+	@Type(() => DishPlanWhereUniqueInput)
+	where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
 
-    @Field(() => DishPlanWhereUniqueInput, {nullable:false})
-    @Type(() => DishPlanWhereUniqueInput)
-    where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
-
-    @Field(() => DishPlanCreateWithoutRecipeInput, {nullable:false})
-    @Type(() => DishPlanCreateWithoutRecipeInput)
-    create!: DishPlanCreateWithoutRecipeInput;
+	@Field(() => DishPlanCreateWithoutRecipeInput, { nullable: false })
+	@Type(() => DishPlanCreateWithoutRecipeInput)
+	create!: DishPlanCreateWithoutRecipeInput;
 }

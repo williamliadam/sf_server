@@ -7,12 +7,11 @@ import { DishTemplateWhereUniqueInput } from './dish-template-where-unique.input
 
 @ArgsType()
 export class UpdateOneDishTemplateArgs {
+	@Field(() => DishTemplateUpdateInput, { nullable: false })
+	@Type(() => DishTemplateUpdateInput)
+	data!: DishTemplateUpdateInput;
 
-    @Field(() => DishTemplateUpdateInput, {nullable:false})
-    @Type(() => DishTemplateUpdateInput)
-    data!: DishTemplateUpdateInput;
-
-    @Field(() => DishTemplateWhereUniqueInput, {nullable:false})
-    @Type(() => DishTemplateWhereUniqueInput)
-    where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
+	@Field(() => DishTemplateWhereUniqueInput, { nullable: false })
+	@Type(() => DishTemplateWhereUniqueInput)
+	where!: Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>;
 }

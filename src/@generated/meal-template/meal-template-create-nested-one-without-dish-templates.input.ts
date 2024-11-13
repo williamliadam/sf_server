@@ -8,16 +8,17 @@ import { MealTemplateWhereUniqueInput } from './meal-template-where-unique.input
 
 @InputType()
 export class MealTemplateCreateNestedOneWithoutDishTemplatesInput {
+	@Field(() => MealTemplateCreateWithoutDishTemplatesInput, { nullable: true })
+	@Type(() => MealTemplateCreateWithoutDishTemplatesInput)
+	create?: MealTemplateCreateWithoutDishTemplatesInput;
 
-    @Field(() => MealTemplateCreateWithoutDishTemplatesInput, {nullable:true})
-    @Type(() => MealTemplateCreateWithoutDishTemplatesInput)
-    create?: MealTemplateCreateWithoutDishTemplatesInput;
+	@Field(() => MealTemplateCreateOrConnectWithoutDishTemplatesInput, {
+		nullable: true,
+	})
+	@Type(() => MealTemplateCreateOrConnectWithoutDishTemplatesInput)
+	connectOrCreate?: MealTemplateCreateOrConnectWithoutDishTemplatesInput;
 
-    @Field(() => MealTemplateCreateOrConnectWithoutDishTemplatesInput, {nullable:true})
-    @Type(() => MealTemplateCreateOrConnectWithoutDishTemplatesInput)
-    connectOrCreate?: MealTemplateCreateOrConnectWithoutDishTemplatesInput;
-
-    @Field(() => MealTemplateWhereUniqueInput, {nullable:true})
-    @Type(() => MealTemplateWhereUniqueInput)
-    connect?: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
+	@Field(() => MealTemplateWhereUniqueInput, { nullable: true })
+	@Type(() => MealTemplateWhereUniqueInput)
+	connect?: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
 }

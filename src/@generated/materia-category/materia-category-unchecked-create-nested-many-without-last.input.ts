@@ -9,20 +9,23 @@ import { MateriaCategoryWhereUniqueInput } from './materia-category-where-unique
 
 @InputType()
 export class MateriaCategoryUncheckedCreateNestedManyWithoutLastInput {
+	@Field(() => [MateriaCategoryCreateWithoutLastInput], { nullable: true })
+	@Type(() => MateriaCategoryCreateWithoutLastInput)
+	create?: Array<MateriaCategoryCreateWithoutLastInput>;
 
-    @Field(() => [MateriaCategoryCreateWithoutLastInput], {nullable:true})
-    @Type(() => MateriaCategoryCreateWithoutLastInput)
-    create?: Array<MateriaCategoryCreateWithoutLastInput>;
+	@Field(() => [MateriaCategoryCreateOrConnectWithoutLastInput], {
+		nullable: true,
+	})
+	@Type(() => MateriaCategoryCreateOrConnectWithoutLastInput)
+	connectOrCreate?: Array<MateriaCategoryCreateOrConnectWithoutLastInput>;
 
-    @Field(() => [MateriaCategoryCreateOrConnectWithoutLastInput], {nullable:true})
-    @Type(() => MateriaCategoryCreateOrConnectWithoutLastInput)
-    connectOrCreate?: Array<MateriaCategoryCreateOrConnectWithoutLastInput>;
+	@Field(() => MateriaCategoryCreateManyLastInputEnvelope, { nullable: true })
+	@Type(() => MateriaCategoryCreateManyLastInputEnvelope)
+	createMany?: MateriaCategoryCreateManyLastInputEnvelope;
 
-    @Field(() => MateriaCategoryCreateManyLastInputEnvelope, {nullable:true})
-    @Type(() => MateriaCategoryCreateManyLastInputEnvelope)
-    createMany?: MateriaCategoryCreateManyLastInputEnvelope;
-
-    @Field(() => [MateriaCategoryWhereUniqueInput], {nullable:true})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MateriaCategoryWhereUniqueInput], { nullable: true })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	connect?: Array<
+		Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>
+	>;
 }

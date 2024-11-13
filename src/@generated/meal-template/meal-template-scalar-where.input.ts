@@ -6,28 +6,27 @@ import { DateTimeFilter } from '../prisma/date-time-filter.input';
 
 @InputType()
 export class MealTemplateScalarWhereInput {
+	@Field(() => [MealTemplateScalarWhereInput], { nullable: true })
+	AND?: Array<MealTemplateScalarWhereInput>;
 
-    @Field(() => [MealTemplateScalarWhereInput], {nullable:true})
-    AND?: Array<MealTemplateScalarWhereInput>;
+	@Field(() => [MealTemplateScalarWhereInput], { nullable: true })
+	OR?: Array<MealTemplateScalarWhereInput>;
 
-    @Field(() => [MealTemplateScalarWhereInput], {nullable:true})
-    OR?: Array<MealTemplateScalarWhereInput>;
+	@Field(() => [MealTemplateScalarWhereInput], { nullable: true })
+	NOT?: Array<MealTemplateScalarWhereInput>;
 
-    @Field(() => [MealTemplateScalarWhereInput], {nullable:true})
-    NOT?: Array<MealTemplateScalarWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => StringFilter, { nullable: true })
+	name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+	@Field(() => IntFilter, { nullable: true })
+	userId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    userId?: IntFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
-
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 }

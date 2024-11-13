@@ -7,28 +7,27 @@ import { MateriaUnitCount } from './materia-unit-count.output';
 
 @ObjectType()
 export class MateriaUnit {
+	@Field(() => ID, { nullable: false })
+	id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Int, { nullable: false })
+	toKilo!: number;
 
-    @Field(() => Int, {nullable:false})
-    toKilo!: number;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+	@Field(() => [Ingredient], { nullable: true })
+	ingredients?: Array<Ingredient>;
 
-    @Field(() => [Ingredient], {nullable:true})
-    ingredients?: Array<Ingredient>;
-
-    @Field(() => MateriaUnitCount, {nullable:false})
-    _count?: MateriaUnitCount;
+	@Field(() => MateriaUnitCount, { nullable: false })
+	_count?: MateriaUnitCount;
 }

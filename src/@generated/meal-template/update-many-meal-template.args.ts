@@ -6,12 +6,11 @@ import { MealTemplateWhereInput } from './meal-template-where.input';
 
 @ArgsType()
 export class UpdateManyMealTemplateArgs {
+	@Field(() => MealTemplateUpdateManyMutationInput, { nullable: false })
+	@Type(() => MealTemplateUpdateManyMutationInput)
+	data!: MealTemplateUpdateManyMutationInput;
 
-    @Field(() => MealTemplateUpdateManyMutationInput, {nullable:false})
-    @Type(() => MealTemplateUpdateManyMutationInput)
-    data!: MealTemplateUpdateManyMutationInput;
-
-    @Field(() => MealTemplateWhereInput, {nullable:true})
-    @Type(() => MealTemplateWhereInput)
-    where?: MealTemplateWhereInput;
+	@Field(() => MealTemplateWhereInput, { nullable: true })
+	@Type(() => MealTemplateWhereInput)
+	where?: MealTemplateWhereInput;
 }

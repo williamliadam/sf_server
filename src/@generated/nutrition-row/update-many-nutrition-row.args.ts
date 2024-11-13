@@ -6,12 +6,11 @@ import { NutritionRowWhereInput } from './nutrition-row-where.input';
 
 @ArgsType()
 export class UpdateManyNutritionRowArgs {
+	@Field(() => NutritionRowUpdateManyMutationInput, { nullable: false })
+	@Type(() => NutritionRowUpdateManyMutationInput)
+	data!: NutritionRowUpdateManyMutationInput;
 
-    @Field(() => NutritionRowUpdateManyMutationInput, {nullable:false})
-    @Type(() => NutritionRowUpdateManyMutationInput)
-    data!: NutritionRowUpdateManyMutationInput;
-
-    @Field(() => NutritionRowWhereInput, {nullable:true})
-    @Type(() => NutritionRowWhereInput)
-    where?: NutritionRowWhereInput;
+	@Field(() => NutritionRowWhereInput, { nullable: true })
+	@Type(() => NutritionRowWhereInput)
+	where?: NutritionRowWhereInput;
 }

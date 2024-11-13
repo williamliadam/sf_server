@@ -7,19 +7,20 @@ import { RecipeUpdateOneWithoutIngredientsNestedInput } from '../recipe/recipe-u
 
 @InputType()
 export class IngredientUpdateWithoutMaterialInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	amount?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    amount?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => MateriaUnitUpdateOneRequiredWithoutIngredientsNestedInput, {
+		nullable: true,
+	})
+	unit?: MateriaUnitUpdateOneRequiredWithoutIngredientsNestedInput;
 
-    @Field(() => MateriaUnitUpdateOneRequiredWithoutIngredientsNestedInput, {nullable:true})
-    unit?: MateriaUnitUpdateOneRequiredWithoutIngredientsNestedInput;
-
-    @Field(() => RecipeUpdateOneWithoutIngredientsNestedInput, {nullable:true})
-    usedRecipe?: RecipeUpdateOneWithoutIngredientsNestedInput;
+	@Field(() => RecipeUpdateOneWithoutIngredientsNestedInput, { nullable: true })
+	usedRecipe?: RecipeUpdateOneWithoutIngredientsNestedInput;
 }

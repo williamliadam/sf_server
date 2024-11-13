@@ -7,12 +7,14 @@ import { UserCreateWithoutChargeDishPlansInput } from './user-create-without-cha
 
 @InputType()
 export class UserCreateOrConnectWithoutChargeDishPlansInput {
+	@Field(() => UserWhereUniqueInput, { nullable: false })
+	@Type(() => UserWhereUniqueInput)
+	where!: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:false})
-    @Type(() => UserWhereUniqueInput)
-    where!: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
-
-    @Field(() => UserCreateWithoutChargeDishPlansInput, {nullable:false})
-    @Type(() => UserCreateWithoutChargeDishPlansInput)
-    create!: UserCreateWithoutChargeDishPlansInput;
+	@Field(() => UserCreateWithoutChargeDishPlansInput, { nullable: false })
+	@Type(() => UserCreateWithoutChargeDishPlansInput)
+	create!: UserCreateWithoutChargeDishPlansInput;
 }

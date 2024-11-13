@@ -8,16 +8,15 @@ import { MealTemplateUpdateInput } from './meal-template-update.input';
 
 @ArgsType()
 export class UpsertOneMealTemplateArgs {
+	@Field(() => MealTemplateWhereUniqueInput, { nullable: false })
+	@Type(() => MealTemplateWhereUniqueInput)
+	where!: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
 
-    @Field(() => MealTemplateWhereUniqueInput, {nullable:false})
-    @Type(() => MealTemplateWhereUniqueInput)
-    where!: Prisma.AtLeast<MealTemplateWhereUniqueInput, 'id'>;
+	@Field(() => MealTemplateCreateInput, { nullable: false })
+	@Type(() => MealTemplateCreateInput)
+	create!: MealTemplateCreateInput;
 
-    @Field(() => MealTemplateCreateInput, {nullable:false})
-    @Type(() => MealTemplateCreateInput)
-    create!: MealTemplateCreateInput;
-
-    @Field(() => MealTemplateUpdateInput, {nullable:false})
-    @Type(() => MealTemplateUpdateInput)
-    update!: MealTemplateUpdateInput;
+	@Field(() => MealTemplateUpdateInput, { nullable: false })
+	@Type(() => MealTemplateUpdateInput)
+	update!: MealTemplateUpdateInput;
 }

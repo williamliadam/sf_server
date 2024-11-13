@@ -9,40 +9,39 @@ import { PostMaxAggregate } from './post-max-aggregate.output';
 
 @ObjectType()
 export class PostGroupBy {
+	@Field(() => Int, { nullable: false })
+	id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+	@Field(() => String, { nullable: false })
+	title!: string;
 
-    @Field(() => String, {nullable:false})
-    title!: string;
+	@Field(() => String, { nullable: true })
+	content?: string;
 
-    @Field(() => String, {nullable:true})
-    content?: string;
+	@Field(() => Boolean, { nullable: true })
+	published?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    published?: boolean;
+	@Field(() => Int, { nullable: true })
+	authorId?: number;
 
-    @Field(() => Int, {nullable:true})
-    authorId?: number;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+	@Field(() => PostCountAggregate, { nullable: true })
+	_count?: PostCountAggregate;
 
-    @Field(() => PostCountAggregate, {nullable:true})
-    _count?: PostCountAggregate;
+	@Field(() => PostAvgAggregate, { nullable: true })
+	_avg?: PostAvgAggregate;
 
-    @Field(() => PostAvgAggregate, {nullable:true})
-    _avg?: PostAvgAggregate;
+	@Field(() => PostSumAggregate, { nullable: true })
+	_sum?: PostSumAggregate;
 
-    @Field(() => PostSumAggregate, {nullable:true})
-    _sum?: PostSumAggregate;
+	@Field(() => PostMinAggregate, { nullable: true })
+	_min?: PostMinAggregate;
 
-    @Field(() => PostMinAggregate, {nullable:true})
-    _min?: PostMinAggregate;
-
-    @Field(() => PostMaxAggregate, {nullable:true})
-    _max?: PostMaxAggregate;
+	@Field(() => PostMaxAggregate, { nullable: true })
+	_max?: PostMaxAggregate;
 }

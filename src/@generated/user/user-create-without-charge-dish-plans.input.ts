@@ -10,46 +10,47 @@ import { MealPlanCreateNestedManyWithoutCreateByInput } from '../meal-plan/meal-
 
 @InputType()
 export class UserCreateWithoutChargeDishPlansInput {
+	@Field(() => String, { nullable: true })
+	email?: string;
 
-    @Field(() => String, {nullable:true})
-    email?: string;
+	@Field(() => String, { nullable: true })
+	name?: string;
 
-    @Field(() => String, {nullable:true})
-    name?: string;
+	@Field(() => String, { nullable: false })
+	password!: string;
 
-    @Field(() => String, {nullable:false})
-    password!: string;
+	@Field(() => String, { nullable: true })
+	phone?: string;
 
-    @Field(() => String, {nullable:true})
-    phone?: string;
+	@Field(() => String, { nullable: true })
+	wxId?: string;
 
-    @Field(() => String, {nullable:true})
-    wxId?: string;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => Role, { nullable: true })
+	role?: keyof typeof Role;
 
-    @Field(() => Role, {nullable:true})
-    role?: keyof typeof Role;
+	@Field(() => ProfileCreateNestedOneWithoutUserInput, { nullable: true })
+	profile?: ProfileCreateNestedOneWithoutUserInput;
 
-    @Field(() => ProfileCreateNestedOneWithoutUserInput, {nullable:true})
-    profile?: ProfileCreateNestedOneWithoutUserInput;
+	@Field(() => BodyDetailCreateNestedOneWithoutUserInput, { nullable: true })
+	bodyDetail?: BodyDetailCreateNestedOneWithoutUserInput;
 
-    @Field(() => BodyDetailCreateNestedOneWithoutUserInput, {nullable:true})
-    bodyDetail?: BodyDetailCreateNestedOneWithoutUserInput;
+	@Field(() => PostCreateNestedManyWithoutAuthorInput, { nullable: true })
+	myPosts?: PostCreateNestedManyWithoutAuthorInput;
 
-    @Field(() => PostCreateNestedManyWithoutAuthorInput, {nullable:true})
-    myPosts?: PostCreateNestedManyWithoutAuthorInput;
+	@Field(() => RecipeCreateNestedManyWithoutAuthorInput, { nullable: true })
+	myRecipes?: RecipeCreateNestedManyWithoutAuthorInput;
 
-    @Field(() => RecipeCreateNestedManyWithoutAuthorInput, {nullable:true})
-    myRecipes?: RecipeCreateNestedManyWithoutAuthorInput;
+	@Field(() => MealTemplateCreateNestedManyWithoutCreateByInput, {
+		nullable: true,
+	})
+	myMealTemplates?: MealTemplateCreateNestedManyWithoutCreateByInput;
 
-    @Field(() => MealTemplateCreateNestedManyWithoutCreateByInput, {nullable:true})
-    myMealTemplates?: MealTemplateCreateNestedManyWithoutCreateByInput;
-
-    @Field(() => MealPlanCreateNestedManyWithoutCreateByInput, {nullable:true})
-    myMealPlans?: MealPlanCreateNestedManyWithoutCreateByInput;
+	@Field(() => MealPlanCreateNestedManyWithoutCreateByInput, { nullable: true })
+	myMealPlans?: MealPlanCreateNestedManyWithoutCreateByInput;
 }

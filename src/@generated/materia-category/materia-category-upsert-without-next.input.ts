@@ -7,16 +7,15 @@ import { MateriaCategoryWhereInput } from './materia-category-where.input';
 
 @InputType()
 export class MateriaCategoryUpsertWithoutNextInput {
+	@Field(() => MateriaCategoryUpdateWithoutNextInput, { nullable: false })
+	@Type(() => MateriaCategoryUpdateWithoutNextInput)
+	update!: MateriaCategoryUpdateWithoutNextInput;
 
-    @Field(() => MateriaCategoryUpdateWithoutNextInput, {nullable:false})
-    @Type(() => MateriaCategoryUpdateWithoutNextInput)
-    update!: MateriaCategoryUpdateWithoutNextInput;
+	@Field(() => MateriaCategoryCreateWithoutNextInput, { nullable: false })
+	@Type(() => MateriaCategoryCreateWithoutNextInput)
+	create!: MateriaCategoryCreateWithoutNextInput;
 
-    @Field(() => MateriaCategoryCreateWithoutNextInput, {nullable:false})
-    @Type(() => MateriaCategoryCreateWithoutNextInput)
-    create!: MateriaCategoryCreateWithoutNextInput;
-
-    @Field(() => MateriaCategoryWhereInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereInput)
-    where?: MateriaCategoryWhereInput;
+	@Field(() => MateriaCategoryWhereInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereInput)
+	where?: MateriaCategoryWhereInput;
 }

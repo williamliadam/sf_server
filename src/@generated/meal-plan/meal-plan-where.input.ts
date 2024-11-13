@@ -9,37 +9,36 @@ import { UserRelationFilter } from '../user/user-relation-filter.input';
 
 @InputType()
 export class MealPlanWhereInput {
+	@Field(() => [MealPlanWhereInput], { nullable: true })
+	AND?: Array<MealPlanWhereInput>;
 
-    @Field(() => [MealPlanWhereInput], {nullable:true})
-    AND?: Array<MealPlanWhereInput>;
+	@Field(() => [MealPlanWhereInput], { nullable: true })
+	OR?: Array<MealPlanWhereInput>;
 
-    @Field(() => [MealPlanWhereInput], {nullable:true})
-    OR?: Array<MealPlanWhereInput>;
+	@Field(() => [MealPlanWhereInput], { nullable: true })
+	NOT?: Array<MealPlanWhereInput>;
 
-    @Field(() => [MealPlanWhereInput], {nullable:true})
-    NOT?: Array<MealPlanWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => DateTimeNullableFilter, { nullable: true })
+	planTime?: DateTimeNullableFilter;
 
-    @Field(() => DateTimeNullableFilter, {nullable:true})
-    planTime?: DateTimeNullableFilter;
+	@Field(() => IntFilter, { nullable: true })
+	userId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    userId?: IntFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => EnumMealTypeFilter, { nullable: true })
+	type?: EnumMealTypeFilter;
 
-    @Field(() => EnumMealTypeFilter, {nullable:true})
-    type?: EnumMealTypeFilter;
+	@Field(() => DishPlanListRelationFilter, { nullable: true })
+	dishPlans?: DishPlanListRelationFilter;
 
-    @Field(() => DishPlanListRelationFilter, {nullable:true})
-    dishPlans?: DishPlanListRelationFilter;
-
-    @Field(() => UserRelationFilter, {nullable:true})
-    createBy?: UserRelationFilter;
+	@Field(() => UserRelationFilter, { nullable: true })
+	createBy?: UserRelationFilter;
 }

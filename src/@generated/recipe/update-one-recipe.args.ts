@@ -7,12 +7,11 @@ import { RecipeWhereUniqueInput } from './recipe-where-unique.input';
 
 @ArgsType()
 export class UpdateOneRecipeArgs {
+	@Field(() => RecipeUpdateInput, { nullable: false })
+	@Type(() => RecipeUpdateInput)
+	data!: RecipeUpdateInput;
 
-    @Field(() => RecipeUpdateInput, {nullable:false})
-    @Type(() => RecipeUpdateInput)
-    data!: RecipeUpdateInput;
-
-    @Field(() => RecipeWhereUniqueInput, {nullable:false})
-    @Type(() => RecipeWhereUniqueInput)
-    where!: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
+	@Field(() => RecipeWhereUniqueInput, { nullable: false })
+	@Type(() => RecipeWhereUniqueInput)
+	where!: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 }

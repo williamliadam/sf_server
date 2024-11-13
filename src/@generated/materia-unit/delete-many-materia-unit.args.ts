@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyMateriaUnitArgs {
-
-    @Field(() => MateriaUnitWhereInput, {nullable:true})
-    @Type(() => MateriaUnitWhereInput)
-    where?: MateriaUnitWhereInput;
+	@Field(() => MateriaUnitWhereInput, { nullable: true })
+	@Type(() => MateriaUnitWhereInput)
+	where?: MateriaUnitWhereInput;
 }

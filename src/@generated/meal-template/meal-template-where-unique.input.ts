@@ -10,34 +10,33 @@ import { DishTemplateListRelationFilter } from '../dish-template/dish-template-l
 
 @InputType()
 export class MealTemplateWhereUniqueInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => [MealTemplateWhereInput], { nullable: true })
+	AND?: Array<MealTemplateWhereInput>;
 
-    @Field(() => [MealTemplateWhereInput], {nullable:true})
-    AND?: Array<MealTemplateWhereInput>;
+	@Field(() => [MealTemplateWhereInput], { nullable: true })
+	OR?: Array<MealTemplateWhereInput>;
 
-    @Field(() => [MealTemplateWhereInput], {nullable:true})
-    OR?: Array<MealTemplateWhereInput>;
+	@Field(() => [MealTemplateWhereInput], { nullable: true })
+	NOT?: Array<MealTemplateWhereInput>;
 
-    @Field(() => [MealTemplateWhereInput], {nullable:true})
-    NOT?: Array<MealTemplateWhereInput>;
+	@Field(() => StringFilter, { nullable: true })
+	name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+	@Field(() => IntFilter, { nullable: true })
+	userId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    userId?: IntFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => UserRelationFilter, { nullable: true })
+	createBy?: UserRelationFilter;
 
-    @Field(() => UserRelationFilter, {nullable:true})
-    createBy?: UserRelationFilter;
-
-    @Field(() => DishTemplateListRelationFilter, {nullable:true})
-    dishTemplates?: DishTemplateListRelationFilter;
+	@Field(() => DishTemplateListRelationFilter, { nullable: true })
+	dishTemplates?: DishTemplateListRelationFilter;
 }

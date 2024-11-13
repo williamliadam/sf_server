@@ -8,31 +8,30 @@ import { NutritionRowListRelationFilter } from '../nutrition-row/nutrition-row-l
 
 @InputType()
 export class NutritionWhereUniqueInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => String, { nullable: true })
+	code?: string;
 
-    @Field(() => String, {nullable:true})
-    code?: string;
+	@Field(() => [NutritionWhereInput], { nullable: true })
+	AND?: Array<NutritionWhereInput>;
 
-    @Field(() => [NutritionWhereInput], {nullable:true})
-    AND?: Array<NutritionWhereInput>;
+	@Field(() => [NutritionWhereInput], { nullable: true })
+	OR?: Array<NutritionWhereInput>;
 
-    @Field(() => [NutritionWhereInput], {nullable:true})
-    OR?: Array<NutritionWhereInput>;
+	@Field(() => [NutritionWhereInput], { nullable: true })
+	NOT?: Array<NutritionWhereInput>;
 
-    @Field(() => [NutritionWhereInput], {nullable:true})
-    NOT?: Array<NutritionWhereInput>;
+	@Field(() => StringFilter, { nullable: true })
+	name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
-
-    @Field(() => NutritionRowListRelationFilter, {nullable:true})
-    usedRow?: NutritionRowListRelationFilter;
+	@Field(() => NutritionRowListRelationFilter, { nullable: true })
+	usedRow?: NutritionRowListRelationFilter;
 }

@@ -8,16 +8,20 @@ import { UserWhereUniqueInput } from './user-where-unique.input';
 
 @InputType()
 export class UserCreateNestedOneWithoutMyMealTemplatesInput {
+	@Field(() => UserCreateWithoutMyMealTemplatesInput, { nullable: true })
+	@Type(() => UserCreateWithoutMyMealTemplatesInput)
+	create?: UserCreateWithoutMyMealTemplatesInput;
 
-    @Field(() => UserCreateWithoutMyMealTemplatesInput, {nullable:true})
-    @Type(() => UserCreateWithoutMyMealTemplatesInput)
-    create?: UserCreateWithoutMyMealTemplatesInput;
+	@Field(() => UserCreateOrConnectWithoutMyMealTemplatesInput, {
+		nullable: true,
+	})
+	@Type(() => UserCreateOrConnectWithoutMyMealTemplatesInput)
+	connectOrCreate?: UserCreateOrConnectWithoutMyMealTemplatesInput;
 
-    @Field(() => UserCreateOrConnectWithoutMyMealTemplatesInput, {nullable:true})
-    @Type(() => UserCreateOrConnectWithoutMyMealTemplatesInput)
-    connectOrCreate?: UserCreateOrConnectWithoutMyMealTemplatesInput;
-
-    @Field(() => UserWhereUniqueInput, {nullable:true})
-    @Type(() => UserWhereUniqueInput)
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
+	@Field(() => UserWhereUniqueInput, { nullable: true })
+	@Type(() => UserWhereUniqueInput)
+	connect?: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 }

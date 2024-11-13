@@ -6,19 +6,20 @@ import { RecipeCreateNestedOneWithoutIngredientsInput } from '../recipe/recipe-c
 
 @InputType()
 export class IngredientCreateWithoutUnitInput {
+	@Field(() => Int, { nullable: false })
+	amount!: number;
 
-    @Field(() => Int, {nullable:false})
-    amount!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => MaterialCreateNestedOneWithoutIngredientsInput, {
+		nullable: false,
+	})
+	material!: MaterialCreateNestedOneWithoutIngredientsInput;
 
-    @Field(() => MaterialCreateNestedOneWithoutIngredientsInput, {nullable:false})
-    material!: MaterialCreateNestedOneWithoutIngredientsInput;
-
-    @Field(() => RecipeCreateNestedOneWithoutIngredientsInput, {nullable:true})
-    usedRecipe?: RecipeCreateNestedOneWithoutIngredientsInput;
+	@Field(() => RecipeCreateNestedOneWithoutIngredientsInput, { nullable: true })
+	usedRecipe?: RecipeCreateNestedOneWithoutIngredientsInput;
 }

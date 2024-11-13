@@ -11,37 +11,36 @@ import { UserNullableRelationFilter } from '../user/user-nullable-relation-filte
 
 @InputType()
 export class PostWhereUniqueInput {
+	@Field(() => Int, { nullable: true })
+	id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+	@Field(() => [PostWhereInput], { nullable: true })
+	AND?: Array<PostWhereInput>;
 
-    @Field(() => [PostWhereInput], {nullable:true})
-    AND?: Array<PostWhereInput>;
+	@Field(() => [PostWhereInput], { nullable: true })
+	OR?: Array<PostWhereInput>;
 
-    @Field(() => [PostWhereInput], {nullable:true})
-    OR?: Array<PostWhereInput>;
+	@Field(() => [PostWhereInput], { nullable: true })
+	NOT?: Array<PostWhereInput>;
 
-    @Field(() => [PostWhereInput], {nullable:true})
-    NOT?: Array<PostWhereInput>;
+	@Field(() => StringFilter, { nullable: true })
+	title?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    title?: StringFilter;
+	@Field(() => StringNullableFilter, { nullable: true })
+	content?: StringNullableFilter;
 
-    @Field(() => StringNullableFilter, {nullable:true})
-    content?: StringNullableFilter;
+	@Field(() => BoolNullableFilter, { nullable: true })
+	published?: BoolNullableFilter;
 
-    @Field(() => BoolNullableFilter, {nullable:true})
-    published?: BoolNullableFilter;
+	@Field(() => IntNullableFilter, { nullable: true })
+	authorId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    authorId?: IntNullableFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
-
-    @Field(() => UserNullableRelationFilter, {nullable:true})
-    author?: UserNullableRelationFilter;
+	@Field(() => UserNullableRelationFilter, { nullable: true })
+	author?: UserNullableRelationFilter;
 }

@@ -11,40 +11,39 @@ import { RecipeCount } from './recipe-count.output';
 
 @ObjectType()
 export class Recipe {
+	@Field(() => ID, { nullable: false })
+	id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Int, { nullable: false })
+	stars!: number;
 
-    @Field(() => Int, {nullable:false})
-    stars!: number;
+	@Field(() => Int, { nullable: false })
+	authorId!: number;
 
-    @Field(() => Int, {nullable:false})
-    authorId!: number;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+	@Field(() => User, { nullable: false })
+	author?: User;
 
-    @Field(() => User, {nullable:false})
-    author?: User;
+	@Field(() => [Ingredient], { nullable: true })
+	ingredients?: Array<Ingredient>;
 
-    @Field(() => [Ingredient], {nullable:true})
-    ingredients?: Array<Ingredient>;
+	@Field(() => [Method], { nullable: true })
+	methods?: Array<Method>;
 
-    @Field(() => [Method], {nullable:true})
-    methods?: Array<Method>;
+	@Field(() => [DishPlan], { nullable: true })
+	usedDishPlans?: Array<DishPlan>;
 
-    @Field(() => [DishPlan], {nullable:true})
-    usedDishPlans?: Array<DishPlan>;
+	@Field(() => [DishTemplate], { nullable: true })
+	usedDishTemplates?: Array<DishTemplate>;
 
-    @Field(() => [DishTemplate], {nullable:true})
-    usedDishTemplates?: Array<DishTemplate>;
-
-    @Field(() => RecipeCount, {nullable:false})
-    _count?: RecipeCount;
+	@Field(() => RecipeCount, { nullable: false })
+	_count?: RecipeCount;
 }

@@ -7,12 +7,11 @@ import { MethodWhereUniqueInput } from './method-where-unique.input';
 
 @ArgsType()
 export class UpdateOneMethodArgs {
+	@Field(() => MethodUpdateInput, { nullable: false })
+	@Type(() => MethodUpdateInput)
+	data!: MethodUpdateInput;
 
-    @Field(() => MethodUpdateInput, {nullable:false})
-    @Type(() => MethodUpdateInput)
-    data!: MethodUpdateInput;
-
-    @Field(() => MethodWhereUniqueInput, {nullable:false})
-    @Type(() => MethodWhereUniqueInput)
-    where!: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => MethodWhereUniqueInput, { nullable: false })
+	@Type(() => MethodWhereUniqueInput)
+	where!: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
 }

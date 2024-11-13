@@ -9,43 +9,42 @@ import { MealPlanNullableRelationFilter } from '../meal-plan/meal-plan-nullable-
 
 @InputType()
 export class DishPlanWhereInput {
+	@Field(() => [DishPlanWhereInput], { nullable: true })
+	AND?: Array<DishPlanWhereInput>;
 
-    @Field(() => [DishPlanWhereInput], {nullable:true})
-    AND?: Array<DishPlanWhereInput>;
+	@Field(() => [DishPlanWhereInput], { nullable: true })
+	OR?: Array<DishPlanWhereInput>;
 
-    @Field(() => [DishPlanWhereInput], {nullable:true})
-    OR?: Array<DishPlanWhereInput>;
+	@Field(() => [DishPlanWhereInput], { nullable: true })
+	NOT?: Array<DishPlanWhereInput>;
 
-    @Field(() => [DishPlanWhereInput], {nullable:true})
-    NOT?: Array<DishPlanWhereInput>;
+	@Field(() => IntFilter, { nullable: true })
+	id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	recipeId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    recipeId?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	amount?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    amount?: IntFilter;
+	@Field(() => IntFilter, { nullable: true })
+	planCookerId?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    planCookerId?: IntFilter;
+	@Field(() => IntNullableFilter, { nullable: true })
+	mealPlanId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    mealPlanId?: IntNullableFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+	@Field(() => DateTimeFilter, { nullable: true })
+	updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+	@Field(() => UserRelationFilter, { nullable: true })
+	planCooker?: UserRelationFilter;
 
-    @Field(() => UserRelationFilter, {nullable:true})
-    planCooker?: UserRelationFilter;
+	@Field(() => RecipeRelationFilter, { nullable: true })
+	recipe?: RecipeRelationFilter;
 
-    @Field(() => RecipeRelationFilter, {nullable:true})
-    recipe?: RecipeRelationFilter;
-
-    @Field(() => MealPlanNullableRelationFilter, {nullable:true})
-    usedMealPlan?: MealPlanNullableRelationFilter;
+	@Field(() => MealPlanNullableRelationFilter, { nullable: true })
+	usedMealPlan?: MealPlanNullableRelationFilter;
 }

@@ -8,28 +8,27 @@ import { MealTemplateCount } from './meal-template-count.output';
 
 @ObjectType()
 export class MealTemplate {
+	@Field(() => ID, { nullable: false })
+	id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => Int, { nullable: false })
+	userId!: number;
 
-    @Field(() => Int, {nullable:false})
-    userId!: number;
+	@Field(() => Date, { nullable: false })
+	createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+	@Field(() => Date, { nullable: false })
+	updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+	@Field(() => User, { nullable: false })
+	createBy?: User;
 
-    @Field(() => User, {nullable:false})
-    createBy?: User;
+	@Field(() => [DishTemplate], { nullable: true })
+	dishTemplates?: Array<DishTemplate>;
 
-    @Field(() => [DishTemplate], {nullable:true})
-    dishTemplates?: Array<DishTemplate>;
-
-    @Field(() => MealTemplateCount, {nullable:false})
-    _count?: MealTemplateCount;
+	@Field(() => MealTemplateCount, { nullable: false })
+	_count?: MealTemplateCount;
 }

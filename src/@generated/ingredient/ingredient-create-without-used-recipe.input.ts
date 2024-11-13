@@ -6,19 +6,22 @@ import { MateriaUnitCreateNestedOneWithoutIngredientsInput } from '../materia-un
 
 @InputType()
 export class IngredientCreateWithoutUsedRecipeInput {
+	@Field(() => Int, { nullable: false })
+	amount!: number;
 
-    @Field(() => Int, {nullable:false})
-    amount!: number;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+	@Field(() => MaterialCreateNestedOneWithoutIngredientsInput, {
+		nullable: false,
+	})
+	material!: MaterialCreateNestedOneWithoutIngredientsInput;
 
-    @Field(() => MaterialCreateNestedOneWithoutIngredientsInput, {nullable:false})
-    material!: MaterialCreateNestedOneWithoutIngredientsInput;
-
-    @Field(() => MateriaUnitCreateNestedOneWithoutIngredientsInput, {nullable:false})
-    unit!: MateriaUnitCreateNestedOneWithoutIngredientsInput;
+	@Field(() => MateriaUnitCreateNestedOneWithoutIngredientsInput, {
+		nullable: false,
+	})
+	unit!: MateriaUnitCreateNestedOneWithoutIngredientsInput;
 }

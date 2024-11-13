@@ -8,16 +8,15 @@ import { RecipeUpdateInput } from './recipe-update.input';
 
 @ArgsType()
 export class UpsertOneRecipeArgs {
+	@Field(() => RecipeWhereUniqueInput, { nullable: false })
+	@Type(() => RecipeWhereUniqueInput)
+	where!: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
 
-    @Field(() => RecipeWhereUniqueInput, {nullable:false})
-    @Type(() => RecipeWhereUniqueInput)
-    where!: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
+	@Field(() => RecipeCreateInput, { nullable: false })
+	@Type(() => RecipeCreateInput)
+	create!: RecipeCreateInput;
 
-    @Field(() => RecipeCreateInput, {nullable:false})
-    @Type(() => RecipeCreateInput)
-    create!: RecipeCreateInput;
-
-    @Field(() => RecipeUpdateInput, {nullable:false})
-    @Type(() => RecipeUpdateInput)
-    update!: RecipeUpdateInput;
+	@Field(() => RecipeUpdateInput, { nullable: false })
+	@Type(() => RecipeUpdateInput)
+	update!: RecipeUpdateInput;
 }

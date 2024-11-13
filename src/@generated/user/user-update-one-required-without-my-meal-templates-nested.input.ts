@@ -10,24 +10,30 @@ import { UserUpdateToOneWithWhereWithoutMyMealTemplatesInput } from './user-upda
 
 @InputType()
 export class UserUpdateOneRequiredWithoutMyMealTemplatesNestedInput {
+	@Field(() => UserCreateWithoutMyMealTemplatesInput, { nullable: true })
+	@Type(() => UserCreateWithoutMyMealTemplatesInput)
+	create?: UserCreateWithoutMyMealTemplatesInput;
 
-    @Field(() => UserCreateWithoutMyMealTemplatesInput, {nullable:true})
-    @Type(() => UserCreateWithoutMyMealTemplatesInput)
-    create?: UserCreateWithoutMyMealTemplatesInput;
+	@Field(() => UserCreateOrConnectWithoutMyMealTemplatesInput, {
+		nullable: true,
+	})
+	@Type(() => UserCreateOrConnectWithoutMyMealTemplatesInput)
+	connectOrCreate?: UserCreateOrConnectWithoutMyMealTemplatesInput;
 
-    @Field(() => UserCreateOrConnectWithoutMyMealTemplatesInput, {nullable:true})
-    @Type(() => UserCreateOrConnectWithoutMyMealTemplatesInput)
-    connectOrCreate?: UserCreateOrConnectWithoutMyMealTemplatesInput;
+	@Field(() => UserUpsertWithoutMyMealTemplatesInput, { nullable: true })
+	@Type(() => UserUpsertWithoutMyMealTemplatesInput)
+	upsert?: UserUpsertWithoutMyMealTemplatesInput;
 
-    @Field(() => UserUpsertWithoutMyMealTemplatesInput, {nullable:true})
-    @Type(() => UserUpsertWithoutMyMealTemplatesInput)
-    upsert?: UserUpsertWithoutMyMealTemplatesInput;
+	@Field(() => UserWhereUniqueInput, { nullable: true })
+	@Type(() => UserWhereUniqueInput)
+	connect?: Prisma.AtLeast<
+		UserWhereUniqueInput,
+		'id' | 'email' | 'phone' | 'wxId'
+	>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:true})
-    @Type(() => UserWhereUniqueInput)
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
-
-    @Field(() => UserUpdateToOneWithWhereWithoutMyMealTemplatesInput, {nullable:true})
-    @Type(() => UserUpdateToOneWithWhereWithoutMyMealTemplatesInput)
-    update?: UserUpdateToOneWithWhereWithoutMyMealTemplatesInput;
+	@Field(() => UserUpdateToOneWithWhereWithoutMyMealTemplatesInput, {
+		nullable: true,
+	})
+	@Type(() => UserUpdateToOneWithWhereWithoutMyMealTemplatesInput)
+	update?: UserUpdateToOneWithWhereWithoutMyMealTemplatesInput;
 }

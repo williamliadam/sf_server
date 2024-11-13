@@ -7,22 +7,21 @@ import { EnumMealTypeFieldUpdateOperationsInput } from '../prisma/enum-meal-type
 
 @InputType()
 export class MealPlanUncheckedUpdateManyInput {
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+	@Field(() => NullableDateTimeFieldUpdateOperationsInput, { nullable: true })
+	planTime?: NullableDateTimeFieldUpdateOperationsInput;
 
-    @Field(() => NullableDateTimeFieldUpdateOperationsInput, {nullable:true})
-    planTime?: NullableDateTimeFieldUpdateOperationsInput;
+	@Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+	userId?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    userId?: IntFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+	@Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+	updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => EnumMealTypeFieldUpdateOperationsInput, {nullable:true})
-    type?: EnumMealTypeFieldUpdateOperationsInput;
+	@Field(() => EnumMealTypeFieldUpdateOperationsInput, { nullable: true })
+	type?: EnumMealTypeFieldUpdateOperationsInput;
 }

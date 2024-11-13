@@ -6,12 +6,11 @@ import { MateriaCategoryUpdateManyMutationInput } from './materia-category-updat
 
 @InputType()
 export class MateriaCategoryUpdateManyWithWhereWithoutLastInput {
+	@Field(() => MateriaCategoryScalarWhereInput, { nullable: false })
+	@Type(() => MateriaCategoryScalarWhereInput)
+	where!: MateriaCategoryScalarWhereInput;
 
-    @Field(() => MateriaCategoryScalarWhereInput, {nullable:false})
-    @Type(() => MateriaCategoryScalarWhereInput)
-    where!: MateriaCategoryScalarWhereInput;
-
-    @Field(() => MateriaCategoryUpdateManyMutationInput, {nullable:false})
-    @Type(() => MateriaCategoryUpdateManyMutationInput)
-    data!: MateriaCategoryUpdateManyMutationInput;
+	@Field(() => MateriaCategoryUpdateManyMutationInput, { nullable: false })
+	@Type(() => MateriaCategoryUpdateManyMutationInput)
+	data!: MateriaCategoryUpdateManyMutationInput;
 }

@@ -6,12 +6,11 @@ import { DishPlanWhereInput } from './dish-plan-where.input';
 
 @ArgsType()
 export class UpdateManyDishPlanArgs {
+	@Field(() => DishPlanUpdateManyMutationInput, { nullable: false })
+	@Type(() => DishPlanUpdateManyMutationInput)
+	data!: DishPlanUpdateManyMutationInput;
 
-    @Field(() => DishPlanUpdateManyMutationInput, {nullable:false})
-    @Type(() => DishPlanUpdateManyMutationInput)
-    data!: DishPlanUpdateManyMutationInput;
-
-    @Field(() => DishPlanWhereInput, {nullable:true})
-    @Type(() => DishPlanWhereInput)
-    where?: DishPlanWhereInput;
+	@Field(() => DishPlanWhereInput, { nullable: true })
+	@Type(() => DishPlanWhereInput)
+	where?: DishPlanWhereInput;
 }

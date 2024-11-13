@@ -5,11 +5,10 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateManyDishPlanArgs {
+	@Field(() => [DishPlanCreateManyInput], { nullable: false })
+	@Type(() => DishPlanCreateManyInput)
+	data!: Array<DishPlanCreateManyInput>;
 
-    @Field(() => [DishPlanCreateManyInput], {nullable:false})
-    @Type(() => DishPlanCreateManyInput)
-    data!: Array<DishPlanCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+	@Field(() => Boolean, { nullable: true })
+	skipDuplicates?: boolean;
 }

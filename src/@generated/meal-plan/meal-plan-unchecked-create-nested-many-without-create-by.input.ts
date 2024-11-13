@@ -9,20 +9,21 @@ import { MealPlanWhereUniqueInput } from './meal-plan-where-unique.input';
 
 @InputType()
 export class MealPlanUncheckedCreateNestedManyWithoutCreateByInput {
+	@Field(() => [MealPlanCreateWithoutCreateByInput], { nullable: true })
+	@Type(() => MealPlanCreateWithoutCreateByInput)
+	create?: Array<MealPlanCreateWithoutCreateByInput>;
 
-    @Field(() => [MealPlanCreateWithoutCreateByInput], {nullable:true})
-    @Type(() => MealPlanCreateWithoutCreateByInput)
-    create?: Array<MealPlanCreateWithoutCreateByInput>;
+	@Field(() => [MealPlanCreateOrConnectWithoutCreateByInput], {
+		nullable: true,
+	})
+	@Type(() => MealPlanCreateOrConnectWithoutCreateByInput)
+	connectOrCreate?: Array<MealPlanCreateOrConnectWithoutCreateByInput>;
 
-    @Field(() => [MealPlanCreateOrConnectWithoutCreateByInput], {nullable:true})
-    @Type(() => MealPlanCreateOrConnectWithoutCreateByInput)
-    connectOrCreate?: Array<MealPlanCreateOrConnectWithoutCreateByInput>;
+	@Field(() => MealPlanCreateManyCreateByInputEnvelope, { nullable: true })
+	@Type(() => MealPlanCreateManyCreateByInputEnvelope)
+	createMany?: MealPlanCreateManyCreateByInputEnvelope;
 
-    @Field(() => MealPlanCreateManyCreateByInputEnvelope, {nullable:true})
-    @Type(() => MealPlanCreateManyCreateByInputEnvelope)
-    createMany?: MealPlanCreateManyCreateByInputEnvelope;
-
-    @Field(() => [MealPlanWhereUniqueInput], {nullable:true})
-    @Type(() => MealPlanWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>>;
+	@Field(() => [MealPlanWhereUniqueInput], { nullable: true })
+	@Type(() => MealPlanWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<MealPlanWhereUniqueInput, 'id'>>;
 }

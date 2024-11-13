@@ -9,20 +9,19 @@ import { DishPlanWhereUniqueInput } from './dish-plan-where-unique.input';
 
 @InputType()
 export class DishPlanCreateNestedManyWithoutRecipeInput {
+	@Field(() => [DishPlanCreateWithoutRecipeInput], { nullable: true })
+	@Type(() => DishPlanCreateWithoutRecipeInput)
+	create?: Array<DishPlanCreateWithoutRecipeInput>;
 
-    @Field(() => [DishPlanCreateWithoutRecipeInput], {nullable:true})
-    @Type(() => DishPlanCreateWithoutRecipeInput)
-    create?: Array<DishPlanCreateWithoutRecipeInput>;
+	@Field(() => [DishPlanCreateOrConnectWithoutRecipeInput], { nullable: true })
+	@Type(() => DishPlanCreateOrConnectWithoutRecipeInput)
+	connectOrCreate?: Array<DishPlanCreateOrConnectWithoutRecipeInput>;
 
-    @Field(() => [DishPlanCreateOrConnectWithoutRecipeInput], {nullable:true})
-    @Type(() => DishPlanCreateOrConnectWithoutRecipeInput)
-    connectOrCreate?: Array<DishPlanCreateOrConnectWithoutRecipeInput>;
+	@Field(() => DishPlanCreateManyRecipeInputEnvelope, { nullable: true })
+	@Type(() => DishPlanCreateManyRecipeInputEnvelope)
+	createMany?: DishPlanCreateManyRecipeInputEnvelope;
 
-    @Field(() => DishPlanCreateManyRecipeInputEnvelope, {nullable:true})
-    @Type(() => DishPlanCreateManyRecipeInputEnvelope)
-    createMany?: DishPlanCreateManyRecipeInputEnvelope;
-
-    @Field(() => [DishPlanWhereUniqueInput], {nullable:true})
-    @Type(() => DishPlanWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>>;
+	@Field(() => [DishPlanWhereUniqueInput], { nullable: true })
+	@Type(() => DishPlanWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>>;
 }

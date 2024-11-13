@@ -8,16 +8,15 @@ import { BodyDetailWhereUniqueInput } from './body-detail-where-unique.input';
 
 @InputType()
 export class BodyDetailUncheckedCreateNestedOneWithoutUserInput {
+	@Field(() => BodyDetailCreateWithoutUserInput, { nullable: true })
+	@Type(() => BodyDetailCreateWithoutUserInput)
+	create?: BodyDetailCreateWithoutUserInput;
 
-    @Field(() => BodyDetailCreateWithoutUserInput, {nullable:true})
-    @Type(() => BodyDetailCreateWithoutUserInput)
-    create?: BodyDetailCreateWithoutUserInput;
+	@Field(() => BodyDetailCreateOrConnectWithoutUserInput, { nullable: true })
+	@Type(() => BodyDetailCreateOrConnectWithoutUserInput)
+	connectOrCreate?: BodyDetailCreateOrConnectWithoutUserInput;
 
-    @Field(() => BodyDetailCreateOrConnectWithoutUserInput, {nullable:true})
-    @Type(() => BodyDetailCreateOrConnectWithoutUserInput)
-    connectOrCreate?: BodyDetailCreateOrConnectWithoutUserInput;
-
-    @Field(() => BodyDetailWhereUniqueInput, {nullable:true})
-    @Type(() => BodyDetailWhereUniqueInput)
-    connect?: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
+	@Field(() => BodyDetailWhereUniqueInput, { nullable: true })
+	@Type(() => BodyDetailWhereUniqueInput)
+	connect?: Prisma.AtLeast<BodyDetailWhereUniqueInput, 'id' | 'userId'>;
 }

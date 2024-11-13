@@ -10,23 +10,22 @@ import { IngredientScalarFieldEnum } from './ingredient-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstIngredientArgs {
+	@Field(() => IngredientWhereInput, { nullable: true })
+	@Type(() => IngredientWhereInput)
+	where?: IngredientWhereInput;
 
-    @Field(() => IngredientWhereInput, {nullable:true})
-    @Type(() => IngredientWhereInput)
-    where?: IngredientWhereInput;
+	@Field(() => [IngredientOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<IngredientOrderByWithRelationInput>;
 
-    @Field(() => [IngredientOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<IngredientOrderByWithRelationInput>;
+	@Field(() => IngredientWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
 
-    @Field(() => IngredientWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<IngredientWhereUniqueInput, 'id'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [IngredientScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof IngredientScalarFieldEnum>;
+	@Field(() => [IngredientScalarFieldEnum], { nullable: true })
+	distinct?: Array<keyof typeof IngredientScalarFieldEnum>;
 }

@@ -6,12 +6,11 @@ import { UserUpdateWithoutMyMealTemplatesInput } from './user-update-without-my-
 
 @InputType()
 export class UserUpdateToOneWithWhereWithoutMyMealTemplatesInput {
+	@Field(() => UserWhereInput, { nullable: true })
+	@Type(() => UserWhereInput)
+	where?: UserWhereInput;
 
-    @Field(() => UserWhereInput, {nullable:true})
-    @Type(() => UserWhereInput)
-    where?: UserWhereInput;
-
-    @Field(() => UserUpdateWithoutMyMealTemplatesInput, {nullable:false})
-    @Type(() => UserUpdateWithoutMyMealTemplatesInput)
-    data!: UserUpdateWithoutMyMealTemplatesInput;
+	@Field(() => UserUpdateWithoutMyMealTemplatesInput, { nullable: false })
+	@Type(() => UserUpdateWithoutMyMealTemplatesInput)
+	data!: UserUpdateWithoutMyMealTemplatesInput;
 }

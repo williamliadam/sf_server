@@ -5,11 +5,10 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class RecipeCreateManyAuthorInputEnvelope {
+	@Field(() => [RecipeCreateManyAuthorInput], { nullable: false })
+	@Type(() => RecipeCreateManyAuthorInput)
+	data!: Array<RecipeCreateManyAuthorInput>;
 
-    @Field(() => [RecipeCreateManyAuthorInput], {nullable:false})
-    @Type(() => RecipeCreateManyAuthorInput)
-    data!: Array<RecipeCreateManyAuthorInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+	@Field(() => Boolean, { nullable: true })
+	skipDuplicates?: boolean;
 }

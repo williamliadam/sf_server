@@ -10,23 +10,22 @@ import { NutritionScalarFieldEnum } from './nutrition-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstNutritionOrThrowArgs {
+	@Field(() => NutritionWhereInput, { nullable: true })
+	@Type(() => NutritionWhereInput)
+	where?: NutritionWhereInput;
 
-    @Field(() => NutritionWhereInput, {nullable:true})
-    @Type(() => NutritionWhereInput)
-    where?: NutritionWhereInput;
+	@Field(() => [NutritionOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<NutritionOrderByWithRelationInput>;
 
-    @Field(() => [NutritionOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<NutritionOrderByWithRelationInput>;
+	@Field(() => NutritionWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => NutritionWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<NutritionWhereUniqueInput, 'id' | 'code'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [NutritionScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof NutritionScalarFieldEnum>;
+	@Field(() => [NutritionScalarFieldEnum], { nullable: true })
+	distinct?: Array<keyof typeof NutritionScalarFieldEnum>;
 }

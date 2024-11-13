@@ -10,23 +10,22 @@ import { DishPlanScalarFieldEnum } from './dish-plan-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstDishPlanOrThrowArgs {
+	@Field(() => DishPlanWhereInput, { nullable: true })
+	@Type(() => DishPlanWhereInput)
+	where?: DishPlanWhereInput;
 
-    @Field(() => DishPlanWhereInput, {nullable:true})
-    @Type(() => DishPlanWhereInput)
-    where?: DishPlanWhereInput;
+	@Field(() => [DishPlanOrderByWithRelationInput], { nullable: true })
+	orderBy?: Array<DishPlanOrderByWithRelationInput>;
 
-    @Field(() => [DishPlanOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<DishPlanOrderByWithRelationInput>;
+	@Field(() => DishPlanWhereUniqueInput, { nullable: true })
+	cursor?: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
 
-    @Field(() => DishPlanWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
+	@Field(() => Int, { nullable: true })
+	take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+	@Field(() => Int, { nullable: true })
+	skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [DishPlanScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof DishPlanScalarFieldEnum>;
+	@Field(() => [DishPlanScalarFieldEnum], { nullable: true })
+	distinct?: Array<keyof typeof DishPlanScalarFieldEnum>;
 }

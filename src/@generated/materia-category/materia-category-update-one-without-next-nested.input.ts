@@ -11,32 +11,35 @@ import { MateriaCategoryUpdateToOneWithWhereWithoutNextInput } from './materia-c
 
 @InputType()
 export class MateriaCategoryUpdateOneWithoutNextNestedInput {
+	@Field(() => MateriaCategoryCreateWithoutNextInput, { nullable: true })
+	@Type(() => MateriaCategoryCreateWithoutNextInput)
+	create?: MateriaCategoryCreateWithoutNextInput;
 
-    @Field(() => MateriaCategoryCreateWithoutNextInput, {nullable:true})
-    @Type(() => MateriaCategoryCreateWithoutNextInput)
-    create?: MateriaCategoryCreateWithoutNextInput;
+	@Field(() => MateriaCategoryCreateOrConnectWithoutNextInput, {
+		nullable: true,
+	})
+	@Type(() => MateriaCategoryCreateOrConnectWithoutNextInput)
+	connectOrCreate?: MateriaCategoryCreateOrConnectWithoutNextInput;
 
-    @Field(() => MateriaCategoryCreateOrConnectWithoutNextInput, {nullable:true})
-    @Type(() => MateriaCategoryCreateOrConnectWithoutNextInput)
-    connectOrCreate?: MateriaCategoryCreateOrConnectWithoutNextInput;
+	@Field(() => MateriaCategoryUpsertWithoutNextInput, { nullable: true })
+	@Type(() => MateriaCategoryUpsertWithoutNextInput)
+	upsert?: MateriaCategoryUpsertWithoutNextInput;
 
-    @Field(() => MateriaCategoryUpsertWithoutNextInput, {nullable:true})
-    @Type(() => MateriaCategoryUpsertWithoutNextInput)
-    upsert?: MateriaCategoryUpsertWithoutNextInput;
+	@Field(() => MateriaCategoryWhereInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereInput)
+	disconnect?: MateriaCategoryWhereInput;
 
-    @Field(() => MateriaCategoryWhereInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereInput)
-    disconnect?: MateriaCategoryWhereInput;
+	@Field(() => MateriaCategoryWhereInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereInput)
+	delete?: MateriaCategoryWhereInput;
 
-    @Field(() => MateriaCategoryWhereInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereInput)
-    delete?: MateriaCategoryWhereInput;
+	@Field(() => MateriaCategoryWhereUniqueInput, { nullable: true })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	connect?: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaCategoryWhereUniqueInput, {nullable:true})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    connect?: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MateriaCategoryUpdateToOneWithWhereWithoutNextInput, {nullable:true})
-    @Type(() => MateriaCategoryUpdateToOneWithWhereWithoutNextInput)
-    update?: MateriaCategoryUpdateToOneWithWhereWithoutNextInput;
+	@Field(() => MateriaCategoryUpdateToOneWithWhereWithoutNextInput, {
+		nullable: true,
+	})
+	@Type(() => MateriaCategoryUpdateToOneWithWhereWithoutNextInput)
+	update?: MateriaCategoryUpdateToOneWithWhereWithoutNextInput;
 }

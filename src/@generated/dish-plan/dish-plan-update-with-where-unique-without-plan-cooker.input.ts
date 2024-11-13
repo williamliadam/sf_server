@@ -7,12 +7,11 @@ import { DishPlanUpdateWithoutPlanCookerInput } from './dish-plan-update-without
 
 @InputType()
 export class DishPlanUpdateWithWhereUniqueWithoutPlanCookerInput {
+	@Field(() => DishPlanWhereUniqueInput, { nullable: false })
+	@Type(() => DishPlanWhereUniqueInput)
+	where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
 
-    @Field(() => DishPlanWhereUniqueInput, {nullable:false})
-    @Type(() => DishPlanWhereUniqueInput)
-    where!: Prisma.AtLeast<DishPlanWhereUniqueInput, 'id'>;
-
-    @Field(() => DishPlanUpdateWithoutPlanCookerInput, {nullable:false})
-    @Type(() => DishPlanUpdateWithoutPlanCookerInput)
-    data!: DishPlanUpdateWithoutPlanCookerInput;
+	@Field(() => DishPlanUpdateWithoutPlanCookerInput, { nullable: false })
+	@Type(() => DishPlanUpdateWithoutPlanCookerInput)
+	data!: DishPlanUpdateWithoutPlanCookerInput;
 }

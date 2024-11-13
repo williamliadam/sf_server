@@ -13,48 +13,61 @@ import { DishTemplateScalarWhereInput } from './dish-template-scalar-where.input
 
 @InputType()
 export class DishTemplateUncheckedUpdateManyWithoutUsedMealTemplatesNestedInput {
+	@Field(() => [DishTemplateCreateWithoutUsedMealTemplatesInput], {
+		nullable: true,
+	})
+	@Type(() => DishTemplateCreateWithoutUsedMealTemplatesInput)
+	create?: Array<DishTemplateCreateWithoutUsedMealTemplatesInput>;
 
-    @Field(() => [DishTemplateCreateWithoutUsedMealTemplatesInput], {nullable:true})
-    @Type(() => DishTemplateCreateWithoutUsedMealTemplatesInput)
-    create?: Array<DishTemplateCreateWithoutUsedMealTemplatesInput>;
+	@Field(() => [DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput], {
+		nullable: true,
+	})
+	@Type(() => DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput)
+	connectOrCreate?: Array<DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput>;
 
-    @Field(() => [DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput], {nullable:true})
-    @Type(() => DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput)
-    connectOrCreate?: Array<DishTemplateCreateOrConnectWithoutUsedMealTemplatesInput>;
+	@Field(
+		() => [DishTemplateUpsertWithWhereUniqueWithoutUsedMealTemplatesInput],
+		{ nullable: true },
+	)
+	@Type(() => DishTemplateUpsertWithWhereUniqueWithoutUsedMealTemplatesInput)
+	upsert?: Array<DishTemplateUpsertWithWhereUniqueWithoutUsedMealTemplatesInput>;
 
-    @Field(() => [DishTemplateUpsertWithWhereUniqueWithoutUsedMealTemplatesInput], {nullable:true})
-    @Type(() => DishTemplateUpsertWithWhereUniqueWithoutUsedMealTemplatesInput)
-    upsert?: Array<DishTemplateUpsertWithWhereUniqueWithoutUsedMealTemplatesInput>;
+	@Field(() => DishTemplateCreateManyUsedMealTemplatesInputEnvelope, {
+		nullable: true,
+	})
+	@Type(() => DishTemplateCreateManyUsedMealTemplatesInputEnvelope)
+	createMany?: DishTemplateCreateManyUsedMealTemplatesInputEnvelope;
 
-    @Field(() => DishTemplateCreateManyUsedMealTemplatesInputEnvelope, {nullable:true})
-    @Type(() => DishTemplateCreateManyUsedMealTemplatesInputEnvelope)
-    createMany?: DishTemplateCreateManyUsedMealTemplatesInputEnvelope;
+	@Field(() => [DishTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => DishTemplateWhereUniqueInput)
+	set?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => DishTemplateWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [DishTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => DishTemplateWhereUniqueInput)
+	disconnect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => DishTemplateWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [DishTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => DishTemplateWhereUniqueInput)
+	delete?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => DishTemplateWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
+	@Field(() => [DishTemplateWhereUniqueInput], { nullable: true })
+	@Type(() => DishTemplateWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
 
-    @Field(() => [DishTemplateWhereUniqueInput], {nullable:true})
-    @Type(() => DishTemplateWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<DishTemplateWhereUniqueInput, 'id'>>;
+	@Field(
+		() => [DishTemplateUpdateWithWhereUniqueWithoutUsedMealTemplatesInput],
+		{ nullable: true },
+	)
+	@Type(() => DishTemplateUpdateWithWhereUniqueWithoutUsedMealTemplatesInput)
+	update?: Array<DishTemplateUpdateWithWhereUniqueWithoutUsedMealTemplatesInput>;
 
-    @Field(() => [DishTemplateUpdateWithWhereUniqueWithoutUsedMealTemplatesInput], {nullable:true})
-    @Type(() => DishTemplateUpdateWithWhereUniqueWithoutUsedMealTemplatesInput)
-    update?: Array<DishTemplateUpdateWithWhereUniqueWithoutUsedMealTemplatesInput>;
+	@Field(() => [DishTemplateUpdateManyWithWhereWithoutUsedMealTemplatesInput], {
+		nullable: true,
+	})
+	@Type(() => DishTemplateUpdateManyWithWhereWithoutUsedMealTemplatesInput)
+	updateMany?: Array<DishTemplateUpdateManyWithWhereWithoutUsedMealTemplatesInput>;
 
-    @Field(() => [DishTemplateUpdateManyWithWhereWithoutUsedMealTemplatesInput], {nullable:true})
-    @Type(() => DishTemplateUpdateManyWithWhereWithoutUsedMealTemplatesInput)
-    updateMany?: Array<DishTemplateUpdateManyWithWhereWithoutUsedMealTemplatesInput>;
-
-    @Field(() => [DishTemplateScalarWhereInput], {nullable:true})
-    @Type(() => DishTemplateScalarWhereInput)
-    deleteMany?: Array<DishTemplateScalarWhereInput>;
+	@Field(() => [DishTemplateScalarWhereInput], { nullable: true })
+	@Type(() => DishTemplateScalarWhereInput)
+	deleteMany?: Array<DishTemplateScalarWhereInput>;
 }

@@ -6,12 +6,11 @@ import { RecipeUpdateWithoutUsedDishTemplatesInput } from './recipe-update-witho
 
 @InputType()
 export class RecipeUpdateToOneWithWhereWithoutUsedDishTemplatesInput {
+	@Field(() => RecipeWhereInput, { nullable: true })
+	@Type(() => RecipeWhereInput)
+	where?: RecipeWhereInput;
 
-    @Field(() => RecipeWhereInput, {nullable:true})
-    @Type(() => RecipeWhereInput)
-    where?: RecipeWhereInput;
-
-    @Field(() => RecipeUpdateWithoutUsedDishTemplatesInput, {nullable:false})
-    @Type(() => RecipeUpdateWithoutUsedDishTemplatesInput)
-    data!: RecipeUpdateWithoutUsedDishTemplatesInput;
+	@Field(() => RecipeUpdateWithoutUsedDishTemplatesInput, { nullable: false })
+	@Type(() => RecipeUpdateWithoutUsedDishTemplatesInput)
+	data!: RecipeUpdateWithoutUsedDishTemplatesInput;
 }

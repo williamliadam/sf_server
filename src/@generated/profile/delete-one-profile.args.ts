@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneProfileArgs {
-
-    @Field(() => ProfileWhereUniqueInput, {nullable:false})
-    @Type(() => ProfileWhereUniqueInput)
-    where!: Prisma.AtLeast<ProfileWhereUniqueInput, 'id' | 'userId'>;
+	@Field(() => ProfileWhereUniqueInput, { nullable: false })
+	@Type(() => ProfileWhereUniqueInput)
+	where!: Prisma.AtLeast<ProfileWhereUniqueInput, 'id' | 'userId'>;
 }

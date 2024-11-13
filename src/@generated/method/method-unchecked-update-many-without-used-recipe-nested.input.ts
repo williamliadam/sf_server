@@ -13,48 +13,55 @@ import { MethodScalarWhereInput } from './method-scalar-where.input';
 
 @InputType()
 export class MethodUncheckedUpdateManyWithoutUsedRecipeNestedInput {
+	@Field(() => [MethodCreateWithoutUsedRecipeInput], { nullable: true })
+	@Type(() => MethodCreateWithoutUsedRecipeInput)
+	create?: Array<MethodCreateWithoutUsedRecipeInput>;
 
-    @Field(() => [MethodCreateWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => MethodCreateWithoutUsedRecipeInput)
-    create?: Array<MethodCreateWithoutUsedRecipeInput>;
+	@Field(() => [MethodCreateOrConnectWithoutUsedRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => MethodCreateOrConnectWithoutUsedRecipeInput)
+	connectOrCreate?: Array<MethodCreateOrConnectWithoutUsedRecipeInput>;
 
-    @Field(() => [MethodCreateOrConnectWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => MethodCreateOrConnectWithoutUsedRecipeInput)
-    connectOrCreate?: Array<MethodCreateOrConnectWithoutUsedRecipeInput>;
+	@Field(() => [MethodUpsertWithWhereUniqueWithoutUsedRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => MethodUpsertWithWhereUniqueWithoutUsedRecipeInput)
+	upsert?: Array<MethodUpsertWithWhereUniqueWithoutUsedRecipeInput>;
 
-    @Field(() => [MethodUpsertWithWhereUniqueWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => MethodUpsertWithWhereUniqueWithoutUsedRecipeInput)
-    upsert?: Array<MethodUpsertWithWhereUniqueWithoutUsedRecipeInput>;
+	@Field(() => MethodCreateManyUsedRecipeInputEnvelope, { nullable: true })
+	@Type(() => MethodCreateManyUsedRecipeInputEnvelope)
+	createMany?: MethodCreateManyUsedRecipeInputEnvelope;
 
-    @Field(() => MethodCreateManyUsedRecipeInputEnvelope, {nullable:true})
-    @Type(() => MethodCreateManyUsedRecipeInputEnvelope)
-    createMany?: MethodCreateManyUsedRecipeInputEnvelope;
+	@Field(() => [MethodWhereUniqueInput], { nullable: true })
+	@Type(() => MethodWhereUniqueInput)
+	set?: Array<Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>>;
 
-    @Field(() => [MethodWhereUniqueInput], {nullable:true})
-    @Type(() => MethodWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MethodWhereUniqueInput], { nullable: true })
+	@Type(() => MethodWhereUniqueInput)
+	disconnect?: Array<Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>>;
 
-    @Field(() => [MethodWhereUniqueInput], {nullable:true})
-    @Type(() => MethodWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MethodWhereUniqueInput], { nullable: true })
+	@Type(() => MethodWhereUniqueInput)
+	delete?: Array<Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>>;
 
-    @Field(() => [MethodWhereUniqueInput], {nullable:true})
-    @Type(() => MethodWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MethodWhereUniqueInput], { nullable: true })
+	@Type(() => MethodWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>>;
 
-    @Field(() => [MethodWhereUniqueInput], {nullable:true})
-    @Type(() => MethodWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>>;
+	@Field(() => [MethodUpdateWithWhereUniqueWithoutUsedRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => MethodUpdateWithWhereUniqueWithoutUsedRecipeInput)
+	update?: Array<MethodUpdateWithWhereUniqueWithoutUsedRecipeInput>;
 
-    @Field(() => [MethodUpdateWithWhereUniqueWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => MethodUpdateWithWhereUniqueWithoutUsedRecipeInput)
-    update?: Array<MethodUpdateWithWhereUniqueWithoutUsedRecipeInput>;
+	@Field(() => [MethodUpdateManyWithWhereWithoutUsedRecipeInput], {
+		nullable: true,
+	})
+	@Type(() => MethodUpdateManyWithWhereWithoutUsedRecipeInput)
+	updateMany?: Array<MethodUpdateManyWithWhereWithoutUsedRecipeInput>;
 
-    @Field(() => [MethodUpdateManyWithWhereWithoutUsedRecipeInput], {nullable:true})
-    @Type(() => MethodUpdateManyWithWhereWithoutUsedRecipeInput)
-    updateMany?: Array<MethodUpdateManyWithWhereWithoutUsedRecipeInput>;
-
-    @Field(() => [MethodScalarWhereInput], {nullable:true})
-    @Type(() => MethodScalarWhereInput)
-    deleteMany?: Array<MethodScalarWhereInput>;
+	@Field(() => [MethodScalarWhereInput], { nullable: true })
+	@Type(() => MethodScalarWhereInput)
+	deleteMany?: Array<MethodScalarWhereInput>;
 }

@@ -6,12 +6,11 @@ import { ProfileUpdateWithoutUserInput } from './profile-update-without-user.inp
 
 @InputType()
 export class ProfileUpdateToOneWithWhereWithoutUserInput {
+	@Field(() => ProfileWhereInput, { nullable: true })
+	@Type(() => ProfileWhereInput)
+	where?: ProfileWhereInput;
 
-    @Field(() => ProfileWhereInput, {nullable:true})
-    @Type(() => ProfileWhereInput)
-    where?: ProfileWhereInput;
-
-    @Field(() => ProfileUpdateWithoutUserInput, {nullable:false})
-    @Type(() => ProfileUpdateWithoutUserInput)
-    data!: ProfileUpdateWithoutUserInput;
+	@Field(() => ProfileUpdateWithoutUserInput, { nullable: false })
+	@Type(() => ProfileUpdateWithoutUserInput)
+	data!: ProfileUpdateWithoutUserInput;
 }

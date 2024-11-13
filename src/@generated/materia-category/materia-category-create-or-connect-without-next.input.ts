@@ -7,12 +7,11 @@ import { MateriaCategoryCreateWithoutNextInput } from './materia-category-create
 
 @InputType()
 export class MateriaCategoryCreateOrConnectWithoutNextInput {
+	@Field(() => MateriaCategoryWhereUniqueInput, { nullable: false })
+	@Type(() => MateriaCategoryWhereUniqueInput)
+	where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MateriaCategoryWhereUniqueInput, {nullable:false})
-    @Type(() => MateriaCategoryWhereUniqueInput)
-    where!: Prisma.AtLeast<MateriaCategoryWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MateriaCategoryCreateWithoutNextInput, {nullable:false})
-    @Type(() => MateriaCategoryCreateWithoutNextInput)
-    create!: MateriaCategoryCreateWithoutNextInput;
+	@Field(() => MateriaCategoryCreateWithoutNextInput, { nullable: false })
+	@Type(() => MateriaCategoryCreateWithoutNextInput)
+	create!: MateriaCategoryCreateWithoutNextInput;
 }

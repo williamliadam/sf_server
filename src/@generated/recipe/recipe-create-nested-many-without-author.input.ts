@@ -9,20 +9,19 @@ import { RecipeWhereUniqueInput } from './recipe-where-unique.input';
 
 @InputType()
 export class RecipeCreateNestedManyWithoutAuthorInput {
+	@Field(() => [RecipeCreateWithoutAuthorInput], { nullable: true })
+	@Type(() => RecipeCreateWithoutAuthorInput)
+	create?: Array<RecipeCreateWithoutAuthorInput>;
 
-    @Field(() => [RecipeCreateWithoutAuthorInput], {nullable:true})
-    @Type(() => RecipeCreateWithoutAuthorInput)
-    create?: Array<RecipeCreateWithoutAuthorInput>;
+	@Field(() => [RecipeCreateOrConnectWithoutAuthorInput], { nullable: true })
+	@Type(() => RecipeCreateOrConnectWithoutAuthorInput)
+	connectOrCreate?: Array<RecipeCreateOrConnectWithoutAuthorInput>;
 
-    @Field(() => [RecipeCreateOrConnectWithoutAuthorInput], {nullable:true})
-    @Type(() => RecipeCreateOrConnectWithoutAuthorInput)
-    connectOrCreate?: Array<RecipeCreateOrConnectWithoutAuthorInput>;
+	@Field(() => RecipeCreateManyAuthorInputEnvelope, { nullable: true })
+	@Type(() => RecipeCreateManyAuthorInputEnvelope)
+	createMany?: RecipeCreateManyAuthorInputEnvelope;
 
-    @Field(() => RecipeCreateManyAuthorInputEnvelope, {nullable:true})
-    @Type(() => RecipeCreateManyAuthorInputEnvelope)
-    createMany?: RecipeCreateManyAuthorInputEnvelope;
-
-    @Field(() => [RecipeWhereUniqueInput], {nullable:true})
-    @Type(() => RecipeWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>>;
+	@Field(() => [RecipeWhereUniqueInput], { nullable: true })
+	@Type(() => RecipeWhereUniqueInput)
+	connect?: Array<Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>>;
 }

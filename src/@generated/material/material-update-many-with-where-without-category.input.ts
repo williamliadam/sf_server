@@ -6,12 +6,11 @@ import { MaterialUpdateManyMutationInput } from './material-update-many-mutation
 
 @InputType()
 export class MaterialUpdateManyWithWhereWithoutCategoryInput {
+	@Field(() => MaterialScalarWhereInput, { nullable: false })
+	@Type(() => MaterialScalarWhereInput)
+	where!: MaterialScalarWhereInput;
 
-    @Field(() => MaterialScalarWhereInput, {nullable:false})
-    @Type(() => MaterialScalarWhereInput)
-    where!: MaterialScalarWhereInput;
-
-    @Field(() => MaterialUpdateManyMutationInput, {nullable:false})
-    @Type(() => MaterialUpdateManyMutationInput)
-    data!: MaterialUpdateManyMutationInput;
+	@Field(() => MaterialUpdateManyMutationInput, { nullable: false })
+	@Type(() => MaterialUpdateManyMutationInput)
+	data!: MaterialUpdateManyMutationInput;
 }

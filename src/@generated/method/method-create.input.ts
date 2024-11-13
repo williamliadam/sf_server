@@ -4,22 +4,21 @@ import { RecipeCreateNestedOneWithoutMethodsInput } from '../recipe/recipe-creat
 
 @InputType()
 export class MethodCreateInput {
+	@Field(() => String, { nullable: false })
+	code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+	@Field(() => String, { nullable: false })
+	name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+	@Field(() => String, { nullable: false })
+	desc!: string;
 
-    @Field(() => String, {nullable:false})
-    desc!: string;
+	@Field(() => Date, { nullable: true })
+	createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+	@Field(() => Date, { nullable: true })
+	updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
-
-    @Field(() => RecipeCreateNestedOneWithoutMethodsInput, {nullable:true})
-    usedRecipe?: RecipeCreateNestedOneWithoutMethodsInput;
+	@Field(() => RecipeCreateNestedOneWithoutMethodsInput, { nullable: true })
+	usedRecipe?: RecipeCreateNestedOneWithoutMethodsInput;
 }

@@ -6,12 +6,11 @@ import { NutritionUpdateWithoutUsedRowInput } from './nutrition-update-without-u
 
 @InputType()
 export class NutritionUpdateToOneWithWhereWithoutUsedRowInput {
+	@Field(() => NutritionWhereInput, { nullable: true })
+	@Type(() => NutritionWhereInput)
+	where?: NutritionWhereInput;
 
-    @Field(() => NutritionWhereInput, {nullable:true})
-    @Type(() => NutritionWhereInput)
-    where?: NutritionWhereInput;
-
-    @Field(() => NutritionUpdateWithoutUsedRowInput, {nullable:false})
-    @Type(() => NutritionUpdateWithoutUsedRowInput)
-    data!: NutritionUpdateWithoutUsedRowInput;
+	@Field(() => NutritionUpdateWithoutUsedRowInput, { nullable: false })
+	@Type(() => NutritionUpdateWithoutUsedRowInput)
+	data!: NutritionUpdateWithoutUsedRowInput;
 }

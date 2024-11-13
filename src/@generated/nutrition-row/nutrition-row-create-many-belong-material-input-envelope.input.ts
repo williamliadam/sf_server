@@ -5,11 +5,10 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class NutritionRowCreateManyBelongMaterialInputEnvelope {
+	@Field(() => [NutritionRowCreateManyBelongMaterialInput], { nullable: false })
+	@Type(() => NutritionRowCreateManyBelongMaterialInput)
+	data!: Array<NutritionRowCreateManyBelongMaterialInput>;
 
-    @Field(() => [NutritionRowCreateManyBelongMaterialInput], {nullable:false})
-    @Type(() => NutritionRowCreateManyBelongMaterialInput)
-    data!: Array<NutritionRowCreateManyBelongMaterialInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+	@Field(() => Boolean, { nullable: true })
+	skipDuplicates?: boolean;
 }

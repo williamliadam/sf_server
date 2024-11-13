@@ -7,12 +7,11 @@ import { MethodUpdateWithoutUsedRecipeInput } from './method-update-without-used
 
 @InputType()
 export class MethodUpdateWithWhereUniqueWithoutUsedRecipeInput {
+	@Field(() => MethodWhereUniqueInput, { nullable: false })
+	@Type(() => MethodWhereUniqueInput)
+	where!: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MethodWhereUniqueInput, {nullable:false})
-    @Type(() => MethodWhereUniqueInput)
-    where!: Prisma.AtLeast<MethodWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MethodUpdateWithoutUsedRecipeInput, {nullable:false})
-    @Type(() => MethodUpdateWithoutUsedRecipeInput)
-    data!: MethodUpdateWithoutUsedRecipeInput;
+	@Field(() => MethodUpdateWithoutUsedRecipeInput, { nullable: false })
+	@Type(() => MethodUpdateWithoutUsedRecipeInput)
+	data!: MethodUpdateWithoutUsedRecipeInput;
 }

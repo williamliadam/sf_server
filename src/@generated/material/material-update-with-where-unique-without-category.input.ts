@@ -7,12 +7,11 @@ import { MaterialUpdateWithoutCategoryInput } from './material-update-without-ca
 
 @InputType()
 export class MaterialUpdateWithWhereUniqueWithoutCategoryInput {
+	@Field(() => MaterialWhereUniqueInput, { nullable: false })
+	@Type(() => MaterialWhereUniqueInput)
+	where!: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
 
-    @Field(() => MaterialWhereUniqueInput, {nullable:false})
-    @Type(() => MaterialWhereUniqueInput)
-    where!: Prisma.AtLeast<MaterialWhereUniqueInput, 'id' | 'code'>;
-
-    @Field(() => MaterialUpdateWithoutCategoryInput, {nullable:false})
-    @Type(() => MaterialUpdateWithoutCategoryInput)
-    data!: MaterialUpdateWithoutCategoryInput;
+	@Field(() => MaterialUpdateWithoutCategoryInput, { nullable: false })
+	@Type(() => MaterialUpdateWithoutCategoryInput)
+	data!: MaterialUpdateWithoutCategoryInput;
 }

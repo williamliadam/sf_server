@@ -4,16 +4,15 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class RecipeCount {
+	@Field(() => Int, { nullable: false })
+	ingredients?: number;
 
-    @Field(() => Int, {nullable:false})
-    ingredients?: number;
+	@Field(() => Int, { nullable: false })
+	methods?: number;
 
-    @Field(() => Int, {nullable:false})
-    methods?: number;
+	@Field(() => Int, { nullable: false })
+	usedDishPlans?: number;
 
-    @Field(() => Int, {nullable:false})
-    usedDishPlans?: number;
-
-    @Field(() => Int, {nullable:false})
-    usedDishTemplates?: number;
+	@Field(() => Int, { nullable: false })
+	usedDishTemplates?: number;
 }
