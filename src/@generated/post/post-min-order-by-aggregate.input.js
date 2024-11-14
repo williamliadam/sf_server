@@ -23,6 +23,9 @@ __decorate([
 ], PostMinOrderByAggregateInput.prototype, "content", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
+], PostMinOrderByAggregateInput.prototype, "stars", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
 ], PostMinOrderByAggregateInput.prototype, "published", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })

@@ -13,8 +13,8 @@ const graphql_2 = require("@nestjs/graphql");
 const int_filter_input_1 = require("../prisma/int-filter.input");
 const string_filter_input_1 = require("../prisma/string-filter.input");
 const string_nullable_filter_input_1 = require("../prisma/string-nullable-filter.input");
-const bool_nullable_filter_input_1 = require("../prisma/bool-nullable-filter.input");
 const int_nullable_filter_input_1 = require("../prisma/int-nullable-filter.input");
+const bool_nullable_filter_input_1 = require("../prisma/bool-nullable-filter.input");
 const date_time_filter_input_1 = require("../prisma/date-time-filter.input");
 let PostScalarWhereInput = PostScalarWhereInput_1 = class PostScalarWhereInput {
 };
@@ -36,6 +36,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => string_nullable_filter_input_1.StringNullableFilter, { nullable: true })
 ], PostScalarWhereInput.prototype, "content", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => int_nullable_filter_input_1.IntNullableFilter, { nullable: true })
+], PostScalarWhereInput.prototype, "stars", void 0);
 __decorate([
     (0, graphql_1.Field)(() => bool_nullable_filter_input_1.BoolNullableFilter, { nullable: true })
 ], PostScalarWhereInput.prototype, "published", void 0);

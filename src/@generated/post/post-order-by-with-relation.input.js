@@ -25,6 +25,9 @@ __decorate([
 ], PostOrderByWithRelationInput.prototype, "content", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
+], PostOrderByWithRelationInput.prototype, "stars", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
 ], PostOrderByWithRelationInput.prototype, "published", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })

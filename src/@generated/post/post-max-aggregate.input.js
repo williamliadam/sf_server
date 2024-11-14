@@ -22,6 +22,9 @@ __decorate([
 ], PostMaxAggregateInput.prototype, "content", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
+], PostMaxAggregateInput.prototype, "stars", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostMaxAggregateInput.prototype, "published", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })

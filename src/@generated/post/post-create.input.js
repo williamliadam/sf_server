@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostCreateInput = void 0;
 const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
+const graphql_3 = require("@nestjs/graphql");
 const user_create_nested_one_without_my_posts_input_1 = require("../user/user-create-nested-one-without-my-posts.input");
 let PostCreateInput = class PostCreateInput {
 };
@@ -18,6 +19,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], PostCreateInput.prototype, "content", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
+], PostCreateInput.prototype, "stars", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostCreateInput.prototype, "published", void 0);

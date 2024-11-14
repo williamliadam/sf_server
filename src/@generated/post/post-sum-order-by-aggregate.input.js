@@ -17,6 +17,9 @@ __decorate([
 ], PostSumOrderByAggregateInput.prototype, "id", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
+], PostSumOrderByAggregateInput.prototype, "stars", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
 ], PostSumOrderByAggregateInput.prototype, "authorId", void 0);
 PostSumOrderByAggregateInput = __decorate([
     (0, graphql_2.InputType)()

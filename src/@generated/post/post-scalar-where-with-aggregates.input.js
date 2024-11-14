@@ -13,8 +13,8 @@ const graphql_2 = require("@nestjs/graphql");
 const int_with_aggregates_filter_input_1 = require("../prisma/int-with-aggregates-filter.input");
 const string_with_aggregates_filter_input_1 = require("../prisma/string-with-aggregates-filter.input");
 const string_nullable_with_aggregates_filter_input_1 = require("../prisma/string-nullable-with-aggregates-filter.input");
-const bool_nullable_with_aggregates_filter_input_1 = require("../prisma/bool-nullable-with-aggregates-filter.input");
 const int_nullable_with_aggregates_filter_input_1 = require("../prisma/int-nullable-with-aggregates-filter.input");
+const bool_nullable_with_aggregates_filter_input_1 = require("../prisma/bool-nullable-with-aggregates-filter.input");
 const date_time_with_aggregates_filter_input_1 = require("../prisma/date-time-with-aggregates-filter.input");
 let PostScalarWhereWithAggregatesInput = PostScalarWhereWithAggregatesInput_1 = class PostScalarWhereWithAggregatesInput {
 };
@@ -36,6 +36,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => string_nullable_with_aggregates_filter_input_1.StringNullableWithAggregatesFilter, { nullable: true })
 ], PostScalarWhereWithAggregatesInput.prototype, "content", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => int_nullable_with_aggregates_filter_input_1.IntNullableWithAggregatesFilter, { nullable: true })
+], PostScalarWhereWithAggregatesInput.prototype, "stars", void 0);
 __decorate([
     (0, graphql_1.Field)(() => bool_nullable_with_aggregates_filter_input_1.BoolNullableWithAggregatesFilter, { nullable: true })
 ], PostScalarWhereWithAggregatesInput.prototype, "published", void 0);

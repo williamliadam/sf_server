@@ -22,6 +22,9 @@ __decorate([
 ], PostCountAggregateInput.prototype, "content", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
+], PostCountAggregateInput.prototype, "stars", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostCountAggregateInput.prototype, "published", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })

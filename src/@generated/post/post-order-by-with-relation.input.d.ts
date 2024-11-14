@@ -5,6 +5,7 @@ export declare class PostOrderByWithRelationInput {
     id?: keyof typeof SortOrder;
     title?: keyof typeof SortOrder;
     content?: SortOrderInput;
+    stars?: SortOrderInput;
     published?: SortOrderInput;
     authorId?: SortOrderInput;
     createdAt?: keyof typeof SortOrder;

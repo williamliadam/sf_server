@@ -17,6 +17,9 @@ __decorate([
 ], PostSumAggregate.prototype, "id", void 0);
 __decorate([
     (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
+], PostSumAggregate.prototype, "stars", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
 ], PostSumAggregate.prototype, "authorId", void 0);
 PostSumAggregate = __decorate([
     (0, graphql_2.ObjectType)()

@@ -14,6 +14,7 @@ async function main() {
         create: [
           {
             title: "First Post",
+            stars: 899,
             content: "This is my first post",
             published: true
           },

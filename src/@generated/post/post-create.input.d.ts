@@ -2,6 +2,7 @@ import { UserCreateNestedOneWithoutMyPostsInput } from '../user/user-create-nest
 export declare class PostCreateInput {
     title: string;
     content?: string;
+    stars?: number;
     published?: boolean;
     createdAt?: Date | string;
     updatedAt?: Date | string;

@@ -16,6 +16,9 @@ __decorate([
 ], PostAvgAggregateInput.prototype, "id", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
+], PostAvgAggregateInput.prototype, "stars", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostAvgAggregateInput.prototype, "authorId", void 0);
 PostAvgAggregateInput = __decorate([
     (0, graphql_2.InputType)()

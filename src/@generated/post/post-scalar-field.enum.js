@@ -7,6 +7,7 @@ var PostScalarFieldEnum;
     PostScalarFieldEnum["id"] = "id";
     PostScalarFieldEnum["title"] = "title";
     PostScalarFieldEnum["content"] = "content";
+    PostScalarFieldEnum["stars"] = "stars";
     PostScalarFieldEnum["published"] = "published";
     PostScalarFieldEnum["authorId"] = "authorId";
     PostScalarFieldEnum["createdAt"] = "createdAt";

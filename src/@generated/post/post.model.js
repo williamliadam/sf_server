@@ -24,6 +24,9 @@ __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], Post.prototype, "content", void 0);
 __decorate([
+    (0, graphql_1.Field)(() => graphql_4.Int, { nullable: true })
+], Post.prototype, "stars", void 0);
+__decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true, defaultValue: false })
 ], Post.prototype, "published", void 0);
 __decorate([

@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostCreateWithoutAuthorInput = void 0;
 const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
+const graphql_3 = require("@nestjs/graphql");
 let PostCreateWithoutAuthorInput = class PostCreateWithoutAuthorInput {
 };
 __decorate([
@@ -17,6 +18,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], PostCreateWithoutAuthorInput.prototype, "content", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
+], PostCreateWithoutAuthorInput.prototype, "stars", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostCreateWithoutAuthorInput.prototype, "published", void 0);

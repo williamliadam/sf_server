@@ -633,6 +633,7 @@ type Post {
   createdAt: DateTime!
   id: ID!
   published: Boolean
+  stars: Int
   title: String!
   updatedAt: DateTime!
 }
@@ -653,6 +654,7 @@ input PostWhereInput {
   createdAt: DateTimeFilter
   id: IntFilter
   published: BoolNullableFilter
+  stars: IntNullableFilter
   title: StringFilter
   updatedAt: DateTimeFilter
 }
@@ -667,6 +669,7 @@ input PostWhereUniqueInput {
   createdAt: DateTimeFilter
   id: Int
   published: BoolNullableFilter
+  stars: IntNullableFilter
   title: StringFilter
   updatedAt: DateTimeFilter
 }

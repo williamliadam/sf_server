@@ -23,6 +23,9 @@ __decorate([
 ], PostMaxOrderByAggregateInput.prototype, "content", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
+], PostMaxOrderByAggregateInput.prototype, "stars", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
 ], PostMaxOrderByAggregateInput.prototype, "published", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })

@@ -22,6 +22,9 @@ __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], PostUncheckedCreateWithoutAuthorInput.prototype, "content", void 0);
 __decorate([
+    (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
+], PostUncheckedCreateWithoutAuthorInput.prototype, "stars", void 0);
+__decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostUncheckedCreateWithoutAuthorInput.prototype, "published", void 0);
 __decorate([

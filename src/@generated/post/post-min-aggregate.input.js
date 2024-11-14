@@ -22,6 +22,9 @@ __decorate([
 ], PostMinAggregateInput.prototype, "content", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
+], PostMinAggregateInput.prototype, "stars", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostMinAggregateInput.prototype, "published", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })

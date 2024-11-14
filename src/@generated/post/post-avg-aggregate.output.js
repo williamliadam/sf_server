@@ -17,6 +17,9 @@ __decorate([
 ], PostAvgAggregate.prototype, "id", void 0);
 __decorate([
     (0, graphql_1.Field)(() => graphql_3.Float, { nullable: true })
+], PostAvgAggregate.prototype, "stars", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => graphql_3.Float, { nullable: true })
 ], PostAvgAggregate.prototype, "authorId", void 0);
 PostAvgAggregate = __decorate([
     (0, graphql_2.ObjectType)()

@@ -22,6 +22,9 @@ __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], PostCreateManyInput.prototype, "content", void 0);
 __decorate([
+    (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
+], PostCreateManyInput.prototype, "stars", void 0);
+__decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostCreateManyInput.prototype, "published", void 0);
 __decorate([
