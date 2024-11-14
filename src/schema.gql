@@ -1,0 +1,861 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type BodyDetail {
+  age: Int
+  bmi: Int
+  bmr: Int
+  createdAt: DateTime!
+  height: Int
+  id: ID!
+  tdee: Int
+  updatedAt: DateTime!
+  user: User!
+  userId: Int!
+  weight: Int
+}
+
+input BodyDetailNullableRelationFilter {
+  is: BodyDetailWhereInput
+  isNot: BodyDetailWhereInput
+}
+
+input BodyDetailWhereInput {
+  AND: [BodyDetailWhereInput!]
+  NOT: [BodyDetailWhereInput!]
+  OR: [BodyDetailWhereInput!]
+  age: IntNullableFilter
+  bmi: IntNullableFilter
+  bmr: IntNullableFilter
+  createdAt: DateTimeFilter
+  height: IntNullableFilter
+  id: IntFilter
+  tdee: IntNullableFilter
+  updatedAt: DateTimeFilter
+  user: UserRelationFilter
+  userId: IntFilter
+  weight: IntNullableFilter
+}
+
+input BoolNullableFilter {
+  equals: Boolean
+  not: NestedBoolNullableFilter
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input DateTimeFilter {
+  equals: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  not: NestedDateTimeFilter
+  notIn: [DateTime!]
+}
+
+input DateTimeNullableFilter {
+  equals: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  not: NestedDateTimeNullableFilter
+  notIn: [DateTime!]
+}
+
+type DishPlan {
+  amount: Int!
+  createdAt: DateTime!
+  id: ID!
+  mealPlanId: Int
+  planCooker: User!
+  planCookerId: Int!
+  recipe: Recipe!
+  recipeId: Int!
+  updatedAt: DateTime!
+  usedMealPlan: MealPlan
+}
+
+input DishPlanListRelationFilter {
+  every: DishPlanWhereInput
+  none: DishPlanWhereInput
+  some: DishPlanWhereInput
+}
+
+input DishPlanWhereInput {
+  AND: [DishPlanWhereInput!]
+  NOT: [DishPlanWhereInput!]
+  OR: [DishPlanWhereInput!]
+  amount: IntFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  mealPlanId: IntNullableFilter
+  planCooker: UserRelationFilter
+  planCookerId: IntFilter
+  recipe: RecipeRelationFilter
+  recipeId: IntFilter
+  updatedAt: DateTimeFilter
+  usedMealPlan: MealPlanNullableRelationFilter
+}
+
+type DishTemplate {
+  amount: Int!
+  createdAt: DateTime!
+  id: ID!
+  mealTemplateId: Int
+  recipe: Recipe!
+  recipeId: Int!
+  updatedAt: DateTime!
+  usedMealTemplates: MealTemplate
+}
+
+input DishTemplateListRelationFilter {
+  every: DishTemplateWhereInput
+  none: DishTemplateWhereInput
+  some: DishTemplateWhereInput
+}
+
+input DishTemplateWhereInput {
+  AND: [DishTemplateWhereInput!]
+  NOT: [DishTemplateWhereInput!]
+  OR: [DishTemplateWhereInput!]
+  amount: IntFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  mealTemplateId: IntNullableFilter
+  recipe: RecipeRelationFilter
+  recipeId: IntFilter
+  updatedAt: DateTimeFilter
+  usedMealTemplates: MealTemplateNullableRelationFilter
+}
+
+input EnumGoalFilter {
+  equals: Goal
+  in: [Goal!]
+  not: NestedEnumGoalFilter
+  notIn: [Goal!]
+}
+
+input EnumMealTypeFilter {
+  equals: MealType
+  in: [MealType!]
+  not: NestedEnumMealTypeFilter
+  notIn: [MealType!]
+}
+
+input EnumRoleFilter {
+  equals: Role
+  in: [Role!]
+  not: NestedEnumRoleFilter
+  notIn: [Role!]
+}
+
+enum Goal {
+  BULKING
+  KEEP
+  SLIMING
+}
+
+type Ingredient {
+  amount: Int!
+  createdAt: DateTime!
+  id: ID!
+  materiaUnitId: Int!
+  material: Material!
+  materialId: Int!
+  recipeId: Int
+  unit: MateriaUnit!
+  updatedAt: DateTime!
+  usedRecipe: Recipe
+}
+
+input IngredientListRelationFilter {
+  every: IngredientWhereInput
+  none: IngredientWhereInput
+  some: IngredientWhereInput
+}
+
+input IngredientWhereInput {
+  AND: [IngredientWhereInput!]
+  NOT: [IngredientWhereInput!]
+  OR: [IngredientWhereInput!]
+  amount: IntFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  materiaUnitId: IntFilter
+  material: MaterialRelationFilter
+  materialId: IntFilter
+  recipeId: IntNullableFilter
+  unit: MateriaUnitRelationFilter
+  updatedAt: DateTimeFilter
+  usedRecipe: RecipeNullableRelationFilter
+}
+
+input IntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntFilter
+  notIn: [Int!]
+}
+
+input IntNullableFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntNullableFilter
+  notIn: [Int!]
+}
+
+type MateriaCategory {
+  _count: MateriaCategoryCount!
+  code: String!
+  createdAt: DateTime!
+  id: ID!
+  last: MateriaCategory
+  lastId: Int
+  materials: [Material!]
+  name: String!
+  next: [MateriaCategory!]
+  updatedAt: DateTime!
+}
+
+type MateriaCategoryCount {
+  materials: Int!
+  next: Int!
+}
+
+input MateriaCategoryListRelationFilter {
+  every: MateriaCategoryWhereInput
+  none: MateriaCategoryWhereInput
+  some: MateriaCategoryWhereInput
+}
+
+input MateriaCategoryNullableRelationFilter {
+  is: MateriaCategoryWhereInput
+  isNot: MateriaCategoryWhereInput
+}
+
+input MateriaCategoryRelationFilter {
+  is: MateriaCategoryWhereInput
+  isNot: MateriaCategoryWhereInput
+}
+
+input MateriaCategoryWhereInput {
+  AND: [MateriaCategoryWhereInput!]
+  NOT: [MateriaCategoryWhereInput!]
+  OR: [MateriaCategoryWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  last: MateriaCategoryNullableRelationFilter
+  lastId: IntNullableFilter
+  materials: MaterialListRelationFilter
+  name: StringFilter
+  next: MateriaCategoryListRelationFilter
+  updatedAt: DateTimeFilter
+}
+
+type MateriaUnit {
+  _count: MateriaUnitCount!
+  code: String!
+  createdAt: DateTime!
+  id: ID!
+  ingredients: [Ingredient!]
+  name: String!
+  toKilo: Int!
+  updatedAt: DateTime!
+}
+
+type MateriaUnitCount {
+  ingredients: Int!
+}
+
+input MateriaUnitRelationFilter {
+  is: MateriaUnitWhereInput
+  isNot: MateriaUnitWhereInput
+}
+
+input MateriaUnitWhereInput {
+  AND: [MateriaUnitWhereInput!]
+  NOT: [MateriaUnitWhereInput!]
+  OR: [MateriaUnitWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  ingredients: IngredientListRelationFilter
+  name: StringFilter
+  toKilo: IntFilter
+  updatedAt: DateTimeFilter
+}
+
+type Material {
+  _count: MaterialCount!
+  category: MateriaCategory!
+  code: String!
+  createdAt: DateTime!
+  id: ID!
+  ingredients: [Ingredient!]
+  materiaCategoryId: Int!
+  name: String!
+  nickName: String!
+  nutritionMatrix: [NutritionRow!]
+  updatedAt: DateTime!
+}
+
+type MaterialCount {
+  ingredients: Int!
+  nutritionMatrix: Int!
+}
+
+input MaterialListRelationFilter {
+  every: MaterialWhereInput
+  none: MaterialWhereInput
+  some: MaterialWhereInput
+}
+
+input MaterialRelationFilter {
+  is: MaterialWhereInput
+  isNot: MaterialWhereInput
+}
+
+input MaterialWhereInput {
+  AND: [MaterialWhereInput!]
+  NOT: [MaterialWhereInput!]
+  OR: [MaterialWhereInput!]
+  category: MateriaCategoryRelationFilter
+  code: StringFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  ingredients: IngredientListRelationFilter
+  materiaCategoryId: IntFilter
+  name: StringFilter
+  nickName: StringFilter
+  nutritionMatrix: NutritionRowListRelationFilter
+  updatedAt: DateTimeFilter
+}
+
+type MealPlan {
+  _count: MealPlanCount!
+  createBy: User!
+  createdAt: DateTime!
+  dishPlans: [DishPlan!]
+  id: ID!
+  planTime: DateTime
+  type: MealType!
+  updatedAt: DateTime!
+  userId: Int!
+}
+
+type MealPlanCount {
+  dishPlans: Int!
+}
+
+input MealPlanListRelationFilter {
+  every: MealPlanWhereInput
+  none: MealPlanWhereInput
+  some: MealPlanWhereInput
+}
+
+input MealPlanNullableRelationFilter {
+  is: MealPlanWhereInput
+  isNot: MealPlanWhereInput
+}
+
+input MealPlanWhereInput {
+  AND: [MealPlanWhereInput!]
+  NOT: [MealPlanWhereInput!]
+  OR: [MealPlanWhereInput!]
+  createBy: UserRelationFilter
+  createdAt: DateTimeFilter
+  dishPlans: DishPlanListRelationFilter
+  id: IntFilter
+  planTime: DateTimeNullableFilter
+  type: EnumMealTypeFilter
+  updatedAt: DateTimeFilter
+  userId: IntFilter
+}
+
+type MealTemplate {
+  _count: MealTemplateCount!
+  createBy: User!
+  createdAt: DateTime!
+  dishTemplates: [DishTemplate!]
+  id: ID!
+  name: String!
+  updatedAt: DateTime!
+  userId: Int!
+}
+
+type MealTemplateCount {
+  dishTemplates: Int!
+}
+
+input MealTemplateListRelationFilter {
+  every: MealTemplateWhereInput
+  none: MealTemplateWhereInput
+  some: MealTemplateWhereInput
+}
+
+input MealTemplateNullableRelationFilter {
+  is: MealTemplateWhereInput
+  isNot: MealTemplateWhereInput
+}
+
+input MealTemplateWhereInput {
+  AND: [MealTemplateWhereInput!]
+  NOT: [MealTemplateWhereInput!]
+  OR: [MealTemplateWhereInput!]
+  createBy: UserRelationFilter
+  createdAt: DateTimeFilter
+  dishTemplates: DishTemplateListRelationFilter
+  id: IntFilter
+  name: StringFilter
+  updatedAt: DateTimeFilter
+  userId: IntFilter
+}
+
+enum MealType {
+  BREAKFAST
+  DINNER
+  LUNCH
+  MEAL
+}
+
+type Method {
+  code: String!
+  createdAt: DateTime!
+  desc: String!
+  id: ID!
+  name: String!
+  recipeId: Int
+  updatedAt: DateTime!
+  usedRecipe: Recipe
+}
+
+input MethodListRelationFilter {
+  every: MethodWhereInput
+  none: MethodWhereInput
+  some: MethodWhereInput
+}
+
+input MethodWhereInput {
+  AND: [MethodWhereInput!]
+  NOT: [MethodWhereInput!]
+  OR: [MethodWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  desc: StringFilter
+  id: IntFilter
+  name: StringFilter
+  recipeId: IntNullableFilter
+  updatedAt: DateTimeFilter
+  usedRecipe: RecipeNullableRelationFilter
+}
+
+input NestedBoolNullableFilter {
+  equals: Boolean
+  not: NestedBoolNullableFilter
+}
+
+input NestedDateTimeFilter {
+  equals: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  not: NestedDateTimeFilter
+  notIn: [DateTime!]
+}
+
+input NestedDateTimeNullableFilter {
+  equals: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  not: NestedDateTimeNullableFilter
+  notIn: [DateTime!]
+}
+
+input NestedEnumGoalFilter {
+  equals: Goal
+  in: [Goal!]
+  not: NestedEnumGoalFilter
+  notIn: [Goal!]
+}
+
+input NestedEnumMealTypeFilter {
+  equals: MealType
+  in: [MealType!]
+  not: NestedEnumMealTypeFilter
+  notIn: [MealType!]
+}
+
+input NestedEnumRoleFilter {
+  equals: Role
+  in: [Role!]
+  not: NestedEnumRoleFilter
+  notIn: [Role!]
+}
+
+input NestedIntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntFilter
+  notIn: [Int!]
+}
+
+input NestedIntNullableFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntNullableFilter
+  notIn: [Int!]
+}
+
+input NestedStringFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: NestedStringFilter
+  notIn: [String!]
+  startsWith: String
+}
+
+input NestedStringNullableFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: NestedStringNullableFilter
+  notIn: [String!]
+  startsWith: String
+}
+
+type Nutrition {
+  _count: NutritionCount!
+  code: String!
+  createdAt: DateTime!
+  id: ID!
+  name: String!
+  updatedAt: DateTime!
+  usedRow: [NutritionRow!]
+}
+
+type NutritionCount {
+  usedRow: Int!
+}
+
+input NutritionRelationFilter {
+  is: NutritionWhereInput
+  isNot: NutritionWhereInput
+}
+
+type NutritionRow {
+  belongMaterial: Material!
+  belongToId: Int!
+  createdAt: DateTime!
+  id: ID!
+  nutirtion: Nutrition!
+  nutirtionId: Int!
+  percent: Int!
+  updatedAt: DateTime!
+}
+
+input NutritionRowListRelationFilter {
+  every: NutritionRowWhereInput
+  none: NutritionRowWhereInput
+  some: NutritionRowWhereInput
+}
+
+input NutritionRowWhereInput {
+  AND: [NutritionRowWhereInput!]
+  NOT: [NutritionRowWhereInput!]
+  OR: [NutritionRowWhereInput!]
+  belongMaterial: MaterialRelationFilter
+  belongToId: IntFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  nutirtion: NutritionRelationFilter
+  nutirtionId: IntFilter
+  percent: IntFilter
+  updatedAt: DateTimeFilter
+}
+
+input NutritionWhereInput {
+  AND: [NutritionWhereInput!]
+  NOT: [NutritionWhereInput!]
+  OR: [NutritionWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  name: StringFilter
+  updatedAt: DateTimeFilter
+  usedRow: NutritionRowListRelationFilter
+}
+
+type Post {
+  author: User
+  authorId: Int
+  content: String
+  createdAt: DateTime!
+  id: ID!
+  published: Boolean
+  title: String!
+  updatedAt: DateTime!
+}
+
+input PostListRelationFilter {
+  every: PostWhereInput
+  none: PostWhereInput
+  some: PostWhereInput
+}
+
+input PostWhereInput {
+  AND: [PostWhereInput!]
+  NOT: [PostWhereInput!]
+  OR: [PostWhereInput!]
+  author: UserNullableRelationFilter
+  authorId: IntNullableFilter
+  content: StringNullableFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  published: BoolNullableFilter
+  title: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+input PostWhereUniqueInput {
+  AND: [PostWhereInput!]
+  NOT: [PostWhereInput!]
+  OR: [PostWhereInput!]
+  author: UserNullableRelationFilter
+  authorId: IntNullableFilter
+  content: StringNullableFilter
+  createdAt: DateTimeFilter
+  id: Int
+  published: BoolNullableFilter
+  title: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+type Profile {
+  avatar: String
+  createdAt: DateTime!
+  goal: Goal!
+  id: ID!
+  nickName: String
+  updatedAt: DateTime!
+  user: User!
+  userId: Int!
+}
+
+input ProfileNullableRelationFilter {
+  is: ProfileWhereInput
+  isNot: ProfileWhereInput
+}
+
+input ProfileWhereInput {
+  AND: [ProfileWhereInput!]
+  NOT: [ProfileWhereInput!]
+  OR: [ProfileWhereInput!]
+  avatar: StringNullableFilter
+  createdAt: DateTimeFilter
+  goal: EnumGoalFilter
+  id: IntFilter
+  nickName: StringNullableFilter
+  updatedAt: DateTimeFilter
+  user: UserRelationFilter
+  userId: IntFilter
+}
+
+type Query {
+  getPost(where: PostWhereUniqueInput!): Post!
+}
+
+enum QueryMode {
+  default
+  insensitive
+}
+
+type Recipe {
+  _count: RecipeCount!
+  author: User!
+  authorId: Int!
+  createdAt: DateTime!
+  id: ID!
+  ingredients: [Ingredient!]
+  methods: [Method!]
+  name: String!
+  stars: Int!
+  updatedAt: DateTime!
+  usedDishPlans: [DishPlan!]
+  usedDishTemplates: [DishTemplate!]
+}
+
+type RecipeCount {
+  ingredients: Int!
+  methods: Int!
+  usedDishPlans: Int!
+  usedDishTemplates: Int!
+}
+
+input RecipeListRelationFilter {
+  every: RecipeWhereInput
+  none: RecipeWhereInput
+  some: RecipeWhereInput
+}
+
+input RecipeNullableRelationFilter {
+  is: RecipeWhereInput
+  isNot: RecipeWhereInput
+}
+
+input RecipeRelationFilter {
+  is: RecipeWhereInput
+  isNot: RecipeWhereInput
+}
+
+input RecipeWhereInput {
+  AND: [RecipeWhereInput!]
+  NOT: [RecipeWhereInput!]
+  OR: [RecipeWhereInput!]
+  author: UserRelationFilter
+  authorId: IntFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  ingredients: IngredientListRelationFilter
+  methods: MethodListRelationFilter
+  name: StringFilter
+  stars: IntFilter
+  updatedAt: DateTimeFilter
+  usedDishPlans: DishPlanListRelationFilter
+  usedDishTemplates: DishTemplateListRelationFilter
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+input StringFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  mode: QueryMode
+  not: NestedStringFilter
+  notIn: [String!]
+  startsWith: String
+}
+
+input StringNullableFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  mode: QueryMode
+  not: NestedStringNullableFilter
+  notIn: [String!]
+  startsWith: String
+}
+
+type User {
+  _count: UserCount!
+  bodyDetail: BodyDetail
+  chargeDishPlans: [DishPlan!]
+  createdAt: DateTime!
+  email: String
+  id: ID!
+  myMealPlans: [MealPlan!]
+  myMealTemplates: [MealTemplate!]
+  myPosts: [Post!]
+  myRecipes: [Recipe!]
+  name: String
+  password: String!
+  phone: String
+  profile: Profile
+  role: Role!
+  updatedAt: DateTime!
+  wxId: String
+}
+
+type UserCount {
+  chargeDishPlans: Int!
+  myMealPlans: Int!
+  myMealTemplates: Int!
+  myPosts: Int!
+  myRecipes: Int!
+}
+
+input UserNullableRelationFilter {
+  is: UserWhereInput
+  isNot: UserWhereInput
+}
+
+input UserRelationFilter {
+  is: UserWhereInput
+  isNot: UserWhereInput
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput!]
+  NOT: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  bodyDetail: BodyDetailNullableRelationFilter
+  chargeDishPlans: DishPlanListRelationFilter
+  createdAt: DateTimeFilter
+  email: StringNullableFilter
+  id: IntFilter
+  myMealPlans: MealPlanListRelationFilter
+  myMealTemplates: MealTemplateListRelationFilter
+  myPosts: PostListRelationFilter
+  myRecipes: RecipeListRelationFilter
+  name: StringNullableFilter
+  password: StringFilter
+  phone: StringNullableFilter
+  profile: ProfileNullableRelationFilter
+  role: EnumRoleFilter
+  updatedAt: DateTimeFilter
+  wxId: StringNullableFilter
+}

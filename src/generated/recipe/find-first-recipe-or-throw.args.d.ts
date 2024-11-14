@@ -1,0 +1,13 @@
+import { RecipeWhereInput } from './recipe-where.input';
+import { RecipeOrderByWithRelationInput } from './recipe-order-by-with-relation.input';
+import { Prisma } from '@prisma/client';
+import { RecipeWhereUniqueInput } from './recipe-where-unique.input';
+import { RecipeScalarFieldEnum } from './recipe-scalar-field.enum';
+export declare class FindFirstRecipeOrThrowArgs {
+    where?: RecipeWhereInput;
+    orderBy?: Array<RecipeOrderByWithRelationInput>;
+    cursor?: Prisma.AtLeast<RecipeWhereUniqueInput, 'id'>;
+    take?: number;
+    skip?: number;
+    distinct?: Array<keyof typeof RecipeScalarFieldEnum>;
+}

@@ -4,14 +4,16 @@ import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class PostService {
-	constructor(private prisma: PrismaService) {}
+	constructor(private prisma: PrismaService) { }
 
 	create(data: Prisma.PostCreateInput): Promise<Post> {
 		return this.prisma.post.create({
 			data,
 		});
 	}
-
+	findUnique(args: Prisma.PostFindUniqueArgs) {
+		return this.prisma.post.findUnique(args)
+	}
 	findAll(params: {
 		skip?: number;
 		take?: number;

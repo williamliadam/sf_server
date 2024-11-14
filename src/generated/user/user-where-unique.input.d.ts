@@ -1,0 +1,33 @@
+import { UserWhereInput } from './user-where.input';
+import { StringNullableFilter } from '../prisma/string-nullable-filter.input';
+import { StringFilter } from '../prisma/string-filter.input';
+import { DateTimeFilter } from '../prisma/date-time-filter.input';
+import { EnumRoleFilter } from '../prisma/enum-role-filter.input';
+import { ProfileNullableRelationFilter } from '../profile/profile-nullable-relation-filter.input';
+import { BodyDetailNullableRelationFilter } from '../body-detail/body-detail-nullable-relation-filter.input';
+import { PostListRelationFilter } from '../post/post-list-relation-filter.input';
+import { RecipeListRelationFilter } from '../recipe/recipe-list-relation-filter.input';
+import { MealTemplateListRelationFilter } from '../meal-template/meal-template-list-relation-filter.input';
+import { MealPlanListRelationFilter } from '../meal-plan/meal-plan-list-relation-filter.input';
+import { DishPlanListRelationFilter } from '../dish-plan/dish-plan-list-relation-filter.input';
+export declare class UserWhereUniqueInput {
+    id?: number;
+    email?: string;
+    phone?: string;
+    wxId?: string;
+    AND?: Array<UserWhereInput>;
+    OR?: Array<UserWhereInput>;
+    NOT?: Array<UserWhereInput>;
+    name?: StringNullableFilter;
+    password?: StringFilter;
+    createdAt?: DateTimeFilter;
+    updatedAt?: DateTimeFilter;
+    role?: EnumRoleFilter;
+    profile?: ProfileNullableRelationFilter;
+    bodyDetail?: BodyDetailNullableRelationFilter;
+    myPosts?: PostListRelationFilter;
+    myRecipes?: RecipeListRelationFilter;
+    myMealTemplates?: MealTemplateListRelationFilter;
+    myMealPlans?: MealPlanListRelationFilter;
+    chargeDishPlans?: DishPlanListRelationFilter;
+}
