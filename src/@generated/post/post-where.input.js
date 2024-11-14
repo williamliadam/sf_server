@@ -41,6 +41,9 @@ __decorate([
     (0, graphql_1.Field)(() => int_nullable_filter_input_1.IntNullableFilter, { nullable: true })
 ], PostWhereInput.prototype, "stars", void 0);
 __decorate([
+    (0, graphql_1.Field)(() => int_nullable_filter_input_1.IntNullableFilter, { nullable: true })
+], PostWhereInput.prototype, "follows", void 0);
+__decorate([
     (0, graphql_1.Field)(() => bool_nullable_filter_input_1.BoolNullableFilter, { nullable: true })
 ], PostWhereInput.prototype, "published", void 0);
 __decorate([

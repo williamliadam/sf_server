@@ -25,6 +25,9 @@ __decorate([
     (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
 ], PostMinAggregate.prototype, "stars", void 0);
 __decorate([
+    (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
+], PostMinAggregate.prototype, "follows", void 0);
+__decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostMinAggregate.prototype, "published", void 0);
 __decorate([

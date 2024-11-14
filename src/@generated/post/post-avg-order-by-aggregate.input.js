@@ -20,6 +20,9 @@ __decorate([
 ], PostAvgOrderByAggregateInput.prototype, "stars", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
+], PostAvgOrderByAggregateInput.prototype, "follows", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
 ], PostAvgOrderByAggregateInput.prototype, "authorId", void 0);
 PostAvgOrderByAggregateInput = __decorate([
     (0, graphql_2.InputType)()

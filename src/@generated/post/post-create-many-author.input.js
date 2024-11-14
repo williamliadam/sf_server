@@ -25,6 +25,9 @@ __decorate([
     (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
 ], PostCreateManyAuthorInput.prototype, "stars", void 0);
 __decorate([
+    (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
+], PostCreateManyAuthorInput.prototype, "follows", void 0);
+__decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostCreateManyAuthorInput.prototype, "published", void 0);
 __decorate([

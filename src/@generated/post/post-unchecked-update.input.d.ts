@@ -9,6 +9,7 @@ export declare class PostUncheckedUpdateInput {
     title?: StringFieldUpdateOperationsInput;
     content?: NullableStringFieldUpdateOperationsInput;
     stars?: NullableIntFieldUpdateOperationsInput;
+    follows?: NullableIntFieldUpdateOperationsInput;
     published?: NullableBoolFieldUpdateOperationsInput;
     authorId?: NullableIntFieldUpdateOperationsInput;
     createdAt?: DateTimeFieldUpdateOperationsInput;

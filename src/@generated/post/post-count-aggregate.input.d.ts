@@ -3,6 +3,7 @@ export declare class PostCountAggregateInput {
     title?: true;
     content?: true;
     stars?: true;
+    follows?: true;
     published?: true;
     authorId?: true;
     createdAt?: true;

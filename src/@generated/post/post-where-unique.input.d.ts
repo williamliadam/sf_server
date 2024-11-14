@@ -13,6 +13,7 @@ export declare class PostWhereUniqueInput {
     title?: StringFilter;
     content?: StringNullableFilter;
     stars?: IntNullableFilter;
+    follows?: IntNullableFilter;
     published?: BoolNullableFilter;
     authorId?: IntNullableFilter;
     createdAt?: DateTimeFilter;

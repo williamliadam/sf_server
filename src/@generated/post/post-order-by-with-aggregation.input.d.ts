@@ -10,6 +10,7 @@ export declare class PostOrderByWithAggregationInput {
     title?: keyof typeof SortOrder;
     content?: SortOrderInput;
     stars?: SortOrderInput;
+    follows?: SortOrderInput;
     published?: SortOrderInput;
     authorId?: SortOrderInput;
     createdAt?: keyof typeof SortOrder;

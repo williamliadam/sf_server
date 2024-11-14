@@ -3,6 +3,7 @@ export declare class PostMinAggregateInput {
     title?: true;
     content?: true;
     stars?: true;
+    follows?: true;
     published?: true;
     authorId?: true;
     createdAt?: true;

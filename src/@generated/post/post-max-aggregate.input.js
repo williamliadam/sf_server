@@ -25,6 +25,9 @@ __decorate([
 ], PostMaxAggregateInput.prototype, "stars", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
+], PostMaxAggregateInput.prototype, "follows", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostMaxAggregateInput.prototype, "published", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })

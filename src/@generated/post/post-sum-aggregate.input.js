@@ -19,6 +19,9 @@ __decorate([
 ], PostSumAggregateInput.prototype, "stars", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
+], PostSumAggregateInput.prototype, "follows", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostSumAggregateInput.prototype, "authorId", void 0);
 PostSumAggregateInput = __decorate([
     (0, graphql_2.InputType)()

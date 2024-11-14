@@ -26,6 +26,9 @@ __decorate([
 ], PostCountOrderByAggregateInput.prototype, "stars", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
+], PostCountOrderByAggregateInput.prototype, "follows", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
 ], PostCountOrderByAggregateInput.prototype, "published", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })

@@ -30,6 +30,9 @@ __decorate([
     (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
 ], PostGroupBy.prototype, "stars", void 0);
 __decorate([
+    (0, graphql_1.Field)(() => graphql_3.Int, { nullable: true })
+], PostGroupBy.prototype, "follows", void 0);
+__decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], PostGroupBy.prototype, "published", void 0);
 __decorate([

@@ -8,6 +8,7 @@ export declare class PostUpdateInput {
     title?: StringFieldUpdateOperationsInput;
     content?: NullableStringFieldUpdateOperationsInput;
     stars?: NullableIntFieldUpdateOperationsInput;
+    follows?: NullableIntFieldUpdateOperationsInput;
     published?: NullableBoolFieldUpdateOperationsInput;
     createdAt?: DateTimeFieldUpdateOperationsInput;
     updatedAt?: DateTimeFieldUpdateOperationsInput;

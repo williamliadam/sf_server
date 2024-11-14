@@ -12,6 +12,7 @@ export declare class PostScalarWhereWithAggregatesInput {
     title?: StringWithAggregatesFilter;
     content?: StringNullableWithAggregatesFilter;
     stars?: IntNullableWithAggregatesFilter;
+    follows?: IntNullableWithAggregatesFilter;
     published?: BoolNullableWithAggregatesFilter;
     authorId?: IntNullableWithAggregatesFilter;
     createdAt?: DateTimeWithAggregatesFilter;

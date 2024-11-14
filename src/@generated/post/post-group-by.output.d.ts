@@ -8,6 +8,7 @@ export declare class PostGroupBy {
     title: string;
     content?: string;
     stars?: number;
+    follows?: number;
     published?: boolean;
     authorId?: number;
     createdAt: Date | string;

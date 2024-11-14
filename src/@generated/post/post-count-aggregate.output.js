@@ -26,6 +26,9 @@ __decorate([
 ], PostCountAggregate.prototype, "stars", void 0);
 __decorate([
     (0, graphql_1.Field)(() => graphql_3.Int, { nullable: false })
+], PostCountAggregate.prototype, "follows", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => graphql_3.Int, { nullable: false })
 ], PostCountAggregate.prototype, "published", void 0);
 __decorate([
     (0, graphql_1.Field)(() => graphql_3.Int, { nullable: false })

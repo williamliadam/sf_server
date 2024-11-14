@@ -12,6 +12,7 @@ export declare class PostScalarWhereInput {
     title?: StringFilter;
     content?: StringNullableFilter;
     stars?: IntNullableFilter;
+    follows?: IntNullableFilter;
     published?: BoolNullableFilter;
     authorId?: IntNullableFilter;
     createdAt?: DateTimeFilter;

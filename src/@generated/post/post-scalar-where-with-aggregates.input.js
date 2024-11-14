@@ -40,6 +40,9 @@ __decorate([
     (0, graphql_1.Field)(() => int_nullable_with_aggregates_filter_input_1.IntNullableWithAggregatesFilter, { nullable: true })
 ], PostScalarWhereWithAggregatesInput.prototype, "stars", void 0);
 __decorate([
+    (0, graphql_1.Field)(() => int_nullable_with_aggregates_filter_input_1.IntNullableWithAggregatesFilter, { nullable: true })
+], PostScalarWhereWithAggregatesInput.prototype, "follows", void 0);
+__decorate([
     (0, graphql_1.Field)(() => bool_nullable_with_aggregates_filter_input_1.BoolNullableWithAggregatesFilter, { nullable: true })
 ], PostScalarWhereWithAggregatesInput.prototype, "published", void 0);
 __decorate([

@@ -26,6 +26,9 @@ __decorate([
     (0, graphql_1.Field)(() => nullable_int_field_update_operations_input_1.NullableIntFieldUpdateOperationsInput, { nullable: true })
 ], PostUpdateWithoutAuthorInput.prototype, "stars", void 0);
 __decorate([
+    (0, graphql_1.Field)(() => nullable_int_field_update_operations_input_1.NullableIntFieldUpdateOperationsInput, { nullable: true })
+], PostUpdateWithoutAuthorInput.prototype, "follows", void 0);
+__decorate([
     (0, graphql_1.Field)(() => nullable_bool_field_update_operations_input_1.NullableBoolFieldUpdateOperationsInput, { nullable: true })
 ], PostUpdateWithoutAuthorInput.prototype, "published", void 0);
 __decorate([

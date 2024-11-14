@@ -4,6 +4,7 @@ export declare class PostMinOrderByAggregateInput {
     title?: keyof typeof SortOrder;
     content?: keyof typeof SortOrder;
     stars?: keyof typeof SortOrder;
+    follows?: keyof typeof SortOrder;
     published?: keyof typeof SortOrder;
     authorId?: keyof typeof SortOrder;
     createdAt?: keyof typeof SortOrder;

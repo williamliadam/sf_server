@@ -30,6 +30,9 @@ __decorate([
     (0, graphql_1.Field)(() => nullable_int_field_update_operations_input_1.NullableIntFieldUpdateOperationsInput, { nullable: true })
 ], PostUncheckedUpdateWithoutAuthorInput.prototype, "stars", void 0);
 __decorate([
+    (0, graphql_1.Field)(() => nullable_int_field_update_operations_input_1.NullableIntFieldUpdateOperationsInput, { nullable: true })
+], PostUncheckedUpdateWithoutAuthorInput.prototype, "follows", void 0);
+__decorate([
     (0, graphql_1.Field)(() => nullable_bool_field_update_operations_input_1.NullableBoolFieldUpdateOperationsInput, { nullable: true })
 ], PostUncheckedUpdateWithoutAuthorInput.prototype, "published", void 0);
 __decorate([

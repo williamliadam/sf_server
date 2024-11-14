@@ -48,6 +48,7 @@ model Post {
   title     String
   content   String?
   stars     Int?
+  follows   Int?
   published Boolean? @default(false)
   authorId  Int?
   createdAt DateTime @default(now())

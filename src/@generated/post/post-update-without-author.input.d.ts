@@ -7,6 +7,7 @@ export declare class PostUpdateWithoutAuthorInput {
     title?: StringFieldUpdateOperationsInput;
     content?: NullableStringFieldUpdateOperationsInput;
     stars?: NullableIntFieldUpdateOperationsInput;
+    follows?: NullableIntFieldUpdateOperationsInput;
     published?: NullableBoolFieldUpdateOperationsInput;
     createdAt?: DateTimeFieldUpdateOperationsInput;
     updatedAt?: DateTimeFieldUpdateOperationsInput;

@@ -32,6 +32,9 @@ __decorate([
 ], PostOrderByWithAggregationInput.prototype, "stars", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
+], PostOrderByWithAggregationInput.prototype, "follows", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
 ], PostOrderByWithAggregationInput.prototype, "published", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })

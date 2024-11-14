@@ -3,6 +3,7 @@ export declare class PostCountAggregate {
     title: number;
     content: number;
     stars: number;
+    follows: number;
     published: number;
     authorId: number;
     createdAt: number;

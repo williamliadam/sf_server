@@ -22,6 +22,11 @@ export class PostService {
 		orderBy?: Prisma.PostOrderByWithRelationInput;
 	}): Promise<Post[]> {
 		const { skip, take, cursor, where, orderBy } = params;
+		this.prisma.post.findFirst({
+			where: {
+				follows: 12323
+			}
+		})
 		return this.prisma.post.findMany({
 			skip,
 			take,

@@ -4,6 +4,7 @@ export declare class Post {
     title: string;
     content: string | null;
     stars: number | null;
+    follows: number | null;
     published: boolean | null;
     authorId: number | null;
     createdAt: Date;
