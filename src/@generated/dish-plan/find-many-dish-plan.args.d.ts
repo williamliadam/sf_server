@@ -3,6 +3,7 @@ import { DishPlanOrderByWithRelationInput } from './dish-plan-order-by-with-rela
 import { Prisma } from '@prisma/client';
 import { DishPlanWhereUniqueInput } from './dish-plan-where-unique.input';
 import { DishPlanScalarFieldEnum } from './dish-plan-scalar-field.enum';
+import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class FindManyDishPlanArgs {
     where?: DishPlanWhereInput;
     orderBy?: Array<DishPlanOrderByWithRelationInput>;
@@ -10,4 +11,5 @@ export declare class FindManyDishPlanArgs {
     take?: number;
     skip?: number;
     distinct?: Array<keyof typeof DishPlanScalarFieldEnum>;
+    relationLoadStrategy?: keyof typeof RelationLoadStrategy;
 }

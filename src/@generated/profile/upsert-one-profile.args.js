@@ -13,6 +13,7 @@ const profile_where_unique_input_1 = require("./profile-where-unique.input");
 const class_transformer_1 = require("class-transformer");
 const profile_create_input_1 = require("./profile-create.input");
 const profile_update_input_1 = require("./profile-update.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpsertOneProfileArgs = class UpsertOneProfileArgs {
 };
 __decorate([
@@ -27,6 +28,9 @@ __decorate([
     (0, graphql_1.Field)(() => profile_update_input_1.ProfileUpdateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => profile_update_input_1.ProfileUpdateInput)
 ], UpsertOneProfileArgs.prototype, "update", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpsertOneProfileArgs.prototype, "relationLoadStrategy", void 0);
 UpsertOneProfileArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpsertOneProfileArgs);

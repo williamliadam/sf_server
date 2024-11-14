@@ -3,6 +3,7 @@ import { ProfileOrderByWithRelationInput } from './profile-order-by-with-relatio
 import { Prisma } from '@prisma/client';
 import { ProfileWhereUniqueInput } from './profile-where-unique.input';
 import { ProfileScalarFieldEnum } from './profile-scalar-field.enum';
+import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class FindFirstProfileArgs {
     where?: ProfileWhereInput;
     orderBy?: Array<ProfileOrderByWithRelationInput>;
@@ -10,4 +11,5 @@ export declare class FindFirstProfileArgs {
     take?: number;
     skip?: number;
     distinct?: Array<keyof typeof ProfileScalarFieldEnum>;
+    relationLoadStrategy?: keyof typeof RelationLoadStrategy;
 }

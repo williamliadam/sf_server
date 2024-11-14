@@ -15,6 +15,7 @@ const nutrition_order_by_with_relation_input_1 = require("./nutrition-order-by-w
 const nutrition_where_unique_input_1 = require("./nutrition-where-unique.input");
 const graphql_3 = require("@nestjs/graphql");
 const nutrition_scalar_field_enum_1 = require("./nutrition-scalar-field.enum");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindFirstNutritionOrThrowArgs = class FindFirstNutritionOrThrowArgs {
 };
 __decorate([
@@ -36,6 +37,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [nutrition_scalar_field_enum_1.NutritionScalarFieldEnum], { nullable: true })
 ], FindFirstNutritionOrThrowArgs.prototype, "distinct", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindFirstNutritionOrThrowArgs.prototype, "relationLoadStrategy", void 0);
 FindFirstNutritionOrThrowArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindFirstNutritionOrThrowArgs);

@@ -13,6 +13,7 @@ const body_detail_where_unique_input_1 = require("./body-detail-where-unique.inp
 const class_transformer_1 = require("class-transformer");
 const body_detail_create_input_1 = require("./body-detail-create.input");
 const body_detail_update_input_1 = require("./body-detail-update.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpsertOneBodyDetailArgs = class UpsertOneBodyDetailArgs {
 };
 __decorate([
@@ -27,6 +28,9 @@ __decorate([
     (0, graphql_1.Field)(() => body_detail_update_input_1.BodyDetailUpdateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => body_detail_update_input_1.BodyDetailUpdateInput)
 ], UpsertOneBodyDetailArgs.prototype, "update", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpsertOneBodyDetailArgs.prototype, "relationLoadStrategy", void 0);
 UpsertOneBodyDetailArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpsertOneBodyDetailArgs);

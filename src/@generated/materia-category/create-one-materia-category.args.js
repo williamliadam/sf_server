@@ -11,12 +11,16 @@ const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
 const materia_category_create_input_1 = require("./materia-category-create.input");
 const class_transformer_1 = require("class-transformer");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let CreateOneMateriaCategoryArgs = class CreateOneMateriaCategoryArgs {
 };
 __decorate([
     (0, graphql_1.Field)(() => materia_category_create_input_1.MateriaCategoryCreateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => materia_category_create_input_1.MateriaCategoryCreateInput)
 ], CreateOneMateriaCategoryArgs.prototype, "data", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], CreateOneMateriaCategoryArgs.prototype, "relationLoadStrategy", void 0);
 CreateOneMateriaCategoryArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], CreateOneMateriaCategoryArgs);

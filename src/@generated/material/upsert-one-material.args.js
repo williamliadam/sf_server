@@ -13,6 +13,7 @@ const material_where_unique_input_1 = require("./material-where-unique.input");
 const class_transformer_1 = require("class-transformer");
 const material_create_input_1 = require("./material-create.input");
 const material_update_input_1 = require("./material-update.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpsertOneMaterialArgs = class UpsertOneMaterialArgs {
 };
 __decorate([
@@ -27,6 +28,9 @@ __decorate([
     (0, graphql_1.Field)(() => material_update_input_1.MaterialUpdateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => material_update_input_1.MaterialUpdateInput)
 ], UpsertOneMaterialArgs.prototype, "update", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpsertOneMaterialArgs.prototype, "relationLoadStrategy", void 0);
 UpsertOneMaterialArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpsertOneMaterialArgs);

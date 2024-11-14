@@ -12,6 +12,7 @@ const graphql_2 = require("@nestjs/graphql");
 const material_update_input_1 = require("./material-update.input");
 const class_transformer_1 = require("class-transformer");
 const material_where_unique_input_1 = require("./material-where-unique.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpdateOneMaterialArgs = class UpdateOneMaterialArgs {
 };
 __decorate([
@@ -22,6 +23,9 @@ __decorate([
     (0, graphql_1.Field)(() => material_where_unique_input_1.MaterialWhereUniqueInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => material_where_unique_input_1.MaterialWhereUniqueInput)
 ], UpdateOneMaterialArgs.prototype, "where", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpdateOneMaterialArgs.prototype, "relationLoadStrategy", void 0);
 UpdateOneMaterialArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpdateOneMaterialArgs);

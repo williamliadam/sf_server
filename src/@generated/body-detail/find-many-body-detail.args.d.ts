@@ -3,6 +3,7 @@ import { BodyDetailOrderByWithRelationInput } from './body-detail-order-by-with-
 import { Prisma } from '@prisma/client';
 import { BodyDetailWhereUniqueInput } from './body-detail-where-unique.input';
 import { BodyDetailScalarFieldEnum } from './body-detail-scalar-field.enum';
+import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class FindManyBodyDetailArgs {
     where?: BodyDetailWhereInput;
     orderBy?: Array<BodyDetailOrderByWithRelationInput>;
@@ -10,4 +11,5 @@ export declare class FindManyBodyDetailArgs {
     take?: number;
     skip?: number;
     distinct?: Array<keyof typeof BodyDetailScalarFieldEnum>;
+    relationLoadStrategy?: keyof typeof RelationLoadStrategy;
 }

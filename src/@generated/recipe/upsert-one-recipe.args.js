@@ -13,6 +13,7 @@ const recipe_where_unique_input_1 = require("./recipe-where-unique.input");
 const class_transformer_1 = require("class-transformer");
 const recipe_create_input_1 = require("./recipe-create.input");
 const recipe_update_input_1 = require("./recipe-update.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpsertOneRecipeArgs = class UpsertOneRecipeArgs {
 };
 __decorate([
@@ -27,6 +28,9 @@ __decorate([
     (0, graphql_1.Field)(() => recipe_update_input_1.RecipeUpdateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => recipe_update_input_1.RecipeUpdateInput)
 ], UpsertOneRecipeArgs.prototype, "update", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpsertOneRecipeArgs.prototype, "relationLoadStrategy", void 0);
 UpsertOneRecipeArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpsertOneRecipeArgs);

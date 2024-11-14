@@ -3,6 +3,7 @@ import { NutritionOrderByWithRelationInput } from './nutrition-order-by-with-rel
 import { Prisma } from '@prisma/client';
 import { NutritionWhereUniqueInput } from './nutrition-where-unique.input';
 import { NutritionScalarFieldEnum } from './nutrition-scalar-field.enum';
+import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class FindFirstNutritionArgs {
     where?: NutritionWhereInput;
     orderBy?: Array<NutritionOrderByWithRelationInput>;
@@ -10,4 +11,5 @@ export declare class FindFirstNutritionArgs {
     take?: number;
     skip?: number;
     distinct?: Array<keyof typeof NutritionScalarFieldEnum>;
+    relationLoadStrategy?: keyof typeof RelationLoadStrategy;
 }

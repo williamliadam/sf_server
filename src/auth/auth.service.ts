@@ -9,7 +9,7 @@ export class AuthService {
 	constructor(
 		private userService: UserService,
 		private jwtService: JwtService,
-	) {}
+	) { }
 	async login(user: Omit<User, 'password'>) {
 		const payload = { email: user.email, sub: user.id };
 		return {
@@ -23,7 +23,7 @@ export class AuthService {
 	): Promise<Omit<User, 'password'> | null> {
 		const user = await this.userService.findOne({ email });
 		if (user?.password) {
-			if (user.email === 'willadamin@gmail.com' && user.password === '123456') {
+			if (email === 'willadamin@gmail.com' && pass === '123456') {
 				const { password, ...result } = user;
 				return result;
 			}

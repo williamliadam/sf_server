@@ -13,6 +13,7 @@ const nutrition_where_unique_input_1 = require("./nutrition-where-unique.input")
 const class_transformer_1 = require("class-transformer");
 const nutrition_create_input_1 = require("./nutrition-create.input");
 const nutrition_update_input_1 = require("./nutrition-update.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpsertOneNutritionArgs = class UpsertOneNutritionArgs {
 };
 __decorate([
@@ -27,6 +28,9 @@ __decorate([
     (0, graphql_1.Field)(() => nutrition_update_input_1.NutritionUpdateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => nutrition_update_input_1.NutritionUpdateInput)
 ], UpsertOneNutritionArgs.prototype, "update", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpsertOneNutritionArgs.prototype, "relationLoadStrategy", void 0);
 UpsertOneNutritionArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpsertOneNutritionArgs);

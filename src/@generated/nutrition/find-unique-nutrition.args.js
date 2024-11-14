@@ -11,12 +11,16 @@ const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
 const nutrition_where_unique_input_1 = require("./nutrition-where-unique.input");
 const class_transformer_1 = require("class-transformer");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindUniqueNutritionArgs = class FindUniqueNutritionArgs {
 };
 __decorate([
     (0, graphql_1.Field)(() => nutrition_where_unique_input_1.NutritionWhereUniqueInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => nutrition_where_unique_input_1.NutritionWhereUniqueInput)
 ], FindUniqueNutritionArgs.prototype, "where", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindUniqueNutritionArgs.prototype, "relationLoadStrategy", void 0);
 FindUniqueNutritionArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindUniqueNutritionArgs);

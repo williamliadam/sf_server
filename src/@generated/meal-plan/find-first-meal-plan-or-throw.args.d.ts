@@ -3,6 +3,7 @@ import { MealPlanOrderByWithRelationInput } from './meal-plan-order-by-with-rela
 import { Prisma } from '@prisma/client';
 import { MealPlanWhereUniqueInput } from './meal-plan-where-unique.input';
 import { MealPlanScalarFieldEnum } from './meal-plan-scalar-field.enum';
+import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class FindFirstMealPlanOrThrowArgs {
     where?: MealPlanWhereInput;
     orderBy?: Array<MealPlanOrderByWithRelationInput>;
@@ -10,4 +11,5 @@ export declare class FindFirstMealPlanOrThrowArgs {
     take?: number;
     skip?: number;
     distinct?: Array<keyof typeof MealPlanScalarFieldEnum>;
+    relationLoadStrategy?: keyof typeof RelationLoadStrategy;
 }

@@ -15,6 +15,7 @@ const material_order_by_with_relation_input_1 = require("./material-order-by-wit
 const material_where_unique_input_1 = require("./material-where-unique.input");
 const graphql_3 = require("@nestjs/graphql");
 const material_scalar_field_enum_1 = require("./material-scalar-field.enum");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindFirstMaterialArgs = class FindFirstMaterialArgs {
 };
 __decorate([
@@ -36,6 +37,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [material_scalar_field_enum_1.MaterialScalarFieldEnum], { nullable: true })
 ], FindFirstMaterialArgs.prototype, "distinct", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindFirstMaterialArgs.prototype, "relationLoadStrategy", void 0);
 FindFirstMaterialArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindFirstMaterialArgs);

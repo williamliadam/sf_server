@@ -15,6 +15,7 @@ const profile_order_by_with_relation_input_1 = require("./profile-order-by-with-
 const profile_where_unique_input_1 = require("./profile-where-unique.input");
 const graphql_3 = require("@nestjs/graphql");
 const profile_scalar_field_enum_1 = require("./profile-scalar-field.enum");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindFirstProfileOrThrowArgs = class FindFirstProfileOrThrowArgs {
 };
 __decorate([
@@ -36,6 +37,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [profile_scalar_field_enum_1.ProfileScalarFieldEnum], { nullable: true })
 ], FindFirstProfileOrThrowArgs.prototype, "distinct", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindFirstProfileOrThrowArgs.prototype, "relationLoadStrategy", void 0);
 FindFirstProfileOrThrowArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindFirstProfileOrThrowArgs);

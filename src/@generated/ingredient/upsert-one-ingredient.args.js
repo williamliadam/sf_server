@@ -13,6 +13,7 @@ const ingredient_where_unique_input_1 = require("./ingredient-where-unique.input
 const class_transformer_1 = require("class-transformer");
 const ingredient_create_input_1 = require("./ingredient-create.input");
 const ingredient_update_input_1 = require("./ingredient-update.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpsertOneIngredientArgs = class UpsertOneIngredientArgs {
 };
 __decorate([
@@ -27,6 +28,9 @@ __decorate([
     (0, graphql_1.Field)(() => ingredient_update_input_1.IngredientUpdateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => ingredient_update_input_1.IngredientUpdateInput)
 ], UpsertOneIngredientArgs.prototype, "update", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpsertOneIngredientArgs.prototype, "relationLoadStrategy", void 0);
 UpsertOneIngredientArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpsertOneIngredientArgs);

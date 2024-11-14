@@ -3,6 +3,7 @@ import { MateriaUnitOrderByWithRelationInput } from './materia-unit-order-by-wit
 import { Prisma } from '@prisma/client';
 import { MateriaUnitWhereUniqueInput } from './materia-unit-where-unique.input';
 import { MateriaUnitScalarFieldEnum } from './materia-unit-scalar-field.enum';
+import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class FindManyMateriaUnitArgs {
     where?: MateriaUnitWhereInput;
     orderBy?: Array<MateriaUnitOrderByWithRelationInput>;
@@ -10,4 +11,5 @@ export declare class FindManyMateriaUnitArgs {
     take?: number;
     skip?: number;
     distinct?: Array<keyof typeof MateriaUnitScalarFieldEnum>;
+    relationLoadStrategy?: keyof typeof RelationLoadStrategy;
 }

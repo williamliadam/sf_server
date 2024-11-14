@@ -15,6 +15,7 @@ const method_order_by_with_relation_input_1 = require("./method-order-by-with-re
 const method_where_unique_input_1 = require("./method-where-unique.input");
 const graphql_3 = require("@nestjs/graphql");
 const method_scalar_field_enum_1 = require("./method-scalar-field.enum");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindFirstMethodOrThrowArgs = class FindFirstMethodOrThrowArgs {
 };
 __decorate([
@@ -36,6 +37,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [method_scalar_field_enum_1.MethodScalarFieldEnum], { nullable: true })
 ], FindFirstMethodOrThrowArgs.prototype, "distinct", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindFirstMethodOrThrowArgs.prototype, "relationLoadStrategy", void 0);
 FindFirstMethodOrThrowArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindFirstMethodOrThrowArgs);

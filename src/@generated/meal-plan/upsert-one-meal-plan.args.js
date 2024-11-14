@@ -13,6 +13,7 @@ const meal_plan_where_unique_input_1 = require("./meal-plan-where-unique.input")
 const class_transformer_1 = require("class-transformer");
 const meal_plan_create_input_1 = require("./meal-plan-create.input");
 const meal_plan_update_input_1 = require("./meal-plan-update.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpsertOneMealPlanArgs = class UpsertOneMealPlanArgs {
 };
 __decorate([
@@ -27,6 +28,9 @@ __decorate([
     (0, graphql_1.Field)(() => meal_plan_update_input_1.MealPlanUpdateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => meal_plan_update_input_1.MealPlanUpdateInput)
 ], UpsertOneMealPlanArgs.prototype, "update", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpsertOneMealPlanArgs.prototype, "relationLoadStrategy", void 0);
 UpsertOneMealPlanArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpsertOneMealPlanArgs);

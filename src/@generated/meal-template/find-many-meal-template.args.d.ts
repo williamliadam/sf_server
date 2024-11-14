@@ -3,6 +3,7 @@ import { MealTemplateOrderByWithRelationInput } from './meal-template-order-by-w
 import { Prisma } from '@prisma/client';
 import { MealTemplateWhereUniqueInput } from './meal-template-where-unique.input';
 import { MealTemplateScalarFieldEnum } from './meal-template-scalar-field.enum';
+import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class FindManyMealTemplateArgs {
     where?: MealTemplateWhereInput;
     orderBy?: Array<MealTemplateOrderByWithRelationInput>;
@@ -10,4 +11,5 @@ export declare class FindManyMealTemplateArgs {
     take?: number;
     skip?: number;
     distinct?: Array<keyof typeof MealTemplateScalarFieldEnum>;
+    relationLoadStrategy?: keyof typeof RelationLoadStrategy;
 }

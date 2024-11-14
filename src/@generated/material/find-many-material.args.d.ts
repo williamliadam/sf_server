@@ -3,6 +3,7 @@ import { MaterialOrderByWithRelationInput } from './material-order-by-with-relat
 import { Prisma } from '@prisma/client';
 import { MaterialWhereUniqueInput } from './material-where-unique.input';
 import { MaterialScalarFieldEnum } from './material-scalar-field.enum';
+import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class FindManyMaterialArgs {
     where?: MaterialWhereInput;
     orderBy?: Array<MaterialOrderByWithRelationInput>;
@@ -10,4 +11,5 @@ export declare class FindManyMaterialArgs {
     take?: number;
     skip?: number;
     distinct?: Array<keyof typeof MaterialScalarFieldEnum>;
+    relationLoadStrategy?: keyof typeof RelationLoadStrategy;
 }

@@ -15,6 +15,7 @@ const dish_plan_order_by_with_relation_input_1 = require("./dish-plan-order-by-w
 const dish_plan_where_unique_input_1 = require("./dish-plan-where-unique.input");
 const graphql_3 = require("@nestjs/graphql");
 const dish_plan_scalar_field_enum_1 = require("./dish-plan-scalar-field.enum");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindFirstDishPlanArgs = class FindFirstDishPlanArgs {
 };
 __decorate([
@@ -36,6 +37,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [dish_plan_scalar_field_enum_1.DishPlanScalarFieldEnum], { nullable: true })
 ], FindFirstDishPlanArgs.prototype, "distinct", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindFirstDishPlanArgs.prototype, "relationLoadStrategy", void 0);
 FindFirstDishPlanArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindFirstDishPlanArgs);

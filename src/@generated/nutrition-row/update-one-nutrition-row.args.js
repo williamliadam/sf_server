@@ -12,6 +12,7 @@ const graphql_2 = require("@nestjs/graphql");
 const nutrition_row_update_input_1 = require("./nutrition-row-update.input");
 const class_transformer_1 = require("class-transformer");
 const nutrition_row_where_unique_input_1 = require("./nutrition-row-where-unique.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpdateOneNutritionRowArgs = class UpdateOneNutritionRowArgs {
 };
 __decorate([
@@ -22,6 +23,9 @@ __decorate([
     (0, graphql_1.Field)(() => nutrition_row_where_unique_input_1.NutritionRowWhereUniqueInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => nutrition_row_where_unique_input_1.NutritionRowWhereUniqueInput)
 ], UpdateOneNutritionRowArgs.prototype, "where", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpdateOneNutritionRowArgs.prototype, "relationLoadStrategy", void 0);
 UpdateOneNutritionRowArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpdateOneNutritionRowArgs);

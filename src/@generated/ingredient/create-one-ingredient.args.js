@@ -11,12 +11,16 @@ const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
 const ingredient_create_input_1 = require("./ingredient-create.input");
 const class_transformer_1 = require("class-transformer");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let CreateOneIngredientArgs = class CreateOneIngredientArgs {
 };
 __decorate([
     (0, graphql_1.Field)(() => ingredient_create_input_1.IngredientCreateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => ingredient_create_input_1.IngredientCreateInput)
 ], CreateOneIngredientArgs.prototype, "data", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], CreateOneIngredientArgs.prototype, "relationLoadStrategy", void 0);
 CreateOneIngredientArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], CreateOneIngredientArgs);

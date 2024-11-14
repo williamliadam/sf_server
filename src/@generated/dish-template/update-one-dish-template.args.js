@@ -12,6 +12,7 @@ const graphql_2 = require("@nestjs/graphql");
 const dish_template_update_input_1 = require("./dish-template-update.input");
 const class_transformer_1 = require("class-transformer");
 const dish_template_where_unique_input_1 = require("./dish-template-where-unique.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpdateOneDishTemplateArgs = class UpdateOneDishTemplateArgs {
 };
 __decorate([
@@ -22,6 +23,9 @@ __decorate([
     (0, graphql_1.Field)(() => dish_template_where_unique_input_1.DishTemplateWhereUniqueInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => dish_template_where_unique_input_1.DishTemplateWhereUniqueInput)
 ], UpdateOneDishTemplateArgs.prototype, "where", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpdateOneDishTemplateArgs.prototype, "relationLoadStrategy", void 0);
 UpdateOneDishTemplateArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpdateOneDishTemplateArgs);

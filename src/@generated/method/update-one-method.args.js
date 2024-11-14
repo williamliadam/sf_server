@@ -12,6 +12,7 @@ const graphql_2 = require("@nestjs/graphql");
 const method_update_input_1 = require("./method-update.input");
 const class_transformer_1 = require("class-transformer");
 const method_where_unique_input_1 = require("./method-where-unique.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpdateOneMethodArgs = class UpdateOneMethodArgs {
 };
 __decorate([
@@ -22,6 +23,9 @@ __decorate([
     (0, graphql_1.Field)(() => method_where_unique_input_1.MethodWhereUniqueInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => method_where_unique_input_1.MethodWhereUniqueInput)
 ], UpdateOneMethodArgs.prototype, "where", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpdateOneMethodArgs.prototype, "relationLoadStrategy", void 0);
 UpdateOneMethodArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpdateOneMethodArgs);

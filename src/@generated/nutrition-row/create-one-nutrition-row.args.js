@@ -11,12 +11,16 @@ const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
 const nutrition_row_create_input_1 = require("./nutrition-row-create.input");
 const class_transformer_1 = require("class-transformer");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let CreateOneNutritionRowArgs = class CreateOneNutritionRowArgs {
 };
 __decorate([
     (0, graphql_1.Field)(() => nutrition_row_create_input_1.NutritionRowCreateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => nutrition_row_create_input_1.NutritionRowCreateInput)
 ], CreateOneNutritionRowArgs.prototype, "data", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], CreateOneNutritionRowArgs.prototype, "relationLoadStrategy", void 0);
 CreateOneNutritionRowArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], CreateOneNutritionRowArgs);

@@ -15,6 +15,7 @@ const body_detail_order_by_with_relation_input_1 = require("./body-detail-order-
 const body_detail_where_unique_input_1 = require("./body-detail-where-unique.input");
 const graphql_3 = require("@nestjs/graphql");
 const body_detail_scalar_field_enum_1 = require("./body-detail-scalar-field.enum");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindFirstBodyDetailOrThrowArgs = class FindFirstBodyDetailOrThrowArgs {
 };
 __decorate([
@@ -36,6 +37,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [body_detail_scalar_field_enum_1.BodyDetailScalarFieldEnum], { nullable: true })
 ], FindFirstBodyDetailOrThrowArgs.prototype, "distinct", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindFirstBodyDetailOrThrowArgs.prototype, "relationLoadStrategy", void 0);
 FindFirstBodyDetailOrThrowArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindFirstBodyDetailOrThrowArgs);

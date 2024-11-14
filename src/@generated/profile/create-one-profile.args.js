@@ -11,12 +11,16 @@ const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
 const profile_create_input_1 = require("./profile-create.input");
 const class_transformer_1 = require("class-transformer");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let CreateOneProfileArgs = class CreateOneProfileArgs {
 };
 __decorate([
     (0, graphql_1.Field)(() => profile_create_input_1.ProfileCreateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => profile_create_input_1.ProfileCreateInput)
 ], CreateOneProfileArgs.prototype, "data", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], CreateOneProfileArgs.prototype, "relationLoadStrategy", void 0);
 CreateOneProfileArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], CreateOneProfileArgs);

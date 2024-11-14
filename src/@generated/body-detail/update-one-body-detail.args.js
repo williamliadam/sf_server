@@ -12,6 +12,7 @@ const graphql_2 = require("@nestjs/graphql");
 const body_detail_update_input_1 = require("./body-detail-update.input");
 const class_transformer_1 = require("class-transformer");
 const body_detail_where_unique_input_1 = require("./body-detail-where-unique.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpdateOneBodyDetailArgs = class UpdateOneBodyDetailArgs {
 };
 __decorate([
@@ -22,6 +23,9 @@ __decorate([
     (0, graphql_1.Field)(() => body_detail_where_unique_input_1.BodyDetailWhereUniqueInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => body_detail_where_unique_input_1.BodyDetailWhereUniqueInput)
 ], UpdateOneBodyDetailArgs.prototype, "where", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpdateOneBodyDetailArgs.prototype, "relationLoadStrategy", void 0);
 UpdateOneBodyDetailArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpdateOneBodyDetailArgs);

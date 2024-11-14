@@ -13,6 +13,7 @@ const method_where_unique_input_1 = require("./method-where-unique.input");
 const class_transformer_1 = require("class-transformer");
 const method_create_input_1 = require("./method-create.input");
 const method_update_input_1 = require("./method-update.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpsertOneMethodArgs = class UpsertOneMethodArgs {
 };
 __decorate([
@@ -27,6 +28,9 @@ __decorate([
     (0, graphql_1.Field)(() => method_update_input_1.MethodUpdateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => method_update_input_1.MethodUpdateInput)
 ], UpsertOneMethodArgs.prototype, "update", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpsertOneMethodArgs.prototype, "relationLoadStrategy", void 0);
 UpsertOneMethodArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpsertOneMethodArgs);

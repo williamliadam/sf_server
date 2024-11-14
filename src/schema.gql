@@ -702,7 +702,7 @@ input ProfileWhereInput {
 }
 
 type Query {
-  getPost(where: PostWhereUniqueInput!): Post!
+  getPost(relationLoadStrategy: RelationLoadStrategy, where: PostWhereUniqueInput!): Post
 }
 
 enum QueryMode {
@@ -763,6 +763,11 @@ input RecipeWhereInput {
   updatedAt: DateTimeFilter
   usedDishPlans: DishPlanListRelationFilter
   usedDishTemplates: DishTemplateListRelationFilter
+}
+
+enum RelationLoadStrategy {
+  join
+  query
 }
 
 enum Role {

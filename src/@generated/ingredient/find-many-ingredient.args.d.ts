@@ -3,6 +3,7 @@ import { IngredientOrderByWithRelationInput } from './ingredient-order-by-with-r
 import { Prisma } from '@prisma/client';
 import { IngredientWhereUniqueInput } from './ingredient-where-unique.input';
 import { IngredientScalarFieldEnum } from './ingredient-scalar-field.enum';
+import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class FindManyIngredientArgs {
     where?: IngredientWhereInput;
     orderBy?: Array<IngredientOrderByWithRelationInput>;
@@ -10,4 +11,5 @@ export declare class FindManyIngredientArgs {
     take?: number;
     skip?: number;
     distinct?: Array<keyof typeof IngredientScalarFieldEnum>;
+    relationLoadStrategy?: keyof typeof RelationLoadStrategy;
 }

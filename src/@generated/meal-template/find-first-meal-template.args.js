@@ -15,6 +15,7 @@ const meal_template_order_by_with_relation_input_1 = require("./meal-template-or
 const meal_template_where_unique_input_1 = require("./meal-template-where-unique.input");
 const graphql_3 = require("@nestjs/graphql");
 const meal_template_scalar_field_enum_1 = require("./meal-template-scalar-field.enum");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindFirstMealTemplateArgs = class FindFirstMealTemplateArgs {
 };
 __decorate([
@@ -36,6 +37,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [meal_template_scalar_field_enum_1.MealTemplateScalarFieldEnum], { nullable: true })
 ], FindFirstMealTemplateArgs.prototype, "distinct", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindFirstMealTemplateArgs.prototype, "relationLoadStrategy", void 0);
 FindFirstMealTemplateArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindFirstMealTemplateArgs);

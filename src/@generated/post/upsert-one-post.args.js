@@ -13,6 +13,7 @@ const post_where_unique_input_1 = require("./post-where-unique.input");
 const class_transformer_1 = require("class-transformer");
 const post_create_input_1 = require("./post-create.input");
 const post_update_input_1 = require("./post-update.input");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let UpsertOnePostArgs = class UpsertOnePostArgs {
 };
 __decorate([
@@ -27,6 +28,9 @@ __decorate([
     (0, graphql_1.Field)(() => post_update_input_1.PostUpdateInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => post_update_input_1.PostUpdateInput)
 ], UpsertOnePostArgs.prototype, "update", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], UpsertOnePostArgs.prototype, "relationLoadStrategy", void 0);
 UpsertOnePostArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], UpsertOnePostArgs);

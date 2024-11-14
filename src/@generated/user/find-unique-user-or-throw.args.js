@@ -11,12 +11,16 @@ const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
 const user_where_unique_input_1 = require("./user-where-unique.input");
 const class_transformer_1 = require("class-transformer");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindUniqueUserOrThrowArgs = class FindUniqueUserOrThrowArgs {
 };
 __decorate([
     (0, graphql_1.Field)(() => user_where_unique_input_1.UserWhereUniqueInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => user_where_unique_input_1.UserWhereUniqueInput)
 ], FindUniqueUserOrThrowArgs.prototype, "where", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindUniqueUserOrThrowArgs.prototype, "relationLoadStrategy", void 0);
 FindUniqueUserOrThrowArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindUniqueUserOrThrowArgs);

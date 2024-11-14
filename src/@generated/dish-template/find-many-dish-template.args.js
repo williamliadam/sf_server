@@ -15,6 +15,7 @@ const dish_template_order_by_with_relation_input_1 = require("./dish-template-or
 const dish_template_where_unique_input_1 = require("./dish-template-where-unique.input");
 const graphql_3 = require("@nestjs/graphql");
 const dish_template_scalar_field_enum_1 = require("./dish-template-scalar-field.enum");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindManyDishTemplateArgs = class FindManyDishTemplateArgs {
 };
 __decorate([
@@ -36,6 +37,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [dish_template_scalar_field_enum_1.DishTemplateScalarFieldEnum], { nullable: true })
 ], FindManyDishTemplateArgs.prototype, "distinct", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindManyDishTemplateArgs.prototype, "relationLoadStrategy", void 0);
 FindManyDishTemplateArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindManyDishTemplateArgs);

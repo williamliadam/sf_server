@@ -15,6 +15,7 @@ const ingredient_order_by_with_relation_input_1 = require("./ingredient-order-by
 const ingredient_where_unique_input_1 = require("./ingredient-where-unique.input");
 const graphql_3 = require("@nestjs/graphql");
 const ingredient_scalar_field_enum_1 = require("./ingredient-scalar-field.enum");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindManyIngredientArgs = class FindManyIngredientArgs {
 };
 __decorate([
@@ -36,6 +37,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [ingredient_scalar_field_enum_1.IngredientScalarFieldEnum], { nullable: true })
 ], FindManyIngredientArgs.prototype, "distinct", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindManyIngredientArgs.prototype, "relationLoadStrategy", void 0);
 FindManyIngredientArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindManyIngredientArgs);

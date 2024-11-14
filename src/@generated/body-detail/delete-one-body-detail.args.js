@@ -11,12 +11,16 @@ const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
 const body_detail_where_unique_input_1 = require("./body-detail-where-unique.input");
 const class_transformer_1 = require("class-transformer");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let DeleteOneBodyDetailArgs = class DeleteOneBodyDetailArgs {
 };
 __decorate([
     (0, graphql_1.Field)(() => body_detail_where_unique_input_1.BodyDetailWhereUniqueInput, { nullable: false }),
     (0, class_transformer_1.Type)(() => body_detail_where_unique_input_1.BodyDetailWhereUniqueInput)
 ], DeleteOneBodyDetailArgs.prototype, "where", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], DeleteOneBodyDetailArgs.prototype, "relationLoadStrategy", void 0);
 DeleteOneBodyDetailArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], DeleteOneBodyDetailArgs);

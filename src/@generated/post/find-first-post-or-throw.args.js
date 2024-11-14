@@ -15,6 +15,7 @@ const post_order_by_with_relation_input_1 = require("./post-order-by-with-relati
 const post_where_unique_input_1 = require("./post-where-unique.input");
 const graphql_3 = require("@nestjs/graphql");
 const post_scalar_field_enum_1 = require("./post-scalar-field.enum");
+const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.enum");
 let FindFirstPostOrThrowArgs = class FindFirstPostOrThrowArgs {
 };
 __decorate([
@@ -36,6 +37,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [post_scalar_field_enum_1.PostScalarFieldEnum], { nullable: true })
 ], FindFirstPostOrThrowArgs.prototype, "distinct", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => relation_load_strategy_enum_1.RelationLoadStrategy, { nullable: true })
+], FindFirstPostOrThrowArgs.prototype, "relationLoadStrategy", void 0);
 FindFirstPostOrThrowArgs = __decorate([
     (0, graphql_2.ArgsType)()
 ], FindFirstPostOrThrowArgs);
