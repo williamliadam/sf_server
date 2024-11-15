@@ -3,6 +3,7 @@
     "biomejs",
     "datasource",
     "fastify",
-    "nestjs"
+    "nestjs",
+    "tdee"
   ]
 }
