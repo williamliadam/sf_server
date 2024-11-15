@@ -9,7 +9,7 @@ export class AuthService {
 	constructor(
 		private userService: UserService,
 		private jwtService: JwtService,
-	) { }
+	) {}
 	async login(user: Omit<User, 'password'>) {
 		const payload = { email: user.email, sub: user.id };
 		return {

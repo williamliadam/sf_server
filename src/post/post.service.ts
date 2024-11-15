@@ -4,7 +4,7 @@ import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class PostService {
-	constructor(private prisma: PrismaService) { }
+	constructor(private prisma: PrismaService) {}
 
 	create(data: Prisma.PostCreateInput): Promise<Post> {
 		return this.prisma.post.create({
@@ -12,7 +12,7 @@ export class PostService {
 		});
 	}
 	findUnique(args: Prisma.PostFindUniqueArgs) {
-		return this.prisma.post.findUnique(args)
+		return this.prisma.post.findUnique(args);
 	}
 	findAll(params: {
 		skip?: number;
@@ -24,9 +24,9 @@ export class PostService {
 		const { skip, take, cursor, where, orderBy } = params;
 		this.prisma.post.findFirst({
 			where: {
-				follows: 12323
-			}
-		})
+				follows: 12323,
+			},
+		});
 		return this.prisma.post.findMany({
 			skip,
 			take,

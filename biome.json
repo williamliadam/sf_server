@@ -1,7 +1,8 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
 	"files": {
-		"include": ["src/**/*.ts", "test/**/*.ts"]
+		"include": ["src/**/*.ts", "test/**/*.ts"],
+		"ignore": ["src/@generated/*"]
 	},
 	"formatter": {
 		"enabled": true

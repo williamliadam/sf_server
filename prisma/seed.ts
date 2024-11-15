@@ -10,13 +10,15 @@ async function main() {
       name: 'WilliamLi',
       password: "123456",
       role: "ADMIN",
+      phone: "178555833177",
       myPosts: {
         create: [
           {
             title: "First Post",
             stars: 899,
             content: "This is my first post",
-            published: true
+            published: true,
+            follows: 222,
           },
           {
             title: "Second Post",
