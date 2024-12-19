@@ -13,6 +13,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'node:path';
 import { BodyDetailModule } from 'src/body-detail/body-detail.module';
+import { RecipeModule } from 'src/recipe/recipe.module';
 
 @Module({
 	imports: [
@@ -50,6 +51,7 @@ import { BodyDetailModule } from 'src/body-detail/body-detail.module';
 		}),
 		UserModule,
 		PostModule,
+		RecipeModule,
 		AuthModule,
 		BodyDetailModule,
 		GraphQLModule.forRoot<ApolloDriverConfig>({
