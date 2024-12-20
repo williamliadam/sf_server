@@ -15,9 +15,9 @@ generator nestgraphql {
   emitCompiled = true
 }
 
-generator erd {
-  provider = "prisma-erd-generator"
-}
+// generator erd {
+//   provider = "prisma-erd-generator"
+// }
 
 datasource db {
   provider = "postgresql"

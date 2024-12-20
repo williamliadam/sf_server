@@ -7,30 +7,28 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
     ports:
-      - 5432:5432
-    networks:
-      - fs_network
+      - ${DB_PORT}:${DB_PORT}
   redis:
     image: "redis:alpine"
     container_name: redis
     volumes:
       - redis_data:/data
     ports:
-      - 6379:6379
+      - ${REDIS_PORT}:${REDIS_PORT}
   app:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: sf_server
     restart: always
+    env_file:
+      - .env.prod
     ports:
-      - 3000:3000
+      - ${PORT}:${PORT}
     depends_on:
       - db
       - redis
 volumes:
   db_data:
   redis_data:
-networks:
-      - fs_network
 
