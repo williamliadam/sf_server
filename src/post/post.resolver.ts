@@ -1,9 +1,8 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Query, Resolver } from '@nestjs/graphql';
 import { PostService } from './post.service';
-import { Post } from 'src/@generated/post/post.model';
-import { FindUniquePostArgs } from 'src/@generated/post/find-unique-post.args';
-import { CurrentUser } from 'src/auth/decorators/user.decorator.graphql';
+import { Post } from '../@generated/post/post.model';
 import { User } from '@prisma/client';
+import { CurrentUser } from '../auth/decorators/user.decorator.graphql';
 
 @Resolver(() => Post)
 export class PostResolver {

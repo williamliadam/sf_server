@@ -6,10 +6,6 @@
       "syntax": "typescript",
       "decorators": true,
       "dynamicImport": true
-    },
-    "baseUrl": "./",
-    "paths": {
-      "src/*": ["./src/*"]
     }
   },
   "minify": false

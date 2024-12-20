@@ -8,6 +8,8 @@ services:
       - db_data:/var/lib/postgresql/data
     ports:
       - 5432:5432
+    networks:
+      - fs_network
   redis:
     image: "redis:alpine"
     container_name: redis
@@ -29,3 +31,6 @@ services:
 volumes:
   db_data:
   redis_data:
+networks:
+      - fs_network
+

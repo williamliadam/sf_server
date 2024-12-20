@@ -1,11 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Request } from '@nestjs/common';
 import { RecipeService } from './recipe.service';
 import { CreateRecipeDto } from './dto/create-recipe.dto';
 import { UpdateRecipeDto } from './dto/update-recipe.dto';
+import { CurrentUser } from '../auth/decorators/user.decorator.graphql';
+import { User } from '@prisma/client';
 
 @Controller('recipe')
 export class RecipeController {
-  constructor(private readonly recipeService: RecipeService) {}
+  constructor(private readonly recipeService: RecipeService) { }
 
   @Post()
   create(@Body() createRecipeDto: CreateRecipeDto) {
@@ -13,8 +15,8 @@ export class RecipeController {
   }
 
   @Get()
-  findAll() {
-    return this.recipeService.findAll();
+  findAll(@Request() req) {
+    return this.recipeService.findAll(req.user.id);
   }
 
   @Get(':id')
@@ -32,3 +34,5 @@ export class RecipeController {
     return this.recipeService.remove(+id);
   }
 }
+
+
