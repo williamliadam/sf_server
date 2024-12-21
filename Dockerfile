@@ -4,10 +4,11 @@ ENV PATH="$PNPM_HOME:$PATH"
 ENV COREPACK_NPM_REGISTRY="https://registry.npmmirror.com"
 
 
+
 FROM base AS prod-deps
 
 RUN corepack enable
-RUN apk add --no-cache g++ make python3
+RUN apk add --no-cache g++ make python3 openssl 
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm fetch --frozen-lockfile
