@@ -9,8 +9,8 @@ import { AppModule } from './app/app.module';
 import { ValidationPipe } from '@nestjs/common';
 
 const httpsOptions = {
-	key: fs.readFileSync('./secrets/private.pem'),
-	cert: fs.readFileSync('./secrets/public.pem'),
+	key: fs.readFileSync('/home/secrets/private.pem'),
+	cert: fs.readFileSync('/home/secrets/public.pem'),
 };
 async function bootstrap() {
 	const app = await NestFactory.create<NestFastifyApplication>(
