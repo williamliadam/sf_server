@@ -16,6 +16,8 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm fetch --frozen-lockfile
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 COPY prisma ./
 RUN pnpm prisma:gen
+RUN pnpm prisma:deploy
+RUN pnpm prisma:seed
 
 FROM base AS build
 
