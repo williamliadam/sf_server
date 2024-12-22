@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core';
+import * as fs from 'node:fs';
 import {
 	FastifyAdapter,
 	NestFastifyApplication,
@@ -7,10 +8,16 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app/app.module';
 import { ValidationPipe } from '@nestjs/common';
 
+const httpsOptions = {
+	key: fs.readFileSync('./secrets/private.pem'),
+	cert: fs.readFileSync('./secrets/public.pem'),
+};
 async function bootstrap() {
 	const app = await NestFactory.create<NestFastifyApplication>(
 		AppModule,
-		new FastifyAdapter(),
+		new FastifyAdapter({
+			https: httpsOptions
+		}),
 		{ cors: true }
 	);
 	app.useGlobalPipes(new ValidationPipe());
