@@ -16,8 +16,6 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm fetch --frozen-lockfile
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 COPY prisma ./
 RUN pnpm prisma:gen
-RUN pnpm prisma:deploy
-RUN pnpm prisma:seed
 
 FROM base AS build
 
@@ -37,5 +35,5 @@ COPY templates ./templates
 COPY --from=prod-deps /app/node_modules /app/node_modules
 COPY --from=build /app/dist /app/dist
 ENV NODE_ENV production
-CMD ["sh", "-c", "npm run prisma:mig; node ./dist/src/main.js"]
+CMD ["sh", "-c", "npm run prisma:deploy;npm run prisma:seed; node ./dist/src/main.js"]
 EXPOSE 3000
