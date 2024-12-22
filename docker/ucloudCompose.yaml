@@ -1,0 +1,31 @@
+services:
+  db:
+    image: "uhub.service.ucloud.cn/library/postgres:9.5.2"
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+  redis:
+    image: "uhub.service.ucloud.cn/ucloud/redis:5.0.7"
+    container_name: redis
+    volumes:
+      - redis_data:/data
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+  app:
+    image: "uhub.service.ucloud.cn/williamliadam/sf_server:main" 
+    container_name: sf_server
+    env_file:
+      - .env
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    depends_on:
+      - db
+      - redis
+volumes:
+  db_data:
+  redis_data:

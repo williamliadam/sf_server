@@ -22,7 +22,7 @@ services:
     container_name: sf_server
     restart: always
     env_file:
-      - .env
+      - .env.local
     ports:
       - ${APP_PORT}:${APP_PORT}
     depends_on:

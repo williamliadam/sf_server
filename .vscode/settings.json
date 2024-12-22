@@ -4,6 +4,9 @@
     "datasource",
     "fastify",
     "nestjs",
-    "tdee"
+    "tdee",
+    "ucloud",
+    "uhub",
+    "williamliadam"
   ]
 }
