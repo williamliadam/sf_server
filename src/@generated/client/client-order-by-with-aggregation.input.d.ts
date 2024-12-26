@@ -1,0 +1,33 @@
+import { SortOrder } from '../prisma/sort-order.enum';
+import { ClientCountOrderByAggregateInput } from './client-count-order-by-aggregate.input';
+import { ClientAvgOrderByAggregateInput } from './client-avg-order-by-aggregate.input';
+import { ClientMaxOrderByAggregateInput } from './client-max-order-by-aggregate.input';
+import { ClientMinOrderByAggregateInput } from './client-min-order-by-aggregate.input';
+import { ClientSumOrderByAggregateInput } from './client-sum-order-by-aggregate.input';
+export declare class ClientOrderByWithAggregationInput {
+    id?: keyof typeof SortOrder;
+    subcompanyid1span?: keyof typeof SortOrder;
+    workcode?: keyof typeof SortOrder;
+    jobtitle?: keyof typeof SortOrder;
+    departmentidspan?: keyof typeof SortOrder;
+    idspan?: keyof typeof SortOrder;
+    departmentid?: keyof typeof SortOrder;
+    telephone?: keyof typeof SortOrder;
+    subcompanyid1?: keyof typeof SortOrder;
+    telephonespan?: keyof typeof SortOrder;
+    lastname?: keyof typeof SortOrder;
+    jobtitlespan?: keyof typeof SortOrder;
+    workcodespan?: keyof typeof SortOrder;
+    lastnamespan?: keyof typeof SortOrder;
+    emailspan?: keyof typeof SortOrder;
+    randomFieldIdspan?: keyof typeof SortOrder;
+    email?: keyof typeof SortOrder;
+    randomFieldId?: keyof typeof SortOrder;
+    createdAt?: keyof typeof SortOrder;
+    updatedAt?: keyof typeof SortOrder;
+    _count?: ClientCountOrderByAggregateInput;
+    _avg?: ClientAvgOrderByAggregateInput;
+    _max?: ClientMaxOrderByAggregateInput;
+    _min?: ClientMinOrderByAggregateInput;
+    _sum?: ClientSumOrderByAggregateInput;
+}

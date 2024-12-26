@@ -219,7 +219,28 @@ model MealPlan {
   dishPlans DishPlan[]
   createBy  User       @relation(fields: [userId], references: [id])
 }
-
+model Client {
+  id                Int      @id @default(autoincrement())
+  subcompanyid1span String
+  workcode          String
+  jobtitle          String
+  departmentidspan  String
+  idspan            String
+  departmentid      String
+  telephone         String
+  subcompanyid1     String
+  telephonespan     String
+  lastname          String
+  jobtitlespan      String
+  workcodespan      String
+  lastnamespan      String
+  emailspan         String
+  randomFieldIdspan String
+  email             String
+  randomFieldId     String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @default(now())
+}
 enum MealType {
   BREAKFAST
   LUNCH

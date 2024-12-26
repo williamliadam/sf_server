@@ -1,0 +1,32 @@
+import { ClientCountAggregate } from './client-count-aggregate.output';
+import { ClientAvgAggregate } from './client-avg-aggregate.output';
+import { ClientSumAggregate } from './client-sum-aggregate.output';
+import { ClientMinAggregate } from './client-min-aggregate.output';
+import { ClientMaxAggregate } from './client-max-aggregate.output';
+export declare class ClientGroupBy {
+    id: number;
+    subcompanyid1span: string;
+    workcode: string;
+    jobtitle: string;
+    departmentidspan: string;
+    idspan: string;
+    departmentid: string;
+    telephone: string;
+    subcompanyid1: string;
+    telephonespan: string;
+    lastname: string;
+    jobtitlespan: string;
+    workcodespan: string;
+    lastnamespan: string;
+    emailspan: string;
+    randomFieldIdspan: string;
+    email: string;
+    randomFieldId: string;
+    createdAt: Date | string;
+    updatedAt: Date | string;
+    _count?: ClientCountAggregate;
+    _avg?: ClientAvgAggregate;
+    _sum?: ClientSumAggregate;
+    _min?: ClientMinAggregate;
+    _max?: ClientMaxAggregate;
+}

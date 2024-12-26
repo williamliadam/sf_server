@@ -1,15 +1,27 @@
 {
   "cSpell.words": [
+    "autoincrement",
     "biomejs",
     "datasource",
+    "departmentid",
     "dpage",
+    "emailspan",
     "fastify",
+    "Idspan",
+    "jobtitle",
+    "jobtitlespan",
+    "lastname",
+    "lastnamespan",
     "nestjs",
     "PGADMAIN",
     "pgadmin",
+    "subcompanyid",
     "tdee",
+    "telephonespan",
     "ucloud",
     "uhub",
-    "williamliadam"
+    "williamliadam",
+    "workcode",
+    "workcodespan"
   ]
 }

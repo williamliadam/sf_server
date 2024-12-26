@@ -1,0 +1,22 @@
+export declare enum ClientScalarFieldEnum {
+    id = "id",
+    subcompanyid1span = "subcompanyid1span",
+    workcode = "workcode",
+    jobtitle = "jobtitle",
+    departmentidspan = "departmentidspan",
+    idspan = "idspan",
+    departmentid = "departmentid",
+    telephone = "telephone",
+    subcompanyid1 = "subcompanyid1",
+    telephonespan = "telephonespan",
+    lastname = "lastname",
+    jobtitlespan = "jobtitlespan",
+    workcodespan = "workcodespan",
+    lastnamespan = "lastnamespan",
+    emailspan = "emailspan",
+    randomFieldIdspan = "randomFieldIdspan",
+    email = "email",
+    randomFieldId = "randomFieldId",
+    createdAt = "createdAt",
+    updatedAt = "updatedAt"
+}

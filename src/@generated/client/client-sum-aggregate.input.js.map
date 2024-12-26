@@ -1,0 +1,1 @@
+{"version":3,"file":"client-sum-aggregate.input.js","sourceRoot":"","sources":["client-sum-aggregate.input.ts"],"names":[],"mappings":";;;;;;;;;AAAA,6CAAwC;AACxC,6CAA4C;AAGrC,IAAM,uBAAuB,GAA7B,MAAM,uBAAuB;CAInC,CAAA;AADG;IADC,IAAA,eAAK,EAAC,GAAG,EAAE,CAAC,OAAO,EAAE,EAAC,QAAQ,EAAC,IAAI,EAAC,CAAC;mDAC5B;AAHD,uBAAuB;IADnC,IAAA,mBAAS,GAAE;GACC,uBAAuB,CAInC;AAJY,0DAAuB"}
