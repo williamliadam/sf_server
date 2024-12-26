@@ -19,6 +19,7 @@ import { RecipeModule } from '../recipe/recipe.module';
 	imports: [
 		ConfigModule.forRoot({
 			envFilePath: ['.env.local', '.env'],
+			isGlobal: true,
 		}),
 		CacheModule.register({
 			ttl: 30, // seconds

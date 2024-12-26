@@ -8,10 +8,10 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app/app.module';
 import { ValidationPipe } from '@nestjs/common';
 
-const httpsOptions = {
+const httpsOptions = process.env.NODE_ENV === 'production' ? {
 	key: fs.readFileSync('/home/secrets/private.pem'),
 	cert: fs.readFileSync('/home/secrets/public.pem'),
-};
+} : {};
 async function bootstrap() {
 	const app = await NestFactory.create<NestFastifyApplication>(
 		AppModule,
