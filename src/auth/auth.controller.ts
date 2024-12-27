@@ -7,6 +7,7 @@ import {
 	Inject,
 	HttpException,
 	HttpStatus,
+	Get,
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { AuthService } from './auth.service';
@@ -36,7 +37,7 @@ export class AuthController {
 	}
 
 	@UseGuards(JwtRefreshAuthGuard)
-	@Post('refreshToken')
+	@Get('refreshToken')
 	async refreshToken(@Request() req) {
 		return this.authService.refresh(req.headers?.["x-refresh-token"]);
 	}
