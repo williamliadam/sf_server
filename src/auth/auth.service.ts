@@ -14,10 +14,54 @@ export class AuthService {
 	) { }
 	async login(user: Omit<User, 'password'>) {
 		const payload = { email: user.email, sub: user.id };
+		const expiresAccessToken = new Date();
+		expiresAccessToken.setMilliseconds(
+			expiresAccessToken.getTime() +
+			Number.parseInt(
+				this.configService.getOrThrow<string>(
+					'JWT_ACCESS_TOKEN_EXPIRATION_MS',
+				),
+			),
+		);
+
+		const expiresRefreshToken = new Date();
+		expiresRefreshToken.setMilliseconds(
+			expiresRefreshToken.getTime() +
+			Number.parseInt(
+				this.configService.getOrThrow<string>(
+					'JWT_REFRESH_TOKEN_EXPIRATION_MS',
+				),
+			),
+		);
+
+		const accessToken = this.jwtService.sign(payload, {
+			secret: this.configService.getOrThrow('JWT_SECRET'),
+			expiresIn: `${this.configService.getOrThrow(
+				'JWT_ACCESS_TOKEN_EXPIRATION_MS',
+			)}ms`,
+		});
+		const refreshToken = this.jwtService.sign(payload, {
+			secret: this.configService.getOrThrow('JWT_REFRESH_SECRET'),
+			expiresIn: `${this.configService.getOrThrow(
+				'JWT_REFRESH_TOKEN_EXPIRATION_MS',
+			)}ms`,
+		});
 		return {
 			user,
-			token: this.jwtService.sign(payload),
+			token: accessToken,
+			refreshToken,
 		};
+	}
+
+	async refresh(refreshToken: string) {
+		const payload = this.jwtService.verify(refreshToken, {
+			secret: this.configService.getOrThrow('JWT_REFRESH_SECRET'),
+		});
+		const user = await this.userService.findOne({ email: payload.email });
+		if (!user) {
+			throw new UnauthorizedException();
+		}
+		return this.login(user);
 	}
 
 	async validateUser(
@@ -37,35 +81,5 @@ export class AuthService {
 			}
 		}
 		return null;
-	}
-
-	async getTokens(userId: string, username: string) {
-		const [accessToken, refreshToken] = await Promise.all([
-			this.jwtService.signAsync(
-				{
-					sub: userId,
-					username,
-				},
-				{
-					secret: this.configService.get<string>('JWT_ACCESS_SECRET'),
-					expiresIn: '15m',
-				},
-			),
-			this.jwtService.signAsync(
-				{
-					sub: userId,
-					username,
-				},
-				{
-					secret: this.configService.get<string>('JWT_REFRESH_SECRET'),
-					expiresIn: '7d',
-				},
-			),
-		]);
-
-		return {
-			accessToken,
-			refreshToken,
-		};
 	}
 }

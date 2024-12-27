@@ -18,6 +18,7 @@ import { MailerService } from '@nestjs-modules/mailer';
 import { VerifyEmailDto } from './dto/verify-email.dto';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
+import { JwtRefreshAuthGuard } from './guards/jwt-refresh-auth.guard';
 
 @Public()
 @Controller('auth')
@@ -27,12 +28,17 @@ export class AuthController {
 		private useService: UserService,
 		private mailerService: MailerService,
 		@Inject(CACHE_MANAGER) private cacheManager: Cache,
-	) {}
-
+	) { }
 	@UseGuards(LocalAuthGuard)
 	@Post('login')
 	async login(@Request() req) {
 		return this.authService.login(req.user);
+	}
+
+	@UseGuards(JwtRefreshAuthGuard)
+	@Post('refreshToken')
+	async refreshToken(@Request() req) {
+		return this.authService.refresh(req.headers?.["x-refresh-token"]);
 	}
 
 	@Post('signup')

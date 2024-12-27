@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { CreateRecipeDto } from './dto/create-recipe.dto';
 import { UpdateRecipeDto } from './dto/update-recipe.dto';
 import { PrismaService } from '../prisma/prisma.service';
@@ -8,7 +8,6 @@ import { User } from '@prisma/client';
 @Injectable()
 export class RecipeService {
   constructor(private prisma: PrismaService) { }
-  private readonly logger = new Logger(RecipeService.name)
 
   create(createRecipeDto: CreateRecipeDto) {
     return 'This action adds a new recipe';
@@ -20,7 +19,6 @@ export class RecipeService {
         authorId: userId,
       },
     });
-    this.logger.log(recipes);
     return recipes;
   }
 

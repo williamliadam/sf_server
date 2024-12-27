@@ -8,16 +8,16 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app/app.module';
 import { ValidationPipe } from '@nestjs/common';
 
-const httpsOptions = process.env.NODE_ENV === 'production' ? {
-	key: fs.readFileSync('/home/secrets/private.pem'),
-	cert: fs.readFileSync('/home/secrets/public.pem'),
-} : {};
+const instanceOptions = process.env.NODE_ENV === 'production' ? {
+	https: {
+		key: fs.readFileSync('/home/secrets/private.pem'),
+		cert: fs.readFileSync('/home/secrets/public.pem'),
+	}
+} : undefined;
 async function bootstrap() {
 	const app = await NestFactory.create<NestFastifyApplication>(
 		AppModule,
-		new FastifyAdapter({
-			https: httpsOptions
-		}),
+		new FastifyAdapter(instanceOptions),
 		{ cors: true }
 	);
 	app.useGlobalPipes(new ValidationPipe());

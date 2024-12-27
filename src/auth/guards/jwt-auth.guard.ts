@@ -1,4 +1,4 @@
-import { ExecutionContext, Injectable, Logger } from '@nestjs/common';
+import { ExecutionContext, Injectable } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { Reflector } from '@nestjs/core';
 import { IS_PUBLIC_KEY } from '../decorators/public.decorator';
@@ -10,7 +10,6 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
 	constructor(private reflector: Reflector) {
 		super();
 	}
-	private readonly logger = new Logger();
 	getRequest(context: ExecutionContext) {
 		switch (context.getType<GqlContextType>()) {
 			case 'graphql': {
