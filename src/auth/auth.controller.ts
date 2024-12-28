@@ -53,12 +53,19 @@ export class AuthController {
 		await this.cacheManager.del(rest.email);
 		const salt = await bcrypt.genSalt();
 		const hash = await bcrypt.hash(password, salt);
-		return this.useService.create({ ...rest, password: hash });
+		await this.useService.create({ ...rest, password: hash });
+		return {
+			message: 'Signup Success',
+		};
 	}
 
 	@Post('email/verify')
 	async verifyEmail(@Body() verifyEmailDto: VerifyEmailDto) {
 		const { email } = verifyEmailDto;
+		const isExistUser = await this.useService.findOne({ email });
+		if (isExistUser) {
+			throw new HttpException('Already Exist', HttpStatus.FORBIDDEN);
+		}
 		const isExistCode = await this.cacheManager.get(email);
 		if (isExistCode) {
 			throw new HttpException('Already Send', HttpStatus.FORBIDDEN);
