@@ -28,14 +28,11 @@ __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], UserGroupBy.prototype, "name", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => String, { nullable: false })
+    (0, graphql_1.Field)(() => String, { nullable: true })
 ], UserGroupBy.prototype, "password", void 0);
 __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], UserGroupBy.prototype, "phone", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => String, { nullable: true })
-], UserGroupBy.prototype, "wxId", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Date, { nullable: false })
 ], UserGroupBy.prototype, "createdAt", void 0);

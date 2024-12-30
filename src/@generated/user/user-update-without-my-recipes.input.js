@@ -10,7 +10,6 @@ exports.UserUpdateWithoutMyRecipesInput = void 0;
 const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
 const nullable_string_field_update_operations_input_1 = require("../prisma/nullable-string-field-update-operations.input");
-const string_field_update_operations_input_1 = require("../prisma/string-field-update-operations.input");
 const date_time_field_update_operations_input_1 = require("../prisma/date-time-field-update-operations.input");
 const enum_role_field_update_operations_input_1 = require("../prisma/enum-role-field-update-operations.input");
 const profile_update_one_without_user_nested_input_1 = require("../profile/profile-update-one-without-user-nested.input");
@@ -19,6 +18,7 @@ const post_update_many_without_author_nested_input_1 = require("../post/post-upd
 const meal_template_update_many_without_create_by_nested_input_1 = require("../meal-template/meal-template-update-many-without-create-by-nested.input");
 const meal_plan_update_many_without_create_by_nested_input_1 = require("../meal-plan/meal-plan-update-many-without-create-by-nested.input");
 const dish_plan_update_many_without_plan_cooker_nested_input_1 = require("../dish-plan/dish-plan-update-many-without-plan-cooker-nested.input");
+const user_auth_update_many_without_user_nested_input_1 = require("../user-auth/user-auth-update-many-without-user-nested.input");
 let UserUpdateWithoutMyRecipesInput = class UserUpdateWithoutMyRecipesInput {
 };
 __decorate([
@@ -28,14 +28,11 @@ __decorate([
     (0, graphql_1.Field)(() => nullable_string_field_update_operations_input_1.NullableStringFieldUpdateOperationsInput, { nullable: true })
 ], UserUpdateWithoutMyRecipesInput.prototype, "name", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => string_field_update_operations_input_1.StringFieldUpdateOperationsInput, { nullable: true })
+    (0, graphql_1.Field)(() => nullable_string_field_update_operations_input_1.NullableStringFieldUpdateOperationsInput, { nullable: true })
 ], UserUpdateWithoutMyRecipesInput.prototype, "password", void 0);
 __decorate([
     (0, graphql_1.Field)(() => nullable_string_field_update_operations_input_1.NullableStringFieldUpdateOperationsInput, { nullable: true })
 ], UserUpdateWithoutMyRecipesInput.prototype, "phone", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => nullable_string_field_update_operations_input_1.NullableStringFieldUpdateOperationsInput, { nullable: true })
-], UserUpdateWithoutMyRecipesInput.prototype, "wxId", void 0);
 __decorate([
     (0, graphql_1.Field)(() => date_time_field_update_operations_input_1.DateTimeFieldUpdateOperationsInput, { nullable: true })
 ], UserUpdateWithoutMyRecipesInput.prototype, "createdAt", void 0);
@@ -63,6 +60,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => dish_plan_update_many_without_plan_cooker_nested_input_1.DishPlanUpdateManyWithoutPlanCookerNestedInput, { nullable: true })
 ], UserUpdateWithoutMyRecipesInput.prototype, "chargeDishPlans", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => user_auth_update_many_without_user_nested_input_1.UserAuthUpdateManyWithoutUserNestedInput, { nullable: true })
+], UserUpdateWithoutMyRecipesInput.prototype, "auths", void 0);
 UserUpdateWithoutMyRecipesInput = __decorate([
     (0, graphql_2.InputType)()
 ], UserUpdateWithoutMyRecipesInput);

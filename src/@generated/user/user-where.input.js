@@ -12,7 +12,6 @@ const graphql_1 = require("@nestjs/graphql");
 const graphql_2 = require("@nestjs/graphql");
 const int_filter_input_1 = require("../prisma/int-filter.input");
 const string_nullable_filter_input_1 = require("../prisma/string-nullable-filter.input");
-const string_filter_input_1 = require("../prisma/string-filter.input");
 const date_time_filter_input_1 = require("../prisma/date-time-filter.input");
 const enum_role_filter_input_1 = require("../prisma/enum-role-filter.input");
 const profile_nullable_relation_filter_input_1 = require("../profile/profile-nullable-relation-filter.input");
@@ -22,6 +21,7 @@ const recipe_list_relation_filter_input_1 = require("../recipe/recipe-list-relat
 const meal_template_list_relation_filter_input_1 = require("../meal-template/meal-template-list-relation-filter.input");
 const meal_plan_list_relation_filter_input_1 = require("../meal-plan/meal-plan-list-relation-filter.input");
 const dish_plan_list_relation_filter_input_1 = require("../dish-plan/dish-plan-list-relation-filter.input");
+const user_auth_list_relation_filter_input_1 = require("../user-auth/user-auth-list-relation-filter.input");
 let UserWhereInput = UserWhereInput_1 = class UserWhereInput {
 };
 __decorate([
@@ -43,14 +43,11 @@ __decorate([
     (0, graphql_1.Field)(() => string_nullable_filter_input_1.StringNullableFilter, { nullable: true })
 ], UserWhereInput.prototype, "name", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => string_filter_input_1.StringFilter, { nullable: true })
+    (0, graphql_1.Field)(() => string_nullable_filter_input_1.StringNullableFilter, { nullable: true })
 ], UserWhereInput.prototype, "password", void 0);
 __decorate([
     (0, graphql_1.Field)(() => string_nullable_filter_input_1.StringNullableFilter, { nullable: true })
 ], UserWhereInput.prototype, "phone", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => string_nullable_filter_input_1.StringNullableFilter, { nullable: true })
-], UserWhereInput.prototype, "wxId", void 0);
 __decorate([
     (0, graphql_1.Field)(() => date_time_filter_input_1.DateTimeFilter, { nullable: true })
 ], UserWhereInput.prototype, "createdAt", void 0);
@@ -81,6 +78,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => dish_plan_list_relation_filter_input_1.DishPlanListRelationFilter, { nullable: true })
 ], UserWhereInput.prototype, "chargeDishPlans", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => user_auth_list_relation_filter_input_1.UserAuthListRelationFilter, { nullable: true })
+], UserWhereInput.prototype, "auths", void 0);
 UserWhereInput = UserWhereInput_1 = __decorate([
     (0, graphql_2.InputType)()
 ], UserWhereInput);

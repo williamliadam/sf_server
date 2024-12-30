@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from '../user/user.module';
@@ -7,14 +7,15 @@ import { PostModule } from '../post/post.module';
 import { AuthModule } from '../auth/auth.module';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
-import { CacheModule } from '@nestjs/cache-manager';
+import { CACHE_MANAGER, CacheModule } from '@nestjs/cache-manager';
 import * as redisStore from 'cache-manager-redis-store';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'node:path';
 import { BodyDetailModule } from '../body-detail/body-detail.module';
 import { RecipeModule } from '../recipe/recipe.module';
-
+import { RedisCache, WeChatModule } from 'nest-wechat';
+import { Cache } from 'cache-manager';
 @Module({
 	imports: [
 		ConfigModule.forRoot({
@@ -49,6 +50,19 @@ import { RecipeModule } from '../recipe/recipe.module';
 					strict: true,
 				},
 			},
+		}),
+		WeChatModule.forRootAsync({
+			imports: [ConfigModule],
+			inject: [ConfigService, CACHE_MANAGER],
+			useFactory: (configService: ConfigService, cache: Cache) => ({
+				appId: configService.get('WX_APPID'),
+				secret: configService.get('WX_SECRET'),
+				token: configService.get('WX_TOKEN'),
+				encodingAESKey: configService.get('WX_AESKEY'),
+				cacheAdapter: new RedisCache(cache),
+				debug: true,
+			}),
+			isGlobal: true,
 		}),
 		UserModule,
 		PostModule,

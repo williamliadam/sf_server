@@ -4,7 +4,6 @@ export declare class UserCountAggregateInput {
     name?: true;
     password?: true;
     phone?: true;
-    wxId?: true;
     createdAt?: true;
     updatedAt?: true;
     role?: true;

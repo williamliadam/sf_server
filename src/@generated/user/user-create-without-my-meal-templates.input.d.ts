@@ -5,12 +5,12 @@ import { PostCreateNestedManyWithoutAuthorInput } from '../post/post-create-nest
 import { RecipeCreateNestedManyWithoutAuthorInput } from '../recipe/recipe-create-nested-many-without-author.input';
 import { MealPlanCreateNestedManyWithoutCreateByInput } from '../meal-plan/meal-plan-create-nested-many-without-create-by.input';
 import { DishPlanCreateNestedManyWithoutPlanCookerInput } from '../dish-plan/dish-plan-create-nested-many-without-plan-cooker.input';
+import { UserAuthCreateNestedManyWithoutUserInput } from '../user-auth/user-auth-create-nested-many-without-user.input';
 export declare class UserCreateWithoutMyMealTemplatesInput {
     email?: string;
     name?: string;
-    password: string;
+    password?: string;
     phone?: string;
-    wxId?: string;
     createdAt?: Date | string;
     updatedAt?: Date | string;
     role?: keyof typeof Role;
@@ -20,4 +20,5 @@ export declare class UserCreateWithoutMyMealTemplatesInput {
     myRecipes?: RecipeCreateNestedManyWithoutAuthorInput;
     myMealPlans?: MealPlanCreateNestedManyWithoutCreateByInput;
     chargeDishPlans?: DishPlanCreateNestedManyWithoutPlanCookerInput;
+    auths?: UserAuthCreateNestedManyWithoutUserInput;
 }

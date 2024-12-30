@@ -29,9 +29,6 @@ __decorate([
 ], UserMaxOrderByAggregateInput.prototype, "phone", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
-], UserMaxOrderByAggregateInput.prototype, "wxId", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
 ], UserMaxOrderByAggregateInput.prototype, "createdAt", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })

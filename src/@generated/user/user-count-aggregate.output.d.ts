@@ -4,7 +4,6 @@ export declare class UserCountAggregate {
     name: number;
     password: number;
     phone: number;
-    wxId: number;
     createdAt: number;
     updatedAt: number;
     role: number;

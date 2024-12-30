@@ -28,9 +28,6 @@ __decorate([
 ], UserMaxAggregateInput.prototype, "phone", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
-], UserMaxAggregateInput.prototype, "wxId", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], UserMaxAggregateInput.prototype, "createdAt", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })

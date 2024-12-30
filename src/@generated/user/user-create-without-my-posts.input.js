@@ -16,6 +16,7 @@ const recipe_create_nested_many_without_author_input_1 = require("../recipe/reci
 const meal_template_create_nested_many_without_create_by_input_1 = require("../meal-template/meal-template-create-nested-many-without-create-by.input");
 const meal_plan_create_nested_many_without_create_by_input_1 = require("../meal-plan/meal-plan-create-nested-many-without-create-by.input");
 const dish_plan_create_nested_many_without_plan_cooker_input_1 = require("../dish-plan/dish-plan-create-nested-many-without-plan-cooker.input");
+const user_auth_create_nested_many_without_user_input_1 = require("../user-auth/user-auth-create-nested-many-without-user.input");
 let UserCreateWithoutMyPostsInput = class UserCreateWithoutMyPostsInput {
 };
 __decorate([
@@ -25,14 +26,11 @@ __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], UserCreateWithoutMyPostsInput.prototype, "name", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => String, { nullable: false })
+    (0, graphql_1.Field)(() => String, { nullable: true })
 ], UserCreateWithoutMyPostsInput.prototype, "password", void 0);
 __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], UserCreateWithoutMyPostsInput.prototype, "phone", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => String, { nullable: true })
-], UserCreateWithoutMyPostsInput.prototype, "wxId", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Date, { nullable: true })
 ], UserCreateWithoutMyPostsInput.prototype, "createdAt", void 0);
@@ -60,6 +58,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => dish_plan_create_nested_many_without_plan_cooker_input_1.DishPlanCreateNestedManyWithoutPlanCookerInput, { nullable: true })
 ], UserCreateWithoutMyPostsInput.prototype, "chargeDishPlans", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => user_auth_create_nested_many_without_user_input_1.UserAuthCreateNestedManyWithoutUserInput, { nullable: true })
+], UserCreateWithoutMyPostsInput.prototype, "auths", void 0);
 UserCreateWithoutMyPostsInput = __decorate([
     (0, graphql_2.InputType)()
 ], UserCreateWithoutMyPostsInput);

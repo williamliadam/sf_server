@@ -29,9 +29,6 @@ __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], UserMinAggregate.prototype, "phone", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => String, { nullable: true })
-], UserMinAggregate.prototype, "wxId", void 0);
-__decorate([
     (0, graphql_1.Field)(() => Date, { nullable: true })
 ], UserMinAggregate.prototype, "createdAt", void 0);
 __decorate([

@@ -10,7 +10,7 @@ import { UserMaxAggregateInput } from './user-max-aggregate.input';
 export declare class UserAggregateArgs {
     where?: UserWhereInput;
     orderBy?: Array<UserOrderByWithRelationInput>;
-    cursor?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
+    cursor?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone'>;
     take?: number;
     skip?: number;
     _count?: UserCountAggregateInput;

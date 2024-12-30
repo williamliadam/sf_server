@@ -1,6 +1,5 @@
 import { IntFieldUpdateOperationsInput } from '../prisma/int-field-update-operations.input';
 import { NullableStringFieldUpdateOperationsInput } from '../prisma/nullable-string-field-update-operations.input';
-import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-operations.input';
 import { DateTimeFieldUpdateOperationsInput } from '../prisma/date-time-field-update-operations.input';
 import { EnumRoleFieldUpdateOperationsInput } from '../prisma/enum-role-field-update-operations.input';
 import { ProfileUncheckedUpdateOneWithoutUserNestedInput } from '../profile/profile-unchecked-update-one-without-user-nested.input';
@@ -9,13 +8,13 @@ import { PostUncheckedUpdateManyWithoutAuthorNestedInput } from '../post/post-un
 import { RecipeUncheckedUpdateManyWithoutAuthorNestedInput } from '../recipe/recipe-unchecked-update-many-without-author-nested.input';
 import { MealTemplateUncheckedUpdateManyWithoutCreateByNestedInput } from '../meal-template/meal-template-unchecked-update-many-without-create-by-nested.input';
 import { MealPlanUncheckedUpdateManyWithoutCreateByNestedInput } from '../meal-plan/meal-plan-unchecked-update-many-without-create-by-nested.input';
+import { UserAuthUncheckedUpdateManyWithoutUserNestedInput } from '../user-auth/user-auth-unchecked-update-many-without-user-nested.input';
 export declare class UserUncheckedUpdateWithoutChargeDishPlansInput {
     id?: IntFieldUpdateOperationsInput;
     email?: NullableStringFieldUpdateOperationsInput;
     name?: NullableStringFieldUpdateOperationsInput;
-    password?: StringFieldUpdateOperationsInput;
+    password?: NullableStringFieldUpdateOperationsInput;
     phone?: NullableStringFieldUpdateOperationsInput;
-    wxId?: NullableStringFieldUpdateOperationsInput;
     createdAt?: DateTimeFieldUpdateOperationsInput;
     updatedAt?: DateTimeFieldUpdateOperationsInput;
     role?: EnumRoleFieldUpdateOperationsInput;
@@ -25,4 +24,5 @@ export declare class UserUncheckedUpdateWithoutChargeDishPlansInput {
     myRecipes?: RecipeUncheckedUpdateManyWithoutAuthorNestedInput;
     myMealTemplates?: MealTemplateUncheckedUpdateManyWithoutCreateByNestedInput;
     myMealPlans?: MealPlanUncheckedUpdateManyWithoutCreateByNestedInput;
+    auths?: UserAuthUncheckedUpdateManyWithoutUserNestedInput;
 }

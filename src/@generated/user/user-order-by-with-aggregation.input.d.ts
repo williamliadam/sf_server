@@ -9,9 +9,8 @@ export declare class UserOrderByWithAggregationInput {
     id?: keyof typeof SortOrder;
     email?: SortOrderInput;
     name?: SortOrderInput;
-    password?: keyof typeof SortOrder;
+    password?: SortOrderInput;
     phone?: SortOrderInput;
-    wxId?: SortOrderInput;
     createdAt?: keyof typeof SortOrder;
     updatedAt?: keyof typeof SortOrder;
     role?: keyof typeof SortOrder;

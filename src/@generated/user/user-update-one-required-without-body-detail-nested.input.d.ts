@@ -8,6 +8,6 @@ export declare class UserUpdateOneRequiredWithoutBodyDetailNestedInput {
     create?: UserCreateWithoutBodyDetailInput;
     connectOrCreate?: UserCreateOrConnectWithoutBodyDetailInput;
     upsert?: UserUpsertWithoutBodyDetailInput;
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
+    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone'>;
     update?: UserUpdateToOneWithWhereWithoutBodyDetailInput;
 }

@@ -15,7 +15,7 @@ const relation_load_strategy_enum_1 = require("../prisma/relation-load-strategy.
 let CreateOneUserArgs = class CreateOneUserArgs {
 };
 __decorate([
-    (0, graphql_1.Field)(() => user_create_input_1.UserCreateInput, { nullable: false }),
+    (0, graphql_1.Field)(() => user_create_input_1.UserCreateInput, { nullable: true }),
     (0, class_transformer_1.Type)(() => user_create_input_1.UserCreateInput)
 ], CreateOneUserArgs.prototype, "data", void 0);
 __decorate([

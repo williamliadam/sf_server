@@ -6,14 +6,14 @@ import { Recipe } from '../recipe/recipe.model';
 import { MealTemplate } from '../meal-template/meal-template.model';
 import { MealPlan } from '../meal-plan/meal-plan.model';
 import { DishPlan } from '../dish-plan/dish-plan.model';
+import { UserAuth } from '../user-auth/user-auth.model';
 import { UserCount } from './user-count.output';
 export declare class User {
     id: number;
     email: string | null;
     name: string | null;
-    password: string;
+    password: string | null;
     phone: string | null;
-    wxId: string | null;
     createdAt: Date;
     updatedAt: Date;
     role: keyof typeof Role;
@@ -24,5 +24,6 @@ export declare class User {
     myMealTemplates?: Array<MealTemplate>;
     myMealPlans?: Array<MealPlan>;
     chargeDishPlans?: Array<DishPlan>;
+    auths?: Array<UserAuth>;
     _count?: UserCount;
 }

@@ -4,6 +4,6 @@ import { UserWhereUniqueInput } from './user-where-unique.input';
 import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class UpdateOneUserArgs {
     data: UserUpdateInput;
-    where: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
+    where: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone'>;
     relationLoadStrategy?: keyof typeof RelationLoadStrategy;
 }

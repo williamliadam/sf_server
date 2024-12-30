@@ -7,7 +7,7 @@ import { RelationLoadStrategy } from '../prisma/relation-load-strategy.enum';
 export declare class FindManyUserArgs {
     where?: UserWhereInput;
     orderBy?: Array<UserOrderByWithRelationInput>;
-    cursor?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
+    cursor?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone'>;
     take?: number;
     skip?: number;
     distinct?: Array<keyof typeof UserScalarFieldEnum>;

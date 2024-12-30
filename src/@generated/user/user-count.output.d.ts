@@ -4,4 +4,5 @@ export declare class UserCount {
     myMealTemplates?: number;
     myMealPlans?: number;
     chargeDishPlans?: number;
+    auths?: number;
 }

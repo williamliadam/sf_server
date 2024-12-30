@@ -9,7 +9,6 @@ var UserScalarFieldEnum;
     UserScalarFieldEnum["name"] = "name";
     UserScalarFieldEnum["password"] = "password";
     UserScalarFieldEnum["phone"] = "phone";
-    UserScalarFieldEnum["wxId"] = "wxId";
     UserScalarFieldEnum["createdAt"] = "createdAt";
     UserScalarFieldEnum["updatedAt"] = "updatedAt";
     UserScalarFieldEnum["role"] = "role";

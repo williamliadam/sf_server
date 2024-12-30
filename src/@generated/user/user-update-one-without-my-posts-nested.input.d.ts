@@ -11,6 +11,6 @@ export declare class UserUpdateOneWithoutMyPostsNestedInput {
     upsert?: UserUpsertWithoutMyPostsInput;
     disconnect?: UserWhereInput;
     delete?: UserWhereInput;
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
+    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone'>;
     update?: UserUpdateToOneWithWhereWithoutMyPostsInput;
 }

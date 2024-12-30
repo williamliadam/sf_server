@@ -8,9 +8,8 @@ export declare class UserGroupBy {
     id: number;
     email?: string;
     name?: string;
-    password: string;
+    password?: string;
     phone?: string;
-    wxId?: string;
     createdAt: Date | string;
     updatedAt: Date | string;
     role: keyof typeof Role;

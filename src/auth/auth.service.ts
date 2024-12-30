@@ -1,9 +1,10 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, Logger, UnauthorizedException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { User } from '@prisma/client';
 import { UserService } from '../user/user.service';
 import { ConfigService } from '@nestjs/config';
+import { WeChatService } from 'nest-wechat';
 
 @Injectable()
 export class AuthService {
@@ -11,9 +12,19 @@ export class AuthService {
 		private userService: UserService,
 		private jwtService: JwtService,
 		private configService: ConfigService,
+		private wechatService: WeChatService,
+
 	) { }
+	private logger = new Logger(AuthService.name);
 	async login(user: Omit<User, 'password'>) {
-		const payload = { email: user.email, sub: user.id };
+		const profile = {
+			id: user.id,
+			email: user.email,
+			name: user.name,
+			role: user.role,
+			phone: user.phone,
+		}
+		const payload = { sub: user.id };
 		const expiresAccessToken = new Date();
 		expiresAccessToken.setMilliseconds(
 			expiresAccessToken.getTime() +
@@ -47,7 +58,7 @@ export class AuthService {
 			)}ms`,
 		});
 		return {
-			user,
+			user: profile,
 			token: accessToken,
 			refreshToken,
 		};
@@ -61,6 +72,26 @@ export class AuthService {
 		if (!user) {
 			throw new UnauthorizedException();
 		}
+		return this.login(user);
+	}
+
+
+	async wxlogin(code: string) {
+		// get openid and session_key from wechat server
+		const res = await this.wechatService.mp.code2Session(code)
+		const { openid, } = res;
+		this.logger.log(`openid: ${openid},code: ${code}, res: ${JSON.stringify(res)}`);
+		// check if user exist
+		if (!openid) {
+			throw new UnauthorizedException();
+		}
+		const userAuth = await this.userService.findOneAuth({ openId: openid });
+		const user = userAuth ? await this.userService.findOne({ id: userAuth.userId }) : null;
+		if (!user) {
+			// if not exist, create user
+			await this.userService.create({ auths: { create: { openId: openid, authType: "WECHAT", accessToken: "" } } });
+		}
+		// return jwt token
 		return this.login(user);
 	}
 

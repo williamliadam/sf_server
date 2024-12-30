@@ -27,6 +27,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => graphql_3.Int, { nullable: false })
 ], UserCount.prototype, "chargeDishPlans", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => graphql_3.Int, { nullable: false })
+], UserCount.prototype, "auths", void 0);
 UserCount = __decorate([
     (0, graphql_2.ObjectType)()
 ], UserCount);

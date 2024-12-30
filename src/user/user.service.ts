@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { User, Prisma } from '@prisma/client';
+import { User, Prisma, UserAuth } from '@prisma/client';
 
 @Injectable()
 export class UserService {
-	constructor(private prisma: PrismaService) {}
+	constructor(private prisma: PrismaService) { }
 
 	create(data: Prisma.UserCreateInput): Promise<User> {
 		return this.prisma.user.create({
@@ -36,6 +36,15 @@ export class UserService {
 			where: userWhereUniqueInput,
 		});
 	}
+
+	findOneAuth(
+		userAuthWhereUniqueInput: Prisma.UserAuthWhereUniqueInput,
+	): Promise<UserAuth | null> {
+		return this.prisma.userAuth.findUnique({
+			where: userAuthWhereUniqueInput,
+		});
+	}
+
 
 	update(params: {
 		where: Prisma.UserWhereUniqueInput;

@@ -5,5 +5,5 @@ import { UserWhereUniqueInput } from './user-where-unique.input';
 export declare class UserCreateNestedOneWithoutMyPostsInput {
     create?: UserCreateWithoutMyPostsInput;
     connectOrCreate?: UserCreateOrConnectWithoutMyPostsInput;
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
+    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone'>;
 }

@@ -29,9 +29,8 @@ model User {
   id              Int            @id @default(autoincrement())
   email           String?        @unique
   name            String?
-  password        String
+  password        String?
   phone           String?        @unique
-  wxId            String?        @unique
   createdAt       DateTime       @default(now())
   updatedAt       DateTime       @default(now())
   role            Role           @default(USER)
@@ -42,6 +41,18 @@ model User {
   myMealTemplates MealTemplate[]
   myMealPlans     MealPlan[]
   chargeDishPlans DishPlan[]     @relation("PlanCooker")
+  auths           UserAuth[]
+}
+
+model UserAuth {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+  authType    AuthType
+  openId      String   @unique
+  accessToken String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
 }
 
 model Post {
@@ -219,6 +230,7 @@ model MealPlan {
   dishPlans DishPlan[]
   createBy  User       @relation(fields: [userId], references: [id])
 }
+
 model Client {
   id                Int      @id @default(autoincrement())
   subcompanyid1span String
@@ -241,6 +253,7 @@ model Client {
   createdAt         DateTime @default(now())
   updatedAt         DateTime @default(now())
 }
+
 enum MealType {
   BREAKFAST
   LUNCH
@@ -257,4 +270,10 @@ enum Goal {
 enum Role {
   USER
   ADMIN
+}
+
+enum AuthType {
+  WECHAT
+  EMAIL
+  PHONE
 }

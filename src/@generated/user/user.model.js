@@ -18,6 +18,7 @@ const recipe_model_1 = require("../recipe/recipe.model");
 const meal_template_model_1 = require("../meal-template/meal-template.model");
 const meal_plan_model_1 = require("../meal-plan/meal-plan.model");
 const dish_plan_model_1 = require("../dish-plan/dish-plan.model");
+const user_auth_model_1 = require("../user-auth/user-auth.model");
 const user_count_output_1 = require("./user-count.output");
 let User = class User {
 };
@@ -31,14 +32,11 @@ __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], User.prototype, "name", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => String, { nullable: false })
+    (0, graphql_1.Field)(() => String, { nullable: true })
 ], User.prototype, "password", void 0);
 __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true })
 ], User.prototype, "phone", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => String, { nullable: true })
-], User.prototype, "wxId", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Date, { nullable: false })
 ], User.prototype, "createdAt", void 0);
@@ -69,6 +67,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => [dish_plan_model_1.DishPlan], { nullable: true })
 ], User.prototype, "chargeDishPlans", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => [user_auth_model_1.UserAuth], { nullable: true })
+], User.prototype, "auths", void 0);
 __decorate([
     (0, graphql_1.Field)(() => user_count_output_1.UserCount, { nullable: false })
 ], User.prototype, "_count", void 0);

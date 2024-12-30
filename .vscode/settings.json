@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "AESKEY",
     "autoincrement",
     "biomejs",
     "datasource",
@@ -21,8 +22,10 @@
     "telephonespan",
     "ucloud",
     "uhub",
+    "wechat",
     "williamliadam",
     "workcode",
-    "workcodespan"
+    "workcodespan",
+    "wxlogin"
   ]
 }

@@ -18,6 +18,7 @@ const recipe_order_by_relation_aggregate_input_1 = require("../recipe/recipe-ord
 const meal_template_order_by_relation_aggregate_input_1 = require("../meal-template/meal-template-order-by-relation-aggregate.input");
 const meal_plan_order_by_relation_aggregate_input_1 = require("../meal-plan/meal-plan-order-by-relation-aggregate.input");
 const dish_plan_order_by_relation_aggregate_input_1 = require("../dish-plan/dish-plan-order-by-relation-aggregate.input");
+const user_auth_order_by_relation_aggregate_input_1 = require("../user-auth/user-auth-order-by-relation-aggregate.input");
 let UserOrderByWithRelationInput = class UserOrderByWithRelationInput {
 };
 __decorate([
@@ -30,14 +31,11 @@ __decorate([
     (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
 ], UserOrderByWithRelationInput.prototype, "name", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
+    (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
 ], UserOrderByWithRelationInput.prototype, "password", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
 ], UserOrderByWithRelationInput.prototype, "phone", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
-], UserOrderByWithRelationInput.prototype, "wxId", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
 ], UserOrderByWithRelationInput.prototype, "createdAt", void 0);
@@ -68,6 +66,9 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => dish_plan_order_by_relation_aggregate_input_1.DishPlanOrderByRelationAggregateInput, { nullable: true })
 ], UserOrderByWithRelationInput.prototype, "chargeDishPlans", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => user_auth_order_by_relation_aggregate_input_1.UserAuthOrderByRelationAggregateInput, { nullable: true })
+], UserOrderByWithRelationInput.prototype, "auths", void 0);
 UserOrderByWithRelationInput = __decorate([
     (0, graphql_2.InputType)()
 ], UserOrderByWithRelationInput);

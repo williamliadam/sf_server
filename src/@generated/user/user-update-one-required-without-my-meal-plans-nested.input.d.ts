@@ -8,6 +8,6 @@ export declare class UserUpdateOneRequiredWithoutMyMealPlansNestedInput {
     create?: UserCreateWithoutMyMealPlansInput;
     connectOrCreate?: UserCreateOrConnectWithoutMyMealPlansInput;
     upsert?: UserUpsertWithoutMyMealPlansInput;
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone' | 'wxId'>;
+    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id' | 'email' | 'phone'>;
     update?: UserUpdateToOneWithWhereWithoutMyMealPlansInput;
 }

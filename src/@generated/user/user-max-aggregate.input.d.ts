@@ -4,7 +4,6 @@ export declare class UserMaxAggregateInput {
     name?: true;
     password?: true;
     phone?: true;
-    wxId?: true;
     createdAt?: true;
     updatedAt?: true;
     role?: true;

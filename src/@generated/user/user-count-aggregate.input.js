@@ -28,9 +28,6 @@ __decorate([
 ], UserCountAggregateInput.prototype, "phone", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })
-], UserCountAggregateInput.prototype, "wxId", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => Boolean, { nullable: true })
 ], UserCountAggregateInput.prototype, "createdAt", void 0);
 __decorate([
     (0, graphql_1.Field)(() => Boolean, { nullable: true })

@@ -7,13 +7,13 @@ import { RecipeOrderByRelationAggregateInput } from '../recipe/recipe-order-by-r
 import { MealTemplateOrderByRelationAggregateInput } from '../meal-template/meal-template-order-by-relation-aggregate.input';
 import { MealPlanOrderByRelationAggregateInput } from '../meal-plan/meal-plan-order-by-relation-aggregate.input';
 import { DishPlanOrderByRelationAggregateInput } from '../dish-plan/dish-plan-order-by-relation-aggregate.input';
+import { UserAuthOrderByRelationAggregateInput } from '../user-auth/user-auth-order-by-relation-aggregate.input';
 export declare class UserOrderByWithRelationInput {
     id?: keyof typeof SortOrder;
     email?: SortOrderInput;
     name?: SortOrderInput;
-    password?: keyof typeof SortOrder;
+    password?: SortOrderInput;
     phone?: SortOrderInput;
-    wxId?: SortOrderInput;
     createdAt?: keyof typeof SortOrder;
     updatedAt?: keyof typeof SortOrder;
     role?: keyof typeof SortOrder;
@@ -24,4 +24,5 @@ export declare class UserOrderByWithRelationInput {
     myMealTemplates?: MealTemplateOrderByRelationAggregateInput;
     myMealPlans?: MealPlanOrderByRelationAggregateInput;
     chargeDishPlans?: DishPlanOrderByRelationAggregateInput;
+    auths?: UserAuthOrderByRelationAggregateInput;
 }

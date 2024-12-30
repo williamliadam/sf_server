@@ -5,7 +5,6 @@ export declare class UserMaxAggregate {
     name?: string;
     password?: string;
     phone?: string;
-    wxId?: string;
     createdAt?: Date | string;
     updatedAt?: Date | string;
     role?: keyof typeof Role;

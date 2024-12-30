@@ -54,6 +54,7 @@
     "graphql": "^16.9.0",
     "handlebars": "^4.7.8",
     "ioredis": "^5.4.1",
+    "nest-wechat": "^0.2.50",
     "nestjs-prisma": "^0.23.0",
     "nestjs-prisma-graphql-crud-gen": "^1.0.4",
     "nodemailer": "^6.9.15",
@@ -61,9 +62,9 @@
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "prisma": "^5.20.0",
+    "prisma-nestjs-graphql": "^20.0.3",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
-    "prisma-nestjs-graphql": "^20.0.3",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {

@@ -28,14 +28,11 @@ __decorate([
     (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
 ], UserOrderByWithAggregationInput.prototype, "name", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
+    (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
 ], UserOrderByWithAggregationInput.prototype, "password", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
 ], UserOrderByWithAggregationInput.prototype, "phone", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => sort_order_input_1.SortOrderInput, { nullable: true })
-], UserOrderByWithAggregationInput.prototype, "wxId", void 0);
 __decorate([
     (0, graphql_1.Field)(() => sort_order_enum_1.SortOrder, { nullable: true })
 ], UserOrderByWithAggregationInput.prototype, "createdAt", void 0);

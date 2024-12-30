@@ -59,6 +59,13 @@ export class AuthController {
 		};
 	}
 
+	@Post("wxlogin")
+	async wxlogin(@Body() body) {
+		const { code } = body;
+		const result = await this.authService.wxlogin(code);
+		return result;
+	}
+
 	@Post('email/verify')
 	async verifyEmail(@Body() verifyEmailDto: VerifyEmailDto) {
 		const { email } = verifyEmailDto;

@@ -5,13 +5,13 @@ import { RecipeUncheckedCreateNestedManyWithoutAuthorInput } from '../recipe/rec
 import { MealTemplateUncheckedCreateNestedManyWithoutCreateByInput } from '../meal-template/meal-template-unchecked-create-nested-many-without-create-by.input';
 import { MealPlanUncheckedCreateNestedManyWithoutCreateByInput } from '../meal-plan/meal-plan-unchecked-create-nested-many-without-create-by.input';
 import { DishPlanUncheckedCreateNestedManyWithoutPlanCookerInput } from '../dish-plan/dish-plan-unchecked-create-nested-many-without-plan-cooker.input';
+import { UserAuthUncheckedCreateNestedManyWithoutUserInput } from '../user-auth/user-auth-unchecked-create-nested-many-without-user.input';
 export declare class UserUncheckedCreateWithoutBodyDetailInput {
     id?: number;
     email?: string;
     name?: string;
-    password: string;
+    password?: string;
     phone?: string;
-    wxId?: string;
     createdAt?: Date | string;
     updatedAt?: Date | string;
     role?: keyof typeof Role;
@@ -21,4 +21,5 @@ export declare class UserUncheckedCreateWithoutBodyDetailInput {
     myMealTemplates?: MealTemplateUncheckedCreateNestedManyWithoutCreateByInput;
     myMealPlans?: MealPlanUncheckedCreateNestedManyWithoutCreateByInput;
     chargeDishPlans?: DishPlanUncheckedCreateNestedManyWithoutPlanCookerInput;
+    auths?: UserAuthUncheckedCreateNestedManyWithoutUserInput;
 }
